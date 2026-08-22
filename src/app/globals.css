@@ -1,26 +1,317 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/**
+ * Design tokens.
+ *
+ * White surface, near-black type, and #3533cd used as an accent — not as a
+ * background wash. The brand ramp is the same scale the reference header uses,
+ * so brand-600 is exactly the specified colour.
+ */
+@theme {
+  /* Brand ------------------------------------------------------------ */
+  --color-brand-50: #eeeefc;
+  --color-brand-100: #dcdcf8;
+  --color-brand-200: #babaf3;
+  --color-brand-300: #9797ec;
+  --color-brand-400: #6f6de1;
+  --color-brand-500: #4a48d6;
+  --color-brand-600: #3533cd;
+  --color-brand-700: #2b29a6;
+  --color-brand-800: #212080;
+  --color-brand-900: #191859;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Neutrals --------------------------------------------------------- */
+  --color-background: #ffffff;
+  --color-foreground: #15151c;
+  --color-muted: #55555f;
+  --color-faint: #8a8a95;
+  --color-surface: #f7f7fb;
+  --color-border: #e6e6ec;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Shape and rhythm ------------------------------------------------- */
+  --radius-pill: 9999px;
+  --radius-card: 1.25rem;
+  --spacing-gutter: clamp(1.75rem, 4.5vw, 4.5rem);
+
+  /* Type ------------------------------------------------------------- */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), ui-sans-serif, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+/* Anchor targets sit below the sticky header. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Hero constellation — CSS-only depth, no WebGL. */
+@keyframes cfg-drift {
+  0%, 100% { transform: rotateX(14deg) rotateY(-12deg) translateY(0); }
+  50%      { transform: rotateX(11deg) rotateY(-8deg) translateY(-10px); }
+}
+@keyframes cfg-dash { to { stroke-dashoffset: -24; } }
+@keyframes cfg-pulse {
+  0%, 100% { opacity: .35; transform: scale(1); }
+  50%      { opacity: .7; transform: scale(1.08); }
+}
+
+.cfg-orbit { animation: cfg-drift 14s ease-in-out infinite; }
+.cfg-flow  { animation: cfg-dash 1.4s linear infinite; }
+.cfg-halo  { animation: cfg-pulse 4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cfg-orbit, .cfg-flow, .cfg-halo { animation: none; }
+}
+
+@keyframes cfg-float {
+  0%, 100% { transform: translate3d(0, 0, var(--cfg-z, 0px)); }
+  50%      { transform: translate3d(0, -8px, calc(var(--cfg-z, 0px) + 14px)); }
+}
+@keyframes cfg-spin { to { transform: rotate(360deg); } }
+@keyframes cfg-ripple {
+  0%   { opacity: .5; transform: scale(.6); }
+  100% { opacity: 0;  transform: scale(1.6); }
+}
+
+.cfg-float  { animation: cfg-float 7s ease-in-out infinite; }
+.cfg-spin   { animation: cfg-spin 40s linear infinite; }
+.cfg-spin-r { animation: cfg-spin 60s linear infinite reverse; }
+.cfg-ripple { animation: cfg-ripple 3.6s ease-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cfg-float, .cfg-spin, .cfg-spin-r, .cfg-ripple { animation: none; }
+}
+
+@keyframes cfg-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgb(74 72 214 / .35); }
+  50%      { box-shadow: 0 0 0 6px rgb(74 72 214 / 0); }
+}
+.cfg-halo-ring { animation: cfg-glow 3s ease-out infinite; }
+@media (prefers-reduced-motion: reduce) { .cfg-halo-ring { animation: none; } }
+
+/*
+ * Industries accordion.
+ *
+ * Panels share the row equally until the pointer enters it: every panel then
+ * yields a little and the one under the pointer takes the space. `focus-within`
+ * carries the same behaviour to the keyboard, so a tabbed panel opens too.
+ */
+.industry-row > * {
+  flex: 1 1 0;
+  transition: flex-grow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.industry-row:hover > * { flex-grow: 0.72; }
+.industry-row > *:hover,
+.industry-row > *:focus-within { flex-grow: 2.6; }
+
+@media (prefers-reduced-motion: reduce) {
+  .industry-row > * { transition: none; }
+}
+
+/* Scroll rails that carry their own affordance and do not need a bar. */
+.cfg-no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.cfg-no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ------------------------------------------------------------------- hero film
+ *
+ * The hero clip was drawn on the same white as the slab it plays on, so the
+ * only thing that can betray its rectangle is the codec's last value or two of
+ * grey. Feathering the outermost few percent dissolves that edge outright — the
+ * diagram itself keeps a tenth of the frame as margin, so nothing is lost.
+ */
+.cfg-hero-film {
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
+  -webkit-mask-composite: source-in;
+          mask-image:
+    linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
+          mask-composite: intersect;
+}
+
+/* ---------------------------------------------------------------- premium card
+ *
+ * White stays the surface; the brand does the lighting. Three layers, all
+ * decorative and all on the compositor: a gradient hairline that catches the
+ * light along two edges, a spotlight that follows the pointer, and a sheen that
+ * sweeps across on hover. Together they are the difference between a bordered
+ * rectangle and something that looks made.
+ */
+.cfg-card {
+  position: relative;
+  isolation: isolate;
+  /* A whisper of ink over the white, so the surface has weight. */
+  background:
+    linear-gradient(180deg, rgb(21 21 28 / 0.035) 0%, rgb(21 21 28 / 0.055) 100%),
+    linear-gradient(180deg, #ffffff 0%, #fbfbff 100%);
+  backdrop-filter: blur(2px);
+  box-shadow:
+    0 1px 2px rgb(21 21 28 / 0.04),
+    0 18px 40px -24px rgb(25 24 89 / 0.28);
+  transition:
+    box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* The hairline: a real gradient border, cut out of a filled box by two masks. */
+.cfg-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    152deg,
+    rgb(53 51 205 / 0.85),
+    rgb(53 51 205 / 0.34) 34%,
+    rgb(53 51 205 / 0.22) 58%,
+    rgb(53 51 205 / 0.7)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* The spotlight, parked wherever the pointer last was. */
+.cfg-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    340px circle at var(--cfg-mx, 50%) var(--cfg-my, 0%),
+    rgb(53 51 205 / 0.11),
+    transparent 68%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.cfg-card:hover {
+  box-shadow:
+    0 2px 4px rgb(21 21 28 / 0.05),
+    0 44px 72px -34px rgb(25 24 89 / 0.45);
+}
+
+.cfg-card:hover::after,
+.group:hover .cfg-card::after {
+  opacity: 1;
+}
+
+/* The sheen: one pass of light, left to right, on hover only. */
+.cfg-sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cfg-sheen::before {
+  content: "";
+  position: absolute;
+  inset: -40% -60%;
+  background: linear-gradient(
+    104deg,
+    transparent 42%,
+    rgb(255 255 255 / 0.75) 50%,
+    transparent 58%
+  );
+  transform: translateX(-70%);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .cfg-sheen::before,
+.cfg-card:hover .cfg-sheen::before {
+  transform: translateX(70%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cfg-sheen::before {
+    display: none;
+  }
+}
+
+/* -------------------------------------------------------------- bento card
+ *
+ * The same lit surface as `.cfg-card`, but plain white behind a solid brand
+ * border rather than tinted glass behind a gradient hairline — the treatment
+ * the bento asks for, where the grid itself is the composition and the cards
+ * should read as cut from one sheet.
+ */
+.cfg-card-solid {
+  position: relative;
+  isolation: isolate;
+  background: #ffffff;
+  border: 1px solid var(--color-brand-600);
+  box-shadow: 0 18px 40px -26px rgb(25 24 89 / 0.3);
+  transition:
+    box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.4s ease;
+}
+
+.cfg-card-solid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    340px circle at var(--cfg-mx, 50%) var(--cfg-my, 0%),
+    rgb(53 51 205 / 0.09),
+    transparent 68%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.cfg-card-solid:hover {
+  box-shadow: 0 34px 64px -32px rgb(25 24 89 / 0.42);
+}
+
+.cfg-card-solid:hover::after,
+.group:hover .cfg-card-solid::after {
+  opacity: 1;
+}
+
+/* A line of copy arriving under the arc, replaced whenever the open card changes. */
+@keyframes cfg-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cfg-fade-up {
+  animation: cfg-fade-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cfg-fade-up {
+    animation: none;
+  }
 }

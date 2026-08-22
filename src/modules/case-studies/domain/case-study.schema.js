@@ -1,0 +1,29 @@
+/**
+ * Case study content contract.
+ *
+ * @typedef {import("@/shared/domain/page").IndexPageRecord} IndexPageRecord
+ *
+ * @typedef {object} CaseStudyRecord
+ * @property {string}   slug
+ * @property {string}   title
+ * @property {string}   sectorLabel    Badge text on the card, e.g. "Real Estate".
+ * @property {string?}  industrySlug   Link into the industries context, when one applies.
+ * @property {number}   order
+ * @property {string}   client         Anonymised client descriptor.
+ * @property {string}   summary
+ * @property {"outline"|"published"} status
+ * @property {{ eyebrow: string?, heading: string, body: string }?} challenge
+ * @property {Array<{ step: string, description: string }>} approach
+ * @property {{ heading: string, body: string }?} solution
+ * @property {string[]} outcomes
+ * @property {string?}  metricsNote    Placeholder used while metrics await client approval.
+ * @property {string[]} technologies
+ * @property {string[]} relatedServices
+ * @property {string[]} relatedSolutions
+ * @property {string[]} ctas
+ * @property {{ title: string, description: string }} seo
+ */
+
+export const REQUIRED_FIELDS = Object.freeze(["slug", "title", "sectorLabel", "summary", "client", "order", "seo"]);
+
+export const PUBLISHABLE_FIELDS = Object.freeze(["challenge", "approach", "solution", "outcomes"]);
