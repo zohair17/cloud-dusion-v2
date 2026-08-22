@@ -138,12 +138,12 @@ export const homePage = {
     solutionSlugs: [
       "ai-document-management",
       "ai-document-generator",
-      "ai-chatbot-solutions",
       "self-hosted-enterprise-ai",
-      "sharepoint-migration",
+      "deal-management-system",
       "erp-manufacturing",
       "erp-wholesale-distribution",
       "smart-device-mobile-app",
+      "sharepoint-migration",
     ],
   },
 

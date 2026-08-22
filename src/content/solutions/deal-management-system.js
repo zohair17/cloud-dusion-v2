@@ -10,6 +10,8 @@ export const solution = {
   slug: "deal-management-system",
   title: "Deal Management System",
   tagline: null,
+  /** Glyph id; the component owns the actual icon. */
+  icon: "handshake",
   summary: "Pipeline, documents, approvals, and analytics for real estate deals — from sourcing through diligence to close, in one governed workspace.",
   categoryId: "real-estate",
   order: 2,

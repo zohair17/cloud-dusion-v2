@@ -6,6 +6,7 @@ import {
   Factory,
   FileOutput,
   FileSearch,
+  Handshake,
   MessageSquareText,
   PackageSearch,
   ServerCog,
@@ -22,6 +23,7 @@ const ICONS = {
   "server-cog": ServerCog,
   "arrow-right-left": ArrowRightLeft,
   factory: Factory,
+  handshake: Handshake,
   "package-search": PackageSearch,
   bluetooth: Bluetooth,
 };
