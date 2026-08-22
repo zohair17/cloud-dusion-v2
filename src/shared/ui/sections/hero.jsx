@@ -3,6 +3,7 @@ import { RevealText } from "../motion/reveal-text";
 import { Container } from "../primitives/container";
 import { Button } from "../primitives/button";
 import { HeroMedia } from "./hero-media";
+import { HeroContactBar } from "./hero-contact-bar";
 
 /**
  * Homepage hero.
@@ -24,9 +25,9 @@ export function Hero({ hero }) {
       {/* `wide` matches the header rail, so the hero lines up with the logo. */}
       <Container
         size="wide"
-        className="[--spacing-gutter:1.25rem] pt-3 pb-8 sm:[--spacing-gutter:2rem] sm:pt-4 sm:pb-10 lg:pb-12"
+        className="[--spacing-gutter:1.25rem] pt-2 pb-6 sm:[--spacing-gutter:2rem] sm:pt-3 sm:pb-7 lg:pb-8"
       >
-        <div className="relative isolate grid min-h-[clamp(26rem,66vh,38rem)] items-center gap-0 overflow-hidden rounded-[2rem] bg-white p-6 shadow-[0_40px_100px_-40px_rgb(11_11_42/0.28)] ring-1 ring-black/[0.04] sm:p-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:py-10 lg:pl-12 lg:pr-6 xl:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] xl:pl-14">
+        <div className="relative isolate grid min-h-[clamp(18rem,50vh,29rem)] items-center gap-0 overflow-hidden rounded-[2rem] bg-white p-5 shadow-[0_40px_100px_-40px_rgb(11_11_42/0.28)] ring-1 ring-black/[0.04] sm:p-7 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:py-6 lg:pl-10 lg:pr-6 xl:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] xl:pl-12">
           <div className="relative z-10 order-2 w-full max-w-2xl lg:order-1">
             {hero.eyebrow ? (
               <p className="inline-flex items-center rounded-pill border border-brand-200/70 bg-white/80 px-4 py-1.5 text-xs font-medium tracking-wide text-brand-700 shadow-sm backdrop-blur-sm sm:text-sm">
@@ -34,7 +35,7 @@ export function Hero({ hero }) {
               </p>
             ) : null}
 
-            <h1 className="mt-5 font-display text-3xl font-semibold leading-[1.08] tracking-tight text-balance sm:text-4xl lg:text-5xl">
+            <h1 className="mt-4 font-display text-3xl font-semibold leading-[1.08] tracking-tight text-balance sm:text-4xl lg:text-[2.65rem]">
               <RevealText delay={0.1}>{hero.headline}</RevealText>{" "}
               {hero.headlineAccent ? (
                 <RevealText
@@ -47,12 +48,12 @@ export function Hero({ hero }) {
             </h1>
 
             {hero.subheadline ? (
-              <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
+              <p className="mt-3.5 max-w-xl text-sm leading-[1.55] text-muted sm:text-base">
                 {hero.subheadline}
               </p>
             ) : null}
 
-            <div className="mt-6 flex flex-col items-start gap-3 sm:flex-row">
+            <div className="mt-5 flex flex-col items-start gap-3 sm:flex-row">
               {primaryCta ? (
                 <Button
                   href={primaryCta.href}
@@ -83,7 +84,7 @@ export function Hero({ hero }) {
             sized by the room it is given, so the picture grows with the slab
             rather than sitting in a fixed well.
           */}
-          <div className="relative order-1 -mx-6 -mt-6 mb-2 h-[clamp(14rem,38vh,20rem)] sm:-mx-8 sm:-mt-8 sm:h-[clamp(18rem,46vw,28rem)] lg:order-2 lg:mx-0 lg:-my-10 lg:mb-0 lg:h-auto lg:self-stretch lg:pl-[4%] xl:pl-[20%]">
+          <div className="relative order-1 -mx-5 -mt-5 mb-1 h-[clamp(9rem,19vh,12.5rem)] sm:-mx-7 sm:-mt-7 sm:h-[clamp(15rem,38vw,24rem)] lg:order-2 lg:mx-0 lg:-my-6 lg:mb-0 lg:h-auto lg:self-stretch lg:pl-[4%] xl:pl-[20%]">
             <HeroMedia
               label={`${hero.constellation?.hub ?? "AI agents"} at the centre of the Microsoft ecosystem`}
             />
@@ -113,6 +114,8 @@ export function Hero({ hero }) {
             </div>
           </div>
         </div>
+
+        <HeroContactBar />
       </Container>
     </section>
   );

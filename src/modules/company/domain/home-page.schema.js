@@ -13,6 +13,8 @@
  * @property {{ eyebrow: string?, heading: string?, solutionSlugs: string[] }} featuredSolutions
  * @property {{ eyebrow: string?, heading: string?, layerIds: string[] }} technologyStack
  * @property {{ eyebrow: string?, heading: string?, industrySlugs: string[] }} industryFocus
+ * @property {{ partners: object, roster: object }} clients
+ * @property {{ eyebrow: string?, heading: string, items: object[] }} testimonials
  * @property {object} differentiators
  * @property {{ heading: string, body: string, ctas: string[] }} closingCta
  * @property {{ title: string?, description: string? }} seo
@@ -26,5 +28,7 @@ export const HOME_SECTION_ORDER = Object.freeze([
   "technologyStack",
   "industryFocus",
   "differentiators",
+  "clients",
+  "testimonials",
   "closingCta",
 ]);

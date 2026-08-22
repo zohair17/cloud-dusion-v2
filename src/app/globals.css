@@ -34,8 +34,8 @@
   --spacing-gutter: clamp(1.75rem, 4.5vw, 4.5rem);
 
   /* Type ------------------------------------------------------------- */
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-space-grotesk), var(--font-inter), ui-sans-serif, sans-serif;
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
@@ -132,6 +132,17 @@ html {
 /* Scroll rails that carry their own affordance and do not need a bar. */
 .cfg-no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
 .cfg-no-scrollbar::-webkit-scrollbar { display: none; }
+
+/*
+ * One rhythm for every section.
+ *
+ * Each section pads itself, so the gap a reader scrolls through between two of
+ * them is twice this value — which is why it is set once, here, rather than
+ * typed into eight files that then drift apart.
+ */
+.section-y {
+  padding-block: clamp(2.75rem, 5.5vw, 4.5rem);
+}
 
 /* ------------------------------------------------------------------- hero film
  *

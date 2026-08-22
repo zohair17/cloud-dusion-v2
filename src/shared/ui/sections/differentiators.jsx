@@ -112,7 +112,7 @@ export function Differentiators({ section }) {
   };
 
   return (
-    <section className="overflow-x-clip py-24 sm:py-32">
+    <section className="overflow-x-clip section-y">
       <Container size="wide">
         <SectionHeading
           align="center"

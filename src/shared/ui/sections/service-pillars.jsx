@@ -31,7 +31,7 @@ const CELLS = [
  */
 export function ServicePillars({ section }) {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="section-y">
       <Container size="wide" className="relative">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>

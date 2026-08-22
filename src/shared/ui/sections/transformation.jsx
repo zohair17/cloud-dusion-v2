@@ -14,7 +14,7 @@ export function Transformation({ section }) {
   const stages = section.stages ?? [];
 
   return (
-    <section className="py-24 sm:py-32">
+    <section className="section-y">
       <Container size="wide">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] lg:gap-16">
           <SectionHeading

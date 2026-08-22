@@ -104,7 +104,7 @@ export function TechnologyStack({ section }) {
   const path = rail ? buildRail(rail, layers.length) : null;
 
   return (
-    <section className="py-24 sm:py-32">
+    <section className="section-y">
       <Container size="wide">
         <SectionHeading eyebrow={section.eyebrow} heading={section.heading} intro={section.intro} />
 

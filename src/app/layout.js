@@ -1,15 +1,15 @@
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { buildRootMetadata } from "@/shared/lib/metadata";
 import { PageBackdrop } from "@/shared/ui/motion/page-backdrop";
 import { SmoothScroll } from "@/shared/ui/motion/smooth-scroll";
 import { organizationSchema } from "@/shared/lib/json-ld";
 
-/** Inter for reading, Space Grotesk for display — the CFG type pairing. */
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+/** Poppins throughout — one family for reading and for display. */
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -31,7 +31,7 @@ export const viewport = {
  */
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}>
+    <html lang="en" className={`${poppins.variable} h-full antialiased`}>
       <body className="relative min-h-full flex flex-col">
         {/*
           One background for the whole application.

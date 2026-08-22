@@ -15,7 +15,7 @@ export function ClosingCta({ section }) {
   const [primaryCta, ...secondaryCtas] = section.ctas;
 
   return (
-    <section className="relative overflow-hidden py-24 sm:py-32">
+    <section className="relative overflow-hidden section-y">
       <Container size="wide" className="relative">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>

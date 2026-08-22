@@ -19,7 +19,7 @@ import { Reveal } from "../motion/reveal";
  */
 export function IndustryFocus({ section }) {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="section-y">
       <Container size="wide">
         <SectionHeading
           align="center"

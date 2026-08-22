@@ -15,7 +15,7 @@ import { routes } from "@/shared/config/routes";
  */
 export function FeaturedSolutions({ section }) {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="section-y">
       <Container size="wide">
         <div className="mx-auto max-w-[34rem] text-center">
           <Reveal>

@@ -1,6 +1,8 @@
 import { getHomePage } from "@/modules/company";
 import { buildMetadata } from "@/shared/lib/metadata";
 import { Hero } from "@/shared/ui/sections/hero";
+import { Clients } from "@/shared/ui/sections/clients";
+import { Testimonials } from "@/shared/ui/sections/testimonials";
 import { Transformation } from "@/shared/ui/sections/transformation";
 import { ServicePillars } from "@/shared/ui/sections/service-pillars";
 import { FeaturedSolutions } from "@/shared/ui/sections/featured-solutions";
@@ -32,6 +34,8 @@ export default function HomePage() {
       <TechnologyStack section={home.technologyStack} />
       <IndustryFocus section={home.industryFocus} />
       <Differentiators section={home.differentiators} />
+      <Clients section={home.clients} />
+      <Testimonials section={home.testimonials} />
       <ClosingCta section={home.closingCta} />
     </>
   );

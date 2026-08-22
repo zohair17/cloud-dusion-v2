@@ -171,6 +171,87 @@ export const homePage = {
     industrySlugs: [],
   },
 
+  /**
+   * Logo proof. Two registers of the same claim: the partners whose platforms
+   * CFG builds on, shown one at a time and large; and the clients who bought
+   * the work, shown all at once and small.
+   *
+   * Each entry carries its file's intrinsic size so the images can be served
+   * responsively without the layout waiting to measure them.
+   */
+  clients: {
+    partners: {
+      heading: "Our",
+      headingAccent: "Partners",
+      items: [
+        { id: "progressive-leasing", name: "Progressive Leasing", file: "progressive-leasing.webp", width: 300, height: 171 },
+        { id: "nisum", name: "Nisum", file: "nisum.png", width: 2297, height: 617 },
+        { id: "chick-fil-a", name: "Chick-fil-A", file: "chickfila.png", width: 343, height: 147 },
+        { id: "gic", name: "GIC", file: "gic-logo-new-2.png", width: 337, height: 102 },
+        { id: "novizant", name: "Novizant", file: "novizant-removebg-preview.png", width: 680, height: 226 },
+        { id: "malath", name: "Malath Insurance", file: "malath.png", width: 850, height: 600 },
+      ],
+    },
+    roster: {
+      eyebrow: "Trusted by leaders",
+      heading: "Clients we've partnered",
+      headingAccent: "with",
+      intro:
+        "The teams who handed us their cloud, their data and their day to day — and stayed.",
+      /** The wall repeats the roster until it fills; the reference sets 50 tiles. */
+      tiles: 50,
+      items: [
+        { id: "grand-studio", name: "Grand Studio", file: "Grandstudio-1.png", width: 220, height: 50 },
+        { id: "briggr-tech", name: "Briggr Tech", file: "briggrtech-1.jpeg", width: 1080, height: 433 },
+        { id: "hut24", name: "Hut24", file: "Hut24.jpeg", width: 501, height: 328 },
+        { id: "jessies", name: "Jessies", file: "Jessies.webp", width: 397, height: 254 },
+        { id: "urida", name: "Urida", file: "Urida.jpeg", width: 603, height: 243 },
+        { id: "da-boss", name: "Da Boss", file: "dabossicon.png", width: 301, height: 278 },
+        { id: "digicop", name: "Digicop", file: "digicop.png", width: 641, height: 207 },
+        { id: "good-n-guys", name: "Good N Guys", file: "goodnguys.png", width: 1222, height: 961 },
+        { id: "le-bleu", name: "Le Bleu", file: "lebleu.png", width: 250, height: 103 },
+        { id: "magic", name: "Magic", file: "magic-logo.png", width: 200, height: 82 },
+        { id: "texas-wholesale", name: "Texas Wholesale", file: "texaswholesale.png", width: 2396, height: 1088 },
+      ],
+    },
+  },
+
+  /**
+   * What clients said, in their own words.
+   *
+   * Quotes, names, roles and portraits are transcribed from cloudfusionglobal.com
+   * exactly as given. Nothing here is written for the site — a testimonial that
+   * was not said is not a testimonial.
+   */
+  testimonials: {
+    eyebrow: "In their words",
+    heading: "Testimonial from",
+    headingAccent: "Clients",
+    items: [
+      {
+        id: "abeer-saeed",
+        quote:
+          "We are very pleased with the operational and technical skills of Cloud Fusion Global. Their team made our projects run smoothly with careful attention to detail. We are satisfied with their work and look forward to working with them again on future projects. Cloud Fusion Global has been a reliable partner, and we trust them to handle any future needs with the same high quality.",
+        name: "Abeer Saeed",
+        role: "Head of People & Culture",
+        company: "Nisum",
+        /** The source site shows five stars against each quote. */
+        rating: 5,
+        avatar: "abeer-saeed.webp",
+      },
+      {
+        id: "johnathan-mediamystix",
+        quote:
+          "Working with Cloud Fusion Global on our web application has been a fantastic experience. The CFG team took the time to understand MediaMystix's vision and transformed it into a sleek, user-friendly platform that our customers love. The application performs seamlessly across devices, and Cloud Fusion Global's dedication to quality and responsive support made the entire process smooth and enjoyable.",
+        name: "Johnathan",
+        role: "Founder",
+        company: "Mediamystix",
+        rating: 5,
+        avatar: "johnathan.webp",
+      },
+    ],
+  },
+
   /** Eight differentiators — the "why CFG" grid. */
   differentiators: {
     eyebrow: "Why CFG",
