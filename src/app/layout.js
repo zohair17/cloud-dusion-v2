@@ -16,6 +16,15 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata = buildRootMetadata();
 
 /**
+ * The same refusal the stylesheet makes, declared in the head so it lands
+ * before the first paint: browsers that auto-darken a page for a reader in
+ * dark mode must leave this one alone. See `color-scheme` in globals.css.
+ */
+export const viewport = {
+  colorScheme: "only light",
+};
+
+/**
  * Root layout. Owns the document shell and the site-wide Organization schema.
  * Page chrome (header, footer) belongs to the (marketing) group layout so a
  * future authenticated area can render a different shell at the same URLs.

@@ -46,6 +46,15 @@ body {
 
 /* Anchor targets sit below the sticky header. */
 html {
+  /*
+   * This design is light, deliberately and only. Without a declaration here,
+   * Chrome and Samsung Internet apply their own automatic dark theme on a
+   * reader whose phone is in dark mode: they invert the slab to black but
+   * leave <video> and <img> alone, so the hero's film became a white block on
+   * a black card. `only` is what refuses that override — plain `light` still
+   * lets the browser force its own.
+   */
+  color-scheme: only light;
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
 }
