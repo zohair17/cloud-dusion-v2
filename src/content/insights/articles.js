@@ -79,7 +79,7 @@ export const articleRecords = [
     slug: "sharepoint-migration-checklist",
     title: "The SharePoint Migration Decisions That Matter Most",
     excerpt:
-      "Information architecture, permissions, and cutover sequencing determine whether a migration lands — long before the first file moves.",
+      "Restructure or replicate? Big bang or waves? The choices that separate clean migrations from years of regret.",
     topicId: "sharepoint",
     publishedAt: "2026-04-22",
     readingMinutes: 8,
@@ -90,7 +90,7 @@ export const articleRecords = [
     slug: "automation-roi-measurement",
     title: "Measuring Automation ROI Beyond Hours Saved",
     excerpt:
-      "Cycle time, error rates, and capacity released tell a truer story than headcount arithmetic — and they survive scrutiny from finance.",
+      "Cycle time, error cost, and capacity release — a fuller framework for valuing enterprise automation initiatives.",
     topicId: "enterprise-automation",
     publishedAt: "2026-04-05",
     readingMinutes: 7,

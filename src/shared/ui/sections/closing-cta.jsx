@@ -18,14 +18,17 @@ export function ClosingCta({ section }) {
     <section className="relative overflow-hidden section-y">
       <Container size="wide" className="relative">
         <div className="mx-auto max-w-3xl text-center">
-          <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-600">{section.eyebrow}</p>
-          </Reveal>
+          {/* Not every page leads the invitation with a line above it. */}
+          {section.eyebrow ? (
+            <Reveal>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-600">{section.eyebrow}</p>
+            </Reveal>
+          ) : null}
 
           <RevealText
             as="h2"
             delay={0.08}
-            className="mt-5 font-display text-3xl font-semibold leading-[1.12] tracking-tight text-balance sm:text-4xl lg:text-5xl"
+            className="font-display text-3xl font-semibold leading-[1.12] tracking-tight text-balance sm:text-4xl lg:text-5xl [&:not(:first-child)]:mt-5"
           >
             {section.heading}
           </RevealText>

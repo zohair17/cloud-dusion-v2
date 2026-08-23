@@ -1,2 +1,2 @@
-"Case Study " kai in cards mai chotti chotti changes required hain wo ye hain:
-"#3533cd" is color kai outer borders ho jo premium look de, jo arrow hai usko ye karo aik box mai arrow rakho white color ka aur us box ka background color hoga "#3533cd" aur horizontal lin jo hai usko bhi "#3533cd" color ka kardo
+"https://cfgv2.vercel.app/insights/" is website link sai content copy karna bus baqi Insight wala page design karo same as case study ki trha
+#3533cd

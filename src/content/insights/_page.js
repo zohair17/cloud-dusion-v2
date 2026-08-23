@@ -8,14 +8,17 @@
 /** @type {import("@/modules/insights/domain/article.schema").IndexPageRecord} */
 export const insightsPage = {
   title: "Insights",
-  tagline: "Thinking on the intelligent enterprise",
+  /* Split where the line breaks: the second half is the half set in brand. */
+  tagline: "Thinking on the",
+  taglineAccent: "intelligent enterprise",
   intro: "Practical perspectives from the CFG team on AI, the Microsoft ecosystem, and enterprise transformation — grounded in delivery, not hype.",
   comingSoonLabel: "Full article coming soon",
   closingCta: {
     heading: "Want these conversations directly?",
-    body: "The best insights happen in working sessions. Bring your questions about AI, Microsoft, or transformation — we will bring the delivery experience.",
+    body: "The best insights happen in working sessions. Bring your questions about AI, Microsoft, or transformation — we'll bring the delivery experience.",
+    /* The intent is the standard one; only the wording is specific to this page. */
     ctas: [
-      "talk-to-expert"
+      { intent: "talk-to-expert", label: "Start a Conversation" }
     ]
   },
   seo: {
