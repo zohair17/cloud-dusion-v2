@@ -8,10 +8,13 @@
 /** @type {import("@/modules/case-studies/domain/case-study.schema").IndexPageRecord} */
 export const caseStudiesPage = {
   title: "Case Studies",
-  tagline: "Work that changed how clients operate",
+  /* Split where the line breaks: the second half is the half set in brand. */
+  tagline: "Work that changed",
+  taglineAccent: "how clients operate",
   intro: "A selection of CFG delivery experience across AI, analytics, document management, and platform modernization. Client identities are anonymized where publication clearance is pending.",
+  /* The intent is the standard one; only the wording is specific to this page. */
   ctas: [
-    "discuss-requirements"
+    { intent: "discuss-requirements", label: "Discuss a Similar Project" }
   ],
   seo: {
     title: "Case Studies",

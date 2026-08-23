@@ -162,6 +162,30 @@ html {
           mask-composite: intersect;
 }
 
+/* ------------------------------------------------------------- case study film
+ *
+ * This clip was lit on a studio backdrop, not on flat white: its background
+ * runs 209–244 and its own white pedestal sits at 207, so no curve can lift the
+ * one without flattening the other. It is therefore given the opposite
+ * treatment to the hero — it fills its half of the slab outright, and the
+ * slab's rounded edge is the only frame. Only the side that faces the words
+ * needs dissolving, and which side that is depends on where the film sits:
+ * above the copy on a narrow screen, beside it on a wide one.
+ */
+.cfg-case-film {
+  object-position: 50% 38%;
+  -webkit-mask-image: linear-gradient(to bottom, #000 58%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 58%, transparent 100%);
+}
+
+@media (min-width: 64rem) {
+  .cfg-case-film {
+    object-position: 68% 50%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 30%);
+            mask-image: linear-gradient(to right, transparent 0%, #000 30%);
+  }
+}
+
 /* ---------------------------------------------------------------- premium card
  *
  * White stays the surface; the brand does the lighting. Three layers, all

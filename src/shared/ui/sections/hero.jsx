@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { RevealText } from "../motion/reveal-text";
 import { Container } from "../primitives/container";
 import { Button } from "../primitives/button";
-import { HeroMedia } from "./hero-media";
+import { Film } from "./film";
 import { HeroContactBar } from "./hero-contact-bar";
 
 /**
@@ -85,8 +85,11 @@ export function Hero({ hero }) {
             rather than sitting in a fixed well.
           */}
           <div className="relative order-1 -mx-5 -mt-5 mb-1 h-[clamp(9rem,19vh,12.5rem)] sm:-mx-7 sm:-mt-7 sm:h-[clamp(15rem,38vw,24rem)] lg:order-2 lg:mx-0 lg:-my-6 lg:mb-0 lg:h-auto lg:self-stretch lg:pl-[4%] xl:pl-[20%]">
-            <HeroMedia
+            <Film
+              src="/asset/hero-ecosystem.mp4"
+              poster="/asset/hero-ecosystem-poster.webp"
               label={`${hero.constellation?.hub ?? "AI agents"} at the centre of the Microsoft ecosystem`}
+              className="cfg-hero-film"
             />
 
             {/*
