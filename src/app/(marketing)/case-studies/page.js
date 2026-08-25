@@ -41,7 +41,8 @@ export default function CaseStudiesIndexPage() {
         <Film
           src="/asset/case-study-film.mp4"
           poster="/asset/case-study-film-poster.webp"
-          fit="cover"
+          fit="contain"
+          className="cfg-hero-film"
           label="Documents, dashboards and models converging on a governed cloud store"
         />
       </PageHero>

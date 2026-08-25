@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowUpRight, ChevronRight } from "lucide-react";
 import { RevealText } from "../motion/reveal-text";
 import { Container } from "../primitives/container";
 import { Button } from "../primitives/button";
@@ -7,57 +7,38 @@ import { Button } from "../primitives/button";
 /**
  * The hero slab, for a page other than home.
  *
- * The film is the hero here, not a picture beside the promise but the ground
- * the promise is set on. Both clips are 16:9, so the section is 16:9 too: the
- * picture then fills it edge to edge at its own proportions, with nothing
- * cropped off and no letterbox at the sides. A minimum height keeps the slab
- * usable on a phone, where 16:9 of 390px would be a strip.
+ * One light card holding two columns: the film on the left, the promise on the
+ * right. The film's panel is cut to the clip's own 16:9, so the picture fills
+ * it corner to corner — nothing is cropped and no band of empty panel is left
+ * around it. A brand spine runs down the seam between the two columns, which is
+ * what keeps the join reading as one object rather than two boxes side by side.
  *
- * Both clips are rendered on white, so the veil over them is black: a white one
- * washed out and left the type floating in space. The words are set on it in
- * white, with the accent lifted to the light end of the brand ramp, which is
- * where #3533cd stops sinking into the dark.
- *
- * There is no card and no rail on the media: a rectangle drawn around a picture
- * that already fills the frame is a rectangle drawn around the page.
+ * The crumb stands above the card, because it belongs to the page and not to
+ * the panel.
  */
 export function PageHero({ trail = [], eyebrow, heading, headingAccent, intro, ctas = [], children }) {
-  const [primaryCta, ...secondaryCtas] = ctas;
+  const [primaryCta] = ctas;
 
-  /*
-   * `w-full` below is load-bearing: with a bare `width: auto` the capped height
-   * is transferred back through the aspect ratio and the slab narrows to match,
-   * leaving a gutter down the side of the page.
-   */
   return (
-    <section className="relative isolate flex aspect-[16/9] max-h-[min(88vh,48rem)] min-h-[clamp(27rem,74vh,40rem)] w-full items-center overflow-hidden">
-      {/* The film, and the veil it is read through. */}
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[#07071e]">
-        {children}
-      </div>
-      <span
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgb(7_7_30/0.88)_0%,rgb(7_7_30/0.66)_46%,rgb(7_7_30/0.58)_100%)]"
-      />
-
-      <Container size="wide" className="relative py-16 text-center sm:py-20">
+    <section className="pb-2 pt-6 sm:pt-8">
+      <Container size="wide">
         {trail.length ? (
-          <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex flex-wrap items-center justify-center gap-1.5 text-xs text-white/55 sm:text-sm">
+          <nav aria-label="Breadcrumb" className="mb-4">
+            <ol className="flex flex-wrap items-center gap-1.5 text-xs text-muted sm:text-sm">
               {trail.map((crumb, index) => {
                 const last = index === trail.length - 1;
 
                 return (
                   <li key={crumb.label} className="flex items-center gap-1.5">
                     {index > 0 ? (
-                      <ChevronRight className="h-3.5 w-3.5 text-white/35" aria-hidden="true" />
+                      <ChevronRight className="h-3.5 w-3.5 text-muted/50" aria-hidden="true" />
                     ) : null}
                     {last || !crumb.href ? (
-                      <span aria-current={last ? "page" : undefined} className="text-white/80">
+                      <span aria-current={last ? "page" : undefined} className="font-medium text-foreground">
                         {crumb.label}
                       </span>
                     ) : (
-                      <Link href={crumb.href} className="transition-colors hover:text-white">
+                      <Link href={crumb.href} className="underline-offset-4 transition-colors hover:text-brand-700 hover:underline">
                         {crumb.label}
                       </Link>
                     )}
@@ -68,58 +49,71 @@ export function PageHero({ trail = [], eyebrow, heading, headingAccent, intro, c
           </nav>
         ) : null}
 
-        <div className="mx-auto max-w-4xl">
-          {eyebrow ? (
-            <p className="inline-flex items-center rounded-pill border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-medium tracking-wide text-white shadow-sm backdrop-blur-sm sm:text-sm">
-              {eyebrow}
-            </p>
-          ) : null}
+        <div className="relative overflow-hidden rounded-[2rem] bg-white p-3 ring-1 ring-brand-600/25 shadow-[0_30px_80px_-52px_rgb(53_51_205/0.45)] sm:p-4">
+          <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1.12fr)_minmax(0,0.88fr)] lg:gap-0">
+            {/*
+              The panel carries the clip's own proportion, so `contain` lands on
+              every edge at once: no crop, no leftover panel, no seam.
+            */}
+            <div className="relative">
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[1.5rem] bg-[#f8f8fb] ring-1 ring-black/[0.06]">
+                {children}
+              </div>
 
-          {/* The headline turns brand halfway through, as it does on the homepage. */}
-          <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.06] tracking-tight text-balance text-white sm:text-5xl lg:text-[3.4rem]">
-            <RevealText delay={0.1}>{heading}</RevealText>{" "}
-            {headingAccent ? (
-              <RevealText
-                className="text-brand-400"
-                delay={0.1 + heading.split(" ").length * 0.055}
-              >
-                {headingAccent}
-              </RevealText>
-            ) : null}
-          </h1>
+              {/* The brand spine on the seam, as the reference draws it. */}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-[3px] bottom-5 top-5 hidden w-[6px] rounded-full bg-brand-600 lg:block"
+              />
+            </div>
 
-          {intro ? (
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-[1.6] text-white/75 sm:text-lg">
-              {intro}
-            </p>
-          ) : null}
+            <div className="self-center px-4 pb-5 sm:px-6 lg:py-8 lg:pl-11 lg:pr-7">
+              {eyebrow ? (
+                <p className="inline-flex items-center rounded-pill border border-brand-200 bg-brand-50/80 px-4 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-brand-700">
+                  {eyebrow}
+                </p>
+              ) : null}
 
-          {ctas.length ? (
-            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
+              <h1 className="mt-5 font-display text-3xl font-semibold leading-[1.1] tracking-tight text-balance text-foreground sm:text-4xl xl:text-[2.75rem]">
+                <RevealText delay={0.1}>{heading}</RevealText>{" "}
+                {headingAccent ? (
+                  <span className="relative inline-block">
+                    <RevealText
+                      className="text-brand-600"
+                      delay={0.1 + heading.split(" ").length * 0.055}
+                    >
+                      {headingAccent}
+                    </RevealText>
+                    {/* The stroke under the brand half, as the reference draws it. */}
+                    <span
+                      aria-hidden="true"
+                      className="absolute -bottom-1 left-0 block h-[3px] w-full rounded-full bg-brand-600/80"
+                    />
+                  </span>
+                ) : null}
+              </h1>
+
+              {intro ? (
+                <p className="mt-6 text-[0.9375rem] leading-[1.7] text-muted">
+                  {intro}
+                </p>
+              ) : null}
+
               {primaryCta ? (
                 <Button
                   href={primaryCta.href}
                   variant="primary"
                   size="lg"
-                  className="w-full whitespace-nowrap sm:w-auto"
+                  className="mt-8 gap-3 pr-2.5"
                 >
                   {primaryCta.label}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-brand-600">
+                    <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                  </span>
                 </Button>
               ) : null}
-              {secondaryCtas.map((cta) => (
-                <Button
-                  key={cta.intent}
-                  href={cta.href}
-                  variant="onDark"
-                  size="lg"
-                  className="w-full whitespace-nowrap sm:w-auto"
-                >
-                  {cta.label}
-                </Button>
-              ))}
             </div>
-          ) : null}
+          </div>
         </div>
       </Container>
     </section>
