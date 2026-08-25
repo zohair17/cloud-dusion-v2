@@ -1,31 +1,57 @@
-import { getCompanyProfile } from "@/modules/company";
+import { getClosingCta, getCompanyProfile } from "@/modules/company";
 import { buildMetadata } from "@/shared/lib/metadata";
+import { routes } from "@/shared/config/routes";
+import { PageHero } from "@/shared/ui/sections/page-hero";
+import { AboutIntro } from "@/shared/ui/sections/about-intro";
+import { AboutBeliefs } from "@/shared/ui/sections/about-beliefs";
+import { AboutEngagement } from "@/shared/ui/sections/about-engagement";
+import { AboutWhyCfg } from "@/shared/ui/sections/about-why-cfg";
+import { ClosingCta } from "@/shared/ui/sections/closing-cta";
 
 export function generateMetadata() {
   return buildMetadata(getCompanyProfile().seo);
 }
 
+/**
+ * About.
+ *
+ * The one page whose subject is the company itself, so it is also the page that
+ * moves differently: the statement lights under the reader, the convictions are
+ * dealt as a deck, the engagement arc is walked sideways, and the differences
+ * open as one instrument. Every section here is composed for this page and
+ * appears nowhere else; the hero and the closing invitation are the site's, so
+ * the page still arrives and departs like the rest of it.
+ *
+ * This segment resolves the aggregate and hands each section its slice. No copy
+ * lives here.
+ */
 export default function AboutPage() {
   const profile = getCompanyProfile();
 
   return (
     <>
-      <h1>{profile.title}</h1>
-      <p>{profile.tagline}</p>
-      <section aria-label="What we believe">
-        <ul>
-          {profile.beliefs.items.map((belief) => (
-            <li key={belief.title}>{belief.title}</li>
-          ))}
-        </ul>
-      </section>
-      <section aria-label="How we work">
-        <ol>
-          {profile.engagementModel.phases.map((phase) => (
-            <li key={phase.step}>{phase.title}</li>
-          ))}
-        </ol>
-      </section>
+      <PageHero
+        trail={[
+          { label: "Home", href: routes.home() },
+          { label: profile.navLabel },
+        ]}
+        eyebrow={profile.title}
+        heading={profile.tagline}
+        headingAccent={profile.taglineAccent}
+        intro={profile.summary}
+        ctas={profile.ctas}
+        backdrop="/asset/about/hero.webp"
+      />
+
+      <AboutIntro paragraphs={profile.intro} />
+
+      <AboutBeliefs section={profile.beliefs} />
+
+      <AboutEngagement section={profile.engagementModel} />
+
+      <AboutWhyCfg section={profile.differentiators} />
+
+      <ClosingCta section={getClosingCta()} />
     </>
   );
 }

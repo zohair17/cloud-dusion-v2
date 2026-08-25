@@ -1,36 +1,26 @@
 import { getContactPage } from "@/modules/company";
 import { buildMetadata } from "@/shared/lib/metadata";
+import { ContactHero } from "@/shared/ui/sections/contact-hero";
+import { ContactForm } from "@/shared/ui/sections/contact-form";
 
 export function generateMetadata() {
   return buildMetadata(getContactPage().seo);
 }
 
 /**
- * Contact. The form is a client component the UI phase will add under
- * shared/ui; it receives `page.form` as props and posts to
- * `submitInquiryAction` from @/modules/inquiries/actions.
+ * Contact.
+ *
+ * Two beats: the invitation, then the brief. The read model already joins the
+ * company's copy to the inquiries context's form definition, so this segment
+ * resolves once and hands both sections the same aggregate. No copy lives here.
  */
 export default function ContactPage() {
   const page = getContactPage();
 
   return (
     <>
-      <h1>{page.title}</h1>
-      <p>{page.intro}</p>
-      <dl>
-        {page.facts.map((fact) => (
-          <div key={fact.label}>
-            <dt>{fact.label}</dt>
-            <dd>{fact.value}</dd>
-          </div>
-        ))}
-      </dl>
-      <section aria-label="Inquiry form">
-        <p>{page.form.serviceOptions.length} services selectable</p>
-        <p>{page.form.projectTypeOptions.length} project types</p>
-        <p>{page.form.budgetRangeOptions.length} budget ranges</p>
-      </section>
-      <p>{page.privacyNote}</p>
+      <ContactHero page={page} image="/asset/company/contact-hero.webp" />
+      <ContactForm page={page} />
     </>
   );
 }

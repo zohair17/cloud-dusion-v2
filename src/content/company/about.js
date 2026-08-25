@@ -8,7 +8,9 @@
 /** @type {import("@/modules/company/domain/company-profile.schema").CompanyProfileRecord} */
 export const companyProfile = {
   title: "About Cloud Fusion Global",
-  tagline: "We build intelligent enterprises",
+  navLabel: "About Us",
+  tagline: "We build",
+  taglineAccent: "intelligent enterprises",
   summary: "Cloud Fusion Global helps enterprises transform their operations through AI-powered Microsoft solutions.",
   status: "published",
 
@@ -62,30 +64,35 @@ export const companyProfile = {
     phases: [
       {
         step: "01",
+        image: "/asset/about/phase-discover.webp",
         title: "Discover",
         description:
           "We map your business goals, current systems, data landscape, and constraints, and identify where AI and automation create the most value.",
       },
       {
         step: "02",
+        image: "/asset/about/phase-architect.webp",
         title: "Architect",
         description:
           "We design the target solution: architecture, security model, integration points, data flows, and a realistic delivery roadmap.",
       },
       {
         step: "03",
+        image: "/asset/about/phase-build.webp",
         title: "Build",
         description:
           "Iterative delivery in short cycles with working software at every step, reviewed against enterprise standards for security and quality.",
       },
       {
         step: "04",
+        image: "/asset/about/phase-adopt.webp",
         title: "Deploy & Adopt",
         description:
           "Controlled rollout with change management, training, and adoption support so the solution is actually used, not just shipped.",
       },
       {
         step: "05",
+        image: "/asset/about/phase-operate.webp",
         title: "Operate & Evolve",
         description:
           "Monitoring, support, and continuous improvement, expanding capabilities as your business and the technology evolve.",
@@ -93,14 +100,19 @@ export const companyProfile = {
     ],
   },
 
-  /** "Why CFG" differentiators, shared with the homepage. */
+  /**
+   * "Why CFG" differentiators.
+   *
+   * The list itself is authored once on the homepage and read from there, so
+   * only the heading this page gives it is written here.
+   */
   differentiators: {
     eyebrow: "Why CFG",
-    heading: "What makes the difference",
+    heading: "What sets Cloud Fusion Global apart",
     items: [],
   },
 
-  ctas: ["talk-to-expert"],
+  ctas: [{ intent: "talk-to-expert", label: "Work With Us" }],
 
   seo: {
     title: "About Us",
