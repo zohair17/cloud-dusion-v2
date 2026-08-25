@@ -72,7 +72,7 @@ export function SpotlightBento({ items = [], className }) {
           >
             <Tile
               {...(item.href ? { href: item.href } : {})}
-              className="group relative flex h-[clamp(15rem,26vw,20rem)] flex-col justify-end overflow-hidden rounded-[2rem] bg-[#07071e] p-7 ring-1 ring-black/[0.06] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-500"
+              className="group relative flex min-h-[clamp(15rem,26vw,20rem)] flex-col justify-end overflow-hidden rounded-[2rem] bg-[#07071e] p-7 ring-1 ring-black/[0.06] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-500"
             >
               {item.image ? (
                 <Image
@@ -114,7 +114,7 @@ export function SpotlightBento({ items = [], className }) {
                   brings it up for anyone reaching the tile by keyboard too.
                 */}
                 {item.summary ? (
-                  <p className="mt-2 max-w-xl translate-y-1 text-sm leading-relaxed text-white/0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:text-white/75 group-focus-within:translate-y-0 group-focus-within:text-white/75">
+                  <p className="mt-2 hidden max-w-xl translate-y-1 text-sm lg:block leading-relaxed text-white/0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:text-white/75 group-focus-within:translate-y-0 group-focus-within:text-white/75">
                     {item.summary}
                   </p>
                 ) : null}

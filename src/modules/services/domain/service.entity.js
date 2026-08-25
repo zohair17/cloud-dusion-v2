@@ -66,6 +66,7 @@ export function toServiceSummary(service) {
     title: service.title,
     navLabel: service.navLabel,
     summary: service.summary,
+    image: service.heroSlides?.[0]?.image ?? null,
     href: service.href,
     groupId: service.group.id,
   });
