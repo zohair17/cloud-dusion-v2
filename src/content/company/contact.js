@@ -2,7 +2,7 @@
  * Contact page copy.
  *
  * Page *copy* lives here. The form's field list and option vocabularies are not
- * copy — they are the inquiry domain's language and live in
+ * copy: they are the inquiry domain's language and live in
  * `src/modules/inquiries/domain/`.
  */
 
@@ -13,7 +13,7 @@ export const contactPage = {
   status: "published",
 
   intro:
-    "Tell us about your initiative — an AI ambition, a migration, a product build, or a team you need to scale. We'll come back with a point of view, not a sales script.",
+    "Tell us about your initiative: an AI ambition, a migration, a product build, or a team you need to scale. We'll come back with a point of view, not a sales script.",
 
   facts: [
     { label: "Email", value: "hello@cloudfusionglobal.com", kind: "email" },
@@ -28,7 +28,7 @@ export const contactPage = {
   seo: {
     title: "Contact",
     description:
-      "Tell us about your initiative — an AI ambition, a migration, a product build, or a team you need to scale.",
+      "Tell us about your initiative: an AI ambition, a migration, a product build, or a team you need to scale.",
   },
 };
 

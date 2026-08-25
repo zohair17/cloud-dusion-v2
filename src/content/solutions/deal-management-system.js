@@ -1,5 +1,5 @@
 /**
- * Solution — Deal Management System
+ * Solution: Deal Management System
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -12,7 +12,7 @@ export const solution = {
   tagline: null,
   /** Glyph id; the component owns the actual icon. */
   icon: "handshake",
-  summary: "Pipeline, documents, approvals, and analytics for real estate deals — from sourcing through diligence to close, in one governed workspace.",
+  summary: "Pipeline, documents, approvals, and analytics for real estate deals: from sourcing through diligence to close, in one governed workspace.",
   categoryId: "real-estate",
   order: 2,
   status: "outline",
@@ -35,7 +35,7 @@ export const solution = {
   ],
   seo: {
     title: "Deal Management System",
-    description: "Pipeline, documents, approvals, and analytics for real estate deals — from sourcing through diligence to close, in one governed workspace."
+    description: "Pipeline, documents, approvals, and analytics for real estate deals: from sourcing through diligence to close, in one governed workspace."
   }
 };
 

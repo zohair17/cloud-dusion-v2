@@ -1,5 +1,5 @@
 /**
- * Solution — Workflow Automation Platform
+ * Solution: Workflow Automation Platform
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -10,7 +10,7 @@ export const solution = {
   slug: "workflow-automation-platform",
   title: "Workflow Automation Platform",
   tagline: null,
-  summary: "An enterprise workflow platform on Power Platform — requests, approvals, casework, and cross-system processes automated with full visibility and audit.",
+  summary: "An enterprise workflow platform on Power Platform: requests, approvals, casework, and cross-system processes automated with full visibility and audit.",
   categoryId: "automation",
   order: 1,
   status: "outline",
@@ -33,7 +33,7 @@ export const solution = {
   ],
   seo: {
     title: "Workflow Automation Platform",
-    description: "An enterprise workflow platform on Power Platform — requests, approvals, casework, and cross-system processes automated with full visibility and audit."
+    description: "An enterprise workflow platform on Power Platform: requests, approvals, casework, and cross-system processes automated with full visibility and audit."
   }
 };
 

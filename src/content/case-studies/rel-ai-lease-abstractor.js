@@ -1,5 +1,5 @@
 /**
- * Case study — REL AI Lease Abstractor
+ * Case study: REL AI Lease Abstractor
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -9,11 +9,13 @@
 export const caseStudy = {
   slug: "rel-ai-lease-abstractor",
   title: "REL AI Lease Abstractor",
+  /** The photograph its tile is set on. */
+  image: "/asset/case-studies/ai-lease-abstractor.webp",
   sectorLabel: "Real Estate",
   industrySlug: "real-estate",
   order: 3,
   client: "Confidential real estate organization",
-  summary: "An AI-powered lease abstraction solution extracting key terms, dates, and obligations from lease documents — with human verification built into the workflow.",
+  summary: "An AI-powered lease abstraction solution extracting key terms, dates, and obligations from lease documents, with human verification built into the workflow.",
   status: "outline",
   challenge: null,
   approach: [],
@@ -29,8 +31,8 @@ export const caseStudy = {
     "discovery-session"
   ],
   seo: {
-    title: "REL AI Lease Abstractor — Case Study",
-    description: "An AI-powered lease abstraction solution extracting key terms, dates, and obligations from lease documents — with human verification built into the workflow."
+    title: "REL AI Lease Abstractor Case Study",
+    description: "An AI-powered lease abstraction solution extracting key terms, dates, and obligations from lease documents, with human verification built into the workflow."
   }
 };
 

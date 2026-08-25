@@ -1,5 +1,5 @@
 /**
- * Industry — Real Estate
+ * Industry: Real Estate
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -12,7 +12,7 @@ export const industry = {
   tagline: null,
   /** Panel photograph for the homepage industries row (StockSnap, CC0). */
   image: "/asset/industries/real-estate.webp",
-  summary: "Purpose-built lease, deal, and portfolio solutions — CFG's deepest industry practice, where AI meets property operations.",
+  summary: "Purpose-built lease, deal, and portfolio solutions: CFG's deepest industry practice, where AI meets property operations.",
   order: 7,
   inFooter: true,
   status: "outline",
@@ -28,7 +28,7 @@ export const industry = {
   ],
   seo: {
     title: "Real Estate Industry Solutions",
-    description: "Purpose-built lease, deal, and portfolio solutions — CFG's deepest industry practice, where AI meets property operations."
+    description: "Purpose-built lease, deal, and portfolio solutions: CFG's deepest industry practice, where AI meets property operations."
   }
 };
 

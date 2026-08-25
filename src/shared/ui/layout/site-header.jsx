@@ -85,6 +85,14 @@ export function SiteHeader({ navigation }) {
                   aria-current={isActive(item.href) ? "page" : undefined}
                   aria-expanded={item.panel ? expanded : undefined}
                   onFocus={() => setOpenPanel(item.panel ? item.id : null)}
+                  /* A top item that owns a panel is the panel's control, not a
+                     destination: clicking it opens the menu instead of leaving. */
+                  onClick={(event) => {
+                    if (!item.panel) return;
+                    event.preventDefault();
+                    cancelClose();
+                    setOpenPanel(expanded ? null : item.id);
+                  }}
                   className={cn(
                     "flex items-center gap-1 rounded-pill px-4 py-2.5 text-[15px] font-medium transition-colors xl:px-5 xl:text-base",
                     isActive(item.href) || expanded

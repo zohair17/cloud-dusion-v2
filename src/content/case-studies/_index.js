@@ -1,5 +1,5 @@
 /**
- * CaseStudy registry — the single place a new record is registered.
+ * CaseStudy registry, the single place a new record is registered.
  * Adding a file without adding it here means it does not exist to the domain.
  */
 import breddBiAnalyticsPlatform from "./bredd-bi-analytics-platform";

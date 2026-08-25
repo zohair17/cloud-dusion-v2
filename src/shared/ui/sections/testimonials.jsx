@@ -47,9 +47,11 @@ function place(offset) {
  * Testimonials.
  *
  * Quotes hang from a single rail like cards on a wire: one is pulled forward
- * and readable, the rest stay pinned and dimmed at either side. Below the rail
- * the speaker of the open quote is named, and only there — a face over every
- * card would compete with the words, which are the point.
+ * and readable, the rest stay pinned and dimmed at either side.
+ *
+ * Each card carries its own attribution: the company's mark above the quote and
+ * the speaker below it. That belongs on the card rather than under the rail —
+ * a quote whose author is named somewhere else is a quote you have to look up.
  */
 export function Testimonials({ section }) {
   const items = section?.items ?? [];
@@ -73,7 +75,6 @@ export function Testimonials({ section }) {
 
   if (count === 0) return null;
 
-  const open = items[active];
   // The run is a loop: the arrows wrap, because the timer does.
   const step = (delta) => setActive((current) => (current + delta + count) % count);
 
@@ -162,10 +163,27 @@ export function Testimonials({ section }) {
                       )}
                       style={{ rotate: `${spot.tilt.toFixed(2)}deg`, scale: String(spot.scale) }}
                     >
-                      <div className="flex items-start justify-between gap-4">
-                        <span className="text-xs font-medium tabular-nums text-faint">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
+                      <div className="flex items-center justify-between gap-4">
+                        {/*
+                          Whose words these are, stated at the top in their own
+                          mark. A company without one in the library falls back
+                          to its name set as a wordmark, which holds the same
+                          slot so the row of cards keeps its line.
+                        */}
+                        {item.logo ? (
+                          <Image
+                            src={`/asset/clients/${item.logo}`}
+                            alt={item.company}
+                            width={320}
+                            height={160}
+                            sizes="120px"
+                            className="h-7 w-auto max-w-[8.5rem] object-contain object-left"
+                          />
+                        ) : (
+                          <span className="flex h-7 items-center font-display text-sm font-semibold uppercase tracking-[0.12em] text-foreground">
+                            {item.company}
+                          </span>
+                        )}
 
                         {item.rating ? (
                           <span
@@ -197,14 +215,34 @@ export function Testimonials({ section }) {
                         {item.quote}
                       </blockquote>
 
-                      <p className="mt-5 border-t border-border pt-4 text-xs font-semibold uppercase tracking-[0.14em] text-faint">
-                        {item.company}
-                      </p>
+                      {/* The speaker, on their own card rather than under the
+                          rail — a quote and its author belong together. */}
+                      <div className="mt-5 flex items-center gap-3 border-t border-border pt-4">
+                        {item.avatar ? (
+                          <Image
+                            src={`/asset/testimonials/${item.avatar}`}
+                            alt={item.name}
+                            width={320}
+                            height={320}
+                            sizes="48px"
+                            className="h-11 w-11 shrink-0 rounded-full object-cover ring-1 ring-black/[0.06]"
+                          />
+                        ) : null}
+
+                        <div className="min-w-0">
+                          <p className="truncate font-display text-sm font-semibold tracking-tight">
+                            {item.name}
+                          </p>
+                          <p className="truncate text-xs text-muted">
+                            {[item.role, item.company].filter(Boolean).join(", ")}
+                          </p>
+                        </div>
+                      </div>
 
                       <button
                         type="button"
                         aria-current={isOpen || undefined}
-                        aria-label={`${item.name} — ${item.company}`}
+                        aria-label={`${item.name}, ${item.company}`}
                         onClick={() => setActive(index)}
                         className={cn(
                           "absolute inset-0 z-10 rounded-[inherit] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-500",
@@ -218,26 +256,7 @@ export function Testimonials({ section }) {
             </ul>
           </div>
 
-          {/* Who just spoke. Keyed on the quote, so it re-enters as the rail moves. */}
-          <div key={open.id} className="cfg-fade-up mt-10 text-center">
-            {open.avatar ? (
-              <Image
-                src={`/asset/testimonials/${open.avatar}`}
-                alt={open.name}
-                width={320}
-                height={320}
-                sizes="72px"
-                className="mx-auto h-16 w-16 rounded-full object-cover ring-1 ring-black/[0.06]"
-              />
-            ) : null}
-
-            <p className="mt-4 font-display text-base font-semibold tracking-tight">{open.name}</p>
-            <p className="mt-1 text-sm text-muted">
-              {[open.role, open.company].filter(Boolean).join(", ")}
-            </p>
-          </div>
-
-          <div className="mt-8 flex items-center justify-center gap-5">
+          <div className="mt-10 flex items-center justify-center gap-5">
             <Control label="Previous testimonial" onClick={() => step(-1)}>
               <ChevronLeft className="h-4 w-4" aria-hidden="true" />
             </Control>

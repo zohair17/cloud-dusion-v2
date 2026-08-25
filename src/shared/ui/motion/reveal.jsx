@@ -51,16 +51,22 @@ export function RevealGroup({ children, delay = 0, stagger = 0.08, className, as
   );
 }
 
-/** Child of a RevealGroup. Timing comes from the parent. */
-export function RevealItem({ children, y = 22, className, as = "div", ...props }) {
+/**
+ * Child of a RevealGroup. Timing comes from the parent.
+ *
+ * `y` is the default travel — things rise into place. Give it an `x` instead
+ * and a staggered group reads as a sweep across the row rather than a set of
+ * separate arrivals.
+ */
+export function RevealItem({ children, x = 0, y = 22, className, as = "div", ...props }) {
   const reduced = useReducedMotion();
   const Tag = motion[as] ?? motion.div;
 
   return (
     <Tag
       variants={{
-        hidden: reduced ? { opacity: 1 } : { opacity: 0, y },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
+        hidden: reduced ? { opacity: 1 } : { opacity: 0, x, y },
+        visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.6, ease: EASE } },
       }}
       className={className}
       {...props}

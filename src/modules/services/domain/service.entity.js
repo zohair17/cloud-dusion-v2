@@ -36,10 +36,14 @@ export function createService(record) {
     status: record.status ?? "outline",
     href,
 
+    heroSlides: record.heroSlides ?? [],
     intro: record.intro ?? [],
     challenges: record.challenges ?? null,
     approach: record.approach ?? null,
     capabilities: record.capabilities ?? null,
+    stack: record.stack ?? null,
+    outcomes: record.outcomes ?? null,
+    closing: record.closing ?? null,
 
     technologyIds: record.technologies ?? [],
     relatedSolutionSlugs: record.relatedSolutions ?? [],

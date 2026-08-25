@@ -1,6 +1,6 @@
 /**
  * Solution categories. `anchor` is the fragment the solutions index and the
- * footer link to (e.g. /solutions/#real-estate) — it is part of the public URL
+ * footer link to (e.g. /solutions/#real-estate): it is part of the public URL
  * contract, so it lives in data, not in a template.
  */
 export const solutionCategories = [

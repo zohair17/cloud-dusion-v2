@@ -1,7 +1,6 @@
-import Link from "next/link";
-import { ArrowUpRight, Clock } from "lucide-react";
 import { Container } from "../primitives/container";
-import { Reveal, RevealGroup, RevealItem } from "../motion/reveal";
+import { Reveal } from "../motion/reveal";
+import { SpotlightBento } from "./spotlight-bento";
 
 /**
  * Publication dates are content, not machine time.
@@ -23,11 +22,9 @@ const DATE = new Intl.DateTimeFormat("en-US", {
  * the reference they are a statement rather than a control, so they are set as
  * text and not as buttons that would promise filtering they do not do.
  *
- * The article cards are the case study card in a different key: white behind a
- * brand hairline, a brand box in the corner, and a brand rule above the line
- * that closes the card. What changes is what the corner means — an arrow where
- * the piece can be read, a clock where it is still only announced, which is
- * also why only the announced ones carry the closing label.
+ * The articles are the same spotlight bento the case studies use, so the two
+ * index pages read as one family. A piece that is only announced has no link
+ * and no arrow; its footer says so instead.
  */
 export function InsightCards({ topics = [], articles, comingSoonLabel }) {
   return (
@@ -50,59 +47,20 @@ export function InsightCards({ topics = [], articles, comingSoonLabel }) {
           </Reveal>
         ) : null}
 
-        <RevealGroup delay={0.08} className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article) => {
-            // A card that leads somewhere is a link; one that does not is not.
-            const Card = article.isPublished ? Link : "article";
-            const Corner = article.isPublished ? ArrowUpRight : Clock;
-
-            return (
-              <RevealItem key={article.slug} className="h-full">
-                <Card
-                  {...(article.isPublished ? { href: article.href } : {})}
-                  className="cfg-card-solid group relative flex h-full flex-col overflow-hidden rounded-card p-7"
-                >
-                  <span aria-hidden="true" className="cfg-sheen" />
-
-                  <div className="relative flex items-start justify-between gap-4">
-                    <span className="inline-flex items-center rounded-pill border border-brand-200/70 bg-brand-50/60 px-3.5 py-1 text-xs font-medium tracking-wide text-brand-700">
-                      {article.topicLabel}
-                    </span>
-
-                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-600 text-white shadow-[0_10px_20px_-8px_rgb(53_51_205/0.55)] transition-transform duration-500 group-hover:-translate-y-0.5">
-                      <Corner
-                        className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                        aria-hidden="true"
-                      />
-                    </span>
-                  </div>
-
-                  <p className="relative mt-5 text-xs font-medium text-faint">
-                    <time dateTime={article.publishedAt}>
-                      {DATE.format(new Date(article.publishedAt))}
-                    </time>
-                    {" · "}
-                    {article.readingMinutes} min read
-                  </p>
-
-                  <h2 className="relative mt-3 font-display text-xl font-semibold leading-tight tracking-tight text-balance">
-                    {article.title}
-                  </h2>
-
-                  <p className="relative mt-3 flex-1 text-sm leading-relaxed text-muted">
-                    {article.excerpt}
-                  </p>
-
-                  {!article.isPublished && comingSoonLabel ? (
-                    <p className="relative mt-6 border-t border-brand-600 pt-4 text-xs leading-relaxed text-faint">
-                      {comingSoonLabel}
-                    </p>
-                  ) : null}
-                </Card>
-              </RevealItem>
-            );
-          })}
-        </RevealGroup>
+        <SpotlightBento
+          className="mt-10"
+          items={articles.map((article) => ({
+            key: article.slug,
+            href: article.isPublished ? article.href : null,
+            image: article.image,
+            eyebrow: article.topicLabel,
+            title: article.title,
+            summary: article.excerpt,
+            meta: article.isPublished
+              ? `${DATE.format(new Date(article.publishedAt))} · ${article.readingMinutes} min read`
+              : comingSoonLabel,
+          }))}
+        />
       </Container>
     </section>
   );

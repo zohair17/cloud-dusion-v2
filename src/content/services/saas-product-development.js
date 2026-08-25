@@ -1,5 +1,5 @@
 /**
- * Service — SaaS Product Development
+ * Service: SaaS Product Development
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -11,7 +11,7 @@ export const service = {
   title: "SaaS Product Development",
   navLabel: "SaaS Product Development",
   tagline: null,
-  summary: "Multi-tenant SaaS platforms engineered on Azure — secure data isolation, subscription readiness, API ecosystems, and the operations to run them.",
+  summary: "Multi-tenant SaaS platforms engineered on Azure: secure data isolation, subscription readiness, API ecosystems, and the operations to run them.",
   groupId: "product-engineering",
   order: 9,
   status: "outline",
@@ -29,7 +29,7 @@ export const service = {
   ],
   seo: {
     title: "SaaS Product Development",
-    description: "Multi-tenant SaaS platforms engineered on Azure — secure data isolation, subscription readiness, API ecosystems, and the operations to run them."
+    description: "Multi-tenant SaaS platforms engineered on Azure: secure data isolation, subscription readiness, API ecosystems, and the operations to run them."
   }
 };
 

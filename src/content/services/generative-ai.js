@@ -1,5 +1,5 @@
 /**
- * Service — Generative AI
+ * Service: Generative AI
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -11,7 +11,7 @@ export const service = {
   title: "Generative AI",
   navLabel: "Generative AI",
   tagline: null,
-  summary: "LLM implementation, RAG solutions, fine-tuning, and semantic search — generative AI engineered into enterprise workflows with your data, safely.",
+  summary: "LLM implementation, RAG solutions, fine-tuning, and semantic search: generative AI engineered into enterprise workflows with your data, safely.",
   groupId: "ai-intelligent-automation",
   order: 2,
   status: "outline",
@@ -29,7 +29,7 @@ export const service = {
   ],
   seo: {
     title: "Generative AI",
-    description: "LLM implementation, RAG solutions, fine-tuning, and semantic search — generative AI engineered into enterprise workflows with your data, safely."
+    description: "LLM implementation, RAG solutions, fine-tuning, and semantic search: generative AI engineered into enterprise workflows with your data, safely."
   }
 };
 

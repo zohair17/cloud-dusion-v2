@@ -1,5 +1,5 @@
 /**
- * Industry registry — the single place a new record is registered.
+ * Industry registry, the single place a new record is registered.
  * Adding a file without adding it here means it does not exist to the domain.
  */
 import healthcare from "./healthcare";

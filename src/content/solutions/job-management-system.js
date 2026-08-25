@@ -1,5 +1,5 @@
 /**
- * Solution — Job Management System
+ * Solution: Job Management System
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -10,7 +10,7 @@ export const solution = {
   slug: "job-management-system",
   title: "Job Management System",
   tagline: null,
-  summary: "End-to-end job management for project and field service businesses — quoting, scheduling, execution, costing, and invoicing in one flow.",
+  summary: "End-to-end job management for project and field service businesses: quoting, scheduling, execution, costing, and invoicing in one flow.",
   categoryId: "erp",
   order: 3,
   status: "outline",
@@ -33,7 +33,7 @@ export const solution = {
   ],
   seo: {
     title: "Job Management System",
-    description: "End-to-end job management for project and field service businesses — quoting, scheduling, execution, costing, and invoicing in one flow."
+    description: "End-to-end job management for project and field service businesses: quoting, scheduling, execution, costing, and invoicing in one flow."
   }
 };
 

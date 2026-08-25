@@ -1,5 +1,5 @@
 /**
- * Solution — B2B Integration Solutions
+ * Solution: B2B Integration Solutions
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -10,7 +10,7 @@ export const solution = {
   slug: "b2b-integration",
   title: "B2B Integration Solutions",
   tagline: null,
-  summary: "Automated integration with trading partners — EDI, APIs, and file exchange unified on Azure Integration Services with monitoring and resilience built in.",
+  summary: "Automated integration with trading partners: EDI, APIs, and file exchange unified on Azure Integration Services with monitoring and resilience built in.",
   categoryId: "automation",
   order: 4,
   status: "outline",
@@ -33,7 +33,7 @@ export const solution = {
   ],
   seo: {
     title: "B2B Integration Solutions",
-    description: "Automated integration with trading partners — EDI, APIs, and file exchange unified on Azure Integration Services with monitoring and resilience built in."
+    description: "Automated integration with trading partners: EDI, APIs, and file exchange unified on Azure Integration Services with monitoring and resilience built in."
   }
 };
 

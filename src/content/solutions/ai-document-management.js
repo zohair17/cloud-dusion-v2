@@ -1,5 +1,5 @@
 /**
- * Solution — AI-Enabled Document Management System
+ * Solution: AI-Enabled Document Management System
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -12,7 +12,7 @@ export const solution = {
   tagline: null,
   /** Glyph id; the component owns the actual icon. */
   icon: "file-search",
-  summary: "Enterprise document management on SharePoint with AI that classifies, extracts, tags, and routes content automatically — and answers questions from it.",
+  summary: "Enterprise document management on SharePoint with AI that classifies, extracts, tags, and routes content automatically, and answers questions from it.",
   categoryId: "ai",
   order: 1,
   status: "outline",
@@ -35,7 +35,7 @@ export const solution = {
   ],
   seo: {
     title: "AI-Enabled Document Management System",
-    description: "Enterprise document management on SharePoint with AI that classifies, extracts, tags, and routes content automatically — and answers questions from it."
+    description: "Enterprise document management on SharePoint with AI that classifies, extracts, tags, and routes content automatically, and answers questions from it."
   }
 };
 

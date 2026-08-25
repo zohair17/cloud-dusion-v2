@@ -21,6 +21,7 @@ export function createCaseStudy(record) {
   return Object.freeze({
     slug,
     title: record.title,
+    image: record.image ?? null,
     sectorLabel: record.sectorLabel,
     industrySlug: record.industrySlug ?? null,
     order: record.order,
@@ -54,6 +55,8 @@ export function toCaseStudySummary(caseStudy) {
     title: caseStudy.title,
     summary: caseStudy.summary,
     sectorLabel: caseStudy.sectorLabel,
+    industrySlug: caseStudy.industrySlug,
+    image: caseStudy.image,
     client: caseStudy.client,
     href: caseStudy.href,
   });

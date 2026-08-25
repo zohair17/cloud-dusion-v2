@@ -2,22 +2,29 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "../primitives/container";
 import { SectionHeading } from "./section-heading";
-import { Reveal } from "../motion/reveal";
+import { RevealGroup, RevealItem } from "../motion/reveal";
+import { cn } from "../primitives/cn";
+
+/** Four to a row on a wide screen, which is what leaves an odd one over. */
+const COLUMNS = 4;
 
 /**
  * Industries served.
  *
- * A full-bleed accordion of photographic panels rather than a card grid: all
- * nine verticals share the row equally, and the panel under the pointer takes
- * space from the rest (see `.industry-row` in globals.css). Titles sit vertical
- * while a panel is narrow and turn horizontal once it opens — a container query
- * on the panel itself, so the flip follows the panel's real width rather than
- * the viewport's.
+ * A grid of photographic cards: the picture is the card, darkened from the foot
+ * upward so the name and the line under it read in white over it. No badge, no
+ * button — the whole card is the link, and what a reader needs is the vertical
+ * and what we do in it.
  *
- * The row is deliberately outside the container: photographs read as a band
- * across the page, which is the one place the site breaks its own gutter.
+ * Nine verticals over four columns leaves one on its own, so the last card is
+ * widened and centred rather than left hanging in the first column. It is the
+ * remainder that gets handled, not the count: the rule reads the list length.
  */
 export function IndustryFocus({ section }) {
+  const items = section.items ?? [];
+  // Only a single leftover is worth widening; two or three fill the row well enough.
+  const orphan = items.length % COLUMNS === 1 ? items.length - 1 : -1;
+
   return (
     <section className="section-y">
       <Container size="wide">
@@ -27,52 +34,52 @@ export function IndustryFocus({ section }) {
           heading={section.heading}
           intro={section.intro}
         />
-      </Container>
 
-      <Reveal delay={0.1} className="mt-14">
-        <ul className="industry-row flex h-[clamp(19rem,52svh,34rem)] gap-[clamp(0.25rem,0.93vw,0.85rem)]">
-          {section.items.map((industry, index) => (
-            <li
+        <RevealGroup
+          delay={0.1}
+          stagger={0.06}
+          className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          {items.map((industry, index) => (
+            <RevealItem
               key={industry.slug}
-              className="group/panel relative isolate min-h-0 overflow-hidden [container-type:size]"
+              className={cn(index === orphan && "lg:col-span-2 lg:col-start-2")}
             >
-              {industry.image ? (
-                <Image
-                  src={industry.image}
-                  alt=""
-                  fill
-                  sizes="(min-width: 1024px) 34vw, (min-width: 640px) 40vw, 50vw"
-                  className="object-cover"
-                />
-              ) : null}
-
-              {/* Scrim. Lifts on hover so the photograph comes forward as the panel opens. */}
-              <span
-                aria-hidden="true"
-                className="absolute inset-0 bg-foreground/45 transition-colors duration-500 group-hover/panel:bg-foreground/15"
-              />
-
               <Link
                 href={industry.href}
-                aria-label={industry.title}
-                className="absolute inset-0 grid grid-rows-[minmax(var(--badge),min(52%,100%_-_13em))_1fr] place-items-center p-1 text-center text-[max(0.5rem,min(clamp(0.7rem,1.6vw,1.05rem),4.2cqh))] focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white @min-[4rem]:p-2 @min-[9rem]:grid-rows-[52%_1fr] @min-[9rem]:text-[min(clamp(0.95rem,1.45vw,1.4rem),12cqw)]"
-                style={{ "--badge": "min(clamp(2rem, 2.96vw, 2.9rem), 66cqw)" }}
+                className="group relative block h-[clamp(17rem,24vw,21rem)] overflow-hidden rounded-card shadow-[0_1px_4px_rgb(21_21_28/0.06),0_24px_50px_-32px_rgb(25_24_89/0.35)] ring-1 ring-black/[0.05] transition-shadow duration-500 hover:shadow-[0_1px_4px_rgb(21_21_28/0.06),0_40px_70px_-34px_rgb(25_24_89/0.45)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-500"
               >
-                <span className="grid h-[var(--badge)] w-[var(--badge)] shrink-0 select-none place-items-center self-end rounded-full bg-white/85 text-[min(clamp(0.75rem,1.35vw,1.3rem),36cqw)] font-semibold leading-none text-foreground transition-colors duration-500 group-hover/panel:bg-brand-600 group-hover/panel:text-white">
-                  {index + 1}
-                </span>
+                {industry.image ? (
+                  <Image
+                    src={industry.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 24vw, (min-width: 640px) 46vw, 92vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  />
+                ) : null}
 
+                {/*
+                  Weighted to the foot: the photograph stays a photograph at the
+                  top and is dark enough to set type on by the time it reaches
+                  the words. A flat scrim would flatten the picture instead.
+                */}
                 <span
                   aria-hidden="true"
-                  className="mt-1 rotate-180 self-start text-nowrap font-semibold leading-tight text-white [writing-mode:vertical-rl] @min-[9rem]:mt-2 @min-[9rem]:rotate-0 @min-[9rem]:text-balance @min-[9rem]:[writing-mode:horizontal-tb]"
-                >
-                  {industry.title}
-                </span>
+                  className="absolute inset-0 bg-[linear-gradient(to_top,rgb(9_9_36/0.92)_0%,rgb(9_9_36/0.72)_28%,rgb(9_9_36/0.22)_62%,rgb(9_9_36/0.05)_100%)]"
+                />
+
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <h3 className="font-display text-xl font-semibold leading-tight tracking-tight text-balance text-white">
+                    {industry.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/75">{industry.summary}</p>
+                </div>
               </Link>
-            </li>
+            </RevealItem>
           ))}
-        </ul>
-      </Reveal>
+        </RevealGroup>
+      </Container>
     </section>
   );
 }

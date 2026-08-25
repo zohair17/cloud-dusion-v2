@@ -9,7 +9,7 @@
 export const solutionsPage = {
   title: "Solutions",
   tagline: "What we build for enterprises",
-  intro: "Services are what we do — solutions are what we build: platforms, systems, and applications engineered on AI and Microsoft technologies to solve specific business problems.",
+  intro: "Services are what we do. Solutions are what we build: platforms, systems, and applications engineered on AI and Microsoft technologies to solve specific business problems.",
   ctas: [
     "discuss-requirements"
   ],

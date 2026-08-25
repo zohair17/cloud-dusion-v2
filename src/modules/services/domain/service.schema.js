@@ -16,17 +16,22 @@
  * @property {string}   groupId       Service group this belongs to.
  * @property {number}   order         Sort order inside the group.
  * @property {"outline"|"published"} status
+ * @property {HeroSlide[]} heroSlides  Pictures behind the hero, in order.
  * @property {string[]} intro         Lead paragraphs.
  * @property {SectionOfStrings} challenges
  * @property {SectionOfItems}   approach
  * @property {SectionOfItems}   capabilities
+ * @property {{ eyebrow: string?, heading: string, body: string }} stack  Where the service meets the Microsoft platform.
+ * @property {SectionOfStrings} outcomes
  * @property {string[]} technologies       Technology ids.
  * @property {string[]} relatedSolutions   Solution slugs.
  * @property {string[]} relatedIndustries  Industry slugs.
  * @property {string[]} relatedCaseStudies Case study slugs.
  * @property {string[]} ctas
+ * @property {{ heading: string, body: string, ctas: string[] }} closing
  * @property {{ title: string, description: string }} seo
  *
+ * @typedef {{ image: string, label: string }} HeroSlide
  * @typedef {{ eyebrow: string?, heading: string, items: string[] }} SectionOfStrings
  * @typedef {{ eyebrow: string?, heading: string, items: Array<{ title: string, description: string }> }} SectionOfItems
  */

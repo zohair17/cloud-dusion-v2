@@ -11,8 +11,8 @@ import Image from "next/image";
  * still be barely turned while it is next in line. `tanh` gives the spread its
  * ceiling, and the power curve keeps the turn slow at first and then quick.
  */
-const SPREAD = 1.3;   // card widths the run reaches before it stops widening
-const SOFT = 0.8;     // how quickly it gets there
+const SPREAD = 1.02;   // card widths the run reaches before it stops widening
+const SOFT = 0.95;     // how quickly it gets there
 const EDGE = 2.15;    // slots at which a card is fully edge-on
 const REACH = 2.4;    // slots at which it has faded out entirely
 

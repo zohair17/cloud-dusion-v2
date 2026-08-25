@@ -1,5 +1,5 @@
 /**
- * Service — Custom Software Development
+ * Service: Custom Software Development
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -11,7 +11,7 @@ export const service = {
   title: "Custom Software Development",
   navLabel: "Custom Software Development",
   tagline: null,
-  summary: "Web applications, enterprise systems, portals, e-commerce, and APIs — custom software engineered for security, scale, and long-term evolution.",
+  summary: "Web applications, enterprise systems, portals, e-commerce, and APIs: custom software engineered for security, scale, and long-term evolution.",
   groupId: "product-engineering",
   order: 8,
   status: "outline",
@@ -29,7 +29,7 @@ export const service = {
   ],
   seo: {
     title: "Custom Software Development",
-    description: "Web applications, enterprise systems, portals, e-commerce, and APIs — custom software engineered for security, scale, and long-term evolution."
+    description: "Web applications, enterprise systems, portals, e-commerce, and APIs: custom software engineered for security, scale, and long-term evolution."
   }
 };
 

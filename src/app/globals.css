@@ -110,25 +110,6 @@ html {
 .cfg-halo-ring { animation: cfg-glow 3s ease-out infinite; }
 @media (prefers-reduced-motion: reduce) { .cfg-halo-ring { animation: none; } }
 
-/*
- * Industries accordion.
- *
- * Panels share the row equally until the pointer enters it: every panel then
- * yields a little and the one under the pointer takes the space. `focus-within`
- * carries the same behaviour to the keyboard, so a tabbed panel opens too.
- */
-.industry-row > * {
-  flex: 1 1 0;
-  transition: flex-grow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.industry-row:hover > * { flex-grow: 0.72; }
-.industry-row > *:hover,
-.industry-row > *:focus-within { flex-grow: 2.6; }
-
-@media (prefers-reduced-motion: reduce) {
-  .industry-row > * { transition: none; }
-}
-
 /* Scroll rails that carry their own affordance and do not need a bar. */
 .cfg-no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
 .cfg-no-scrollbar::-webkit-scrollbar { display: none; }
@@ -160,30 +141,6 @@ html {
     linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
     linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
           mask-composite: intersect;
-}
-
-/* ------------------------------------------------------------- case study film
- *
- * This clip was lit on a studio backdrop, not on flat white: its background
- * runs 209–244 and its own white pedestal sits at 207, so no curve can lift the
- * one without flattening the other. It is therefore given the opposite
- * treatment to the hero — it fills its half of the slab outright, and the
- * slab's rounded edge is the only frame. Only the side that faces the words
- * needs dissolving, and which side that is depends on where the film sits:
- * above the copy on a narrow screen, beside it on a wide one.
- */
-.cfg-case-film {
-  object-position: 50% 38%;
-  -webkit-mask-image: linear-gradient(to bottom, #000 58%, transparent 100%);
-          mask-image: linear-gradient(to bottom, #000 58%, transparent 100%);
-}
-
-@media (min-width: 64rem) {
-  .cfg-case-film {
-    object-position: 68% 50%;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 30%);
-            mask-image: linear-gradient(to right, transparent 0%, #000 30%);
-  }
 }
 
 /* ---------------------------------------------------------------- premium card
@@ -338,24 +295,14 @@ html {
   opacity: 1;
 }
 
-/* A line of copy arriving under the arc, replaced whenever the open card changes. */
-@keyframes cfg-fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.cfg-fade-up {
-  animation: cfg-fade-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cfg-fade-up {
-    animation: none;
-  }
+/*
+ * The same lit card, filled white.
+ *
+ * `.cfg-card` lays a whisper of ink over its surface so a card reads as sitting
+ * on the page rather than cut out of it. Where a section wants the card to be
+ * plain white — because the colour is doing the work instead — this takes the
+ * wash off and leaves the hairline and the spotlight alone.
+ */
+.cfg-card-plain {
+  background: #ffffff;
 }

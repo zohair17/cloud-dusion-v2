@@ -1,5 +1,5 @@
 /**
- * Solution — ERP for Manufacturing
+ * Solution: ERP for Manufacturing
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -12,7 +12,7 @@ export const solution = {
   tagline: null,
   /** Glyph id; the component owns the actual icon. */
   icon: "factory",
-  summary: "An ERP implementation for manufacturers — production planning, inventory, procurement, quality, and costing unified with real-time shop-floor visibility.",
+  summary: "An ERP implementation for manufacturers: production planning, inventory, procurement, quality, and costing unified with real-time shop-floor visibility.",
   categoryId: "erp",
   order: 1,
   status: "outline",
@@ -35,7 +35,7 @@ export const solution = {
   ],
   seo: {
     title: "ERP for Manufacturing",
-    description: "An ERP implementation for manufacturers — production planning, inventory, procurement, quality, and costing unified with real-time shop-floor visibility."
+    description: "An ERP implementation for manufacturers: production planning, inventory, procurement, quality, and costing unified with real-time shop-floor visibility."
   }
 };
 

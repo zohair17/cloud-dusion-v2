@@ -1,5 +1,5 @@
 /**
- * Solution — Enterprise Content Management System
+ * Solution: Enterprise Content Management System
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -10,7 +10,7 @@ export const solution = {
   slug: "enterprise-content-management",
   title: "Enterprise Content Management System",
   tagline: null,
-  summary: "Organization-wide content management on SharePoint — unifying documents, media, and knowledge under one architecture, one governance model, one search.",
+  summary: "Organization-wide content management on SharePoint, unifying documents, media, and knowledge under one architecture, one governance model, one search.",
   categoryId: "sharepoint-microsoft",
   order: 2,
   status: "outline",
@@ -33,7 +33,7 @@ export const solution = {
   ],
   seo: {
     title: "Enterprise Content Management System",
-    description: "Organization-wide content management on SharePoint — unifying documents, media, and knowledge under one architecture, one governance model, one search."
+    description: "Organization-wide content management on SharePoint, unifying documents, media, and knowledge under one architecture, one governance model, one search."
   }
 };
 

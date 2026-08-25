@@ -1,5 +1,5 @@
 /**
- * Solution — Contract Management System
+ * Solution: Contract Management System
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -10,7 +10,7 @@ export const solution = {
   slug: "contract-management-system",
   title: "Contract Management System",
   tagline: null,
-  summary: "End-to-end contract lifecycle management — authoring, negotiation, approval, signature, obligations, and renewals — on SharePoint with AI-extracted terms.",
+  summary: "End-to-end contract lifecycle management on SharePoint with AI-extracted terms: authoring, negotiation, approval, signature, obligations, and renewals.",
   categoryId: "sharepoint-microsoft",
   order: 4,
   status: "outline",
@@ -33,7 +33,7 @@ export const solution = {
   ],
   seo: {
     title: "Contract Management System",
-    description: "End-to-end contract lifecycle management — authoring, negotiation, approval, signature, obligations, and renewals — on SharePoint with AI-extracted terms."
+    description: "End-to-end contract lifecycle management on SharePoint with AI-extracted terms: authoring, negotiation, approval, signature, obligations, and renewals."
   }
 };
 

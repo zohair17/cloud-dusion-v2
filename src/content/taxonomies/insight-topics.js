@@ -1,4 +1,4 @@
-/** Filter chips on the insights index. */
+/** The subjects the insights desk covers, named on the index page. */
 export const insightTopics = [
   { id: "artificial-intelligence", label: "Artificial Intelligence" },
   { id: "agentic-ai", label: "Agentic AI" },

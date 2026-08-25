@@ -3,7 +3,7 @@ export const serviceGroups = [
   {
     id: "ai-intelligent-automation",
     title: "AI & Intelligent Automation",
-    description: "Intelligence applied to enterprise work — agents, generative AI, and AI document processing.",
+    description: "Intelligence applied to enterprise work: agents, generative AI, and AI document processing.",
     order: 1,
   },
   {

@@ -34,6 +34,7 @@ export function createArticle(record) {
     readingMinutes: record.readingMinutes,
     status: record.status ?? "announced",
     isPublished,
+    image: record.image ?? null,
     body: record.body ?? null,
     href: isPublished ? routes.insights.detail(slug) : null,
   });
@@ -46,6 +47,7 @@ export function toArticleSummary(article) {
     excerpt: article.excerpt,
     topicLabel: article.topic.label,
     topicId: article.topic.id,
+    image: article.image,
     publishedAt: article.publishedAt,
     readingMinutes: article.readingMinutes,
     isPublished: article.isPublished,

@@ -1,5 +1,5 @@
 /**
- * Solution — Self-Hosted Enterprise AI Solutions
+ * Solution: Self-Hosted Enterprise AI Solutions
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -12,7 +12,7 @@ export const solution = {
   tagline: null,
   /** Glyph id; the component owns the actual icon. */
   icon: "server-cog",
-  summary: "Private AI platforms — models, retrieval, and applications — deployed in your own environment for organizations whose data cannot leave.",
+  summary: "Private AI platforms (models, retrieval, and applications) deployed in your own environment for organizations whose data cannot leave.",
   categoryId: "ai",
   order: 4,
   status: "outline",
@@ -35,7 +35,7 @@ export const solution = {
   ],
   seo: {
     title: "Self-Hosted Enterprise AI Solutions",
-    description: "Private AI platforms — models, retrieval, and applications — deployed in your own environment for organizations whose data cannot leave."
+    description: "Private AI platforms (models, retrieval, and applications) deployed in your own environment for organizations whose data cannot leave."
   }
 };
 

@@ -1,5 +1,5 @@
 /**
- * Solution — SharePoint Version Upgrade
+ * Solution: SharePoint Version Upgrade
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -10,7 +10,7 @@ export const solution = {
   slug: "sharepoint-version-upgrade",
   title: "SharePoint Version Upgrade",
   tagline: null,
-  summary: "Structured upgrades from legacy SharePoint versions to current platforms — customizations remediated, content preserved, downtime minimized.",
+  summary: "Structured upgrades from legacy SharePoint versions to current platforms: customizations remediated, content preserved, downtime minimized.",
   categoryId: "sharepoint-microsoft",
   order: 7,
   status: "outline",
@@ -33,7 +33,7 @@ export const solution = {
   ],
   seo: {
     title: "SharePoint Version Upgrade",
-    description: "Structured upgrades from legacy SharePoint versions to current platforms — customizations remediated, content preserved, downtime minimized."
+    description: "Structured upgrades from legacy SharePoint versions to current platforms: customizations remediated, content preserved, downtime minimized."
   }
 };
 

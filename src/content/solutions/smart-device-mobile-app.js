@@ -1,5 +1,5 @@
 /**
- * Solution — Mobile App for Smart Devices
+ * Solution: Mobile App for Smart Devices
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -12,7 +12,7 @@ export const solution = {
   tagline: null,
   /** Glyph id; the component owns the actual icon. */
   icon: "bluetooth",
-  summary: "Companion mobile applications for connected devices — pairing, control, telemetry, and firmware updates with a cloud backbone on Azure IoT.",
+  summary: "Companion mobile applications for connected devices: pairing, control, telemetry, and firmware updates with a cloud backbone on Azure IoT.",
   categoryId: "mobile-iot",
   order: 1,
   status: "outline",
@@ -35,7 +35,7 @@ export const solution = {
   ],
   seo: {
     title: "Mobile App for Smart Devices",
-    description: "Companion mobile applications for connected devices — pairing, control, telemetry, and firmware updates with a cloud backbone on Azure IoT."
+    description: "Companion mobile applications for connected devices: pairing, control, telemetry, and firmware updates with a cloud backbone on Azure IoT."
   }
 };
 

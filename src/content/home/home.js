@@ -1,7 +1,7 @@
 /**
  * Homepage composition.
  *
- * The homepage owns almost no content of its own — it is a *composition* of
+ * The homepage owns almost no content of its own: it is a *composition* of
  * other bounded contexts. Sections that show services, solutions, industries or
  * technologies declare which records to pull and in what order; the page read
  * model resolves them through the repositories at build time. Editing the
@@ -15,7 +15,7 @@ export const homePage = {
   hero: {
     eyebrow: "AI-Powered Enterprise Solutions · Built on Microsoft",
     headline: "Transforming Enterprises with",
-    /** Rendered in the brand colour — the one accent the headline gets. */
+    /** Rendered in the brand colour, the one accent the headline gets. */
     headlineAccent: "AI-Powered Microsoft Solutions",
     subheadline:
       "Cloud Fusion Global helps organizations modernize operations, automate complex workflows, unlock the power of their data, and build intelligent business applications through Artificial Intelligence, Microsoft technologies, and enterprise-grade software solutions.",
@@ -45,7 +45,7 @@ export const homePage = {
     eyebrow: "The Transformation",
     heading: "AI is changing how enterprises operate",
     intro:
-      "The journey from manual operations to the intelligent enterprise runs through AI, automation, and the Microsoft ecosystem — and ends in measurable business outcomes.",
+      "The journey from manual operations to the intelligent enterprise runs through AI, automation, and the Microsoft ecosystem, and ends in measurable business outcomes.",
     /** Four stages of one journey; the last is the destination. */
     stages: [
       {
@@ -81,7 +81,7 @@ export const homePage = {
     ],
   },
 
-  /** Four service pillars — each links into the services catalogue. */
+  /** Four service pillars, each links into the services catalogue. */
   servicePillars: {
     eyebrow: "What We Do",
     heading: "An",
@@ -94,7 +94,7 @@ export const homePage = {
         id: "agentic-ai",
         title: "Agentic AI & AI Automation",
         description:
-          "AI agents, multi-agent orchestration, and human-in-the-loop systems that take real work off your teams — governed, secure, and built to scale.",
+          "AI agents, multi-agent orchestration, and human-in-the-loop systems that take real work off your teams: governed, secure, and built to scale.",
         icon: "bot",
         art: "ai-cube",
         serviceSlug: "agentic-ai-automation",
@@ -103,7 +103,7 @@ export const homePage = {
         id: "microsoft",
         title: "Intelligent Microsoft Solutions",
         description:
-          "Azure, Microsoft 365, SharePoint, and Power Platform — implemented as an intelligent, connected ecosystem rather than isolated tools.",
+          "Azure, Microsoft 365, SharePoint, and Power Platform: implemented as an intelligent, connected ecosystem rather than isolated tools.",
         icon: "cloud",
         art: "cloud",
         serviceSlug: "microsoft-cloud-solutions",
@@ -112,7 +112,7 @@ export const homePage = {
         id: "product",
         title: "Custom Applications & Product Engineering",
         description:
-          "Web, mobile, and SaaS products engineered for the enterprise — from architecture and APIs to AI-powered user experiences.",
+          "Web, mobile, and SaaS products engineered for the enterprise, from architecture and APIs to AI-powered user experiences.",
         icon: "code",
         art: "code",
         serviceSlug: "custom-software-development",
@@ -134,7 +134,7 @@ export const homePage = {
     eyebrow: "What We Build",
     heading: "AI-powered solutions for the enterprise",
     intro:
-      "Purpose-built platforms and systems — from intelligent document management to ERP — engineered on AI and Microsoft technologies.",
+      "Purpose-built platforms and systems, from intelligent document management to ERP, engineered on AI and Microsoft technologies.",
     solutionSlugs: [
       "ai-document-management",
       "ai-document-generator",
@@ -152,7 +152,7 @@ export const homePage = {
     eyebrow: "Technology Ecosystem",
     heading: "The Microsoft stack, connected by AI",
     intro:
-      "CFG builds on the full Microsoft ecosystem — AI capabilities flowing through cloud, workplace, and application layers into working business solutions.",
+      "CFG builds on the full Microsoft ecosystem: AI capabilities flowing through cloud, workplace, and application layers into working business solutions.",
     layerIds: ["ai", "cloud", "workplace", "applications"],
     /** Where the four layers arrive: the outcome the stack exists to produce. */
     destination: {
@@ -167,7 +167,7 @@ export const homePage = {
     eyebrow: "Who We Serve",
     heading: "Industry-focused transformation",
     intro:
-      "Every industry has its own challenges, systems, and regulations. CFG builds solutions shaped to each — not generic templates.",
+      "Every industry has its own challenges, systems, and regulations. CFG builds solutions shaped to each, not generic templates.",
     industrySlugs: [],
   },
 
@@ -197,7 +197,7 @@ export const homePage = {
       heading: "Clients we've partnered",
       headingAccent: "with",
       intro:
-        "The teams who handed us their cloud, their data and their day to day — and stayed.",
+        "The teams who handed us their cloud, their data and their day to day, and stayed.",
       /** The wall repeats the roster until it fills; the reference sets 50 tiles. */
       tiles: 50,
       items: [
@@ -220,7 +220,7 @@ export const homePage = {
    * What clients said, in their own words.
    *
    * Quotes, names, roles and portraits are transcribed from cloudfusionglobal.com
-   * exactly as given. Nothing here is written for the site — a testimonial that
+   * exactly as given. Nothing here is written for the site, a testimonial that
    * was not said is not a testimonial.
    */
   testimonials: {
@@ -238,6 +238,9 @@ export const homePage = {
         /** The source site shows five stars against each quote. */
         rating: 5,
         avatar: "abeer-saeed.webp",
+        /** Company mark, from the clients library. Omit it and the card sets the
+            company name as a wordmark instead. */
+        logo: "nisum.png",
       },
       {
         id: "johnathan-mediamystix",
@@ -252,7 +255,7 @@ export const homePage = {
     ],
   },
 
-  /** Eight differentiators — the "why CFG" grid. */
+  /** Eight differentiators, the "why CFG" grid. */
   differentiators: {
     eyebrow: "Why CFG",
     heading: "Why enterprises choose Cloud Fusion Global",
@@ -272,25 +275,25 @@ export const homePage = {
       {
         title: "Enterprise Architecture",
         description:
-          "Solutions designed by architects who think in systems — security, integration, data, and scale from day one.",
+          "Solutions designed by architects who think in systems: security, integration, data, and scale from day one.",
         icon: "blocks",
       },
       {
         title: "End-to-End Delivery",
         description:
-          "Strategy, architecture, build, rollout, adoption, and support — one accountable team across the full lifecycle.",
+          "Strategy, architecture, build, rollout, adoption, and support: one accountable team across the full lifecycle.",
         icon: "route",
       },
       {
         title: "Industry-Focused Solutions",
         description:
-          "Purpose-built solutions for real estate, healthcare, financial services, and other industries — not generic templates.",
+          "Purpose-built solutions for real estate, healthcare, financial services, and other industries, not generic templates.",
         icon: "building",
       },
       {
         title: "Flexible Engagement Models",
         description:
-          "Fixed-scope projects, dedicated teams, managed services, or staff augmentation — engagement shaped to how you work.",
+          "Fixed-scope projects, dedicated teams, managed services, or staff augmentation: engagement shaped to how you work.",
         icon: "handshake",
       },
       {

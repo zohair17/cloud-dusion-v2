@@ -1,5 +1,5 @@
 /**
- * Solution — SharePoint Online Tenant-to-Tenant Migration
+ * Solution: SharePoint Online Tenant-to-Tenant Migration
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -10,7 +10,7 @@ export const solution = {
   slug: "tenant-to-tenant-migration",
   title: "SharePoint Online Tenant-to-Tenant Migration",
   tagline: null,
-  summary: "Merger, acquisition, and divestiture migrations between Microsoft 365 tenants — SharePoint, OneDrive, and Teams content moved with identity and sharing intact.",
+  summary: "Merger, acquisition, and divestiture migrations between Microsoft 365 tenants: SharePoint, OneDrive, and Teams content moved with identity and sharing intact.",
   categoryId: "sharepoint-microsoft",
   order: 8,
   status: "outline",
@@ -33,7 +33,7 @@ export const solution = {
   ],
   seo: {
     title: "SharePoint Online Tenant-to-Tenant Migration",
-    description: "Merger, acquisition, and divestiture migrations between Microsoft 365 tenants — SharePoint, OneDrive, and Teams content moved with identity and sharing intact."
+    description: "Merger, acquisition, and divestiture migrations between Microsoft 365 tenants: SharePoint, OneDrive, and Teams content moved with identity and sharing intact."
   }
 };
 

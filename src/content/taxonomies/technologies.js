@@ -9,12 +9,14 @@ export const technologies = [
   { id: "microsoft-syntex", label: "Microsoft Syntex", layer: "ai" },
   { id: "azure-ai-document-intelligence", label: "Azure AI Document Intelligence", layer: "ai" },
   { id: "microsoft-copilot", label: "Microsoft 365 Copilot", layer: "ai" },
+  { id: "semantic-kernel", label: "Semantic Kernel", layer: "ai" },
 
   { id: "azure", label: "Microsoft Azure", layer: "cloud" },
   { id: "azure-integration-services", label: "Azure Integration Services", layer: "cloud" },
   { id: "azure-iot", label: "Azure IoT", layer: "cloud" },
   { id: "microsoft-fabric", label: "Microsoft Fabric", layer: "cloud" },
   { id: "azure-data-platform", label: "Azure Data Platform", layer: "cloud" },
+  { id: "azure-functions", label: "Azure Functions", layer: "cloud" },
 
   { id: "microsoft-365", label: "Microsoft 365", layer: "workplace" },
   { id: "sharepoint-online", label: "SharePoint Online", layer: "workplace" },
@@ -22,6 +24,7 @@ export const technologies = [
   { id: "onedrive", label: "OneDrive for Business", layer: "workplace" },
   { id: "microsoft-purview", label: "Microsoft Purview", layer: "workplace" },
   { id: "microsoft-entra", label: "Microsoft Entra", layer: "workplace" },
+  { id: "microsoft-graph", label: "Microsoft Graph", layer: "workplace" },
 
   { id: "power-apps", label: "Power Apps", layer: "applications" },
   { id: "power-automate", label: "Power Automate", layer: "applications" },

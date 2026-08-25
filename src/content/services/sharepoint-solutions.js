@@ -1,5 +1,5 @@
 /**
- * Service — SharePoint Solutions
+ * Service: SharePoint Solutions
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -11,7 +11,7 @@ export const service = {
   title: "SharePoint Solutions",
   navLabel: "SharePoint Solutions",
   tagline: null,
-  summary: "Document management, intranets, workflows, migrations, and managed services — SharePoint engineered as the intelligent content backbone of your enterprise.",
+  summary: "Document management, intranets, workflows, migrations, and managed services: SharePoint engineered as the intelligent content backbone of your enterprise.",
   groupId: "microsoft-platform",
   order: 5,
   status: "outline",
@@ -29,7 +29,7 @@ export const service = {
   ],
   seo: {
     title: "SharePoint Solutions",
-    description: "Document management, intranets, workflows, migrations, and managed services — SharePoint engineered as the intelligent content backbone of your enterprise."
+    description: "Document management, intranets, workflows, migrations, and managed services: SharePoint engineered as the intelligent content backbone of your enterprise."
   }
 };
 

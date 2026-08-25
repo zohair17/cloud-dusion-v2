@@ -1,5 +1,5 @@
 /**
- * Solution — Electronic Contract Generator
+ * Solution: Electronic Contract Generator
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -10,7 +10,7 @@ export const solution = {
   slug: "electronic-contract-generator",
   title: "Electronic Contract Generator",
   tagline: null,
-  summary: "Automated contract creation from approved templates and live data — generated, approved, signed, and filed in one governed flow.",
+  summary: "Automated contract creation from approved templates and live data, generated, approved, signed, and filed in one governed flow.",
   categoryId: "automation",
   order: 3,
   status: "outline",
@@ -33,7 +33,7 @@ export const solution = {
   ],
   seo: {
     title: "Electronic Contract Generator",
-    description: "Automated contract creation from approved templates and live data — generated, approved, signed, and filed in one governed flow."
+    description: "Automated contract creation from approved templates and live data, generated, approved, signed, and filed in one governed flow."
   }
 };
 

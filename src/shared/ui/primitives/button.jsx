@@ -13,6 +13,9 @@ const VARIANTS = {
   secondary:
     "border border-border bg-white text-foreground hover:border-brand-300 hover:text-brand-700 focus-visible:outline-brand-600",
   ghost: "text-foreground hover:bg-surface focus-visible:outline-brand-600",
+  /* For a button standing on a photograph rather than on the page. */
+  onDark:
+    "border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:border-white/55 hover:bg-white/20 focus-visible:outline-white",
 };
 
 const SIZES = {

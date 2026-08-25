@@ -1,5 +1,5 @@
 /**
- * Solution — AI-Enabled Document Generator
+ * Solution: AI-Enabled Document Generator
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -12,7 +12,7 @@ export const solution = {
   tagline: null,
   /** Glyph id; the component owns the actual icon. */
   icon: "file-output",
-  summary: "Automated generation of contracts, proposals, reports, and letters — assembled from templates, your data, and AI drafting, with human review built in.",
+  summary: "Automated generation of contracts, proposals, reports, and letters: assembled from templates, your data, and AI drafting, with human review built in.",
   categoryId: "ai",
   order: 2,
   status: "outline",
@@ -35,7 +35,7 @@ export const solution = {
   ],
   seo: {
     title: "AI-Enabled Document Generator",
-    description: "Automated generation of contracts, proposals, reports, and letters — assembled from templates, your data, and AI drafting, with human review built in."
+    description: "Automated generation of contracts, proposals, reports, and letters: assembled from templates, your data, and AI drafting, with human review built in."
   }
 };
 

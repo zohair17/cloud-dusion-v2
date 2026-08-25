@@ -1,5 +1,5 @@
 /**
- * Industry — Transportation
+ * Industry: Transportation
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.

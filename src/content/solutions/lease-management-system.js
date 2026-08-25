@@ -1,17 +1,17 @@
 /**
- * Solution — Lease Management System
+ * Solution: Lease Management System
  *
  * REFERENCE RECORD. This file is fully authored and is the worked example of the
- * solution content contract — copy its shape when filling in the other solutions.
+ * solution content contract, copy its shape when filling in the other solutions.
  */
 
 /** @type {import("@/modules/solutions/domain/solution.schema").SolutionRecord} */
 export const solution = {
   slug: "lease-management-system",
   title: "Lease Management System",
-  tagline: "Every lease, every clause, every date — managed",
+  tagline: "Every lease, every clause, every date: managed",
   summary:
-    "A centralized lease platform with AI abstraction — critical dates, obligations, and financials extracted from lease documents and turned into alerts and reporting.",
+    "A centralized lease platform with AI abstraction: critical dates, obligations, and financials extracted from lease documents and turned into alerts and reporting.",
   categoryId: "real-estate",
   order: 1,
   status: "published",
@@ -26,7 +26,7 @@ export const solution = {
     eyebrow: "Business Challenges",
     heading: "What it replaces",
     items: [
-      "Renewal, notice, and escalation dates tracked in spreadsheets — or memories.",
+      "Renewal, notice, and escalation dates tracked in spreadsheets, or memories.",
       "Lease abstracts produced manually at high cost and inconsistent quality.",
       "No portfolio-wide view of obligations, options, and exposure.",
       "Audit and diligence requests requiring weeks of document review.",
@@ -35,7 +35,7 @@ export const solution = {
 
   overview: [
     "CFG's Lease Management System creates a single source of truth for the lease portfolio: documents in a governed repository, key terms abstracted into structured data, and critical dates driving automated alerts to the right owners.",
-    "AI abstraction reads leases and amendments — parties, terms, rents, escalations, options, obligations — with human verification workflows, cutting abstraction time dramatically while raising consistency.",
+    "AI abstraction reads leases and amendments (parties, terms, rents, escalations, options, obligations) with human verification workflows, cutting abstraction time dramatically while raising consistency.",
   ],
 
   howItWorks: {
@@ -108,7 +108,7 @@ export const solution = {
   seo: {
     title: "Lease Management System",
     description:
-      "A centralized lease platform with AI abstraction — critical dates, obligations, and financials extracted from lease documents and turned into alerts and reporting.",
+      "A centralized lease platform with AI abstraction: critical dates, obligations, and financials extracted from lease documents and turned into alerts and reporting.",
   },
 };
 

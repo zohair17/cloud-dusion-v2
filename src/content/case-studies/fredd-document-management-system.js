@@ -1,5 +1,5 @@
 /**
- * Case study — FREDD Document Management System
+ * Case study: FREDD Document Management System
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -9,6 +9,8 @@
 export const caseStudy = {
   slug: "fredd-document-management-system",
   title: "FREDD Document Management System",
+  /** The photograph its tile is set on. */
+  image: "/asset/case-studies/document-management-system.webp",
   sectorLabel: "Real Estate",
   industrySlug: "real-estate",
   order: 2,
@@ -29,7 +31,7 @@ export const caseStudy = {
     "discovery-session"
   ],
   seo: {
-    title: "FREDD Document Management System — Case Study",
+    title: "FREDD Document Management System Case Study",
     description: "An enterprise document management system bringing structure, governance, and searchability to a high-volume real estate document estate."
   }
 };
