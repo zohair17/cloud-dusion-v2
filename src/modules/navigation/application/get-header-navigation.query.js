@@ -2,7 +2,6 @@ import { primaryNavigation } from "@/shared/config/navigation.config";
 import { createNavItem } from "../domain/nav-item";
 import { getGroupedServices } from "@/modules/services";
 import { getCategorizedSolutions } from "@/modules/solutions";
-import { getIndustries } from "@/modules/industries";
 
 /**
  * Header navigation with mega-menu panels.
@@ -26,13 +25,6 @@ const PANELS = {
       title: category.title,
       links: category.solutions.map((s) => ({ id: s.slug, label: s.title, href: s.href })),
     })),
-  industries: () => [
-    {
-      id: "all",
-      title: null,
-      links: getIndustries().map((i) => ({ id: i.slug, label: i.title, href: i.href, description: i.summary })),
-    },
-  ],
 };
 
 export function getHeaderNavigation() {

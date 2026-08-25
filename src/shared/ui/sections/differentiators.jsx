@@ -125,7 +125,7 @@ function useArcGeometry(width) {
       radius,
       step,
       centerY: top + radius,
-      height: Math.round(bottom + 18),
+      height: Math.round(bottom - cardH * 0.1),
       cx: width / 2,
     };
   }, [width]);
@@ -428,7 +428,7 @@ export function Differentiators({ section }) {
           </ul>
         </div>
 
-        <div className="mt-6 flex items-center justify-center gap-4">
+        <div className="relative z-20 -mt-[clamp(3rem,9vw,7rem)] flex items-center justify-center gap-4">
           <PagerButton
             label="Previous"
             disabled={active === 0}
