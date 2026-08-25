@@ -34,6 +34,25 @@ export function ContactHero({ page, image }) {
     <section className="pb-2 pt-6 sm:pt-8">
       <Container size="wide">
         <div className="relative overflow-hidden rounded-[2rem] bg-white shadow-[0_40px_100px_-56px_rgb(53_51_205/0.45)] ring-1 ring-brand-600/25 sm:rounded-[2.5rem]">
+          {/*
+            Below the split there is no room to flank, so the photograph leads
+            instead: a band across the top of the card, fading into the white
+            the copy is set on so the two still read as one surface.
+          */}
+          <div className="relative h-52 w-full overflow-hidden sm:h-72 lg:hidden">
+            <motion.div
+              className="absolute inset-0"
+              animate={reduced ? undefined : { scale: [1, 1.08, 1] }}
+              transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <Image src={image} alt="" fill sizes="100vw" priority className="object-cover" />
+            </motion.div>
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_45%,rgb(255_255_255/0.7)_78%,#fff_100%)]"
+            />
+          </div>
+
           {/* The photograph, holding the right of the card. */}
           <div className="absolute inset-y-0 right-0 hidden w-[50%] lg:block">
             <motion.div
@@ -89,7 +108,7 @@ export function ContactHero({ page, image }) {
             </div>
           )}
 
-          <div className="relative px-7 py-12 sm:px-12 sm:py-16 lg:w-[52%] lg:py-20 lg:pl-16 lg:pr-8">
+          <div className="relative px-7 pb-12 pt-8 sm:px-12 sm:pb-16 sm:pt-10 lg:w-[52%] lg:py-20 lg:pl-16 lg:pr-8">
             <motion.p
               initial={reduced ? false : { opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
