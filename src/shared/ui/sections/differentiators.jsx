@@ -94,7 +94,7 @@ function useArcGeometry(width) {
         ? clamp(width * 0.34, 210, 270)
         : clamp(width * 0.2, 220, 300);
 
-    const cardH = cardW * 1.5;
+    const cardH = cardW * 1.3;
     const s = step * RAD;
     const radius = (cardW * (1 + NEIGHBOUR_GAP)) / Math.sin(s);
 
@@ -176,11 +176,11 @@ function ArcCard({ item, angle, geo, rotation, onSelect }) {
       >
         <div className="relative flex h-full w-full flex-col overflow-hidden rounded-[1.35rem] bg-[linear-gradient(to_bottom,#f7f8fd_0%,#eef0fa_24%,#c9cbdd_44%,#565a76_64%,#20212f_82%,#15161f_100%)]">
           {/* The picture of the card, struck at the light end of the wash. */}
-          <div className="flex h-[42%] shrink-0 items-center justify-center pt-[6%]">
+          <div className="flex h-[38%] shrink-0 items-center justify-center pt-[4%]">
             <Icon
               aria-hidden="true"
               strokeWidth={1.4}
-              className="h-[3.25rem] w-[3.25rem] text-brand-600 transition-transform duration-700 ease-out group-hover:scale-105"
+              className="h-[4.75rem] w-[4.75rem] text-brand-600 transition-transform duration-700 ease-out group-hover:scale-105"
             />
           </div>
 
@@ -409,7 +409,7 @@ export function Differentiators({ section }) {
             that number is measured against the page, and the card climbs over
             the sticky header on the way past.
           */
-          className="relative isolate mt-10 cursor-grab select-none overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-500 active:cursor-grabbing"
+          className="relative isolate left-1/2 mt-10 w-screen -translate-x-1/2 cursor-grab select-none overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-500 active:cursor-grabbing"
         >
           <ul className="absolute inset-0">
             {items.map((item, index) => (
