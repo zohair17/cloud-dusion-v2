@@ -1,17 +1,20 @@
 /**
  * Solution: Lease Management System
  *
- * REFERENCE RECORD. This file is fully authored and is the worked example of the
- * solution content contract, copy its shape when filling in the other solutions.
+ * Long-form section content is authored here. `status` stays "outline" until every
+ * required section is filled, which is what `npm run content:check` reports on.
  */
 
 /** @type {import("@/modules/solutions/domain/solution.schema").SolutionRecord} */
 export const solution = {
   slug: "lease-management-system",
   title: "Lease Management System",
-  tagline: "Every lease, every clause, every date: managed",
-  summary:
-    "A centralized lease platform with AI abstraction: critical dates, obligations, and financials extracted from lease documents and turned into alerts and reporting.",
+  tagline: "Every lease, every clause, every date, managed",
+  /** Glyph id; the component owns the actual icon. */
+  icon: undefined,
+  /** Panel photograph, used by the index rail and the detail hero. */
+  image: "/asset/solutions/lease-management-system.webp",
+  summary: "A centralized lease platform with AI abstraction: critical dates, obligations, and financials extracted from lease documents and turned into alerts and reporting.",
   categoryId: "real-estate",
   order: 1,
   status: "published",
@@ -35,7 +38,7 @@ export const solution = {
 
   overview: [
     "CFG's Lease Management System creates a single source of truth for the lease portfolio: documents in a governed repository, key terms abstracted into structured data, and critical dates driving automated alerts to the right owners.",
-    "AI abstraction reads leases and amendments (parties, terms, rents, escalations, options, obligations) with human verification workflows, cutting abstraction time dramatically while raising consistency.",
+    "AI abstraction reads leases and amendments, parties, terms, rents, escalations, options, obligations, with human verification workflows, cutting abstraction time dramatically while raising consistency.",
   ],
 
   howItWorks: {
@@ -45,8 +48,7 @@ export const solution = {
       {
         step: "01",
         title: "Centralize",
-        description:
-          "Leases, amendments, and correspondence come into one governed repository linked by property and party.",
+        description: "Leases, amendments, and correspondence come into one governed repository linked by property and party.",
       },
       {
         step: "02",
@@ -75,11 +77,18 @@ export const solution = {
     "Audit-ready document trails",
   ],
 
-  aiCapabilities: [
-    "AI lease abstraction with human verification",
-    "Amendment detection and record updating",
-    "Natural-language queries across the portfolio",
-  ],
+  aiCapabilities: {
+    eyebrow: "AI Inside",
+    heading: "AI capabilities",
+    body: "Where intelligence does the heavy lifting in this solution.",
+    items: [
+      "AI lease abstraction with human verification",
+      "Amendment detection and record updating",
+      "Natural-language queries across the portfolio",
+    ],
+  },
+
+  architecture: null,
 
   benefits: [
     "No missed renewals, notices, or escalations",
@@ -96,19 +105,43 @@ export const solution = {
     "Lease accounting data feeds",
   ],
 
-  technologies: ["sharepoint-online", "azure-openai", "microsoft-syntex", "power-apps", "power-automate", "power-bi"],
+  technologies: [
+    "sharepoint-online",
+    "azure-openai",
+    "microsoft-syntex",
+    "power-apps",
+    "power-automate",
+    "power-bi",
+  ],
 
-  industries: ["real-estate", "financial-services", "transportation"],
-  relatedServices: ["agentic-ai-automation", "microsoft-syntex", "data-business-intelligence"],
-  relatedSolutions: ["deal-management-system", "contract-management-system", "tenant-portal"],
-  relatedCaseStudies: ["rel-ai-lease-abstractor"],
+  industries: [
+    "real-estate",
+    "financial-services",
+    "transportation",
+  ],
 
-  ctas: ["request-demo", "talk-to-expert"],
+  relatedServices: [
+    "agentic-ai-automation",
+    "microsoft-syntex",
+    "power-platform-solutions",
+  ],
+
+  relatedSolutions: [
+    "deal-management-system",
+    "contract-management-system",
+    "reit-analytics-dashboard",
+  ],
+
+  relatedCaseStudies: [],
+
+  ctas: [
+    "request-demo",
+    "talk-to-expert",
+  ],
 
   seo: {
     title: "Lease Management System",
-    description:
-      "A centralized lease platform with AI abstraction: critical dates, obligations, and financials extracted from lease documents and turned into alerts and reporting.",
+    description: "A centralized lease platform with AI abstraction: critical dates, obligations, and financials extracted from lease documents and turned into alerts and reporting.",
   },
 };
 
