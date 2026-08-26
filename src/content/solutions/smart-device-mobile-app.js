@@ -105,9 +105,11 @@ export const solution = {
   ],
 
   technologies: [
+    "azure-iot-hub",
     "dotnet-maui",
     "react-native",
     "azure-functions",
+    "azure-stream-analytics",
     "power-bi",
   ],
 

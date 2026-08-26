@@ -108,6 +108,7 @@ export const solution = {
     "power-automate",
     "azure-openai",
     "sharepoint-online",
+    "sharepoint-esignature",
     "dataverse",
   ],
 

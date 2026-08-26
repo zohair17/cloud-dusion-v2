@@ -81,7 +81,7 @@ export const service = {
       { title: "Threat Protection", description: "Detection and response across identity, email, endpoints, and cloud apps." },
       { title: "Compliance Management", description: "Regulatory compliance posture, assessments, and evidence with Purview." },
       { title: "Governance", description: "Policies, lifecycle, and controls for Microsoft 365, Power Platform, and AI workloads." },
-      { title: "Cloud Security", description: "Secure Azure architecture across networking, encryption, and posture management." },
+      { title: "Cloud Security", description: "Secure Azure architecture: networking, encryption, posture management." },
       { title: "Security Monitoring", description: "Continuous monitoring and alerting with Microsoft Sentinel." },
       { title: "Infrastructure Security", description: "Hardening and protection for hybrid infrastructure estates." },
     ],
@@ -128,8 +128,8 @@ export const service = {
   ctas: ["talk-to-expert", "request-proposal"],
 
   closing: {
-    heading: "Ready to talk about Data Security & Governance?",
-    body: "Tell us where you are and where you want to be, and we'll bring the architecture, the delivery plan, and the team.",
+    heading: "Ready to talk about Security & Governance?",
+    body: "Tell us where you are and where you want to be: we'll bring the architecture, the delivery plan, and the team.",
     ctas: ["talk-to-expert", "request-proposal", "discovery-session"],
   },
 

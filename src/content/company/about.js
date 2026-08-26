@@ -16,7 +16,7 @@ export const companyProfile = {
 
   intro: [
     "Cloud Fusion Global is an AI-powered Microsoft solutions and digital transformation company. We work at the intersection of four forces reshaping the enterprise: artificial intelligence, the Microsoft technology ecosystem, enterprise software engineering, and the operational transformation they make possible together.",
-    "We are not a reseller, and we are not a generic IT services firm. We are architects and engineers who design and deliver working systems: AI agents that process real documents, platforms that run real portfolios, migrations that move real enterprises. We stay to operate and evolve them.",
+    "We are not a reseller, and we are not a generic IT services firm. We are architects and engineers who design and deliver working systems (AI agents that process real documents, platforms that run real portfolios, migrations that move real enterprises) and stay to operate and evolve them.",
     "Our clients span healthcare, financial services, energy, real estate, and beyond, served through a global delivery model that combines senior architecture, disciplined engineering, and long-term partnership.",
   ],
 

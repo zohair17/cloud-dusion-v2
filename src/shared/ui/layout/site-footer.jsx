@@ -20,7 +20,7 @@ export function SiteFooter({ columns = [] }) {
   const from = siteConfig.copyrightStartYear;
 
   return (
-    <footer className="relative mt-24 border-t border-border/80 pb-10 pt-16 sm:mt-32 sm:pt-20">
+    <footer className="relative mt-24 border-t border-brand-600 pb-10 pt-16 sm:mt-32 sm:pt-20">
       <Container size="wide">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] lg:gap-16">
           <div>
@@ -107,7 +107,7 @@ export function SiteFooter({ columns = [] }) {
           </nav>
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-border/80 pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-brand-600 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-faint">
             © {from === year ? year : `${from}–${year}`} {siteConfig.name}. All rights reserved.
           </p>

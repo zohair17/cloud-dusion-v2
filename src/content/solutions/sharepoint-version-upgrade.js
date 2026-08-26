@@ -99,7 +99,9 @@ export const solution = {
   technologies: [
     "sharepoint-server",
     "sharepoint-online",
+    "sharepoint-framework",
     "power-automate",
+    "powershell",
   ],
 
   industries: [

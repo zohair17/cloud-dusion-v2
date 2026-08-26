@@ -83,7 +83,7 @@ export const service = {
   stack: {
     eyebrow: "AI + Microsoft",
     heading: "Where AI meets the Microsoft stack",
-    body: "AI is the fastest-moving differentiator in SaaS. We build AI-native product capabilities such as copilots, document intelligence, semantic search, and automated insights on Azure OpenAI and Azure AI Foundry, with per-tenant data boundaries preserved so intelligence never compromises isolation.",
+    body: "AI is the fastest-moving differentiator in SaaS. We build AI-native product capabilities (copilots, document intelligence, semantic search, automated insights) on Azure OpenAI and Azure AI Foundry, with per-tenant data boundaries preserved so intelligence never compromises isolation.",
   },
 
   outcomes: {
@@ -122,8 +122,8 @@ export const service = {
   ctas: ["talk-to-expert", "request-proposal"],
 
   closing: {
-    heading: "Ready to talk about SaaS Product Development?",
-    body: "Tell us where you are and where you want to be, and we'll bring the architecture, the delivery plan, and the team.",
+    heading: "Ready to talk about SaaS Development?",
+    body: "Tell us where you are and where you want to be: we'll bring the architecture, the delivery plan, and the team.",
     ctas: ["talk-to-expert", "request-proposal", "discovery-session"],
   },
 

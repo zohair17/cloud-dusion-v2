@@ -54,11 +54,12 @@ export function InsightCards({ topics = [], articles, comingSoonLabel }) {
             href: article.isPublished ? article.href : null,
             image: article.image,
             eyebrow: article.topicLabel,
+            /* A piece carries its date and length whether or not it has been
+               written yet; only the footer changes. */
+            dateline: `${DATE.format(new Date(article.publishedAt))} · ${article.readingMinutes} min read`,
             title: article.title,
             summary: article.excerpt,
-            meta: article.isPublished
-              ? `${DATE.format(new Date(article.publishedAt))} · ${article.readingMinutes} min read`
-              : comingSoonLabel,
+            meta: article.isPublished ? null : comingSoonLabel,
           }))}
         />
       </Container>

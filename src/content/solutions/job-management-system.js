@@ -109,6 +109,7 @@ export const solution = {
     "dataverse",
     "power-automate",
     "power-bi",
+    "dynamics-365-business-central",
   ],
 
   industries: [

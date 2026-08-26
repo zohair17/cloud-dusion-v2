@@ -73,7 +73,7 @@ export function PartnerCoverflow({ items = [], label = "Our partners" }) {
         node.style.opacity = spot.opacity.toFixed(3);
         node.style.zIndex = String(spot.depth);
         node.firstChild.style.transform = `rotateY(${spot.angle.toFixed(2)}deg)`;
-        node.firstChild.lastChild.style.opacity = spot.sheen.toFixed(3);
+        node.firstChild.querySelector("[data-sheen]").style.opacity = spot.sheen.toFixed(3);
       });
     };
 
@@ -141,9 +141,27 @@ export function PartnerCoverflow({ items = [], label = "Our partners" }) {
               className="h-auto w-auto max-h-[calc(var(--card-h)*0.58)] max-w-[calc(var(--card-h)*2.1*0.82)] object-contain"
             />
 
+            {/* Where the partner is based, if the record says. */}
+            {item.country ? (
+              <span className="absolute bottom-[7%] right-[6%] inline-flex items-center gap-[clamp(0.2rem,0.5vw,0.5rem)] rounded-pill bg-white/85 px-[clamp(0.35rem,0.8vw,0.7rem)] py-[clamp(0.15rem,0.35vw,0.35rem)] ring-1 ring-black/[0.06] backdrop-blur-sm">
+                <Image
+                  src={`/asset/flags/${item.country.code}.png`}
+                  alt=""
+                  width={80}
+                  height={53}
+                  sizes="1.25rem"
+                  className="h-[clamp(0.5rem,1vw,0.8rem)] w-[clamp(0.75rem,1.5vw,1.2rem)] rounded-[0.15rem] object-cover ring-1 ring-black/10"
+                />
+                <span className="text-[clamp(0.45rem,0.95vw,0.7rem)] font-semibold uppercase leading-none tracking-[0.1em] text-muted">
+                  {item.country.name}
+                </span>
+              </span>
+            ) : null}
+
             {/* Raking light: the further a card has turned, the darker its face. */}
             <span
               aria-hidden="true"
+              data-sheen
               className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgb(255_255_255/0.55)_0%,rgb(11_11_42/0)_28%,rgb(11_11_42/0.14)_62%,rgb(11_11_42/0.6)_100%)] opacity-0"
             />
           </div>

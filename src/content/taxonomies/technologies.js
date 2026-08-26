@@ -14,7 +14,7 @@ export const technologies = [
   { id: "ai-builder", label: "AI Builder", layer: "ai" },
   { id: "azure-ai-vision", label: "Azure AI Vision", layer: "ai" },
 
-  { id: "azure", label: "Microsoft Azure", layer: "cloud" },
+  { id: "azure", label: "Azure", layer: "cloud" },
   { id: "azure-integration-services", label: "Azure Integration Services", layer: "cloud" },
   { id: "azure-iot", label: "Azure IoT", layer: "cloud" },
   { id: "microsoft-fabric", label: "Microsoft Fabric", layer: "cloud" },
@@ -39,7 +39,7 @@ export const technologies = [
   { id: "microsoft-graph", label: "Microsoft Graph", layer: "workplace" },
   { id: "sharepoint-server", label: "SharePoint Server", layer: "workplace" },
   { id: "sharepoint-premium", label: "SharePoint Premium", layer: "workplace" },
-  { id: "sharepoint-framework", label: "SharePoint Framework", layer: "workplace" },
+  { id: "sharepoint-framework", label: "SharePoint Framework (SPFx)", layer: "workplace" },
   { id: "exchange-online", label: "Exchange Online", layer: "workplace" },
   { id: "microsoft-viva", label: "Microsoft Viva", layer: "workplace" },
   { id: "microsoft-defender", label: "Microsoft Defender", layer: "workplace" },
@@ -63,6 +63,32 @@ export const technologies = [
   { id: "flutter", label: "Flutter", layer: "applications" },
   { id: "swift", label: "Swift", layer: "applications" },
   { id: "kotlin", label: "Kotlin", layer: "applications" },
+  /*
+   * Platform components, runtimes, and delivery tooling. Solutions and case
+   * studies name what the work was actually built with, and these are not
+   * products in the four-layer stack, so they carry no layer and never appear
+   * in the homepage stack diagram.
+   */
+  { id: "sharepoint-esignature", label: "SharePoint eSignature", layer: null },
+  { id: "dynamics-365-business-central", label: "Dynamics 365 Business Central", layer: null },
+  { id: "azure-logic-apps", label: "Azure Logic Apps", layer: null },
+  { id: "azure-service-bus", label: "Azure Service Bus", layer: null },
+  { id: "api-management", label: "API Management", layer: null },
+  { id: "azure-iot-hub", label: "Azure IoT Hub", layer: null },
+  { id: "azure-stream-analytics", label: "Azure Stream Analytics", layer: null },
+  { id: "azure-ai-speech", label: "Azure AI Speech", layer: null },
+  { id: "core-ml-ml-kit", label: "Core ML / ML Kit", layer: null },
+  { id: "edi-api-integrations", label: "EDI / API integrations", layer: null },
+  { id: "open-weight-llms", label: "Open-weight LLMs", layer: null },
+  { id: "kubernetes", label: "Kubernetes", layer: null },
+  { id: "vector-databases", label: "Vector databases", layer: null },
+  { id: "azure-stack-private-cloud", label: "Azure Stack / private cloud", layer: null },
+  { id: "iis", label: "IIS", layer: null },
+  { id: "sql-server", label: "SQL Server", layer: null },
+  { id: "windows-server", label: "Windows Server", layer: null },
+  { id: "application-gateway-waf", label: "Application Gateway / WAF", layer: null },
+  { id: "powershell", label: "PowerShell", layer: null },
+  { id: "migration-tooling", label: "Migration tooling", layer: null },
 ];
 
 export const technologyLayers = [

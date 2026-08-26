@@ -12,9 +12,9 @@
  * @property {string}   client         Anonymised client descriptor.
  * @property {string}   summary
  * @property {"outline"|"published"} status
- * @property {{ eyebrow: string?, heading: string, body: string }?} challenge
+ * @property {string?}  challenge      Where it started. Section furniture lives in _detail.js.
  * @property {Array<{ step: string, description: string }>} approach
- * @property {{ heading: string, body: string }?} solution
+ * @property {string?}  solution       What was built.
  * @property {string[]} outcomes
  * @property {string?}  metricsNote    Placeholder used while metrics await client approval.
  * @property {string[]} technologies

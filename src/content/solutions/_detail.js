@@ -42,7 +42,7 @@ export const solutionDetailSections = {
   closing: {
     /** `{title}` is replaced with the solution's own name. */
     heading: "See {title} in your context",
-    body: "Bring us your documents, workflows, or portfolio, and we'll walk through exactly how this solution would work in your environment.",
+    body: "Bring us your documents, workflows, or portfolio: we'll walk through exactly how this solution would work in your environment.",
     ctas: ["talk-to-expert", "request-proposal", "discovery-session"],
   },
 };

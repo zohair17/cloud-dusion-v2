@@ -33,7 +33,7 @@ export const service = {
     heading: "Business challenges we solve",
     items: [
       "Critical roles open for months while roadmap commitments slip.",
-      "Specialist skills in Agentic AI, Azure, SPFx, and Power Platform too scarce or costly to hire locally.",
+      "Specialist skills (Agentic AI, Azure, SPFx, Power Platform) too scarce or costly to hire locally.",
       "Project peaks that don't justify permanent headcount.",
       "Vendor engagements that deliver bodies, not accountable engineering.",
       "Ramp-up friction that burns months before new people contribute.",
@@ -73,7 +73,7 @@ export const service = {
     items: [
       { title: "Nearshore Staff Augmentation", description: "Engineers in adjacent time zones for maximum real-time collaboration." },
       { title: "Offshore Staff Augmentation", description: "Cost-efficient scale with structured overlap and delivery discipline." },
-      { title: "Dedicated Development Teams", description: "Complete, stable teams across engineering, QA, and leadership, owning a workstream end-to-end." },
+      { title: "Dedicated Development Teams", description: "Complete, stable teams (engineering, QA, and leadership) owning a workstream end-to-end." },
       { title: "Project-Based Resource Augmentation", description: "Specialists embedded for the duration of a defined project or initiative." },
       { title: "On-Demand Resource Scaling", description: "Rapid capacity changes as priorities and workloads shift." },
     ],
@@ -82,7 +82,7 @@ export const service = {
   stack: {
     eyebrow: "AI + Microsoft",
     heading: "Where AI meets the Microsoft stack",
-    body: "The scarcest skills today sit at the intersection of AI and Microsoft technologies. CFG's bench is built there, with engineers fluent in Azure OpenAI, AI Foundry, Copilot Studio, and the Microsoft stack, so augmentation brings not just capacity, but the capabilities your AI roadmap depends on.",
+    body: "The scarcest skills today sit at the intersection of AI and Microsoft technologies. CFG's bench is built there (engineers fluent in Azure OpenAI, AI Foundry, Copilot Studio, and the Microsoft stack) so augmentation brings not just capacity, but the capabilities your AI roadmap depends on.",
   },
 
   outcomes: {
@@ -120,8 +120,8 @@ export const service = {
   ctas: ["talk-to-expert", "request-proposal"],
 
   closing: {
-    heading: "Ready to talk about IT Staff Augmentation?",
-    body: "Tell us where you are and where you want to be, and we'll bring the architecture, the delivery plan, and the team.",
+    heading: "Ready to talk about Staff Augmentation?",
+    body: "Tell us where you are and where you want to be: we'll bring the architecture, the delivery plan, and the team.",
     ctas: ["talk-to-expert", "request-proposal", "discovery-session"],
   },
 

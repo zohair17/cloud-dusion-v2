@@ -98,6 +98,10 @@ export const solution = {
 
   technologies: [
     "sharepoint-server",
+    "iis",
+    "sql-server",
+    "windows-server",
+    "application-gateway-waf",
   ],
 
   industries: [

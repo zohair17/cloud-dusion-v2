@@ -25,7 +25,7 @@ export const service = {
 
   intro: [
     "Packaged software fits average businesses. When your processes, data, or customer experience are a competitive advantage, custom software is how you press it: systems shaped exactly to how you operate, integrated with everything you run, and able to evolve as you do.",
-    "Cloud Fusion Global engineers custom software with enterprise discipline: clear architecture, secure-by-design implementation, automated testing, and cloud-native deployment on Azure. And because we are an AI-first company, intelligence such as search, extraction, assistance, and prediction is designed into applications rather than bolted on.",
+    "Cloud Fusion Global engineers custom software with enterprise discipline: clear architecture, secure-by-design implementation, automated testing, and cloud-native deployment on Azure. And because we are an AI-first company, intelligence (search, extraction, assistance, prediction) is designed into applications rather than bolted on.",
   ],
 
   challenges: {
@@ -62,7 +62,7 @@ export const service = {
       {
         title: "Design intelligence in",
         description:
-          "AI capabilities such as semantic search, document understanding, and copilots, architected into the product where they create value.",
+          "AI capabilities (semantic search, document understanding, copilots) architected into the product where they create value.",
       },
     ],
   },
@@ -127,8 +127,8 @@ export const service = {
   ctas: ["talk-to-expert", "request-proposal"],
 
   closing: {
-    heading: "Ready to talk about Custom Software Development?",
-    body: "Tell us where you are and where you want to be, and we'll bring the architecture, the delivery plan, and the team.",
+    heading: "Ready to talk about Custom Software?",
+    body: "Tell us where you are and where you want to be: we'll bring the architecture, the delivery plan, and the team.",
     ctas: ["talk-to-expert", "request-proposal", "discovery-session"],
   },
 

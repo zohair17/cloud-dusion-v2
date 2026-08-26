@@ -73,7 +73,7 @@ export const service = {
     items: [
       {
         title: "Generative AI Development",
-        description: "Custom generative applications for drafting, summarization, and transformation, built for your use cases.",
+        description: "Custom generative applications (drafting, summarization, transformation) built for your use cases.",
       },
       {
         title: "LLM Implementation",
@@ -160,7 +160,7 @@ export const service = {
 
   closing: {
     heading: "Ready to talk about Generative AI?",
-    body: "Tell us where you are and where you want to be, and we'll bring the architecture, the delivery plan, and the team.",
+    body: "Tell us where you are and where you want to be: we'll bring the architecture, the delivery plan, and the team.",
     ctas: ["talk-to-expert", "request-proposal", "discovery-session"],
   },
 

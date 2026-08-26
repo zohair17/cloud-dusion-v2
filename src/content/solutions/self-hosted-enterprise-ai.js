@@ -140,7 +140,11 @@ export const solution = {
 
   technologies: [
     "azure-ai-foundry",
+    "open-weight-llms",
+    "kubernetes",
+    "vector-databases",
     "microsoft-entra",
+    "azure-stack-private-cloud",
   ],
 
   industries: [

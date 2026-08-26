@@ -15,7 +15,7 @@ export const insightsPage = {
   comingSoonLabel: "Full article coming soon",
   closingCta: {
     heading: "Want these conversations directly?",
-    body: "The best insights happen in working sessions. Bring your questions about AI, Microsoft, or transformation, and we'll bring the delivery experience.",
+    body: "The best insights happen in working sessions. Bring your questions about AI, Microsoft, or transformation: we'll bring the delivery experience.",
     /* The intent is the standard one; only the wording is specific to this page. */
     ctas: [
       { intent: "talk-to-expert", label: "Start a Conversation" }

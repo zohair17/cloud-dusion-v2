@@ -127,7 +127,7 @@ export function SolutionHero({ solution, trail = [] }) {
                 initial={reduced ? false : { opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="mt-5 max-w-2xl font-display text-lg font-medium tracking-tight text-brand-600 sm:text-xl"
+                className="mt-5 max-w-3xl font-display text-lg font-medium tracking-tight text-brand-600 sm:text-xl"
               >
                 {solution.tagline}
               </motion.p>
@@ -137,7 +137,7 @@ export function SolutionHero({ solution, trail = [] }) {
               initial={reduced ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.58 }}
-              className="mt-5 max-w-2xl text-[0.9375rem] leading-[1.75] text-muted"
+              className="mt-5 max-w-3xl text-[0.9375rem] leading-[1.75] text-muted"
             >
               {solution.summary}
             </motion.p>
@@ -282,78 +282,58 @@ export function SolutionOverview({ paragraphs = [] }) {
 /* -------------------------------------------------------------- how it works */
 
 /**
- * The mechanism, as a chain.
+ * The mechanism, as a stair.
  *
- * The nodes sit on one rail and the rail fills as the section is read, so the
- * sequence is legible as a sequence rather than as four cards that happen to be
- * numbered. Below the desktop breakpoint the rail turns vertical, because a
- * horizontal chain on a phone is either unreadable or a scrollbar.
+ * Each step is set one tread further in than the one before it, so the sequence
+ * reads as a descent rather than as a row of cards that happen to be numbered.
+ * The indent stops after the fifth tread: a solution with nine steps would
+ * otherwise walk its last one off the margin.
  */
 export function SolutionHowItWorks({ section }) {
-  const scope = useGsap(({ reduced, root }) => {
-    const fill = root?.querySelector("[data-fill]");
-    if (!fill) return;
-
-    if (reduced) {
-      gsap.set(fill, { scaleX: 1, scaleY: 1 });
-      return;
-    }
-
-    gsap.fromTo(
-      fill,
-      { scaleX: 0, scaleY: 0 },
-      {
-        scaleX: 1,
-        scaleY: 1,
-        ease: "none",
-        scrollTrigger: { trigger: root, start: "top 72%", end: "bottom 62%", scrub: 0.6 },
-      },
-    );
-  }, [section]);
-
   if (!section) return null;
 
   return (
-    <section ref={scope} className="section-y">
+    <section className="section-y">
       <Container size="wide">
         <Head eyebrow={section.eyebrow} heading={section.heading} />
 
-        <div className="relative mt-12 lg:mt-16">
-          {/* The rail, and the part of it that has been read. */}
-          <span
-            aria-hidden="true"
-            className="absolute left-[1.375rem] top-3 h-[calc(100%-1.5rem)] w-px bg-black/[0.09] lg:left-0 lg:top-[1.375rem] lg:h-px lg:w-full"
-          />
-          <span
-            data-fill
-            aria-hidden="true"
-            className="absolute left-[1.375rem] top-3 h-[calc(100%-1.5rem)] w-px origin-top bg-brand-600 lg:left-0 lg:top-[1.375rem] lg:h-px lg:w-full lg:origin-left"
-          />
-
-          <ol className="grid gap-9 lg:grid-cols-4 lg:gap-8">
-            {section.steps.map((step, index) => (
-              <motion.li
-                key={step.step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "0px 0px -12% 0px" }}
-                transition={{ duration: 0.6, delay: index * 0.09, ease: EASE }}
-                className="relative flex gap-5 pl-0 lg:block"
-              >
-                <span className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white font-display text-sm font-semibold text-brand-700 ring-1 ring-brand-200">
+        <ol className="mt-11 space-y-3.5 overflow-x-clip lg:mt-14">
+          {section.steps.map((step, index) => (
+            <motion.li
+              key={step.step}
+              initial={{ opacity: 0, x: -22 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "0px 0px -12% 0px" }}
+              transition={{ duration: 0.55, delay: index * 0.08, ease: EASE }}
+              style={{ "--tread": `${Math.min(index, 4) * 2}rem` }}
+              className="lg:ml-[var(--tread)]"
+            >
+              <div className="group relative flex items-start gap-5 overflow-hidden rounded-[1.35rem] bg-white p-5 ring-1 ring-black/[0.06] transition-shadow duration-500 hover:shadow-[0_28px_60px_-46px_rgb(53_51_205/0.75)] sm:gap-7 sm:p-7">
+                {/* The step's own number, large and nearly out of ink. */}
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -right-3 top-1/2 hidden -translate-y-1/2 font-display font-bold leading-none tabular-nums text-brand-600/[0.06] sm:block sm:text-[6rem]"
+                >
                   {step.step}
                 </span>
 
-                <div className="lg:mt-6 lg:pr-6">
+                <span className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-[0.85rem] bg-brand-600 font-display text-sm font-semibold tabular-nums text-white sm:h-[3.25rem] sm:w-[3.25rem] sm:text-base">
+                  <span className="sr-only">Step </span>
+                  {step.step}
+                </span>
+
+                <div className="relative min-w-0">
                   <h3 className="font-display text-lg font-semibold tracking-tight text-foreground sm:text-xl">
                     {step.title}
                   </h3>
-                  <p className="mt-2.5 text-[0.875rem] leading-relaxed text-muted">{step.description}</p>
+                  <p className="mt-2 max-w-2xl text-[0.875rem] leading-relaxed text-muted sm:text-[0.9375rem]">
+                    {step.description}
+                  </p>
                 </div>
-              </motion.li>
-            ))}
-          </ol>
-        </div>
+              </div>
+            </motion.li>
+          ))}
+        </ol>
       </Container>
     </section>
   );
@@ -361,7 +341,13 @@ export function SolutionHowItWorks({ section }) {
 
 /* --------------------------------------------------------------- spec sheet */
 
-/** Capabilities, set as a spec sheet rather than as cards. */
+/**
+ * Capabilities, set as a board.
+ *
+ * Each tile draws its own rule as it arrives, so the board fills in rather than
+ * simply appearing. A capability list has no order to it, so the tiles are all
+ * one size and carry their count quietly.
+ */
 export function SolutionCapabilities({ section, items = [] }) {
   if (!items.length) return null;
 
@@ -370,34 +356,53 @@ export function SolutionCapabilities({ section, items = [] }) {
       <Container size="wide">
         <Head eyebrow={section.eyebrow} heading={section.heading} />
 
-        <RevealGroup
-          as="ul"
-          stagger={0.06}
-          className="mt-10 overflow-hidden rounded-[1.5rem] ring-1 ring-black/[0.07] sm:grid sm:grid-cols-2"
-        >
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3">
           {items.map((item, index) => (
-            <RevealItem
+            <motion.li
               key={item}
-              as="li"
-              y={14}
-              className={cn(
-                "flex items-start gap-4 border-b border-border bg-white px-6 py-5 last:border-b-0",
-                index % 2 === 0 && "sm:border-r",
-                // The last row in each column keeps its own edge clean.
-                index >= items.length - (items.length % 2 === 0 ? 2 : 1) && "sm:border-b-0",
-              )}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+              variants={{
+                hidden: { opacity: 0, y: 16 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.5, delay: (index % 3) * 0.08, ease: EASE },
+                },
+              }}
+              className="relative overflow-hidden rounded-[1.2rem] bg-white p-6 ring-1 ring-black/[0.06] transition-shadow duration-500 hover:shadow-[0_26px_56px_-46px_rgb(53_51_205/0.8)]"
             >
-              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-brand-50 text-brand-600">
-                <Check className="h-3.5 w-3.5" strokeWidth={2.4} aria-hidden="true" />
+              {/* The rule is driven by the tile's own variant: one observer for
+                  the tile is enough for both. */}
+              <motion.span
+                aria-hidden="true"
+                variants={{
+                  hidden: { scaleX: 0 },
+                  visible: {
+                    scaleX: 1,
+                    transition: { duration: 0.7, delay: 0.12 + (index % 3) * 0.08, ease: EASE },
+                  },
+                }}
+                className="absolute inset-x-6 top-0 block h-[2px] origin-left bg-brand-600"
+              />
+
+              <span className="flex items-center gap-2.5">
+                <Check className="h-3.5 w-3.5 text-brand-600" strokeWidth={2.6} aria-hidden="true" />
+                <span className="font-display text-[0.6875rem] font-semibold tabular-nums tracking-[0.16em] text-faint">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
               </span>
-              <span className="text-[0.9375rem] leading-relaxed text-foreground">{item}</span>
-            </RevealItem>
+
+              <p className="mt-3.5 text-[0.9375rem] leading-relaxed text-foreground">{item}</p>
+            </motion.li>
           ))}
-        </RevealGroup>
+        </ul>
       </Container>
     </section>
   );
 }
+
 
 /* --------------------------------------------------------------- ai + stack */
 
@@ -493,56 +498,79 @@ export function SolutionArchitecture({ section }) {
 
 /* ------------------------------------------------------- outcomes and stack */
 
-/** What changes, and where it fits, read as two ledgers side by side. */
+/**
+ * What changes, and where it fits.
+ *
+ * Two sections rather than two columns, because they are two different kinds of
+ * statement. A benefit is a claim, so it gets a tile with its own count set
+ * behind it; a use case is a place, so it gets a ruled line and an arrow.
+ */
 export function SolutionOutcomes({ benefits, useCases, benefitItems = [], useCaseItems = [] }) {
   if (!benefitItems.length && !useCaseItems.length) return null;
 
   return (
-    <section className="section-y">
-      <Container size="wide">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-          {benefitItems.length ? (
-            <div>
-              <Head eyebrow={benefits.eyebrow} heading={benefits.heading} />
-              <RevealGroup as="ol" stagger={0.07} className="mt-8">
-                {benefitItems.map((item, index) => (
-                  <RevealItem
-                    key={item}
-                    as="li"
-                    y={14}
-                    className="flex items-baseline gap-5 border-t border-border py-5"
-                  >
-                    <span className="font-display text-lg font-semibold tabular-nums text-brand-600/35">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className="font-display text-[0.9375rem] font-medium leading-relaxed tracking-tight text-foreground sm:text-base">
-                      {item}
-                    </span>
-                  </RevealItem>
-                ))}
-              </RevealGroup>
-            </div>
-          ) : null}
+    <>
+      {benefitItems.length ? (
+        <section className="section-y">
+          <Container size="wide">
+            <Head eyebrow={benefits.eyebrow} heading={benefits.heading} />
 
-          {useCaseItems.length ? (
-            <div>
-              <Head eyebrow={useCases.eyebrow} heading={useCases.heading} />
-              <RevealGroup as="ul" stagger={0.07} className="mt-8 space-y-3">
-                {useCaseItems.map((item) => (
-                  <RevealItem key={item} as="li" y={14}>
-                    <p className="rounded-[1.1rem] bg-surface px-5 py-4 text-[0.9375rem] leading-relaxed text-foreground ring-1 ring-black/[0.05]">
-                      {item}
-                    </p>
-                  </RevealItem>
-                ))}
-              </RevealGroup>
-            </div>
-          ) : null}
-        </div>
-      </Container>
-    </section>
+            <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3">
+              {benefitItems.map((item, index) => (
+                <motion.li
+                  key={item}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+                  transition={{ duration: 0.5, delay: (index % 3) * 0.08, ease: EASE }}
+                  className="relative overflow-hidden rounded-[1.2rem] bg-surface p-6 ring-1 ring-black/[0.05]"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -right-1 -top-3 font-display text-[4.25rem] font-bold leading-none tabular-nums text-brand-600/[0.08]"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <p className="relative font-display text-[0.9375rem] font-medium leading-[1.6] tracking-tight text-foreground sm:text-base">
+                    {item}
+                  </p>
+                </motion.li>
+              ))}
+            </ul>
+          </Container>
+        </section>
+      ) : null}
+
+      {useCaseItems.length ? (
+        <section className="section-y">
+          <Container size="wide">
+            <Head eyebrow={useCases.eyebrow} heading={useCases.heading} />
+
+            <ul className="mt-9 grid gap-x-14 lg:mt-11 lg:grid-cols-2">
+              {useCaseItems.map((item, index) => (
+                <motion.li
+                  key={item}
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+                  transition={{ duration: 0.45, delay: (index % 2) * 0.07, ease: EASE }}
+                  className="group flex items-start gap-4 border-t border-border py-5"
+                >
+                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-600 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white">
+                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </span>
+                  <span className="text-[0.9375rem] leading-relaxed text-foreground">{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </Container>
+        </section>
+      ) : null}
+    </>
   );
 }
+
 
 /** The Microsoft stack this is built on. */
 export function SolutionStack({ section, technologies = [] }) {
@@ -593,9 +621,9 @@ export function SolutionCrossLinks({ sections, industries = [], services = [], s
                       </span>
                     ) : null}
                     <span className="min-w-0">
-                      <span className="block font-display text-base font-semibold tracking-tight text-foreground">
+                      <h3 className="font-display text-base font-semibold tracking-tight text-foreground">
                         {industry.title}
-                      </span>
+                      </h3>
                       <span className="mt-1.5 block text-[0.8125rem] leading-relaxed text-muted">
                         {industry.summary}
                       </span>
@@ -637,7 +665,12 @@ export function SolutionCrossLinks({ sections, industries = [], services = [], s
                   <RevealGroup as="ul" stagger={0.06} className="mt-4">
                     {solutions.map((solution) => (
                       <RevealItem key={solution.slug} as="li" y={12} className="border-t border-border">
-                        <CrossRow href={solution.href} title={solution.title} summary={solution.summary} />
+                        <CrossRow
+                          href={solution.href}
+                          title={solution.title}
+                          summary={solution.summary}
+                          category={solution.categoryTitle}
+                        />
                       </RevealItem>
                     ))}
                   </RevealGroup>
@@ -651,14 +684,21 @@ export function SolutionCrossLinks({ sections, industries = [], services = [], s
   );
 }
 
-function CrossRow({ href, title, summary }) {
+function CrossRow({ href, title, summary, category }) {
   return (
     <Link href={href} className="group flex items-start gap-4 py-5">
       <span className="min-w-0 flex-1">
-        <span className="block font-display text-base font-semibold tracking-tight text-foreground transition-colors group-hover:text-brand-700">
+        <h3 className="font-display text-base font-semibold tracking-tight text-foreground transition-colors group-hover:text-brand-700">
           {title}
-        </span>
+        </h3>
         <span className="mt-1.5 block text-[0.8125rem] leading-relaxed text-muted">{summary}</span>
+
+        {/* A solution belongs to a family; a service does not, so this is optional. */}
+        {category ? (
+          <span className="mt-2.5 inline-flex items-center rounded-pill border border-border bg-surface px-2.5 py-1 text-[0.625rem] font-semibold uppercase tracking-[0.12em] text-muted">
+            {category}
+          </span>
+        ) : null}
       </span>
       <span className="mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border text-brand-600 transition-colors group-hover:border-brand-600 group-hover:bg-brand-600 group-hover:text-white">
         <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />

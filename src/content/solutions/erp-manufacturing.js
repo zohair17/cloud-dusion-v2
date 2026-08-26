@@ -105,8 +105,10 @@ export const solution = {
   ],
 
   technologies: [
+    "dynamics-365-business-central",
     "power-bi",
     "power-automate",
+    "azure",
     "dataverse",
   ],
 

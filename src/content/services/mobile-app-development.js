@@ -62,7 +62,7 @@ export const service = {
       {
         title: "Embed intelligence",
         description:
-          "AI features such as capture, vision, personalization, and chat, built into the app where they remove friction.",
+          "AI features (capture, vision, personalization, chat) built into the app where they remove friction.",
       },
     ],
   },
@@ -123,8 +123,8 @@ export const service = {
   ctas: ["talk-to-expert", "request-proposal"],
 
   closing: {
-    heading: "Ready to talk about Mobile Application Development?",
-    body: "Tell us where you are and where you want to be, and we'll bring the architecture, the delivery plan, and the team.",
+    heading: "Ready to talk about Mobile Development?",
+    body: "Tell us where you are and where you want to be: we'll bring the architecture, the delivery plan, and the team.",
     ctas: ["talk-to-expert", "request-proposal", "discovery-session"],
   },
 

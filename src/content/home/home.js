@@ -88,7 +88,7 @@ export const homePage = {
     /** Rendered in the brand colour, mid-heading. */
     headingAccent: "AI-first",
     headingRest: "service ecosystem",
-    intro: "End-to-end solutions powered by AI, Microsoft technology, and expert engineering.",
+    intro: "Four pillars, one thread: intelligence applied to the Microsoft platform to change how your enterprise operates.",
     items: [
       {
         id: "agentic-ai",
@@ -184,12 +184,12 @@ export const homePage = {
       heading: "Our",
       headingAccent: "Partners",
       items: [
-        { id: "progressive-leasing", name: "Progressive Leasing", file: "progressive-leasing.webp", width: 300, height: 171 },
-        { id: "nisum", name: "Nisum", file: "nisum.png", width: 2297, height: 617 },
-        { id: "chick-fil-a", name: "Chick-fil-A", file: "chickfila.png", width: 343, height: 147 },
-        { id: "gic", name: "GIC", file: "gic-logo-new-2.png", width: 337, height: 102 },
-        { id: "novizant", name: "Novizant", file: "novizant-removebg-preview.png", width: 680, height: 226 },
-        { id: "malath", name: "Malath Insurance", file: "malath.png", width: 850, height: 600 },
+        { id: "progressive-leasing", name: "Progressive Leasing", file: "progressive-leasing.webp", width: 300, height: 171, country: { code: "us", name: "United States" } },
+        { id: "nisum", name: "Nisum", file: "nisum.png", width: 2297, height: 617, country: { code: "us", name: "United States" } },
+        { id: "chick-fil-a", name: "Chick-fil-A", file: "chickfila.png", width: 343, height: 147, country: { code: "us", name: "United States" } },
+        { id: "gic", name: "GIC", file: "gic-logo-new-2.png", width: 337, height: 102, country: { code: "in", name: "India" } },
+        { id: "novizant", name: "Novizant", file: "novizant-removebg-preview.png", width: 680, height: 226, country: { code: "us", name: "United States" } },
+        { id: "malath", name: "Malath Insurance", file: "malath.png", width: 850, height: 600, country: { code: "sa", name: "Saudi Arabia" } },
       ],
     },
     roster: {
@@ -259,6 +259,7 @@ export const homePage = {
   differentiators: {
     eyebrow: "Why CFG",
     heading: "Why enterprises choose Cloud Fusion Global",
+    intro: "The combination that matters: AI-first thinking, deep Microsoft expertise, and enterprise delivery discipline.",
     items: [
       {
         title: "AI-First Approach",

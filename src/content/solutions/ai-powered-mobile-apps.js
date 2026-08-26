@@ -109,8 +109,10 @@ export const solution = {
   technologies: [
     "azure-openai",
     "azure-ai-vision",
+    "azure-ai-speech",
     "dotnet-maui",
     "react-native",
+    "core-ml-ml-kit",
   ],
 
   industries: [

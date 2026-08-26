@@ -16,6 +16,8 @@ export const CTA_INTENT = Object.freeze({
   DISCUSS_REQUIREMENTS: "discuss-requirements",
   BOOK_CONSULTATION: "book-consultation",
   EXPLORE_SOLUTIONS: "explore-solutions",
+  INDUSTRY_EXPERT: "industry-expert",
+  DISCUSS_INDUSTRY: "discuss-industry",
 });
 
 const CTA_REGISTRY = Object.freeze({
@@ -26,13 +28,23 @@ const CTA_REGISTRY = Object.freeze({
     href: routes.contact(),
     variant: "secondary",
   },
-  [CTA_INTENT.REQUEST_DEMO]: { label: "Request a Demo", href: routes.contact(), variant: "primary" },
+  [CTA_INTENT.REQUEST_DEMO]: { label: "Request a Demo Conversation", href: routes.contact(), variant: "primary" },
   [CTA_INTENT.DISCUSS_REQUIREMENTS]: {
     label: "Discuss Your Requirements",
     href: routes.contact(),
     variant: "primary",
   },
   [CTA_INTENT.BOOK_CONSULTATION]: { label: "Book a Free Consultation", href: routes.contact(), variant: "primary" },
+  [CTA_INTENT.DISCUSS_INDUSTRY]: {
+    label: "Discuss Your Industry",
+    href: routes.contact(),
+    variant: "primary",
+  },
+  [CTA_INTENT.INDUSTRY_EXPERT]: {
+    label: "Talk to an Industry Expert",
+    href: routes.contact(),
+    variant: "primary",
+  },
   [CTA_INTENT.EXPLORE_SOLUTIONS]: {
     label: "Explore Our Solutions",
     href: routes.solutions.index(),

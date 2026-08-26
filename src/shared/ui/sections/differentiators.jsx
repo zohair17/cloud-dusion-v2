@@ -387,7 +387,7 @@ export function Differentiators({ section }) {
   return (
     <section className="overflow-x-clip section-y">
       <Container size="wide">
-        <SectionHeading align="center" eyebrow={section.eyebrow} heading={section.heading} />
+        <SectionHeading align="center" eyebrow={section.eyebrow} heading={section.heading} intro={section.intro} />
 
         <div
           ref={rootRef}

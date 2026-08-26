@@ -413,14 +413,14 @@ function SolutionRow({ solution, row, active, onEnter }) {
         </span>
 
         <span className="min-w-0 flex-1">
-          <span
+          <h3
             className={cn(
-              "block font-display text-lg font-semibold tracking-tight text-balance transition-colors duration-300 sm:text-xl",
+              "font-display text-lg font-semibold tracking-tight text-balance transition-colors duration-300 sm:text-xl",
               active ? "text-brand-700" : "text-foreground",
             )}
           >
             {solution.title}
-          </span>
+          </h3>
           <span className="mt-2 block max-w-2xl text-[0.875rem] leading-relaxed text-muted">
             {solution.summary}
           </span>

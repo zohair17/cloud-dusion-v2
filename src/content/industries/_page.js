@@ -11,7 +11,7 @@ export const industriesPage = {
   tagline: "Who we serve",
   intro: "Every industry carries its own challenges, regulations, and systems. We meet each with the same method: understand the pressure, apply AI where it counts, build on Microsoft, and measure the outcome.",
   ctas: [
-    "discuss-requirements"
+    "discuss-industry"
   ],
   seo: {
     title: "Industries",

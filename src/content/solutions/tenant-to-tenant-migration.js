@@ -100,6 +100,8 @@ export const solution = {
     "sharepoint-online",
     "microsoft-365",
     "microsoft-entra",
+    "migration-tooling",
+    "powershell",
   ],
 
   industries: [

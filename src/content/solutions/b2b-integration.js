@@ -105,8 +105,11 @@ export const solution = {
   ],
 
   technologies: [
+    "azure-logic-apps",
     "azure-integration-services",
+    "azure-service-bus",
     "azure-functions",
+    "api-management",
   ],
 
   industries: [

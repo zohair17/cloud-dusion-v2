@@ -14,7 +14,7 @@ export const solution = {
   icon: undefined,
   /** Panel photograph, used by the index rail and the detail hero. */
   image: "/asset/solutions/contract-management-system.webp",
-  summary: "End-to-end contract lifecycle management on SharePoint with AI-extracted terms: authoring, negotiation, approval, signature, obligations, and renewals.",
+  summary: "End-to-end contract lifecycle management (authoring, negotiation, approval, signature, obligations, and renewals) on SharePoint with AI-extracted terms.",
   categoryId: "sharepoint-microsoft",
   order: 4,
   status: "published",
@@ -110,6 +110,7 @@ export const solution = {
     "microsoft-syntex",
     "azure-openai",
     "power-automate",
+    "sharepoint-esignature",
     "power-bi",
   ],
 
@@ -140,7 +141,7 @@ export const solution = {
 
   seo: {
     title: "Contract Management System",
-    description: "End-to-end contract lifecycle management on SharePoint with AI-extracted terms: authoring, negotiation, approval, signature, obligations, and renewals.",
+    description: "End-to-end contract lifecycle management (authoring, negotiation, approval, signature, obligations, and renewals) on SharePoint with AI-extracted terms.",
   },
 };
 

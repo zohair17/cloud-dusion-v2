@@ -33,6 +33,7 @@ export function createIndustry(record) {
     challenges: record.challenges ?? [],
     aiImpact: record.aiImpact ?? [],
     microsoftEnablement: record.microsoftEnablement ?? [],
+    outcomes: record.outcomes ?? [],
 
     solutionSlugs: record.solutions ?? [],
     relatedServiceSlugs: record.relatedServices ?? [],

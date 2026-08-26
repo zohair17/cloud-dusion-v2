@@ -108,6 +108,7 @@ export const solution = {
     "sharepoint-online",
     "microsoft-viva",
     "microsoft-teams",
+    "sharepoint-framework",
     "microsoft-graph",
   ],
 

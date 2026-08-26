@@ -16,6 +16,7 @@
  * @property {string[]} challenges           What this industry is up against.
  * @property {string[]} aiImpact             How AI changes the picture.
  * @property {string[]} microsoftEnablement  How Microsoft technologies deliver it.
+ * @property {string[]} outcomes             What changes for the business.
  * @property {string[]} solutions            Solution slugs offered to this industry.
  * @property {string[]} relatedServices      Service slugs.
  * @property {string[]} relatedCaseStudies   Case study slugs.
@@ -31,4 +32,5 @@ export const PUBLISHABLE_FIELDS = Object.freeze([
   "challenges",
   "aiImpact",
   "microsoftEnablement",
+  "outcomes",
 ]);

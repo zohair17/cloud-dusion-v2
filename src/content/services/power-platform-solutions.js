@@ -77,10 +77,10 @@ export const service = {
       { title: "Power Pages Development", description: "Secure external-facing portals for customers, partners, and communities." },
       { title: "Microsoft Copilot Studio", description: "Custom copilots and conversational agents connected to your data and workflows." },
       { title: "Microsoft Dataverse", description: "The secure, governed data backbone for the entire Power Platform estate." },
-      { title: "AI Builder", description: "Prebuilt and custom AI models for document processing, prediction, and classification inside apps and flows." },
+      { title: "AI Builder", description: "Prebuilt and custom AI models (document processing, prediction, classification) inside apps and flows." },
       { title: "UiPath", description: "Robotic process automation for legacy systems and interfaces without APIs." },
       { title: "Low-Code Automation", description: "Rapid automation of departmental processes with governed low-code patterns." },
-      { title: "Enterprise Workflow Automation", description: "Cross-departmental workflow platforms for requests, approvals, and case management at organizational scale." },
+      { title: "Enterprise Workflow Automation", description: "Cross-departmental workflow platforms (requests, approvals, case management) at organizational scale." },
     ],
   },
 
@@ -126,8 +126,8 @@ export const service = {
   ctas: ["talk-to-expert", "request-proposal"],
 
   closing: {
-    heading: "Ready to talk about Power Platform Solutions?",
-    body: "Tell us where you are and where you want to be, and we'll bring the architecture, the delivery plan, and the team.",
+    heading: "Ready to talk about Power Platform?",
+    body: "Tell us where you are and where you want to be: we'll bring the architecture, the delivery plan, and the team.",
     ctas: ["talk-to-expert", "request-proposal", "discovery-session"],
   },
 

@@ -1,5 +1,15 @@
 import { getCaseStudyDetail, getCaseStudySlugs } from "@/modules/case-studies";
 import { buildMetadata } from "@/shared/lib/metadata";
+import { routes } from "@/shared/config/routes";
+import {
+  CaseStudyHero,
+  CaseStudyChallenge,
+  CaseStudyApproach,
+  CaseStudySolution,
+  CaseStudyOutcomes,
+  CaseStudyRelated,
+} from "@/shared/ui/sections/case-study-detail";
+import { ClosingCta } from "@/shared/ui/sections/closing-cta";
 
 export function generateStaticParams() {
   return getCaseStudySlugs().map((slug) => ({ slug }));
@@ -12,28 +22,52 @@ export async function generateMetadata({ params }) {
   return buildMetadata(getCaseStudyDetail(slug).seo);
 }
 
+/**
+ * Case study detail.
+ *
+ * Where it started, how it was delivered, what was built, and what changed.
+ * This segment resolves the aggregate and hands each section its slice; no copy
+ * lives here.
+ */
 export default async function CaseStudyDetailPage({ params }) {
   const { slug } = await params;
   const caseStudy = getCaseStudyDetail(slug);
+  const { sections } = caseStudy;
 
   return (
     <>
-      <h1>{caseStudy.title}</h1>
-      <p>{caseStudy.client}</p>
-      <section aria-label="Outcomes">
-        <ul>
-          {caseStudy.outcomes.map((outcome) => (
-            <li key={outcome}>{outcome}</li>
-          ))}
-        </ul>
-      </section>
-      <section aria-label="Related services">
-        <ul>
-          {caseStudy.relatedServices.map((service) => (
-            <li key={service.slug}>{service.title}</li>
-          ))}
-        </ul>
-      </section>
+      <CaseStudyHero
+        caseStudy={caseStudy}
+        trail={[
+          { label: "Home", href: routes.home() },
+          { label: "Case Studies", href: routes.caseStudies.index() },
+          { label: caseStudy.title },
+        ]}
+      />
+
+      <CaseStudyChallenge section={sections.challenge} body={caseStudy.challenge} />
+
+      <CaseStudyApproach section={sections.approach} steps={caseStudy.approach} />
+
+      <CaseStudySolution
+        section={sections.solution}
+        body={caseStudy.solution}
+        technologies={caseStudy.technologies}
+      />
+
+      <CaseStudyOutcomes
+        section={sections.outcomes}
+        items={caseStudy.outcomes}
+        metricsNote={caseStudy.metricsNote}
+      />
+
+      <CaseStudyRelated
+        section={sections.related}
+        services={caseStudy.relatedServices}
+        solutions={caseStudy.relatedSolutions}
+      />
+
+      <ClosingCta section={caseStudy.closing} />
     </>
   );
 }

@@ -90,9 +90,20 @@ export function SpotlightBento({ items = [], className }) {
                 className="absolute inset-0 bg-[linear-gradient(to_top,rgb(7_7_30/0.94)_0%,rgb(7_7_30/0.82)_34%,rgb(7_7_30/0.34)_70%,rgb(7_7_30/0.16)_100%)]"
               />
 
-              {item.eyebrow ? (
-                <span className="absolute left-7 top-7 inline-flex items-center rounded-pill border border-white/20 bg-[rgb(7_7_30/0.55)] px-3.5 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-sm">
-                  {item.eyebrow}
+              {item.eyebrow || item.dateline ? (
+                <span className="absolute left-7 top-7 flex flex-wrap items-center gap-x-3 gap-y-2">
+                  {item.eyebrow ? (
+                    <span className="inline-flex items-center rounded-pill border border-white/20 bg-[rgb(7_7_30/0.55)] px-3.5 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-sm">
+                      {item.eyebrow}
+                    </span>
+                  ) : null}
+
+                  {/* When a piece is dated, the date belongs beside its topic. */}
+                  {item.dateline ? (
+                    <span className="text-[0.6875rem] font-medium tracking-tight text-white/70">
+                      {item.dateline}
+                    </span>
+                  ) : null}
                 </span>
               ) : null}
 

@@ -20,7 +20,7 @@
  * @property {string[]} intro         Lead paragraphs.
  * @property {SectionOfStrings} challenges
  * @property {SectionOfItems}   approach
- * @property {SectionOfItems}   capabilities
+ * @property {SectionOfItems}   capabilities  Items may name a `group`; consecutive items sharing one are set under it.
  * @property {{ eyebrow: string?, heading: string, body: string }} stack  Where the service meets the Microsoft platform.
  * @property {SectionOfStrings} outcomes
  * @property {string[]} technologies       Technology ids.
@@ -33,7 +33,7 @@
  *
  * @typedef {{ image: string, label: string }} HeroSlide
  * @typedef {{ eyebrow: string?, heading: string, items: string[] }} SectionOfStrings
- * @typedef {{ eyebrow: string?, heading: string, items: Array<{ title: string, description: string }> }} SectionOfItems
+ * @typedef {{ eyebrow: string?, heading: string, items: Array<{ group: string?, title: string, description: string }> }} SectionOfItems
  */
 
 /** Fields every record must supply for the catalogue to function at all. */
