@@ -313,8 +313,8 @@ export const homePage = {
   },
 
   closingCta: {
-    eyebrow: "Let's Build the Future Together",
-    heading: "Ready when you are",
+    eyebrow: null,
+    heading: "Let's Build the Future Together",
     body: "Whether you're planning an AI initiative, modernizing SharePoint, migrating to the cloud, building a custom application, or scaling your technology team, Cloud Fusion Global is ready to help.",
     ctas: ["talk-to-expert", "request-proposal", "discovery-session"],
   },
