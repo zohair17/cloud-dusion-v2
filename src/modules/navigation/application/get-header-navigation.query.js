@@ -1,6 +1,6 @@
 import { primaryNavigation } from "@/shared/config/navigation.config";
 import { createNavItem } from "../domain/nav-item";
-import { getGroupedServices } from "@/modules/services";
+import { getGroupedServices, getServiceDetail } from "@/modules/services";
 import { getCategorizedSolutions } from "@/modules/solutions";
 
 /**
@@ -9,7 +9,23 @@ import { getCategorizedSolutions } from "@/modules/solutions";
  * Services, Solutions and Industries open a panel built from the catalogue, so
  * the menu can never drift from the pages that exist. The final link is pulled
  * out as its own solid button, matching the reference header.
+ *
+ * A service link carries its own capabilities as `children`, which the panel
+ * opens as a second level on hover. They are the service's own sections, not a
+ * hand-kept list, so a capability added to a record appears in the menu.
  */
+const SUBMENU_LIMIT = 8;
+
+/** What one service offers, as menu entries pointing back at its page. */
+function serviceChildren(slug, href) {
+  const items = getServiceDetail(slug)?.capabilities?.items ?? [];
+  return items.slice(0, SUBMENU_LIMIT).map((item, index) => ({
+    id: `${slug}-${index}`,
+    label: item.title,
+    description: item.description ?? null,
+    href,
+  }));
+}
 const CTA_ID = "contact";
 
 const PANELS = {
@@ -17,7 +33,12 @@ const PANELS = {
     getGroupedServices().map((group) => ({
       id: group.id,
       title: group.title,
-      links: group.services.map((s) => ({ id: s.slug, label: s.navLabel, href: s.href })),
+      links: group.services.map((s) => ({
+        id: s.slug,
+        label: s.navLabel,
+        href: s.href,
+        children: serviceChildren(s.slug, s.href),
+      })),
     })),
   solutions: () =>
     getCategorizedSolutions().map((category) => ({

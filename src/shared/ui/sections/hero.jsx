@@ -35,7 +35,7 @@ export function Hero({ hero }) {
               </p>
             ) : null}
 
-            <h1 className="mt-4 font-display text-3xl font-semibold leading-[1.08] tracking-tight text-balance sm:text-4xl lg:text-[2.65rem]">
+            <h1 className="mt-4 font-display text-[1.625rem] font-semibold leading-[1.14] tracking-tight text-balance sm:text-4xl sm:leading-[1.08] lg:text-[2.65rem]">
               <RevealText delay={0.1}>{hero.headline}</RevealText>{" "}
               {hero.headlineAccent ? (
                 <RevealText
@@ -48,7 +48,7 @@ export function Hero({ hero }) {
             </h1>
 
             {hero.subheadline ? (
-              <p className="mt-3.5 max-w-xl text-sm leading-[1.55] text-muted sm:text-base">
+              <p className="mt-3.5 max-w-xl text-[0.8125rem] leading-[1.6] text-muted sm:text-base sm:leading-[1.55]">
                 {hero.subheadline}
               </p>
             ) : null}
@@ -84,7 +84,7 @@ export function Hero({ hero }) {
             sized by the room it is given, so the picture grows with the slab
             rather than sitting in a fixed well.
           */}
-          <div className="relative order-1 -mx-5 -mt-5 mb-1 h-[clamp(9rem,19vh,12.5rem)] sm:-mx-7 sm:-mt-7 sm:h-[clamp(15rem,38vw,24rem)] lg:order-2 lg:mx-0 lg:-my-6 lg:mb-0 lg:h-auto lg:self-stretch lg:pl-[4%] xl:pl-[20%]">
+          <div className="relative order-1 -mx-5 -mt-5 mb-1 h-[clamp(17rem,42vh,22rem)] sm:-mx-7 sm:-mt-7 sm:h-[clamp(15rem,38vw,24rem)] lg:order-2 lg:mx-0 lg:-my-6 lg:mb-0 lg:h-auto lg:self-stretch lg:pl-[4%] xl:pl-[20%]">
             <Film
               src="/asset/hero-ecosystem.mp4"
               poster="/asset/hero-ecosystem-poster.webp"

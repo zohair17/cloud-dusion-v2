@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import { Container } from "../primitives/container";
 import { Logo } from "../primitives/logo";
 import { cn } from "../primitives/cn";
@@ -23,6 +23,10 @@ import { cn } from "../primitives/cn";
  */
 const SCROLL_THRESHOLD = 24;
 const CLOSE_DELAY = 120;
+
+/** Flyout widths in px, matching `w-[19rem]` and `w-[36rem]`. */
+const SUBMENU_NARROW = 304;
+const SUBMENU_WIDE = 576;
 
 export function SiteHeader({ navigation }) {
   const { items, cta } = navigation;
@@ -79,35 +83,52 @@ export function SiteHeader({ navigation }) {
           {items.map((item) => {
             const expanded = openPanel === item.id;
             return (
-              <div key={item.id} onMouseEnter={() => (item.panel ? (cancelClose(), setOpenPanel(item.id)) : scheduleClose())}>
+              <div
+                key={item.id}
+                onMouseEnter={() => (item.panel ? (cancelClose(), setOpenPanel(item.id)) : scheduleClose())}
+                /* The label and the chevron read as one pill but do two jobs,
+                   so the highlight is painted here rather than on either. */
+                className={cn(
+                  "group flex items-center rounded-pill transition-colors",
+                  isActive(item.href) || expanded ? "bg-white/15" : "hover:bg-white/15"
+                )}
+              >
                 <Link
                   href={item.href}
                   aria-current={isActive(item.href) ? "page" : undefined}
-                  aria-expanded={item.panel ? expanded : undefined}
                   onFocus={() => setOpenPanel(item.panel ? item.id : null)}
-                  /* A top item that owns a panel is the panel's control, not a
-                     destination: clicking it opens the menu instead of leaving. */
-                  onClick={(event) => {
-                    if (!item.panel) return;
-                    event.preventDefault();
-                    cancelClose();
-                    setOpenPanel(expanded ? null : item.id);
-                  }}
+                  onClick={() => setOpenPanel(null)}
                   className={cn(
-                    "flex items-center gap-1 rounded-pill px-4 py-2.5 text-[15px] font-medium transition-colors xl:px-5 xl:text-base",
-                    isActive(item.href) || expanded
-                      ? "bg-white/15 text-white"
-                      : "text-white/90 hover:bg-white/15 hover:text-white"
+                    "flex items-center rounded-pill py-2.5 text-[15px] font-medium transition-colors xl:text-base",
+                    item.panel ? "pl-4 pr-1.5 xl:pl-5" : "px-4 xl:px-5",
+                    isActive(item.href) || expanded ? "text-white" : "text-white/90 group-hover:text-white"
                   )}
                 >
                   {item.label}
-                  {item.panel ? (
+                </Link>
+
+                {/* The chevron alone owns the panel: the label stays a destination. */}
+                {item.panel ? (
+                  <button
+                    type="button"
+                    aria-label={`${item.label} menu`}
+                    aria-expanded={expanded}
+                    onFocus={() => setOpenPanel(item.id)}
+                    onClick={() => {
+                      cancelClose();
+                      setOpenPanel(expanded ? null : item.id);
+                    }}
+                    className={cn(
+                      "flex items-center rounded-pill py-2.5 pl-1 pr-3.5 transition-colors xl:pr-4",
+                      isActive(item.href) || expanded ? "text-white" : "text-white/90 hover:text-white"
+                    )}
+                  >
                     <ChevronDown
                       aria-hidden="true"
                       className={cn("h-3.5 w-3.5 transition-transform", expanded && "rotate-180")}
                     />
-                  ) : null}
-                </Link>
+                  </button>
+                ) : null}
               </div>
             );
           })}
@@ -242,6 +263,108 @@ export function SiteHeader({ navigation }) {
  * Mega-menu body. Column count follows the group count so a two-group menu does
  * not stretch to fill four columns.
  */
+/**
+ * One entry in a mega-menu column.
+ *
+ * A service carries its own capabilities, and hovering the entry opens them
+ * beside it rather than under it: the column is already a list, and nesting a
+ * second list inside pushes every following service down the panel. The
+ * flyout is positioned from the entry itself, so it tracks whichever row the
+ * pointer is on.
+ *
+ * Keyboard reaches it the same way focus reaches anything else — the entry and
+ * the flyout share one wrapper, so focus moving into the flyout keeps it open.
+ */
+function SubmenuLink({ link, onNavigate }) {
+  const [open, setOpen] = useState(false);
+  /* The rightmost column has no room to its right, so that one opens inward. */
+  const [flipped, setFlipped] = useState(false);
+  const rowRef = useRef(null);
+  const children = link.children ?? [];
+
+  const reveal = () => {
+    const box = rowRef.current?.getBoundingClientRect();
+    const width = children.length > 5 ? SUBMENU_WIDE : SUBMENU_NARROW;
+    if (box) setFlipped(box.right + width > window.innerWidth - 16);
+    setOpen(true);
+  };
+
+  if (!children.length) {
+    return (
+      <li>
+        <Link
+          href={link.href}
+          onClick={onNavigate}
+          className="block rounded-pill px-2 py-1.5 text-sm text-muted transition-colors hover:bg-surface hover:text-brand-700"
+        >
+          {link.label}
+        </Link>
+      </li>
+    );
+  }
+
+  return (
+    <li
+      ref={rowRef}
+      className="relative"
+      onMouseEnter={reveal}
+      onMouseLeave={() => setOpen(false)}
+      onFocus={reveal}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
+      }}
+    >
+      <Link
+        href={link.href}
+        onClick={onNavigate}
+        aria-expanded={open}
+        className={cn(
+          "flex items-center justify-between gap-2 rounded-pill px-2 py-1.5 text-sm transition-colors",
+          open ? "bg-surface text-brand-700" : "text-muted hover:bg-surface hover:text-brand-700"
+        )}
+      >
+        {link.label}
+        <ChevronRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0 opacity-60" />
+      </Link>
+
+      <AnimatePresence>
+        {open ? (
+          <motion.ul
+            initial={{ opacity: 0, x: flipped ? 6 : -6 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: flipped ? 6 : -6 }}
+            transition={{ duration: 0.16, ease: "easeOut" }}
+            className={cn(
+              "absolute top-0 z-10 grid gap-x-2 rounded-card border border-border bg-background p-2 shadow-xl shadow-brand-900/10",
+              children.length > 5 ? "w-[36rem] grid-cols-2" : "w-[19rem] grid-cols-1",
+              flipped ? "right-full mr-2" : "left-full ml-2"
+            )}
+          >
+            {children.map((child) => (
+              <li key={child.id}>
+                <Link
+                  href={child.href}
+                  onClick={onNavigate}
+                  className="group/child block rounded-card px-3 py-2 transition-colors hover:bg-surface"
+                >
+                  <span className="block text-sm font-medium text-foreground transition-colors group-hover/child:text-brand-700">
+                    {child.label}
+                  </span>
+                  {child.description ? (
+                    <span className="mt-0.5 block text-xs leading-relaxed text-faint">
+                      {child.description}
+                    </span>
+                  ) : null}
+                </Link>
+              </li>
+            ))}
+          </motion.ul>
+        ) : null}
+      </AnimatePresence>
+    </li>
+  );
+}
+
 function MegaPanel({ groups, onNavigate }) {
   /**
    * Static map — Tailwind cannot see a class name built by string interpolation.
@@ -284,15 +407,7 @@ function MegaPanel({ groups, onNavigate }) {
             ) : (
               <ul className="space-y-1">
                 {group.links.map((link) => (
-                  <li key={link.id}>
-                    <Link
-                      href={link.href}
-                      onClick={onNavigate}
-                      className="block rounded-pill px-2 py-1.5 text-sm text-muted transition-colors hover:bg-surface hover:text-brand-700"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
+                  <SubmenuLink key={link.id} link={link} onNavigate={onNavigate} />
                 ))}
               </ul>
             )}

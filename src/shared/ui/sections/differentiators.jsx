@@ -94,7 +94,7 @@ function useArcGeometry(width) {
         ? clamp(width * 0.34, 210, 270)
         : clamp(width * 0.2, 220, 300);
 
-    const cardH = cardW * 1.3;
+    const cardH = cardW * (mobile ? 1.62 : 1.3);
     const s = step * RAD;
     const radius = (cardW * (1 + NEIGHBOUR_GAP)) / Math.sin(s);
 
@@ -166,7 +166,7 @@ function ArcCard({ item, angle, geo, rotation, onSelect }) {
     >
       {/*
         A white card with a picture inside it, and the picture falls from light
-        at the top to near-black at the foot — one continuous wash rather than a
+        at the top to a deep slate at the foot: one continuous wash rather than a
         panel dropped on top, so the words have solid ground under them without
         a second edge appearing halfway down the card.
       */}
@@ -174,25 +174,28 @@ function ArcCard({ item, angle, geo, rotation, onSelect }) {
         onClick={onSelect}
         className="relative h-full w-full rounded-[1.75rem] bg-white p-2 shadow-[0_1px_4px_rgb(21_21_28/0.06),0_24px_50px_-32px_rgb(25_24_89/0.35)] ring-1 ring-black/[0.05] transition-shadow duration-500 hover:shadow-[0_1px_4px_rgb(21_21_28/0.06),0_40px_70px_-34px_rgb(25_24_89/0.45)]"
       >
-        <div className="relative flex h-full w-full flex-col overflow-hidden rounded-[1.35rem] bg-[linear-gradient(to_bottom,#f7f8fd_0%,#eef0fa_24%,#c9cbdd_44%,#565a76_64%,#20212f_82%,#15161f_100%)]">
-          {/* The picture of the card, struck at the light end of the wash. */}
-          <div className="flex h-[38%] shrink-0 items-center justify-center pt-[4%]">
+        <div className="relative flex h-full w-full flex-col overflow-hidden rounded-[1.35rem] bg-[linear-gradient(to_bottom,#f8f9fd_0%,#eef0fa_22%,#d5d8ec_42%,#9aa0c2_62%,#5d6183_84%,#4a4e6c_100%)]">
+          {/*
+            The mark is the card's ground rather than an object sitting on it:
+            drawn large across the light half and held faint, so the sentence
+            below keeps the contrast and the picture only tints the card.
+          */}
+          <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 flex h-[52%] items-center justify-center">
             <Icon
-              aria-hidden="true"
-              strokeWidth={1.4}
-              className="h-[4.75rem] w-[4.75rem] text-brand-600 transition-transform duration-700 ease-out group-hover:scale-105"
+              strokeWidth={1}
+              className="h-[7rem] w-[7rem] text-brand-600/[0.16] transition-transform duration-700 ease-out group-hover:scale-105 sm:h-[9.5rem] sm:w-[9.5rem]"
             />
           </div>
 
-          <div className="mt-auto px-5 pb-6 text-center">
+          <div className="relative mt-auto px-4 pb-5 text-center sm:px-5 sm:pb-6">
             <span
               aria-hidden="true"
               className="mx-auto mb-3.5 block h-[3px] w-9 rounded-full bg-brand-400"
             />
-            <h3 className="font-display text-base font-semibold leading-snug tracking-tight text-balance text-white">
+            <h3 className="font-display text-[0.9375rem] font-semibold leading-snug tracking-tight text-balance text-white sm:text-base">
               {item.title}
             </h3>
-            <p className="mt-2 text-[0.8125rem] leading-relaxed text-balance text-white/70">
+            <p className="mt-2 text-[0.75rem] leading-[1.5] text-balance text-white/85 sm:text-[0.8125rem] sm:leading-relaxed">
               {item.description}
             </p>
           </div>
@@ -428,7 +431,7 @@ export function Differentiators({ section }) {
           </ul>
         </div>
 
-        <div className="relative z-20 -mt-[clamp(3rem,9vw,7rem)] flex items-center justify-center gap-4">
+        <div className="relative z-20 mt-4 sm:-mt-[clamp(3rem,9vw,7rem)] flex items-center justify-center gap-4">
           <PagerButton
             label="Previous"
             disabled={active === 0}

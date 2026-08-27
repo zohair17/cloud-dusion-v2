@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight, Check, ListChecks, Sparkles, TriangleAlert } from "lucide-react";
 import { Container } from "../primitives/container";
 import { Button } from "../primitives/button";
 import { RevealText } from "../motion/reveal-text";
@@ -179,101 +179,134 @@ export function SolutionHero({ solution, trail = [] }) {
  * describing problems, it is describing things this system deletes, and a line
  * through them says that faster than a paragraph could.
  */
-export function SolutionProblem({ problem, challenges }) {
-  const scope = useGsap(({ reduced, root }) => {
-    const strikes = gsap.utils.toArray("[data-strike]");
-    if (!strikes.length) return;
+/**
+ * The brief.
+ *
+ * The three things a reader needs before anything else: what is wrong, what it
+ * is costing, and what we build instead. They used to be two sections of prose
+ * a screen apart, which read as notes; here they are one row of three cards, so
+ * the argument can be taken in at a glance and the answer card can carry the
+ * brand colour that makes it obviously the answer.
+ *
+ * The cards stretch to a common height, so the row reads as a set rather than
+ * three panels of different weight.
+ */
+export function SolutionBrief({ problem, challenges, overview = [] }) {
+  const reduced = useReducedMotion();
 
-    if (reduced) {
-      gsap.set(strikes, { scaleX: 1 });
-      return;
-    }
+  const cards = [
+    problem
+      ? {
+          key: "problem",
+          icon: TriangleAlert,
+          eyebrow: problem.eyebrow ?? "The problem",
+          heading: problem.heading,
+          body: [problem.body],
+        }
+      : null,
+    challenges
+      ? {
+          key: "challenges",
+          icon: ListChecks,
+          eyebrow: challenges.eyebrow ?? "Business challenges",
+          heading: challenges.heading,
+          list: challenges.items,
+        }
+      : null,
+    overview.length
+      ? {
+          key: "overview",
+          icon: Sparkles,
+          eyebrow: "Overview",
+          heading: "The solution",
+          body: overview,
+          accent: true,
+        }
+      : null,
+  ].filter(Boolean);
 
-    gsap.fromTo(
-      strikes,
-      { scaleX: 0 },
-      {
-        scaleX: 1,
-        duration: 0.7,
-        stagger: 0.13,
-        ease: "power2.out",
-        scrollTrigger: { trigger: root, start: "top 68%", once: true },
-      },
-    );
-  }, [challenges]);
-
-  return (
-    <section ref={scope} className="section-y">
-      <Container size="wide">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-20">
-          {problem ? (
-            <div>
-              <Head eyebrow={problem.eyebrow} heading={problem.heading} />
-              <Reveal delay={0.16}>
-                <p className="mt-7 border-l-2 border-brand-600 pl-6 font-display text-lg font-medium leading-[1.6] tracking-tight text-balance text-foreground sm:text-xl">
-                  {problem.body}
-                </p>
-              </Reveal>
-            </div>
-          ) : null}
-
-          {challenges ? (
-            <div>
-              <Head eyebrow={challenges.eyebrow} heading={challenges.heading} />
-              <ul className="mt-8 space-y-5">
-                {challenges.items.map((item) => (
-                  <li key={item} className="flex gap-4">
-                    <span
-                      aria-hidden="true"
-                      className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-300"
-                    />
-                    <span className="relative inline-block text-[0.9375rem] leading-relaxed text-muted">
-                      {item}
-                      <span
-                        data-strike
-                        aria-hidden="true"
-                        className="absolute left-0 top-1/2 block h-px w-full origin-left bg-brand-600/60"
-                      />
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-/* ----------------------------------------------------------------- overview */
-
-export function SolutionOverview({ paragraphs = [] }) {
-  if (!paragraphs.length) return null;
+  if (!cards.length) return null;
 
   return (
     <section className="section-y">
       <Container size="wide">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.34fr)_minmax(0,1fr)] lg:gap-16">
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <Head eyebrow="Overview" heading="The solution" />
-          </div>
+        <motion.ul
+          initial={reduced ? false : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, margin: "0px 0px -12% 0px" }}
+          className="grid items-stretch gap-4 lg:grid-cols-3 lg:gap-5"
+        >
+          {cards.map((card, index) => (
+            <motion.li
+              key={card.key}
+              variants={{
+                hidden: { opacity: 0, y: 22 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.65, delay: index * 0.1, ease: EASE },
+                },
+              }}
+              className={cn(
+                "flex flex-col rounded-[1.25rem] p-5 ring-1 sm:rounded-[1.5rem] sm:p-8",
+                card.accent
+                  ? "bg-brand-600 ring-brand-600 shadow-[0_30px_60px_-34px_rgb(53_51_205/0.75)]"
+                  : "bg-white ring-border",
+              )}
+            >
+              <span
+                aria-hidden="true"
+                className={cn(
+                  "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[0.85rem]",
+                  card.accent ? "bg-white/15 text-white" : "bg-brand-50 text-brand-600",
+                )}
+              >
+                <card.icon className="h-5 w-5" strokeWidth={1.7} />
+              </span>
 
-          <RevealGroup className="space-y-6">
-            {paragraphs.map((paragraph, index) => (
-              <RevealItem key={index} y={18}>
-                <p
-                  className={cn(
-                    "leading-[1.8] text-muted",
-                    index === 0 ? "text-[1.0625rem] text-foreground sm:text-lg" : "text-[0.9375rem] sm:text-base",
-                  )}
-                >
-                  {paragraph}
-                </p>
-              </RevealItem>
-            ))}
-          </RevealGroup>
-        </div>
+              <p
+                className={cn(
+                  "mt-6 text-[0.6875rem] font-semibold uppercase tracking-[0.18em]",
+                  card.accent ? "text-white/70" : "text-brand-600",
+                )}
+              >
+                {card.eyebrow}
+              </p>
+              <h2
+                className={cn(
+                  "mt-2.5 font-display text-xl font-semibold leading-snug tracking-tight text-balance sm:text-2xl",
+                  card.accent ? "text-white" : "text-foreground",
+                )}
+              >
+                {card.heading}
+              </h2>
+
+              {card.body ? (
+                <div className={cn("mt-4 space-y-3.5", card.accent ? "text-white/80" : "text-muted")}>
+                  {card.body.map((paragraph, i) => (
+                    <p key={i} className="text-[0.9375rem] leading-[1.7]">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              ) : null}
+
+              {card.list ? (
+                <ul className="mt-5 space-y-3">
+                  {card.list.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span
+                        aria-hidden="true"
+                        className="mt-[0.5rem] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-400"
+                      />
+                      <span className="text-[0.9375rem] leading-[1.6] text-muted">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </motion.li>
+          ))}
+        </motion.ul>
       </Container>
     </section>
   );

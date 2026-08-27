@@ -22,7 +22,7 @@ export function Clients({ section }) {
       {partners?.items?.length ? (
         <>
           <Container size="wide">
-            <h2 className="mx-auto max-w-[46rem] text-center font-display text-3xl font-semibold leading-[1.15] tracking-tight text-balance sm:text-4xl lg:text-5xl">
+            <h2 className="mx-auto max-w-[46rem] text-center font-display text-[1.5rem] font-semibold leading-[1.2] tracking-tight sm:leading-[1.15] text-balance sm:text-4xl lg:text-5xl">
               <RevealText>{partners.heading}</RevealText>{" "}
               {partners.headingAccent ? (
                 <RevealText
@@ -57,7 +57,7 @@ export function Clients({ section }) {
               </Reveal>
             ) : null}
 
-            <h2 className="mt-4 font-display text-3xl font-semibold leading-[1.15] tracking-tight text-balance sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 font-display text-[1.5rem] font-semibold leading-[1.2] tracking-tight sm:leading-[1.15] text-balance sm:text-4xl lg:text-5xl">
               <RevealText delay={0.08}>{roster.heading}</RevealText>{" "}
               {roster.headingAccent ? (
                 <RevealText
@@ -92,6 +92,48 @@ export function Clients({ section }) {
                         sizes="(min-width: 768px) 11vw, 8rem"
                         className="relative h-auto w-auto max-h-[calc(var(--tile-h)*0.48)] max-w-[calc(var(--tile-w)*0.78)] object-contain"
                       />
+
+                      {/*
+                        Some of this wall came to us through a partner rather
+                        than direct. The tile says so on hover: a brand panel
+                        rises over the mark and names who brought them, so the
+                        relationship is readable without a second legend.
+                      */}
+                      {/* Where the client is, if the record says. */}
+                      {logo.country ? (
+                        <Image
+                          src={`/asset/flags/${logo.country.code}.png`}
+                          alt={logo.country.name}
+                          width={80}
+                          height={53}
+                          sizes="2rem"
+                          className="absolute bottom-[0.3rem] right-[0.35rem] h-[0.7rem] w-[1.05rem] rounded-[0.15rem] object-cover shadow-sm ring-1 ring-black/15"
+                        />
+                      ) : null}
+
+                      {/*
+                        Some of this wall came to us through a partner rather
+                        than direct. The tile says so on hover: a brand panel
+                        rises over the mark and shows whose client they are,
+                        so the relationship is readable without a second legend.
+                      */}
+                      {logo.via ? (
+                        <span className="absolute inset-0 flex flex-col items-center justify-center gap-[0.2em] rounded-[inherit] bg-brand-600 px-2 text-center opacity-0 transition-opacity duration-300 ease-out group-hover/tile:opacity-100">
+                          <span className="text-[0.45rem] font-semibold uppercase leading-none tracking-[0.14em] text-white/70">
+                            Client of
+                          </span>
+                          <span className="inline-flex items-center justify-center rounded-[0.3rem] bg-white px-1.5 py-1">
+                            <Image
+                              src={`/asset/clients/${logo.via.file}`}
+                              alt={logo.via.name}
+                              width={logo.via.width}
+                              height={logo.via.height}
+                              sizes="6rem"
+                              className="h-auto w-auto max-h-[calc(var(--tile-h)*0.3)] max-w-[calc(var(--tile-w)*0.66)] object-contain"
+                            />
+                          </span>
+                        </span>
+                      ) : null}
                     </span>
                   </li>
                 );

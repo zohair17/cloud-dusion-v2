@@ -81,7 +81,7 @@ export function Testimonials({ section }) {
   return (
     <section className="section-y overflow-x-clip">
       <Container size="wide">
-        <h2 className="mx-auto max-w-[46rem] text-center font-display text-3xl font-semibold leading-[1.15] tracking-tight text-balance sm:text-4xl lg:text-5xl">
+        <h2 className="mx-auto max-w-[46rem] text-center font-display text-[1.5rem] font-semibold leading-[1.2] tracking-tight sm:leading-[1.15] text-balance sm:text-4xl lg:text-5xl">
           <RevealText>{section.heading}</RevealText>{" "}
           {section.headingAccent ? (
             <RevealText

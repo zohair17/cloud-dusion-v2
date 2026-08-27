@@ -189,7 +189,6 @@ function Schematic() {
 export function SolutionsHero({ page, categories }) {
   const reduced = useReducedMotion();
   const [primaryCta] = page.ctas ?? [];
-  const count = categories.reduce((total, category) => total + category.count, 0);
 
   return (
     <section className="pb-2 pt-6 sm:pt-8">
@@ -206,7 +205,7 @@ export function SolutionsHero({ page, categories }) {
                 {page.title}
               </motion.p>
 
-              <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.06] tracking-tight text-balance text-foreground sm:text-5xl xl:text-[3.4rem]">
+              <h1 className="mt-6 font-display text-[1.75rem] font-semibold leading-[1.14] tracking-tight sm:leading-[1.06] text-balance text-foreground sm:text-5xl xl:text-[3.4rem]">
                 <RevealText delay={0.12}>{page.tagline}</RevealText>
               </h1>
 
@@ -239,9 +238,6 @@ export function SolutionsHero({ page, categories }) {
                       className="inline-flex items-center gap-2 rounded-pill border border-border bg-white px-3.5 py-1.5 text-[0.8125rem] font-medium text-foreground transition-colors hover:border-brand-300 hover:text-brand-700"
                     >
                       {category.title}
-                      <span className="font-display text-[0.6875rem] font-semibold text-brand-600">
-                        {category.count}
-                      </span>
                     </a>
                   </motion.li>
                 ))}
@@ -260,9 +256,6 @@ export function SolutionsHero({ page, categories }) {
                       <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                     </span>
                   </Button>
-                  <p className="font-display text-sm font-medium text-muted">
-                    <span className="font-semibold text-brand-600">{count}</span> systems we build
-                  </p>
                 </motion.div>
               ) : null}
             </div>
@@ -291,33 +284,12 @@ export function SolutionRails({ categories }) {
 
 function CategoryRail({ category, index }) {
   const [active, setActive] = useState(null);
-  const previewRef = useRef(null);
-  const moveRef = useRef(null);
-
-  /* The preview is positioned by GSAP, not by state: a pointer move must not
-     cost a React render. */
-  const scope = useGsap(({ reduced }) => {
-    if (reduced || !previewRef.current) return;
-
-    gsap.set(previewRef.current, { xPercent: -50, yPercent: -50 });
-    const x = gsap.quickTo(previewRef.current, "x", { duration: 0.5, ease: "power3" });
-    const y = gsap.quickTo(previewRef.current, "y", { duration: 0.5, ease: "power3" });
-    moveRef.current = { x, y };
-  }, []);
-
-  const track = useCallback((event) => {
-    const box = event.currentTarget.getBoundingClientRect();
-    moveRef.current?.x(event.clientX - box.left);
-    moveRef.current?.y(event.clientY - box.top);
-  }, []);
 
   return (
     <section id={category.anchor} className="section-y scroll-mt-28">
       <Container size="wide">
         <div
-          ref={scope}
           className="relative grid gap-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-14"
-          onPointerMove={track}
           onPointerLeave={() => setActive(null)}
         >
           {/* The practice, held beside its list while the list is read. */}
@@ -346,33 +318,6 @@ function CategoryRail({ category, index }) {
             ))}
           </ul>
 
-          {/* The picture, carried beside the pointer rather than pinned to a tile. */}
-          <div
-            ref={previewRef}
-            aria-hidden="true"
-            className={cn(
-              "pointer-events-none absolute left-0 top-0 z-20 hidden h-[13rem] w-[17rem] overflow-hidden rounded-[1.25rem] shadow-[0_30px_70px_-32px_rgb(21_21_28/0.55)] ring-1 ring-white/60 transition-opacity duration-300 lg:block",
-              active === null ? "opacity-0" : "opacity-100",
-            )}
-          >
-            {category.solutions.map((solution, row) => (
-              <div
-                key={solution.slug}
-                className={cn(
-                  "absolute inset-0 transition-opacity duration-300",
-                  active === row ? "opacity-100" : "opacity-0",
-                )}
-              >
-                {solution.image ? (
-                  <Image src={solution.image} alt="" fill sizes="17rem" className="object-cover" />
-                ) : null}
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-[linear-gradient(to_top,rgb(53_51_205/0.3),transparent_55%)]"
-                />
-              </div>
-            ))}
-          </div>
         </div>
       </Container>
     </section>
@@ -393,26 +338,39 @@ function SolutionRow({ solution, row, active, onEnter }) {
     >
       <Link
         href={solution.href}
-        className="group relative flex gap-4 py-6 outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-4 sm:gap-6"
+        className="group relative flex gap-4 py-6 outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-4 sm:gap-6 lg:px-5"
       >
-        {/* The row's own thumbnail, where there is no pointer to carry one. */}
-        {solution.image ? (
-          <span className="relative h-16 w-20 shrink-0 overflow-hidden rounded-xl bg-surface sm:h-20 sm:w-28 lg:hidden">
-            <Image src={solution.image} alt="" fill sizes="7rem" className="object-cover" />
-          </span>
-        ) : null}
+        {/*
+          The row answers the pointer with itself: a brand wash opens from the
+          left edge and a rule is drawn down it, so the reader's place in the
+          list is marked by the list rather than by a picture chasing the cursor.
+        */}
+        <span
+          aria-hidden="true"
+          className={cn(
+            "pointer-events-none absolute inset-y-0 -left-2 right-0 hidden origin-left rounded-[1rem] bg-brand-50 transition-transform duration-500 ease-out lg:block",
+            active ? "scale-x-100" : "scale-x-0",
+          )}
+        />
+        <span
+          aria-hidden="true"
+          className={cn(
+            "pointer-events-none absolute inset-y-3 -left-2 hidden w-[3px] origin-top rounded-full bg-brand-600 transition-transform duration-500 ease-out lg:block",
+            active ? "scale-y-100" : "scale-y-0",
+          )}
+        />
 
         <span
           aria-hidden="true"
           className={cn(
-            "hidden shrink-0 pt-1 font-display text-sm font-semibold tabular-nums transition-colors duration-300 lg:block",
+            "relative hidden shrink-0 pt-1 font-display text-sm font-semibold tabular-nums transition-colors duration-300 lg:block",
             active ? "text-brand-600" : "text-faint",
           )}
         >
           {String(row + 1).padStart(2, "0")}
         </span>
 
-        <span className="min-w-0 flex-1">
+        <span className="relative min-w-0 flex-1">
           <h3
             className={cn(
               "font-display text-lg font-semibold tracking-tight text-balance transition-colors duration-300 sm:text-xl",
@@ -428,7 +386,7 @@ function SolutionRow({ solution, row, active, onEnter }) {
 
         <span
           className={cn(
-            "mt-1 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300",
+            "relative mt-1 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300",
             active
               ? "border-brand-600 bg-brand-600 text-white"
               : "border-border bg-white text-brand-600",

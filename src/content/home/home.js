@@ -14,7 +14,7 @@ export const homePage = {
 
   hero: {
     eyebrow: "AI-Powered Enterprise Solutions · Built on Microsoft",
-    headline: "Transforming Enterprises with",
+    headline: "Transforming Organizations with",
     /** Rendered in the brand colour, the one accent the headline gets. */
     headlineAccent: "AI-Powered Microsoft Solutions",
     subheadline:
@@ -162,13 +162,23 @@ export const homePage = {
     },
   },
 
-  /** All nine industries, resolved from the industries repository. */
+  /** The nine industries the homepage leads with, in authored order. */
   industryFocus: {
-    eyebrow: "Who We Serve",
+    eyebrow: "Industries We Specialize In",
     heading: "Industry-focused transformation",
     intro:
       "Every industry has its own challenges, systems, and regulations. CFG builds solutions shaped to each, not generic templates.",
-    industrySlugs: [],
+    industrySlugs: [
+      "manufacturing",
+      "financial-services",
+      "insurance",
+      "retail",
+      "government",
+      "energy",
+      "technology",
+      "education",
+      "real-estate",
+    ],
   },
 
   /**
@@ -190,6 +200,7 @@ export const homePage = {
         { id: "gic", name: "GIC", file: "gic-logo-new-2.png", width: 337, height: 102, country: { code: "in", name: "India" } },
         { id: "novizant", name: "Novizant", file: "novizant-removebg-preview.png", width: 680, height: 226, country: { code: "us", name: "United States" } },
         { id: "malath", name: "Malath Insurance", file: "malath.png", width: 850, height: 600, country: { code: "sa", name: "Saudi Arabia" } },
+        { id: "grand-studio", name: "Grand Studio", file: "Grandstudio-1.png", width: 220, height: 50 },
       ],
     },
     roster: {
@@ -197,21 +208,20 @@ export const homePage = {
       heading: "Clients we've partnered",
       headingAccent: "with",
       intro:
-        "The teams who handed us their cloud, their data and their day to day, and stayed.",
+        "Trusted by organizations to modernize their technology, data, and business operations.",
       /** The wall repeats the roster until it fills; the reference sets 50 tiles. */
       tiles: 50,
       items: [
-        { id: "grand-studio", name: "Grand Studio", file: "Grandstudio-1.png", width: 220, height: 50 },
-        { id: "briggr-tech", name: "Briggr Tech", file: "briggrtech-1.jpeg", width: 1080, height: 433 },
-        { id: "hut24", name: "Hut24", file: "Hut24.jpeg", width: 501, height: 328 },
-        { id: "jessies", name: "Jessies", file: "Jessies.webp", width: 397, height: 254 },
-        { id: "urida", name: "Urida", file: "Urida.jpeg", width: 603, height: 243 },
-        { id: "da-boss", name: "Da Boss", file: "dabossicon.png", width: 301, height: 278 },
-        { id: "digicop", name: "Digicop", file: "digicop.png", width: 641, height: 207 },
-        { id: "good-n-guys", name: "Good N Guys", file: "goodnguys.png", width: 1222, height: 961 },
-        { id: "le-bleu", name: "Le Bleu", file: "lebleu.png", width: 250, height: 103 },
-        { id: "magic", name: "Magic", file: "magic-logo.png", width: 200, height: 82 },
-        { id: "texas-wholesale", name: "Texas Wholesale", file: "texaswholesale.png", width: 2396, height: 1088 },
+        { id: "briggr-tech", name: "Briggr Tech", file: "briggrtech-1.jpeg", width: 1080, height: 433, country: { code: "us", name: "United States" }  },
+        { id: "hut24", name: "Hut24", file: "Hut24.jpeg", width: 501, height: 328, country: { code: "us", name: "United States" }  },
+        { id: "jessies", name: "Jessies", file: "Jessies.webp", width: 397, height: 254, via: { name: "Grand Studio", file: "Grandstudio-1.png", width: 220, height: 50 }, country: { code: "us", name: "United States" }  },
+        { id: "urida", name: "Urida", file: "Urida.jpeg", width: 603, height: 243, country: { code: "us", name: "United States" }  },
+        { id: "da-boss", name: "Da Boss", file: "dabossicon.png", width: 301, height: 278, country: { code: "us", name: "United States" }  },
+        { id: "digicop", name: "Digicop", file: "digicop.png", width: 641, height: 207, country: { code: "us", name: "United States" }  },
+        { id: "good-n-guys", name: "Good N Guys", file: "goodnguys.png", width: 1222, height: 961, country: { code: "us", name: "United States" }  },
+        { id: "le-bleu", name: "Le Bleu", file: "lebleu.png", width: 250, height: 103, country: { code: "us", name: "United States" }  },
+        { id: "magic", name: "Magic", file: "magic-logo.png", width: 200, height: 82, country: { code: "us", name: "United States" }  },
+        { id: "texas-wholesale", name: "Texas Wholesale", file: "texaswholesale.png", width: 2396, height: 1088, country: { code: "us", name: "United States" }  },
       ],
     },
   },

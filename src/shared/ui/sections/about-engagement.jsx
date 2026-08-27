@@ -65,7 +65,7 @@ function PhaseLane({ phase, index }) {
         viewport={{ once: true, margin: "0px 0px -14% 0px" }}
         transition={{ duration: 0.75, ease: EASE }}
         className={cn(
-          "group relative mx-gutter my-6 flex flex-col gap-5 rounded-[1.75rem] border border-brand-600/30 p-4",
+          "group relative mx-gutter my-4 flex flex-col gap-4 rounded-[1.75rem] border border-brand-600/30 p-4 sm:my-6 sm:gap-5",
           "transition-colors duration-500 hover:border-brand-600/60",
           "lg:my-5 lg:h-[clamp(9.5rem,12.5vw,12rem)] lg:flex-row lg:items-center lg:gap-8 lg:rounded-full lg:p-0",
           leansLeft
@@ -76,7 +76,7 @@ function PhaseLane({ phase, index }) {
         {/* The picture, capping the lane on the side the lane leans away from. */}
         <div
           className={cn(
-            "relative order-1 h-40 w-full shrink-0 overflow-hidden rounded-[1.35rem] bg-surface",
+            "relative order-1 h-24 w-full shrink-0 overflow-hidden rounded-[1.35rem] bg-surface sm:h-40",
             "lg:h-[78%] lg:w-[clamp(16rem,29vw,26rem)] lg:rounded-full",
             leansLeft ? "lg:order-3" : "lg:order-1",
           )}

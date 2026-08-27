@@ -49,7 +49,7 @@ export function IndustriesHero({ page, industries }) {
                 {page.title}
               </motion.p>
 
-              <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.06] tracking-tight text-balance text-foreground sm:text-5xl xl:text-[3.25rem]">
+              <h1 className="mt-6 font-display text-[1.75rem] font-semibold leading-[1.14] tracking-tight sm:leading-[1.06] text-balance text-foreground sm:text-5xl xl:text-[3.25rem]">
                 <RevealText delay={0.12}>{page.tagline}</RevealText>
               </h1>
 

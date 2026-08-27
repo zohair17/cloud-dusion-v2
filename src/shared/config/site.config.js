@@ -17,7 +17,7 @@ export const siteConfig = Object.freeze({
   ]),
   locale: "en",
   tagline: "AI-Powered Microsoft Solutions & Digital Transformation",
-  headline: "Transforming Enterprises with AI-Powered Microsoft Solutions",
+  headline: "Transforming Organizations with AI-Powered Microsoft Solutions",
   description:
     "Cloud Fusion Global helps organizations modernize operations, automate complex workflows, unlock the power of their data, and build intelligent business applications through Artificial Intelligence, Microsoft technologies, and enterprise-grade software solutions.",
   shortDescription:

@@ -47,8 +47,11 @@ export function getHomePage() {
 
     industryFocus: {
       ...home.industryFocus,
+      /** Authored order wins here: the homepage row is a curated sequence. */
       items: home.industryFocus.industrySlugs.length
-        ? getIndustries().filter((industry) => home.industryFocus.industrySlugs.includes(industry.slug))
+        ? home.industryFocus.industrySlugs
+            .map((slug) => getIndustries().find((industry) => industry.slug === slug))
+            .filter(Boolean)
         : getIndustries(),
     },
 

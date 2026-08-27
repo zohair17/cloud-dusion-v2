@@ -43,7 +43,7 @@ export function ServicesHero({ page, groups }) {
               {page.title}
             </motion.p>
 
-            <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-balance text-foreground sm:text-5xl">
+            <h1 className="mt-6 font-display text-[1.75rem] font-semibold leading-[1.14] tracking-tight sm:leading-[1.08] text-balance text-foreground sm:text-5xl">
               <RevealText delay={0.12}>{page.tagline}</RevealText>
             </h1>
 

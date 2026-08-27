@@ -104,7 +104,7 @@ export function IndustryHero({ industry, trail = [] }) {
               {industry.title} Industry
             </motion.p>
 
-            <h1 className="mt-7 font-display text-[2.25rem] font-semibold leading-[1.06] tracking-tight text-balance text-foreground sm:text-5xl lg:text-[3.4rem]">
+            <h1 className="mt-7 font-display text-[1.75rem] font-semibold leading-[1.14] tracking-tight sm:leading-[1.06] text-balance text-foreground sm:text-5xl lg:text-[3.4rem]">
               <RevealText delay={0.1}>{industry.tagline ?? industry.title}</RevealText>
             </h1>
 

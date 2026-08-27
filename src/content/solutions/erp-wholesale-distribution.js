@@ -1,5 +1,5 @@
 /**
- * Solution: ERP for Wholesale Distribution
+ * Solution: Wholesale Distribution ERP Solutions
  *
  * Long-form section content is authored here. `status` stays "outline" until every
  * required section is filled, which is what `npm run content:check` reports on.
@@ -8,7 +8,7 @@
 /** @type {import("@/modules/solutions/domain/solution.schema").SolutionRecord} */
 export const solution = {
   slug: "erp-wholesale-distribution",
-  title: "ERP for Wholesale Distribution",
+  title: "Wholesale Distribution ERP Solutions",
   tagline: "From purchase order to proof of delivery, connected",
   /** Glyph id; the component owns the actual icon. */
   icon: "package-search",
@@ -138,7 +138,7 @@ export const solution = {
   ],
 
   seo: {
-    title: "ERP for Wholesale Distribution",
+    title: "Wholesale Distribution ERP Solutions",
     description: "Distribution ERP covering inventory, purchasing, sales, warehouse, and delivery: with the margin visibility wholesale lives or dies on.",
   },
 };

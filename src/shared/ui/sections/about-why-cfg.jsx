@@ -73,7 +73,7 @@ export function AboutWhyCfg({ section }) {
             <RevealText
               as="h2"
               delay={0.08}
-              className="mt-5 font-display text-3xl font-semibold leading-[1.12] tracking-tight text-balance sm:text-4xl"
+              className="mt-5 font-display text-[1.5rem] font-semibold leading-[1.18] tracking-tight text-balance sm:text-4xl sm:leading-[1.12]"
             >
               {section.heading}
             </RevealText>

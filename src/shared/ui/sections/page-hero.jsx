@@ -57,7 +57,7 @@ export function PageHero({ trail = [], eyebrow, heading, headingAccent, intro, c
 
       <h1
         className={cn(
-          "mt-5 font-display text-3xl font-semibold leading-[1.1] tracking-tight text-balance sm:text-4xl xl:text-[2.75rem]",
+          "mt-5 font-display text-[1.625rem] font-semibold leading-[1.16] tracking-tight sm:leading-[1.1] text-balance sm:text-4xl xl:text-[2.75rem]",
           centred
             ? "max-w-3xl text-white [text-shadow:0_1px_2px_rgb(0_0_0/0.6),0_6px_30px_rgb(0_0_0/0.7)]"
             : "text-foreground",

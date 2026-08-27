@@ -49,7 +49,7 @@ export function ContactForm({ page }) {
               The brief
             </p>
 
-            <h2 className="mt-5 font-display text-3xl font-semibold leading-[1.14] tracking-tight text-balance sm:text-4xl">
+            <h2 className="mt-5 font-display text-[1.5rem] font-semibold leading-[1.2] tracking-tight sm:leading-[1.14] text-balance sm:text-4xl">
               Tell us what you are trying to move
             </h2>
 

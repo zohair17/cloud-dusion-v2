@@ -44,7 +44,7 @@ export function ServicePillars({ section }) {
             </p>
           </Reveal>
 
-          <h2 className="mt-5 font-display text-3xl font-semibold leading-[1.12] tracking-tight text-balance sm:text-4xl lg:text-5xl">
+          <h2 className="mt-5 font-display text-[1.5rem] font-semibold leading-[1.18] tracking-tight text-balance sm:text-4xl sm:leading-[1.12] lg:text-5xl">
             <RevealText delay={0.08}>{section.heading}</RevealText>{" "}
             <RevealText className="text-brand-600" delay={0.14}>
               {section.headingAccent}
@@ -62,7 +62,7 @@ export function ServicePillars({ section }) {
           ) : null}
         </div>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:auto-rows-fr lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:auto-rows-fr lg:grid-cols-3">
           {section.items.map((pillar, index) => {
             const Icon = ICONS[pillar.icon] ?? Bot;
             // First and last run the full height of the row pair.
@@ -77,7 +77,7 @@ export function ServicePillars({ section }) {
                 <Tilt className="group h-full">
                   <Link
                     href={routes.services.detail(pillar.serviceSlug)}
-                    className={`cfg-card-solid relative flex h-full overflow-hidden rounded-card p-6 [transform-style:preserve-3d] sm:p-7 ${
+                    className={`cfg-card-solid relative flex h-full overflow-hidden rounded-card p-5 [transform-style:preserve-3d] sm:p-7 ${
                       tall ? "flex-col" : "flex-col gap-4 sm:flex-row sm:items-center"
                     }`}
                   >
@@ -92,18 +92,18 @@ export function ServicePillars({ section }) {
                     </span>
 
                     <div className={tall ? "" : "relative flex-1"}>
-                      <span className="relative inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[linear-gradient(140deg,var(--color-brand-500),var(--color-brand-700))] text-white shadow-[0_12px_26px_-10px_rgb(53_51_205/0.65)] ring-1 ring-white/25 [transform:translateZ(38px)]">
+                      <span className="relative inline-flex h-11 w-11 items-center justify-center rounded-2xl sm:h-12 sm:w-12 bg-[linear-gradient(140deg,var(--color-brand-500),var(--color-brand-700))] text-white shadow-[0_12px_26px_-10px_rgb(53_51_205/0.65)] ring-1 ring-white/25 [transform:translateZ(38px)]">
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </span>
 
-                      <h3 className="mt-5 font-display text-lg font-semibold leading-snug text-balance">
+                      <h3 className="mt-4 font-display text-base font-semibold leading-snug text-balance sm:mt-5 sm:text-lg">
                         {pillar.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-muted">
+                      <p className="mt-2.5 text-[0.8125rem] leading-relaxed text-muted sm:text-sm">
                         {pillar.description}
                       </p>
 
-                      <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-600">
+                      <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-600 sm:mt-6">
                         <span className="relative">
                           Explore
                           <span
@@ -121,8 +121,8 @@ export function ServicePillars({ section }) {
                     <div
                       className={`relative overflow-hidden rounded-2xl bg-surface ring-1 ring-brand-100 [transform:translateZ(46px)] ${
                         tall
-                          ? "mt-6 min-h-[12rem] flex-1"
-                          : "min-h-[9rem] sm:w-[44%] sm:shrink-0 sm:self-stretch"
+                          ? "mt-5 min-h-[7.5rem] flex-1 sm:mt-6 sm:min-h-[12rem]"
+                          : "min-h-[7rem] sm:min-h-[9rem] sm:w-[44%] sm:shrink-0 sm:self-stretch"
                       }`}
                     >
                       <Image

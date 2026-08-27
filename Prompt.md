@@ -1,7 +1,4 @@
+1) Header:
+![alt text](image-6.png) yar ismai flags bhot chottay hain visible nahi hain
 
-#3533cd
-1) https://cfgv2.vercel.app/ acha ab is link ko pura verify karo kai iska content aur hmara content same to same hai?. aur phir ye bhi check karo iski navigatios aur hmari navigations sahi hai aesa to nhi kai koi page jo is link mai hai wo humnay nahi bnaya ho,, mujhay jawab dena sirf .. matlab agar hum ye link sai application ko compare karain to kia hmari application complete hai?
-
-
-
-Important Note: Bhai sirf problem solve karna , solve karnay kai baad details mat btana mujhay bus kehna "done" aur ziada token consume mat karna
+Important Note: is Issue ko solve karnay kai lye mainay sirf 6000 token rakhain hain , 100 token sai ziada use nahi karna aur Bhai sirf problem solve karna , solve karnay kai baad details mat btana mujhay bus kehna "done" 

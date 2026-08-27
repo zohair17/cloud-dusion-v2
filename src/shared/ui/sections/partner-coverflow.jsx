@@ -143,18 +143,15 @@ export function PartnerCoverflow({ items = [], label = "Our partners" }) {
 
             {/* Where the partner is based, if the record says. */}
             {item.country ? (
-              <span className="absolute bottom-[7%] right-[6%] inline-flex items-center gap-[clamp(0.2rem,0.5vw,0.5rem)] rounded-pill bg-white/85 px-[clamp(0.35rem,0.8vw,0.7rem)] py-[clamp(0.15rem,0.35vw,0.35rem)] ring-1 ring-black/[0.06] backdrop-blur-sm">
+              <span className="absolute bottom-[7%] right-[6%] inline-flex rounded-[0.25rem] bg-white/85 p-[clamp(0.14rem,0.3vw,0.28rem)] ring-1 ring-black/[0.06] backdrop-blur-sm">
                 <Image
                   src={`/asset/flags/${item.country.code}.png`}
-                  alt=""
+                  alt={item.country.name}
                   width={80}
                   height={53}
-                  sizes="1.25rem"
-                  className="h-[clamp(0.5rem,1vw,0.8rem)] w-[clamp(0.75rem,1.5vw,1.2rem)] rounded-[0.15rem] object-cover ring-1 ring-black/10"
+                  sizes="1.75rem"
+                  className="h-[clamp(0.62rem,1.25vw,1rem)] w-[clamp(0.95rem,1.9vw,1.5rem)] rounded-[0.12rem] object-cover ring-1 ring-black/10"
                 />
-                <span className="text-[clamp(0.45rem,0.95vw,0.7rem)] font-semibold uppercase leading-none tracking-[0.1em] text-muted">
-                  {item.country.name}
-                </span>
               </span>
             ) : null}
 

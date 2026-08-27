@@ -31,9 +31,9 @@ export async function generateMetadata({ params }) {
 /**
  * Service detail.
  *
- * One argument told in order: what the service is, what is currently wrong, how
- * we go about it, what is included, what it is built on, what it becomes, who it
- * is for, how it is delivered, what you get, and why us.
+ * One argument told in order: what the service is, what is included, what is
+ * currently wrong, how we go about it, what it is built on, what it becomes, who
+ * it is for, how it is delivered, what you get, and why us.
  *
  * Every section renders only if its record carries content, so the eleven
  * outline services degrade to the parts they have authored rather than showing
@@ -66,9 +66,9 @@ export default async function ServiceDetailPage({ params }) {
       />
 
       <ServiceIntro paragraphs={service.intro} />
+      <ServiceCapabilities section={service.capabilities} />
       <ServiceChallenges section={service.challenges} />
       <ServiceApproach section={service.approach} />
-      <ServiceCapabilities section={service.capabilities} />
       <ServiceStack section={service.stack} technologies={service.technologies} />
       <ServiceSolutions section={service.sections.solutions} items={service.relatedSolutions} />
       <ServiceIndustries section={service.sections.industries} items={service.relatedIndustries} />

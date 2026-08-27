@@ -3,8 +3,7 @@ import { buildMetadata } from "@/shared/lib/metadata";
 import { routes } from "@/shared/config/routes";
 import {
   SolutionHero,
-  SolutionProblem,
-  SolutionOverview,
+  SolutionBrief,
   SolutionHowItWorks,
   SolutionCapabilities,
   SolutionAi,
@@ -53,9 +52,11 @@ export default async function SolutionDetailPage({ params }) {
         ]}
       />
 
-      <SolutionProblem problem={solution.problem} challenges={solution.businessChallenges} />
-
-      <SolutionOverview paragraphs={solution.overview} />
+      <SolutionBrief
+        problem={solution.problem}
+        challenges={solution.businessChallenges}
+        overview={solution.overview}
+      />
 
       <SolutionHowItWorks section={solution.howItWorks} />
 

@@ -11,6 +11,10 @@ import education from "./education";
 import realEstate from "./real-estate";
 import transportation from "./transportation";
 import nonProfit from "./non-profit";
+import manufacturing from "./manufacturing";
+import insurance from "./insurance";
+import retail from "./retail";
+import government from "./government";
 
 export const industryRecords = [
   healthcare,
@@ -22,6 +26,10 @@ export const industryRecords = [
   realEstate,
   transportation,
   nonProfit,
+  manufacturing,
+  insurance,
+  retail,
+  government,
 ];
 
 export default industryRecords;
