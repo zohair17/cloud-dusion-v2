@@ -101,7 +101,7 @@ export function CaseStudyHero({ caseStudy, trail = [] }) {
               {caseStudy.sectorLabel}
             </motion.p>
 
-            <h1 className="mt-7 font-display text-[2.1rem] font-semibold leading-[1.07] tracking-tight text-balance text-foreground sm:text-[2.75rem] lg:text-[3.15rem]">
+            <h1 className="mt-7 font-display text-[1.625rem] font-semibold leading-[1.16] tracking-tight sm:text-[2.1rem] sm:leading-[1.07] text-balance text-foreground sm:text-[2.75rem] lg:text-[3.15rem]">
               <RevealText delay={0.1}>{caseStudy.title}</RevealText>
             </h1>
 

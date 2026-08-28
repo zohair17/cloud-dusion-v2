@@ -1,3 +1,3 @@
-1) HeroVideo Updte ki hai to ab wo use karo forward aur reverse mai
+1) video ka size agar thora sa bara hoskta hai to kardo lekin desgin mai kuch khrabi na aye dusra mobile par bhi sai sai aye.
 
-Important Note: is Issue ko solve karnay kai lye mainay sirf 6000 token rakhain hain , 800 token sai ziada use nahi karna aur Bhai sirf problem solve karna , solve karnay kai baad details mat btana mujhay bus kehna "done" 
+Important Note:  300 token sai ziada use nahi karna aur Bhai sirf problem solve karna , solve karnay kai baad details mat btana mujhay bus kehna "done" 

@@ -118,7 +118,7 @@ export function SolutionHero({ solution, trail = [] }) {
             transition={{ duration: 0.7, delay: 0.2, ease: EASE }}
             className="relative z-10 -mt-12 rounded-[1.75rem] bg-white px-6 py-8 shadow-[0_36px_90px_-58px_rgb(21_21_28/0.6)] ring-1 ring-black/[0.06] sm:-mt-16 sm:px-10 sm:py-11 lg:-mt-20 lg:px-14 lg:py-14"
           >
-            <h1 className="max-w-4xl font-display text-3xl font-semibold leading-[1.08] tracking-tight text-balance text-foreground sm:text-4xl lg:text-[3rem]">
+            <h1 className="max-w-4xl font-display text-[1.625rem] font-semibold leading-[1.16] tracking-tight sm:text-3xl sm:leading-[1.08] text-balance text-foreground sm:text-4xl lg:text-[3rem]">
               <RevealText delay={0.28}>{solution.title}</RevealText>
             </h1>
 

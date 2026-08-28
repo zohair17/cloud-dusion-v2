@@ -82,8 +82,12 @@ export function Clients({ section }) {
                 const logo = roster.items[index % roster.items.length];
 
                 return (
-                  <li key={index} className="group/tile [transform-style:preserve-3d]">
-                    <span className="relative flex h-[var(--tile-h)] w-[var(--tile-w)] items-center justify-center overflow-hidden rounded-[clamp(0.75rem,1.2vw,1.15rem)] bg-[linear-gradient(150deg,#ffffff_0%,#ffffff_55%,#f2f3fa_100%)] shadow-[0_18px_30px_-18px_rgb(11_11_42/0.45),0_2px_4px_rgb(11_11_42/0.06),inset_0_1px_0_rgb(255_255_255/0.9)] ring-1 ring-black/[0.06] transition-[transform,box-shadow] duration-500 ease-out group-hover/tile:[transform:translateZ(34px)] group-hover/tile:shadow-[0_30px_50px_-22px_rgb(11_11_42/0.5),0_4px_8px_rgb(11_11_42/0.08)]">
+                  <li key={index} className="group/tile relative [transform-style:preserve-3d]">
+                    <span
+                      tabIndex={logo.via ? 0 : undefined}
+                      role={logo.via ? "button" : undefined}
+                      aria-label={logo.via ? `${logo.name}, client of ${logo.via.name}` : undefined}
+                      className="relative flex h-[var(--tile-h)] w-[var(--tile-w)] items-center justify-center overflow-hidden rounded-[clamp(0.75rem,1.2vw,1.15rem)] bg-[linear-gradient(150deg,#ffffff_0%,#ffffff_55%,#f2f3fa_100%)] shadow-[0_18px_30px_-18px_rgb(11_11_42/0.45),0_2px_4px_rgb(11_11_42/0.06),inset_0_1px_0_rgb(255_255_255/0.9)] ring-1 ring-black/[0.06] transition-[transform,box-shadow] duration-500 ease-out group-hover/tile:[transform:translateZ(34px)] group-hover/tile:shadow-[0_30px_50px_-22px_rgb(11_11_42/0.5),0_4px_8px_rgb(11_11_42/0.08)]">
                       <Image
                         src={`/asset/clients/${logo.file}`}
                         alt={logo.name}
@@ -105,30 +109,35 @@ export function Clients({ section }) {
                         />
                       ) : null}
 
-                      {/*
-                        Some of this wall came to us through a partner rather
-                        than direct. The tile says so on hover: a brand panel
-                        rises over the mark and shows whose client they are,
-                        so the relationship is readable without a second legend.
-                      */}
-                      {logo.via ? (
-                        <span className="absolute inset-0 flex flex-col items-center justify-center gap-[0.2em] rounded-[inherit] bg-brand-600 px-2 text-center opacity-0 transition-opacity duration-300 ease-out group-hover/tile:opacity-100 group-active/tile:opacity-100 group-focus-within/tile:opacity-100">
-                          <span className="text-[0.45rem] font-semibold uppercase leading-none tracking-[0.14em] text-white/70">
-                            Client of
-                          </span>
-                          <span className="inline-flex items-center justify-center rounded-[0.3rem] bg-white px-1.5 py-1">
-                            <Image
-                              src={`/asset/clients/${logo.via.file}`}
-                              alt={logo.via.name}
-                              width={logo.via.width}
-                              height={logo.via.height}
-                              sizes="6rem"
-                              className="h-auto w-auto max-h-[calc(var(--tile-h)*0.3)] max-w-[calc(var(--tile-w)*0.66)] object-contain"
-                            />
-                          </span>
-                        </span>
-                      ) : null}
                     </span>
+
+                    {/*
+                      Some of this wall came to us through a partner rather
+                      than direct. The tile says so above itself rather than
+                      over itself, so the mark being explained stays visible
+                      while the note is open.
+                    */}
+                    {logo.via ? (
+                      <span className="pointer-events-none absolute bottom-[calc(100%+0.5rem)] left-1/2 z-30 flex -translate-x-1/2 flex-col items-center gap-[0.35em] whitespace-nowrap rounded-[0.75rem] bg-brand-600 px-4 py-2.5 text-center opacity-0 shadow-lg transition-opacity duration-200 ease-out group-hover/tile:opacity-100 group-focus-within/tile:opacity-100">
+                        <span className="text-[0.625rem] font-semibold uppercase leading-none tracking-[0.14em] text-white/70">
+                          Client of
+                        </span>
+                        <span className="inline-flex items-center justify-center rounded-[0.4rem] bg-white px-2.5 py-1.5">
+                          <Image
+                            src={`/asset/clients/${logo.via.file}`}
+                            alt={logo.via.name}
+                            width={logo.via.width}
+                            height={logo.via.height}
+                            sizes="6rem"
+                            className="h-auto w-auto max-h-[1.9rem] max-w-[8rem] object-contain"
+                          />
+                        </span>
+                        <span
+                          aria-hidden="true"
+                          className="absolute left-1/2 top-full h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-brand-600"
+                        />
+                      </span>
+                    ) : null}
                   </li>
                 );
               })}

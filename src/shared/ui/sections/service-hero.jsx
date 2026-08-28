@@ -175,7 +175,7 @@ export function ServiceHero({ trail = [], eyebrow, heading, tagline, ctas = [], 
               </Reveal>
             ) : null}
 
-            <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-[3.25rem] xl:text-[3.6rem]">
+            <h1 className="mt-5 font-display text-[1.625rem] font-semibold leading-[1.16] tracking-tight sm:text-4xl sm:leading-[1.05] text-balance sm:text-5xl lg:text-[3.25rem] xl:text-[3.6rem]">
               <RevealText delay={0.1}>{heading}</RevealText>
             </h1>
 
