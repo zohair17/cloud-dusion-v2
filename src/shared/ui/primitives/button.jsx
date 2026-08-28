@@ -19,9 +19,9 @@ const VARIANTS = {
 };
 
 const SIZES = {
-  sm: "px-5 py-2 text-sm",
-  md: "px-6 py-3 text-[15px]",
-  lg: "px-7 py-3.5 text-base",
+  sm: "px-4 py-1.5 text-[0.8125rem] sm:px-5 sm:py-2 sm:text-sm",
+  md: "px-5 py-2.5 text-sm sm:px-6 sm:py-3 sm:text-[15px]",
+  lg: "px-5 py-2.5 text-sm sm:px-7 sm:py-3.5 sm:text-base",
 };
 
 export function Button({ href, variant = "primary", size = "md", className, children, ...props }) {

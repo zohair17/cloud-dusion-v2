@@ -250,9 +250,9 @@ export function SolutionsHero({ page, categories }) {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="mt-10 flex flex-wrap items-center gap-5"
                 >
-                  <Button href={primaryCta.href} variant="primary" size="lg" className="gap-3 pr-2.5">
+                  <Button href={primaryCta.href} variant="primary" size="lg" className="gap-2.5 pr-2 sm:gap-3 sm:pr-2.5">
                     {primaryCta.label}
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-brand-600">
+                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-brand-600 sm:h-8 sm:w-8">
                       <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                     </span>
                   </Button>

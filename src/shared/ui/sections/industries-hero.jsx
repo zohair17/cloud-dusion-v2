@@ -37,8 +37,8 @@ export function IndustriesHero({ page, industries }) {
     <section className="pb-2 pt-6 sm:pt-8">
       <Container size="wide">
         <div className="relative overflow-hidden rounded-[2rem] bg-white p-3 shadow-[0_34px_90px_-58px_rgb(53_51_205/0.5)] ring-1 ring-brand-600/25 sm:rounded-[2.5rem] sm:p-4">
-          <div className="grid items-center gap-8 overflow-hidden rounded-[1.5rem] bg-surface lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-0 lg:rounded-[2rem]">
-            <div className="px-6 pt-12 sm:px-10 lg:py-16 lg:pl-14 lg:pr-10">
+          <div className="grid items-center gap-6 overflow-hidden rounded-[1.5rem] bg-surface sm:gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-0 lg:rounded-[2rem]">
+            <div className="order-2 px-5 pb-2 sm:px-10 sm:pt-12 lg:order-1 lg:py-16 lg:pl-14 lg:pr-10">
               <motion.p
                 initial={reduced ? false : { opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -69,9 +69,9 @@ export function IndustriesHero({ page, industries }) {
                 className="mt-9 flex flex-wrap items-center gap-5"
               >
                 {primaryCta ? (
-                  <Button href={primaryCta.href} variant="primary" size="lg" className="gap-3 pr-2.5">
+                  <Button href={primaryCta.href} variant="primary" size="lg" className="gap-2.5 pr-2 sm:gap-3 sm:pr-2.5">
                     {primaryCta.label}
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-brand-600">
+                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-brand-600 sm:h-8 sm:w-8">
                       <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                     </span>
                   </Button>
@@ -82,7 +82,7 @@ export function IndustriesHero({ page, industries }) {
 
             {/* The two columns, feathered at both ends. */}
             <div
-              className="relative h-[20rem] overflow-hidden sm:h-[24rem] lg:h-[32rem]"
+              className="relative order-1 h-[13rem] overflow-hidden sm:h-[24rem] lg:order-2 lg:h-[32rem]"
               style={{
                 maskImage: "linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent)",
                 WebkitMaskImage: "linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent)",

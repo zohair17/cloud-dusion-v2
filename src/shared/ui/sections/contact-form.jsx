@@ -179,7 +179,7 @@ export function ContactForm({ page }) {
                       )}
                     >
                       {pending ? "Sending" : page.formSubmitLabel}
-                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-brand-600">
+                      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-brand-600 sm:h-8 sm:w-8">
                         {pending ? (
                           <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
                         ) : (

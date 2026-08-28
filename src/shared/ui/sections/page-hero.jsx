@@ -98,10 +98,10 @@ export function PageHero({ trail = [], eyebrow, heading, headingAccent, intro, c
       ) : null}
 
       {primaryCta ? (
-        <Button href={primaryCta.href} variant="primary" size="lg" className="mt-8 gap-3 pr-2.5">
+        <Button href={primaryCta.href} variant="primary" size="lg" className="mt-8 gap-2.5 pr-2 sm:gap-3 sm:pr-2.5">
           {primaryCta.label}
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-brand-600">
-            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-brand-600 sm:h-8 sm:w-8">
+            <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
           </span>
         </Button>
       ) : null}

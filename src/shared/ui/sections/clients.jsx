@@ -77,7 +77,7 @@ export function Clients({ section }) {
           </div>
 
           <Reveal delay={0.18}>
-            <ul className="mt-10 flex flex-wrap items-center justify-center gap-[clamp(0.55rem,1vw,1.1rem)] [perspective:1600px] [--tile-h:clamp(3.1rem,3.8vw,4rem)] [--tile-w:clamp(5.5rem,9vw,9rem)] sm:mt-12">
+            <ul className="mt-10 flex flex-wrap items-center justify-center gap-[clamp(0.55rem,1vw,1.1rem)] [perspective:1600px] [--tile-h:clamp(3.6rem,3.8vw,4rem)] [--tile-w:clamp(6.5rem,9vw,9rem)] sm:mt-12">
               {Array.from({ length: roster.tiles ?? roster.items.length }, (_, index) => {
                 const logo = roster.items[index % roster.items.length];
 
@@ -93,12 +93,6 @@ export function Clients({ section }) {
                         className="relative h-auto w-auto max-h-[calc(var(--tile-h)*0.48)] max-w-[calc(var(--tile-w)*0.78)] object-contain"
                       />
 
-                      {/*
-                        Some of this wall came to us through a partner rather
-                        than direct. The tile says so on hover: a brand panel
-                        rises over the mark and names who brought them, so the
-                        relationship is readable without a second legend.
-                      */}
                       {/* Where the client is, if the record says. */}
                       {logo.country ? (
                         <Image
@@ -118,7 +112,7 @@ export function Clients({ section }) {
                         so the relationship is readable without a second legend.
                       */}
                       {logo.via ? (
-                        <span className="absolute inset-0 flex flex-col items-center justify-center gap-[0.2em] rounded-[inherit] bg-brand-600 px-2 text-center opacity-0 transition-opacity duration-300 ease-out group-hover/tile:opacity-100">
+                        <span className="absolute inset-0 flex flex-col items-center justify-center gap-[0.2em] rounded-[inherit] bg-brand-600 px-2 text-center opacity-0 transition-opacity duration-300 ease-out group-hover/tile:opacity-100 group-active/tile:opacity-100 group-focus-within/tile:opacity-100">
                           <span className="text-[0.45rem] font-semibold uppercase leading-none tracking-[0.14em] text-white/70">
                             Client of
                           </span>

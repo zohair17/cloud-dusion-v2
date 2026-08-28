@@ -219,7 +219,7 @@ function LayerRow({ ref, layer, index }) {
       <div
         ref={copy}
         className={cn(
-          "relative z-10 py-10 pl-12 sm:py-16 sm:pl-16 sm:pr-8",
+          "relative z-10 py-8 pl-6 sm:py-16 sm:pl-16 sm:pr-8",
           onLeft ? "sm:order-1" : "sm:order-2"
         )}
       >
@@ -236,7 +236,7 @@ function LayerRow({ ref, layer, index }) {
 
       <div
         className={cn(
-          "relative z-10 pb-10 pl-12 sm:py-16",
+          "relative z-10 pb-10 pl-6 sm:py-16 sm:pl-12",
           onLeft ? "sm:order-2 sm:pl-8 sm:pr-0" : "sm:order-1 sm:pl-0 sm:pr-8"
         )}
       >
@@ -268,7 +268,7 @@ function LayerSlab({ layer, active }) {
         className="pointer-events-none absolute -inset-8 rounded-[3rem] bg-[radial-gradient(58%_58%_at_50%_38%,var(--color-brand-200),transparent_72%)] opacity-60 blur-2xl"
       />
 
-      <div className="relative overflow-hidden rounded-card border border-border bg-gradient-to-br from-white/95 via-white/80 to-brand-50/80 p-7 shadow-[0_30px_80px_rgba(21,21,28,0.10)] ring-1 ring-inset ring-white/70 backdrop-blur-sm sm:p-8">
+      <div className="relative overflow-hidden rounded-card border border-border bg-gradient-to-br from-white/95 via-white/80 to-brand-50/80 p-4 shadow-[0_30px_80px_rgba(21,21,28,0.10)] ring-1 ring-inset ring-white/70 backdrop-blur-sm sm:p-8">
         <span
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 opacity-80 [background-image:linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] [background-size:34px_34px] [mask-image:radial-gradient(78%_78%_at_50%_35%,black,transparent)]"
@@ -277,7 +277,7 @@ function LayerSlab({ layer, active }) {
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-300 to-transparent"
         />
-        <ul className="relative flex flex-wrap gap-2.5 sm:gap-3">
+        <ul className="relative flex flex-wrap gap-2 sm:gap-3">
           {layer.technologies.map((technology, order) => (
             <motion.li
               key={technology.id}
@@ -285,7 +285,7 @@ function LayerSlab({ layer, active }) {
               animate={active ? { opacity: 1, y: 0 } : undefined}
               transition={{ duration: 0.45, delay: 0.16 + order * 0.06, ease: [0.22, 1, 0.36, 1] }}
             >
-              <span className="inline-flex items-center gap-2 rounded-pill border border-brand-100 bg-white px-4 py-2.5 text-[0.8rem] font-medium text-foreground shadow-[0_1px_2px_rgb(21_21_28/0.05)] transition-colors duration-300 hover:border-brand-400 hover:text-brand-700">
+              <span className="inline-flex items-center gap-2 rounded-pill border border-brand-100 bg-white px-2.5 py-1.5 text-[0.7rem] font-medium sm:px-4 sm:py-2.5 sm:text-[0.8rem] text-foreground shadow-[0_1px_2px_rgb(21_21_28/0.05)] transition-colors duration-300 hover:border-brand-400 hover:text-brand-700">
                 <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-brand-400" />
                 {technology.label}
               </span>

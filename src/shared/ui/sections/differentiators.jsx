@@ -68,6 +68,9 @@ function angleDistance(a, b) {
 /** The gap between neighbours, as a fraction of a card. */
 const NEIGHBOUR_GAP = 0.14;
 
+/** A phone shows fewer cards at once, so they can afford to sit further apart. */
+const MOBILE_NEIGHBOUR_GAP = 0.3;
+
 /**
  * The arc, sized off its own width.
  *
@@ -94,9 +97,9 @@ function useArcGeometry(width) {
         ? clamp(width * 0.34, 210, 270)
         : clamp(width * 0.2, 220, 300);
 
-    const cardH = cardW * (mobile ? 1.62 : 1.3);
+    const cardH = cardW * (mobile ? 1.24 : 1.3);
     const s = step * RAD;
-    const radius = (cardW * (1 + NEIGHBOUR_GAP)) / Math.sin(s);
+    const radius = (cardW * (1 + (mobile ? MOBILE_NEIGHBOUR_GAP : NEIGHBOUR_GAP))) / Math.sin(s);
 
     /* Room above the focal card for the size it grows to when it gets there. */
     const top = cardH * 0.56 + 20;
@@ -125,7 +128,7 @@ function useArcGeometry(width) {
       radius,
       step,
       centerY: top + radius,
-      height: Math.round(bottom - cardH * 0.1),
+      height: Math.round(mobile ? bottom + cardH * 0.1 : bottom - cardH * 0.1),
       cx: width / 2,
     };
   }, [width]);
@@ -180,22 +183,22 @@ function ArcCard({ item, angle, geo, rotation, onSelect }) {
             drawn large across the light half and held faint, so the sentence
             below keeps the contrast and the picture only tints the card.
           */}
-          <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 flex h-[52%] items-center justify-center">
+          <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 flex h-[34%] items-center justify-center sm:h-[52%]">
             <Icon
               strokeWidth={1}
-              className="h-[7rem] w-[7rem] text-brand-600/[0.16] transition-transform duration-700 ease-out group-hover:scale-105 sm:h-[9.5rem] sm:w-[9.5rem]"
+              className="h-[4.25rem] w-[4.25rem] text-brand-600/[0.16] transition-transform duration-700 ease-out group-hover:scale-105 sm:h-[9.5rem] sm:w-[9.5rem]"
             />
           </div>
 
           <div className="relative mt-auto px-4 pb-5 text-center sm:px-5 sm:pb-6">
             <span
               aria-hidden="true"
-              className="mx-auto mb-3.5 block h-[3px] w-9 rounded-full bg-brand-400"
+              className="mx-auto mb-2.5 block h-[3px] w-9 rounded-full bg-brand-400 sm:mb-3.5"
             />
             <h3 className="font-display text-[0.9375rem] font-semibold leading-snug tracking-tight text-balance text-white sm:text-base">
               {item.title}
             </h3>
-            <p className="mt-2 text-[0.75rem] leading-[1.5] text-balance text-white/85 sm:text-[0.8125rem] sm:leading-relaxed">
+            <p className="mt-1.5 text-[0.7rem] leading-[1.45] text-balance text-white/85 sm:text-[0.8125rem] sm:leading-relaxed">
               {item.description}
             </p>
           </div>

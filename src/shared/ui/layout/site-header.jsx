@@ -29,6 +29,7 @@ export function SiteHeader({ navigation }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openPanel, setOpenPanel] = useState(null);
   const [mobileSection, setMobileSection] = useState(null);
+  const [mobileService, setMobileService] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const closeTimer = useRef(null);
   const pathname = usePathname();
@@ -223,14 +224,35 @@ export function SiteHeader({ navigation }) {
                           ) : null}
                           {group.links.map((link) => (
                             <div key={link.id}>
-                              <Link
-                                href={link.href}
-                                onClick={() => setMenuOpen(false)}
-                                className="block rounded-pill px-2 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface hover:text-brand-700"
-                              >
-                                {link.label}
-                              </Link>
-                              {link.children?.length ? (
+                              <div className="flex items-center gap-1">
+                                <Link
+                                  href={link.href}
+                                  onClick={() => setMenuOpen(false)}
+                                  className="flex-1 rounded-pill px-2 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface hover:text-brand-700"
+                                >
+                                  {link.label}
+                                </Link>
+                                {link.children?.length ? (
+                                  <button
+                                    type="button"
+                                    aria-label={`${link.label} capabilities`}
+                                    aria-expanded={mobileService === link.id}
+                                    onClick={() =>
+                                      setMobileService((id) => (id === link.id ? null : link.id))
+                                    }
+                                    className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-pill text-muted transition-colors hover:bg-surface"
+                                  >
+                                    <ChevronDown
+                                      aria-hidden="true"
+                                      className={cn(
+                                        "h-3.5 w-3.5 transition-transform",
+                                        mobileService === link.id && "rotate-180"
+                                      )}
+                                    />
+                                  </button>
+                                ) : null}
+                              </div>
+                              {link.children?.length && mobileService === link.id ? (
                                 <ul className="mb-1 ml-2 border-l border-border pl-3">
                                   {link.children.map((child) => (
                                     <li key={child.id}>

@@ -26,7 +26,7 @@ export function ServicesHero({ page, groups }) {
   return (
     <section className="pb-2 pt-6 sm:pt-8">
       <Container size="wide">
-        <div className="relative overflow-hidden rounded-[2rem] bg-white px-7 py-14 text-center shadow-[0_34px_90px_-58px_rgb(53_51_205/0.5)] ring-1 ring-brand-600/25 sm:rounded-[2.5rem] sm:px-12 sm:py-20">
+        <div className="relative overflow-hidden rounded-[2rem] bg-white px-5 py-10 text-center shadow-[0_34px_90px_-58px_rgb(53_51_205/0.5)] ring-1 ring-brand-600/25 sm:rounded-[2.5rem] sm:px-12 sm:py-20">
           <span
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_90%_at_50%_0%,rgb(53_51_205/0.08),transparent_70%)]"
@@ -87,9 +87,9 @@ export function ServicesHero({ page, groups }) {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="mt-10 flex flex-wrap items-center justify-center gap-4"
               >
-                <Button href={primaryCta.href} variant="primary" size="lg" className="gap-3 pr-2.5">
+                <Button href={primaryCta.href} variant="primary" size="lg" className="gap-2.5 pr-2 sm:gap-3 sm:pr-2.5">
                   {primaryCta.label}
-                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-brand-600">
+                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-brand-600 sm:h-8 sm:w-8">
                     <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                   </span>
                 </Button>
@@ -149,7 +149,7 @@ function ServiceCard({ service }) {
       className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-white ring-1 ring-black/[0.06] transition-shadow duration-500 hover:shadow-[0_30px_70px_-46px_rgb(53_51_205/0.55)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-600"
     >
       {service.image ? (
-        <div className="relative h-40 w-full overflow-hidden bg-surface">
+        <div className="relative h-28 w-full overflow-hidden bg-surface sm:h-40">
           <Image
             src={service.image}
             alt=""
@@ -164,13 +164,13 @@ function ServiceCard({ service }) {
         </div>
       ) : null}
 
-      <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-display text-lg font-semibold tracking-tight text-balance text-foreground">
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <h3 className="font-display text-base font-semibold tracking-tight text-balance text-foreground sm:text-lg">
           {service.title}
         </h3>
-        <p className="mt-3 text-[0.875rem] leading-relaxed text-muted">{service.summary}</p>
+        <p className="mt-2.5 text-[0.8125rem] leading-relaxed text-muted sm:mt-3 sm:text-[0.875rem]">{service.summary}</p>
 
-        <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-brand-600">
+        <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-brand-600 sm:mt-6">
           Explore
           <ArrowUpRight
             className="h-4 w-4 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"

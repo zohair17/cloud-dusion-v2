@@ -37,7 +37,7 @@ export function ServiceSlider({ images, alt }) {
 
   return (
     <div
-      className="relative aspect-[4/3] w-full shrink-0 cursor-grab select-none overflow-hidden bg-surface"
+      className="relative aspect-[16/9] w-full shrink-0 cursor-grab select-none overflow-hidden bg-surface sm:aspect-[4/3]"
       onPointerDown={onPointerDown}
       onPointerUp={onPointerUp}
     >
