@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
+import { Check, ChevronDown, Menu, X } from "lucide-react";
 import { Container } from "../primitives/container";
 import { Logo } from "../primitives/logo";
 import { cn } from "../primitives/cn";
@@ -24,10 +24,6 @@ import { cn } from "../primitives/cn";
 const SCROLL_THRESHOLD = 24;
 const CLOSE_DELAY = 120;
 
-/** Flyout widths in px, matching `w-[19rem]` and `w-[36rem]`. */
-const SUBMENU_NARROW = 304;
-const SUBMENU_WIDE = 576;
-
 export function SiteHeader({ navigation }) {
   const { items, cta } = navigation;
   const [menuOpen, setMenuOpen] = useState(false);
@@ -45,11 +41,11 @@ export function SiteHeader({ navigation }) {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
+    document.body.style.overflow = menuOpen || openPanel ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [menuOpen]);
+  }, [menuOpen, openPanel]);
 
   useEffect(() => () => clearTimeout(closeTimer.current), []);
 
@@ -226,14 +222,35 @@ export function SiteHeader({ navigation }) {
                             </p>
                           ) : null}
                           {group.links.map((link) => (
-                            <Link
-                              key={link.id}
-                              href={link.href}
-                              onClick={() => setMenuOpen(false)}
-                              className="block rounded-pill px-2 py-2 text-sm text-muted transition-colors hover:bg-surface hover:text-brand-700"
-                            >
-                              {link.label}
-                            </Link>
+                            <div key={link.id}>
+                              <Link
+                                href={link.href}
+                                onClick={() => setMenuOpen(false)}
+                                className="block rounded-pill px-2 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface hover:text-brand-700"
+                              >
+                                {link.label}
+                              </Link>
+                              {link.children?.length ? (
+                                <ul className="mb-1 ml-2 border-l border-border pl-3">
+                                  {link.children.map((child) => (
+                                    <li key={child.id}>
+                                      <Link
+                                        href={child.href}
+                                        onClick={() => setMenuOpen(false)}
+                                        className="flex items-start gap-2 rounded-pill px-2 py-1.5 text-[0.8125rem] leading-snug text-muted transition-colors hover:bg-surface hover:text-brand-700"
+                                      >
+                                        <Check
+                                          aria-hidden="true"
+                                          strokeWidth={2.6}
+                                          className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-600"
+                                        />
+                                        {child.label}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              ) : null}
+                            </div>
                           ))}
                         </div>
                       ))}
@@ -264,108 +281,130 @@ export function SiteHeader({ navigation }) {
  * not stretch to fill four columns.
  */
 /**
- * One entry in a mega-menu column.
+ * The services panel, as a rail and a pane.
  *
- * A service carries its own capabilities, and hovering the entry opens them
- * beside it rather than under it: the column is already a list, and nesting a
- * second list inside pushes every following service down the panel. The
- * flyout is positioned from the entry itself, so it tracks whichever row the
- * pointer is on.
+ * A service has a dozen capabilities and the panel has four groups, which is
+ * more than a column of columns can hold: the earlier version pushed the list
+ * off the bottom of the screen. So the services run down a rail on the left,
+ * each with the sentence that says what it is, and the one under the pointer
+ * opens its capabilities in the pane beside it. Only one service is expanded
+ * at a time, so the panel's height is the rail's height whatever is selected.
  *
- * Keyboard reaches it the same way focus reaches anything else — the entry and
- * the flyout share one wrapper, so focus moving into the flyout keeps it open.
+ * Hover selects; the rail entries stay real links, so a click still goes to
+ * the service page and the keyboard reaches every one of them.
  */
-function SubmenuLink({ link, onNavigate }) {
-  const [open, setOpen] = useState(false);
-  /* The rightmost column has no room to its right, so that one opens inward. */
-  const [flipped, setFlipped] = useState(false);
-  const rowRef = useRef(null);
-  const children = link.children ?? [];
-
-  const reveal = () => {
-    const box = rowRef.current?.getBoundingClientRect();
-    const width = children.length > 5 ? SUBMENU_WIDE : SUBMENU_NARROW;
-    if (box) setFlipped(box.right + width > window.innerWidth - 16);
-    setOpen(true);
-  };
-
-  if (!children.length) {
-    return (
-      <li>
-        <Link
-          href={link.href}
-          onClick={onNavigate}
-          className="block rounded-pill px-2 py-1.5 text-sm text-muted transition-colors hover:bg-surface hover:text-brand-700"
-        >
-          {link.label}
-        </Link>
-      </li>
-    );
-  }
+function ServiceRailPanel({ groups, onNavigate }) {
+  const rail = groups.flatMap((group) =>
+    group.links.map((link) => ({ ...link, groupTitle: group.title })),
+  );
+  const [activeId, setActiveId] = useState(rail[0]?.id ?? null);
+  const active = rail.find((link) => link.id === activeId) ?? rail[0];
+  const children = active?.children ?? [];
 
   return (
-    <li
-      ref={rowRef}
-      className="relative"
-      onMouseEnter={reveal}
-      onMouseLeave={() => setOpen(false)}
-      onFocus={reveal}
-      onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
-      }}
-    >
-      <Link
-        href={link.href}
-        onClick={onNavigate}
-        aria-expanded={open}
-        className={cn(
-          "flex items-center justify-between gap-2 rounded-pill px-2 py-1.5 text-sm transition-colors",
-          open ? "bg-surface text-brand-700" : "text-muted hover:bg-surface hover:text-brand-700"
-        )}
-      >
-        {link.label}
-        <ChevronRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0 opacity-60" />
-      </Link>
+    <div className="mx-auto max-w-[1720px] overflow-hidden rounded-card border border-border bg-background shadow-xl shadow-brand-900/10">
+      <div className="grid items-start lg:grid-cols-[minmax(0,20rem)_minmax(0,1fr)]">
+        {/* The rail: every service, grouped as the catalogue groups them. */}
+        <div
+          data-lenis-prevent
+          className="max-h-[min(21rem,60vh)] overflow-y-auto [scrollbar-color:var(--color-brand-600)_transparent] [scrollbar-width:thin] overscroll-contain border-b border-border bg-surface/60 p-2.5 lg:border-b-0 lg:border-r"
+        >
+          {groups.map((group) => (
+            <div key={group.id} className="mb-1 last:mb-0">
+              {group.title ? (
+                <p className="px-3 pb-1.5 pt-2 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-brand-600">
+                  {group.title}
+                </p>
+              ) : null}
 
-      <AnimatePresence>
-        {open ? (
-          <motion.ul
-            initial={{ opacity: 0, x: flipped ? 6 : -6 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: flipped ? 6 : -6 }}
-            transition={{ duration: 0.16, ease: "easeOut" }}
-            className={cn(
-              "absolute top-0 z-10 grid gap-x-2 rounded-card border border-border bg-background p-2 shadow-xl shadow-brand-900/10",
-              children.length > 5 ? "w-[36rem] grid-cols-2" : "w-[19rem] grid-cols-1",
-              flipped ? "right-full mr-2" : "left-full ml-2"
-            )}
-          >
-            {children.map((child) => (
-              <li key={child.id}>
-                <Link
-                  href={child.href}
-                  onClick={onNavigate}
-                  className="group/child block rounded-card px-3 py-2 transition-colors hover:bg-surface"
-                >
-                  <span className="block text-sm font-medium text-foreground transition-colors group-hover/child:text-brand-700">
-                    {child.label}
-                  </span>
-                  {child.description ? (
-                    <span className="mt-0.5 block text-xs leading-relaxed text-faint">
-                      {child.description}
-                    </span>
-                  ) : null}
-                </Link>
-              </li>
-            ))}
-          </motion.ul>
-        ) : null}
-      </AnimatePresence>
-    </li>
+              <ul>
+                {group.links.map((link) => {
+                  const current = link.id === active?.id;
+                  return (
+                    <li key={link.id}>
+                      <Link
+                        href={link.href}
+                        onClick={onNavigate}
+                        onMouseEnter={() => setActiveId(link.id)}
+                        onFocus={() => setActiveId(link.id)}
+                        aria-current={current ? "true" : undefined}
+                        className={cn(
+                          "block rounded-card px-3 py-1.5 transition-colors",
+                          current ? "bg-white shadow-sm ring-1 ring-brand-100" : "hover:bg-white/70",
+                        )}
+                      >
+                        <span
+                          className={cn(
+                            "block text-sm font-semibold leading-snug transition-colors",
+                            current ? "text-brand-700" : "text-foreground",
+                          )}
+                        >
+                          {link.label}
+                        </span>
+                        {link.description ? (
+                          <span className="mt-0.5 block text-xs leading-relaxed text-faint">
+                            {link.description}
+                          </span>
+                        ) : null}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* The pane: what the selected service actually covers. */}
+        <div data-lenis-prevent className="max-h-[min(21rem,60vh)] overflow-y-auto [scrollbar-color:var(--color-brand-600)_transparent] [scrollbar-width:thin] overscroll-contain p-5 sm:p-6">
+          {active ? (
+            <>
+              <Link
+                href={active.href}
+                onClick={onNavigate}
+                className="font-display text-lg font-semibold tracking-tight text-brand-600 transition-colors hover:text-brand-700"
+              >
+                {active.label}
+              </Link>
+
+              {children.length ? (
+                <ul className="mt-4 grid gap-x-4 gap-y-0.5 sm:grid-cols-2">
+                  {children.map((child) => (
+                    <li key={child.id}>
+                      <Link
+                        href={child.href}
+                        onClick={onNavigate}
+                        className="group/child flex items-start gap-2.5 rounded-card px-2 py-1.5 transition-colors hover:bg-surface"
+                      >
+                        <Check
+                          aria-hidden="true"
+                          strokeWidth={2.6}
+                          className="mt-0.5 h-4 w-4 shrink-0 text-brand-600"
+                        />
+                        <span className="text-sm leading-snug text-foreground transition-colors group-hover/child:text-brand-700">
+                          {child.label}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted">{active.description}</p>
+              )}
+            </>
+          ) : null}
+        </div>
+      </div>
+    </div>
   );
 }
 
 function MegaPanel({ groups, onNavigate }) {
+  /* A panel whose links carry capabilities is the services panel. */
+  if (groups.some((group) => group.links.some((link) => link.children?.length))) {
+    return <ServiceRailPanel groups={groups} onNavigate={onNavigate} />;
+  }
+
   /**
    * Static map — Tailwind cannot see a class name built by string interpolation.
    * Five or more groups drop to three columns so they land in even rows instead
@@ -407,7 +446,15 @@ function MegaPanel({ groups, onNavigate }) {
             ) : (
               <ul className="space-y-1">
                 {group.links.map((link) => (
-                  <SubmenuLink key={link.id} link={link} onNavigate={onNavigate} />
+                  <li key={link.id}>
+                    <Link
+                      href={link.href}
+                      onClick={onNavigate}
+                      className="block rounded-pill px-2 py-1.5 text-sm text-muted transition-colors hover:bg-surface hover:text-brand-700"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
                 ))}
               </ul>
             )}

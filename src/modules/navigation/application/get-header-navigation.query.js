@@ -14,7 +14,7 @@ import { getCategorizedSolutions } from "@/modules/solutions";
  * opens as a second level on hover. They are the service's own sections, not a
  * hand-kept list, so a capability added to a record appears in the menu.
  */
-const SUBMENU_LIMIT = 8;
+const SUBMENU_LIMIT = 14;
 
 /** What one service offers, as menu entries pointing back at its page. */
 function serviceChildren(slug, href) {
@@ -36,6 +36,7 @@ const PANELS = {
       links: group.services.map((s) => ({
         id: s.slug,
         label: s.navLabel,
+        description: s.summary,
         href: s.href,
         children: serviceChildren(s.slug, s.href),
       })),
