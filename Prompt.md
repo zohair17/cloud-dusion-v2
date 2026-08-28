@@ -1,3 +1,3 @@
-1) video ka size agar thora sa bara hoskta hai to kardo lekin desgin mai kuch khrabi na aye dusra mobile par bhi sai sai aye.
+1) ![alt text](image-2.png) ismai shadow bhot dikh raha hai video isko top sai bottom sai left sai full rakho
 
-Important Note:  300 token sai ziada use nahi karna aur Bhai sirf problem solve karna , solve karnay kai baad details mat btana mujhay bus kehna "done" 
+Important Note:  200 token sai ziada use nahi karna aur Bhai sirf problem solve karna , solve karnay kai baad details mat btana mujhay bus kehna "done" 

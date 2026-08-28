@@ -39,10 +39,10 @@ export default function CaseStudiesIndexPage() {
         ctas={page.ctas}
       >
         <Film
-          src="/asset/case-study-film.mp4"
+          src="/asset/case-study-film-swing.mp4"
           poster="/asset/case-study-film-poster.webp"
           fit="contain"
-          className="cfg-hero-film lg:-translate-x-[10%] lg:scale-[1.12]"
+          className="cfg-hero-film"
           label="Documents, dashboards and models converging on a governed cloud store"
         />
       </PageHero>

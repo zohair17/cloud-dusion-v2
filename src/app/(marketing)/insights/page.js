@@ -38,10 +38,10 @@ export default function InsightsIndexPage() {
         intro={page.intro}
       >
         <Film
-          src="/asset/insights-film.mp4"
+          src="/asset/insights-film-swing.mp4"
           poster="/asset/insights-film-poster.webp"
           fit="contain"
-          className="cfg-hero-film lg:-translate-x-[18%] lg:scale-[1.12]"
+          className="cfg-hero-film"
           label="The CFG platform at the centre of AI, the Microsoft ecosystem, transformation and delivery"
         />
       </PageHero>
