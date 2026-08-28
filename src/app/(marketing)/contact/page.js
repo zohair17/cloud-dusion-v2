@@ -2,6 +2,7 @@ import { getContactPage } from "@/modules/company";
 import { buildMetadata } from "@/shared/lib/metadata";
 import { ContactHero } from "@/shared/ui/sections/contact-hero";
 import { ContactForm } from "@/shared/ui/sections/contact-form";
+import { Offices } from "@/shared/ui/sections/offices";
 
 export function generateMetadata() {
   return buildMetadata(getContactPage().seo);
@@ -21,6 +22,7 @@ export default function ContactPage() {
     <>
       <ContactHero page={page} image="/asset/company/contact-hero.webp" />
       <ContactForm page={page} />
+      <Offices />
     </>
   );
 }

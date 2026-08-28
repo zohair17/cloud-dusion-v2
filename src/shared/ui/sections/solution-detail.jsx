@@ -202,6 +202,7 @@ export function SolutionBrief({ problem, challenges, overview = [] }) {
           eyebrow: problem.eyebrow ?? "The problem",
           heading: problem.heading,
           body: [problem.body],
+          tone: "text-red-600",
         }
       : null,
     challenges
@@ -211,6 +212,7 @@ export function SolutionBrief({ problem, challenges, overview = [] }) {
           eyebrow: challenges.eyebrow ?? "Business challenges",
           heading: challenges.heading,
           list: challenges.items,
+          tone: "text-orange-600",
         }
       : null,
     overview.length
@@ -267,7 +269,7 @@ export function SolutionBrief({ problem, challenges, overview = [] }) {
               <p
                 className={cn(
                   "mt-6 text-[0.6875rem] font-semibold uppercase tracking-[0.18em]",
-                  card.accent ? "text-white/70" : "text-brand-600",
+                  card.accent ? "text-white/70" : (card.tone ?? "text-brand-600"),
                 )}
               >
                 {card.eyebrow}
@@ -350,9 +352,20 @@ export function SolutionHowItWorks({ section }) {
                   {step.step}
                 </span>
 
-                <span className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-[0.85rem] bg-brand-600 font-display text-sm font-semibold tabular-nums text-white sm:h-[3.25rem] sm:w-[3.25rem] sm:text-base">
-                  <span className="sr-only">Step </span>
-                  {step.step}
+                {/*
+                  The number is the step's own plate rather than a chip beside
+                  it: set large on a tinted panel with the guilloche behind it,
+                  so the sequence reads as a set of numbered plates.
+                */}
+                <span className="relative flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center overflow-hidden rounded-[1rem] bg-[linear-gradient(150deg,#f4f5fd_0%,#eceefb_100%)] ring-1 ring-brand-100 sm:h-[5.5rem] sm:w-[5.5rem]">
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 opacity-70 [background-image:repeating-linear-gradient(115deg,transparent_0_7px,var(--color-brand-200)_7px_8px)]"
+                  />
+                  <span className="relative font-display text-[1.6rem] font-bold tabular-nums tracking-tight text-brand-300 transition-colors duration-500 group-hover:text-brand-500 sm:text-[2.1rem]">
+                    <span className="sr-only">Step </span>
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </span>
 
                 <div className="relative min-w-0">

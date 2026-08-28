@@ -2,6 +2,20 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import {
+  Boxes,
+  Cloud,
+  Cpu,
+  Database,
+  Layers,
+  LineChart,
+  ScanEye,
+  Search,
+  ShieldCheck,
+  Sparkles,
+  Workflow,
+  Wrench,
+} from "lucide-react";
 import { Container } from "../primitives/container";
 import { SectionHeading } from "./section-heading";
 import { cn } from "../primitives/cn";
@@ -286,7 +300,12 @@ function LayerSlab({ layer, active }) {
               transition={{ duration: 0.45, delay: 0.16 + order * 0.06, ease: [0.22, 1, 0.36, 1] }}
             >
               <span className="inline-flex items-center gap-2 rounded-pill border border-brand-100 bg-white px-2.5 py-1.5 text-[0.7rem] font-medium sm:px-4 sm:py-2.5 sm:text-[0.8rem] text-foreground shadow-[0_1px_2px_rgb(21_21_28/0.05)] transition-colors duration-300 hover:border-brand-400 hover:text-brand-700">
-                <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-brand-400" />
+                <span aria-hidden="true" className={techTone(technology.label)}>
+                  {(() => {
+                    const Mark = techIcon(technology.label);
+                    return <Mark className="h-3.5 w-3.5" strokeWidth={1.9} />;
+                  })()}
+                </span>
                 {technology.label}
               </span>
             </motion.li>
@@ -303,6 +322,48 @@ function LayerSlab({ layer, active }) {
  * The strip of digits is exactly ten glyphs tall, so translating it by
  * `value × 10%` lands the right one in the window.
  */
+/**
+ * The mark for a technology, read off its own name.
+ *
+ * Vendor logotypes are not in the repository and cannot be invented, so each
+ * chip carries the mark for the kind of thing it is instead: the shape says
+ * database, model, or pipeline where a logo would have said whose.
+ */
+const TECH_ICONS = [
+  [/openai|foundry|copilot|gpt|llm|semantic kernel|agent/i, Sparkles],
+  [/vision|speech|translat|ocr|document intelligence|syntex/i, ScanEye],
+  [/search|index|vector/i, Search],
+  [/sql|database|dataverse|cosmos|warehouse|lakehouse|fabric|synapse/i, Database],
+  [/power bi|analytic|report|insight/i, LineChart],
+  [/azure|cloud|kubernetes|iis|server|stack/i, Cloud],
+  [/sharepoint|teams|365|onedrive|purview|viva/i, Boxes],
+  [/logic apps|automate|flow|workflow|service bus|integration|api/i, Workflow],
+  [/security|defender|entra|identity|gateway|waf|firewall/i, ShieldCheck],
+  [/power apps|power platform|builder|studio|framework|spfx|powershell/i, Wrench],
+  [/iot|device|stream|hub|edge/i, Cpu],
+];
+
+/** The vendor's own colour, where the name says whose product it is. */
+const TECH_TONES = [
+  [/azure|microsoft|365|entra|defender|purview|fabric|synapse|copilot/i, "text-[#0078d4]"],
+  [/sharepoint|teams|viva/i, "text-[#038387]"],
+  [/power (bi|apps|automate|platform)|dataverse|builder/i, "text-[#c4a000]"],
+  [/openai|foundry|gpt|llm|semantic kernel|agent|ai/i, "text-[#10a37f]"],
+  [/sql|database|cosmos|warehouse|lakehouse/i, "text-[#a4373a]"],
+  [/security|identity|gateway|waf|firewall/i, "text-[#d13438]"],
+  [/kubernetes|iis|server|powershell|stack/i, "text-[#326ce5]"],
+];
+
+function techTone(label) {
+  for (const [pattern, tone] of TECH_TONES) if (pattern.test(label)) return tone;
+  return "text-brand-600";
+}
+
+function techIcon(label) {
+  for (const [pattern, Icon] of TECH_ICONS) if (pattern.test(label)) return Icon;
+  return Layers;
+}
+
 function RollingNumber({ value, active }) {
   const reduced = useReducedMotion();
   const units = value % 10;

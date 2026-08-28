@@ -16,7 +16,7 @@ export const contactPage = {
     "Tell us about your initiative: an AI ambition, a migration, a product build, or a team you need to scale. We'll come back with a point of view, not a sales script.",
 
   facts: [
-    { label: "Email", value: "hello@cloudfusionglobal.com", kind: "email" },
+    { label: "Email", value: "Business@cloudfusionglobal.com", kind: "email" },
     { label: "Delivery", value: "Global delivery capability", kind: "text" },
     { label: "Response", value: "We reply to every serious inquiry", kind: "text" },
   ],

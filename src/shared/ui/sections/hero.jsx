@@ -1,9 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { RevealText } from "../motion/reveal-text";
 import { Container } from "../primitives/container";
 import { Button } from "../primitives/button";
 import { Film } from "./film";
 import { HeroContactBar } from "./hero-contact-bar";
+import { ConsultationModal } from "./consultation-modal";
 
 /**
  * Homepage hero.
@@ -19,6 +23,8 @@ import { HeroContactBar } from "./hero-contact-bar";
  */
 export function Hero({ hero }) {
   const [primaryCta, ...secondaryCtas] = hero.ctas;
+  /* The first ask happens here rather than a page away. */
+  const [consulting, setConsulting] = useState(false);
 
   return (
     <section className="relative isolate">
@@ -56,7 +62,8 @@ export function Hero({ hero }) {
             <div className="mt-5 flex flex-col items-start gap-3 sm:flex-row">
               {primaryCta ? (
                 <Button
-                  href={primaryCta.href}
+                  type="button"
+                  onClick={() => setConsulting(true)}
                   variant="primary"
                   size="lg"
                   className="w-full whitespace-nowrap sm:w-auto"
@@ -109,17 +116,19 @@ export function Hero({ hero }) {
             */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute left-[4%] top-[-14%] hidden h-[128%] w-[22%] [filter:drop-shadow(4px_0_8px_rgb(53_51_205/0.18))] xl:block"
+              className="pointer-events-none absolute left-[4%] inset-y-[0%] hidden w-[22%] [filter:drop-shadow(3px_0_7px_rgb(21_21_28/0.10))] xl:block"
             >
               {/* Clipped inside the filter, so the shadow is cast by the
                   bracket rather than trimmed away with the rectangle. */}
-              <div className="h-full w-full bg-brand-600 [clip-path:polygon(100%_0,100%_8%,16%_50%,100%_92%,100%_100%,0_50%)]" />
+              <div className="h-[40rem] w-full bg-[#a6a6a6] [clip-path:polygon(100%_0,100%_10%,18%_50%,100%_90%,100%_100%,0_50%)]" />
             </div>
           </div>
         </div>
 
         <HeroContactBar />
       </Container>
+
+      <ConsultationModal open={consulting} onClose={() => setConsulting(false)} />
     </section>
   );
 }

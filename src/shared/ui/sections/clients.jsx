@@ -77,7 +77,7 @@ export function Clients({ section }) {
           </div>
 
           <Reveal delay={0.18}>
-            <ul className="mt-10 flex flex-wrap items-center justify-center gap-[clamp(0.55rem,1vw,1.1rem)] [perspective:1600px] [--tile-h:clamp(3.6rem,3.8vw,4rem)] [--tile-w:clamp(6.5rem,9vw,9rem)] sm:mt-12">
+            <ul className="mt-10 flex flex-wrap items-center justify-center gap-[clamp(0.55rem,1vw,1.1rem)] [perspective:1600px] [--tile-h:clamp(4.4rem,3.8vw,4rem)] [--tile-w:clamp(8.5rem,9vw,9rem)] sm:mt-12">
               {Array.from({ length: roster.tiles ?? roster.items.length }, (_, index) => {
                 const logo = roster.items[index % roster.items.length];
 

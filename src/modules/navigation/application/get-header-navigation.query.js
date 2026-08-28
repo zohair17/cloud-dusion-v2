@@ -16,15 +16,45 @@ import { getCategorizedSolutions } from "@/modules/solutions";
  */
 const SUBMENU_LIMIT = 14;
 
-/** What one service offers, as menu entries pointing back at its page. */
+/**
+ * What one service offers, as menu entries pointing back at its page.
+ *
+ * A service whose capabilities name a product family gets that family as the
+ * level below it, and the capabilities themselves one level below that: the
+ * menu then reads Microsoft & Cloud, Microsoft 365, Microsoft 365 Migration,
+ * which is the shape the catalogue already has. A service with one flat run of
+ * capabilities has nothing to nest, so it stops at two levels.
+ */
 function serviceChildren(slug, href) {
   const items = getServiceDetail(slug)?.capabilities?.items ?? [];
-  return items.slice(0, SUBMENU_LIMIT).map((item, index) => ({
-    id: `${slug}-${index}`,
+  if (!items.length) return [];
+
+  const families = [];
+  for (const item of items) {
+    const title = item.group ?? null;
+    const last = families[families.length - 1];
+    if (last && last.title === title) last.items.push(item);
+    else families.push({ title, items: [item] });
+  }
+
+  const entry = (item, id) => ({
+    id,
     label: item.title,
     description: item.description ?? null,
     href,
-  }));
+  });
+
+  if (families.length > 1 && families.every((family) => family.title)) {
+    return families.slice(0, SUBMENU_LIMIT).map((family, index) => ({
+      id: `${slug}-g${index}`,
+      label: family.title,
+      description: null,
+      href,
+      children: family.items.slice(0, SUBMENU_LIMIT).map((item, i) => entry(item, `${slug}-g${index}-${i}`)),
+    }));
+  }
+
+  return items.slice(0, SUBMENU_LIMIT).map((item, index) => entry(item, `${slug}-${index}`));
 }
 const CTA_ID = "contact";
 

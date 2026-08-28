@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { Container } from "../primitives/container";
 import { siteConfig } from "@/shared/config/site.config";
 
@@ -37,6 +37,25 @@ export function SiteFooter({ columns = [] }) {
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted">
               {siteConfig.shortDescription}
             </p>
+
+            {/* Where the company is, under what it is. */}
+            <ul className="mt-6 space-y-4 text-sm">
+              {(siteConfig.offices ?? []).map((office) => (
+                <li key={office.id} className="flex items-start gap-2.5">
+                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-600 ring-1 ring-brand-100">
+                    <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+                  </span>
+                  <span>
+                    <span className="block text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-brand-600">
+                      {office.label}
+                    </span>
+                    <address className="mt-1 block not-italic leading-relaxed text-muted">
+                      {office.lines.join(" ")}
+                    </address>
+                  </span>
+                </li>
+              ))}
+            </ul>
 
             <ul className="mt-6 space-y-3 text-sm">
               <li>

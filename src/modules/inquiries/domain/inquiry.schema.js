@@ -34,4 +34,5 @@ export function buildInquirySchema({ serviceSlugs = [] } = {}) {
 }
 
 /** Fields marked required in the UI. */
-export const REQUIRED_FIELDS = Object.freeze(["name", "company", "email", "country", "message"]);
+/** Only what we cannot reply without: everything else is offered, not demanded. */
+export const REQUIRED_FIELDS = Object.freeze(["name", "email"]);

@@ -137,21 +137,6 @@ export function ContactForm({ page }) {
                     issue={issues.serviceOfInterest}
                     className="sm:col-span-2"
                   />
-                  <Select
-                    name="projectType"
-                    label="Project type"
-                    placeholder={form.placeholders.projectType}
-                    options={form.projectTypeOptions}
-                    issue={issues.projectType}
-                  />
-                  <Select
-                    name="budgetRange"
-                    label="Estimated budget"
-                    placeholder={form.placeholders.budgetRange}
-                    options={form.budgetRangeOptions}
-                    issue={issues.budgetRange}
-                  />
-
                   <Field
                     name="message"
                     label="Message"

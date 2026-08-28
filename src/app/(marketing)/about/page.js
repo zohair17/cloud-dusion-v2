@@ -7,6 +7,7 @@ import { AboutIntro } from "@/shared/ui/sections/about-intro";
 import { AboutBeliefs } from "@/shared/ui/sections/about-beliefs";
 import { AboutEngagement } from "@/shared/ui/sections/about-engagement";
 import { AboutWhyCfg } from "@/shared/ui/sections/about-why-cfg";
+import { Offices } from "@/shared/ui/sections/offices";
 import { ClosingCta } from "@/shared/ui/sections/closing-cta";
 
 export function generateMetadata() {
@@ -63,6 +64,8 @@ export default function AboutPage() {
       <AboutEngagement section={profile.engagementModel} />
 
       <AboutWhyCfg section={profile.differentiators} />
+
+      <Offices />
 
       <ClosingCta section={getClosingCta()} />
     </>

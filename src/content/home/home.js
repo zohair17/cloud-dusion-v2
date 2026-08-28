@@ -191,8 +191,8 @@ export const homePage = {
    */
   clients: {
     partners: {
-      heading: "Our",
-      headingAccent: "Partners",
+      heading: "Our Strategic",
+      headingAccent: "Partnerships",
       items: [
         { id: "progressive-leasing", name: "Progressive Leasing", file: "progressive-leasing.webp", width: 300, height: 171, country: { code: "us", name: "United States" } },
         { id: "nisum", name: "Nisum", file: "nisum.png", width: 2297, height: 617, country: { code: "us", name: "United States" } },
@@ -205,8 +205,8 @@ export const homePage = {
     },
     roster: {
       eyebrow: "Trusted by leaders",
-      heading: "Clients we've partnered",
-      headingAccent: "with",
+      heading: "Trusted By Organizations",
+      headingAccent: "Worldwide",
       intro:
         "Trusted by organizations to modernize their technology, data, and business operations.",
       /** The wall repeats the roster until it fills; the reference sets 50 tiles. */

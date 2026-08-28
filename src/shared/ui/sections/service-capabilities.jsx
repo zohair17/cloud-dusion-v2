@@ -147,11 +147,11 @@ export function ServiceCapabilities({ section }) {
                   <div className="flex items-center gap-3">
                     <span
                       aria-hidden="true"
-                      className="inline-flex h-11 w-11 items-center justify-center rounded-[0.8rem] bg-[linear-gradient(140deg,var(--color-brand-500),var(--color-brand-700))] text-white shadow-[0_12px_24px_-12px_rgb(53_51_205/0.7)] ring-1 ring-white/25 transition-transform duration-500 group-hover:scale-105"
+                      className="inline-flex h-10 w-10 items-center justify-center text-brand-600 transition-transform duration-500 group-hover:scale-105"
                     >
                       {(() => {
                         const Icon = iconFor(item.title);
-                        return <Icon className="h-5 w-5" strokeWidth={1.7} />;
+                        return <Icon className="h-7 w-7" strokeWidth={1.6} />;
                       })()}
                     </span>
                     <p

@@ -43,14 +43,14 @@ export function AboutIntro({ paragraphs = [] }) {
           gives it an edge: brand rule above, a tinted field behind, and the
           measure kept short enough that the lit words stay one thought wide.
         */}
-        <div className="relative mx-auto max-w-[62rem] overflow-hidden rounded-[1.5rem] bg-[linear-gradient(150deg,#f6f7fd_0%,#ffffff_50%,#f3f4fc_100%)] px-6 py-10 ring-1 ring-brand-100 sm:rounded-[2rem] sm:px-12 sm:py-14 lg:px-16">
+        <div className="relative overflow-hidden rounded-[1.5rem] bg-[linear-gradient(150deg,#f6f7fd_0%,#ffffff_50%,#f3f4fc_100%)] px-6 py-10 ring-1 ring-brand-100 sm:rounded-[2rem] sm:px-12 sm:py-14 lg:px-16">
           <span
             aria-hidden="true"
             className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-brand-600/[0.07] blur-3xl"
           />
-          <span aria-hidden="true" className="mx-auto block h-[3px] w-12 rounded-full bg-brand-600" />
+          <span aria-hidden="true" className="block h-[3px] w-12 rounded-full bg-brand-600" />
 
-        <p className="relative mx-auto mt-8 max-w-[46rem] text-center font-display text-[1.0625rem] leading-[1.6] tracking-tight text-pretty sm:text-[1.1875rem] sm:leading-[1.58] lg:text-[1.375rem] lg:leading-[1.55]">
+        <p className="relative mt-7 font-display text-[0.9375rem] leading-[1.75] tracking-tight text-pretty sm:text-[1.0625rem] sm:leading-[1.7] lg:text-[1.1875rem] lg:leading-[1.7]">
           {words.map((word, index) => (
             <Word
               key={`${index}-${word}`}

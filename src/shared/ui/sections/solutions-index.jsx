@@ -292,15 +292,51 @@ function CategoryRail({ category, index }) {
           className="relative grid gap-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-14"
           onPointerLeave={() => setActive(null)}
         >
-          {/* The practice, held beside its list while the list is read. */}
+          {/*
+            The practice, held beside its list while the list is read. The
+            number is a plate rather than a line of text: set large on a tinted
+            panel with the guilloche behind it, so each practice announces
+            itself before its name does. Below it, the first picture from the
+            practice's own catalogue, so the column is not three lines of type
+            beside a long list.
+          */}
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <p className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-brand-600">
-              {String(index + 1).padStart(2, "0")} / Practice
-            </p>
-            <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight text-balance text-foreground sm:text-3xl">
+            <div className="flex items-center gap-4">
+              <span
+                aria-hidden="true"
+                className="relative flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center overflow-hidden rounded-[1rem] bg-[linear-gradient(150deg,#f4f5fd_0%,#eceefb_100%)] ring-1 ring-brand-100 sm:h-[5.5rem] sm:w-[5.5rem]"
+              >
+                <span className="pointer-events-none absolute inset-0 opacity-70 [background-image:repeating-linear-gradient(115deg,transparent_0_7px,var(--color-brand-200)_7px_8px)]" />
+                <span className="relative font-display text-[1.6rem] font-bold tabular-nums tracking-tight text-brand-300 sm:text-[2.1rem]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </span>
+
+              <p className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-brand-600">
+                Practice
+              </p>
+            </div>
+
+            <h2 className="mt-5 font-display text-2xl font-semibold tracking-tight text-balance text-foreground sm:text-3xl">
               {category.title}
             </h2>
             <p className="mt-4 max-w-md text-[0.9375rem] leading-relaxed text-muted">{category.description}</p>
+
+            {category.solutions.find((solution) => solution.image) ? (
+              <span className="relative mt-7 block aspect-[16/10] w-full max-w-md overflow-hidden rounded-[1.25rem] bg-surface ring-1 ring-black/[0.06]">
+                <Image
+                  src={category.solutions.find((solution) => solution.image).image}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 28vw, 92vw"
+                  className="object-cover"
+                />
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-[linear-gradient(to_top,rgb(53_51_205/0.22),transparent_55%)]"
+                />
+              </span>
+            ) : null}
           </div>
 
           <ul className="border-t border-border">
