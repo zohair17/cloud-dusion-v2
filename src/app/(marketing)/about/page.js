@@ -2,6 +2,7 @@ import { getClosingCta, getCompanyProfile } from "@/modules/company";
 import { buildMetadata } from "@/shared/lib/metadata";
 import { routes } from "@/shared/config/routes";
 import { PageHero } from "@/shared/ui/sections/page-hero";
+import { HeroMarquee } from "@/shared/ui/sections/hero-marquee";
 import { AboutIntro } from "@/shared/ui/sections/about-intro";
 import { AboutBeliefs } from "@/shared/ui/sections/about-beliefs";
 import { AboutEngagement } from "@/shared/ui/sections/about-engagement";
@@ -40,8 +41,20 @@ export default function AboutPage() {
         headingAccent={profile.taglineAccent}
         intro={profile.summary}
         ctas={profile.ctas}
-        backdrop="/asset/about/hero.webp"
-      />
+      >
+        <HeroMarquee
+          images={[
+            "/asset/CloudFusion/cf-01.jpeg",
+            "/asset/CloudFusion/cf-02.jpeg",
+            "/asset/CloudFusion/cf-04.jpeg",
+            "/asset/CloudFusion/cf-06.jpeg",
+            "/asset/CloudFusion/cf-07.jpeg",
+            "/asset/CloudFusion/cf-08.jpeg",
+            "/asset/CloudFusion/cf-11.jpeg",
+          ]}
+          label="The Cloud Fusion Global team at work"
+        />
+      </PageHero>
 
       <AboutIntro paragraphs={profile.intro} />
 

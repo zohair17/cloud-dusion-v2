@@ -301,9 +301,6 @@ function CategoryRail({ category, index }) {
               {category.title}
             </h2>
             <p className="mt-4 max-w-md text-[0.9375rem] leading-relaxed text-muted">{category.description}</p>
-            <p className="mt-6 font-display text-sm font-medium text-faint">
-              {category.count} {category.count === 1 ? "solution" : "solutions"}
-            </p>
           </div>
 
           <ul className="border-t border-border">

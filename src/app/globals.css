@@ -306,3 +306,13 @@ html {
 .cfg-card-plain {
   background: #ffffff;
 }
+
+/* ------------------------------------------------------------- hero marquee
+ *
+ * The strip is duplicated once, so travelling exactly half its width lands the
+ * copy where the original started and the loop has no seam.
+ */
+@keyframes cfg-marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}

@@ -41,7 +41,7 @@ export default function InsightsIndexPage() {
           src="/asset/insights-film.mp4"
           poster="/asset/insights-film-poster.webp"
           fit="contain"
-          className="cfg-hero-film"
+          className="cfg-hero-film lg:-translate-x-[18%] lg:scale-[1.12]"
           label="The CFG platform at the centre of AI, the Microsoft ecosystem, transformation and delivery"
         />
       </PageHero>

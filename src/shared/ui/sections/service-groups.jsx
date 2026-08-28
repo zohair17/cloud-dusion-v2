@@ -22,7 +22,6 @@ const EASE = [0.22, 1, 0.36, 1];
 export function ServicesHero({ page, groups }) {
   const reduced = useReducedMotion();
   const [primaryCta] = page.ctas ?? [];
-  const count = groups.reduce((total, group) => total + group.services.length, 0);
 
   return (
     <section className="pb-2 pt-6 sm:pt-8">
@@ -76,9 +75,6 @@ export function ServicesHero({ page, groups }) {
                     className="inline-flex items-center gap-2 rounded-pill border border-border bg-white px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-brand-300 hover:text-brand-700"
                   >
                     {group.title}
-                    <span className="font-display text-xs font-semibold text-brand-600">
-                      {group.services.length}
-                    </span>
                   </a>
                 </motion.li>
               ))}
@@ -97,9 +93,6 @@ export function ServicesHero({ page, groups }) {
                     <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                   </span>
                 </Button>
-                <p className="font-display text-sm font-medium text-muted">
-                  <span className="font-semibold text-brand-600">{count}</span> service lines
-                </p>
               </motion.div>
             ) : null}
           </div>
@@ -129,9 +122,6 @@ export function ServiceGroups({ groups }) {
                 ) : null}
               </div>
 
-              <p className="font-display text-sm font-medium text-faint">
-                {group.services.length} {group.services.length === 1 ? "service" : "services"}
-              </p>
             </div>
 
             <RevealGroup

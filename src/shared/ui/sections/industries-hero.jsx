@@ -77,9 +77,6 @@ export function IndustriesHero({ page, industries }) {
                   </Button>
                 ) : null}
 
-                <p className="font-display text-sm font-medium text-muted">
-                  <span className="font-semibold text-brand-600">{industries.length}</span> industries served
-                </p>
               </motion.div>
             </div>
 
