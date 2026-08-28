@@ -7,7 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Container } from "../primitives/container";
 import { Button } from "../primitives/button";
 import { RevealText } from "../motion/reveal-text";
-import { RevealGroup, RevealItem } from "../motion/reveal";
+import { cn } from "../primitives/cn";
 
 /**
  * The services index: the promise, then the catalogue by practice.
@@ -102,39 +102,43 @@ export function ServicesHero({ page, groups }) {
   );
 }
 
-/** One practice, then the services inside it. */
+/**
+ * One practice, then the services inside it.
+ *
+ * The catalogue used to be a three-up grid of identical tiles, which reads as
+ * inventory. Here each service takes a full row and the halves swap sides as
+ * you go down, so the eye is walked left, right, left rather than scanned. Only
+ * the practice carries a number: numbering the services as well would count the
+ * same catalogue twice.
+ */
 export function ServiceGroups({ groups }) {
   return (
     <>
       {groups.map((group, groupIndex) => (
         <section key={group.id} id={group.id} className="section-y scroll-mt-28">
           <Container size="wide">
-            <div className="flex flex-wrap items-end justify-between gap-4 border-t border-border pt-7">
-              <div className="max-w-2xl">
-                <p className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-brand-600">
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-4">
+                <p className="font-display text-sm font-semibold tabular-nums tracking-tight text-brand-600">
                   {String(groupIndex + 1).padStart(2, "0")}
                 </p>
-                <h2 className="mt-3 font-display text-2xl font-semibold tracking-tight text-balance text-foreground sm:text-3xl">
-                  {group.title}
-                </h2>
-                {group.description ? (
-                  <p className="mt-3 text-[0.9375rem] leading-relaxed text-muted">{group.description}</p>
-                ) : null}
+                <span aria-hidden="true" className="h-px w-16 bg-brand-200" />
               </div>
 
+              <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight text-balance text-foreground sm:text-4xl">
+                <GroupTitle title={group.title} />
+              </h2>
+
+              {group.description ? (
+                <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted">{group.description}</p>
+              ) : null}
             </div>
 
-            <RevealGroup
-              as="ul"
-              stagger={0.07}
-              className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
-            >
-              {group.services.map((service) => (
-                <RevealItem key={service.slug} as="li" y={20}>
-                  <ServiceCard service={service} />
-                </RevealItem>
+            <div className="mt-8 space-y-4 sm:mt-10">
+              {group.services.map((service, index) => (
+                <ServiceRow key={service.slug} service={service} flip={index % 2 === 1} />
               ))}
-            </RevealGroup>
+            </div>
           </Container>
         </section>
       ))}
@@ -142,43 +146,72 @@ export function ServiceGroups({ groups }) {
   );
 }
 
-function ServiceCard({ service }) {
+/** The practice name, with its opening words carried in the brand colour. */
+function GroupTitle({ title }) {
+  const words = title.split(" ");
+  if (words.length < 3) return title;
+  const lead = words.slice(0, words.length > 4 ? 2 : 1).join(" ");
+
   return (
-    <Link
-      href={service.href}
-      className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-white ring-1 ring-black/[0.06] transition-shadow duration-500 hover:shadow-[0_30px_70px_-46px_rgb(53_51_205/0.55)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-600"
+    <>
+      <span className="text-brand-600">{lead}</span> {words.slice(lead.split(" ").length).join(" ")}
+    </>
+  );
+}
+
+/** One service: a picture on one side, the case for it on the other. */
+function ServiceRow({ service, flip }) {
+  const reduced = useReducedMotion();
+
+  return (
+    <motion.div
+      initial={reduced ? false : { opacity: 0, y: 22 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "0px 0px -12% 0px" }}
+      transition={{ duration: 0.6, ease: EASE }}
+      className="grid gap-3 sm:gap-4 lg:grid-cols-2"
     >
       {service.image ? (
-        <div className="relative h-28 w-full overflow-hidden bg-surface sm:h-40">
+        <Link
+          href={service.href}
+          tabIndex={-1}
+          aria-hidden="true"
+          className={cn(
+            "group relative block h-40 overflow-hidden rounded-[1.25rem] bg-surface sm:h-52 lg:h-full lg:min-h-[13.5rem]",
+            flip ? "lg:order-2" : "lg:order-1",
+          )}
+        >
           <Image
             src={service.image}
             alt=""
             fill
-            sizes="(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 92vw"
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+            sizes="(min-width: 1024px) 46vw, 92vw"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
           />
-          <span
-            aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(to_top,rgb(7_7_30/0.35),transparent_60%)]"
-          />
-        </div>
+        </Link>
       ) : null}
 
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <h3 className="font-display text-base font-semibold tracking-tight text-balance text-foreground sm:text-lg">
+      <Link
+        href={service.href}
+        className={cn(
+          "group flex flex-col justify-center rounded-[1.25rem] bg-[#f7f7fa] p-6 ring-1 ring-black/[0.04] transition-colors duration-500 hover:bg-brand-50/70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-600 sm:p-8 lg:p-9",
+          service.image ? (flip ? "lg:order-1" : "lg:order-2") : "lg:col-span-2",
+        )}
+      >
+        <h3 className="font-display text-lg font-semibold tracking-tight text-balance text-foreground sm:text-xl">
           {service.title}
         </h3>
-        <p className="mt-2.5 text-[0.8125rem] leading-relaxed text-muted sm:mt-3 sm:text-[0.875rem]">{service.summary}</p>
+        <p className="mt-3 max-w-xl text-[0.875rem] leading-relaxed text-muted">{service.summary}</p>
 
-        <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-brand-600 sm:mt-6">
+        <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-600">
           Explore
           <ArrowUpRight
             className="h-4 w-4 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
             aria-hidden="true"
           />
         </span>
-      </div>
-    </Link>
+      </Link>
+    </motion.div>
   );
 }
 

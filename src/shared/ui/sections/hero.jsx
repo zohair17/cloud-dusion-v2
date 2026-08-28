@@ -120,7 +120,7 @@ export function Hero({ hero }) {
             >
               {/* Clipped inside the filter, so the shadow is cast by the
                   bracket rather than trimmed away with the rectangle. */}
-              <div className="h-[40rem] w-full bg-[#a6a6a6] [clip-path:polygon(100%_0,100%_10%,18%_50%,100%_90%,100%_100%,0_50%)]" />
+              <div className="h-full w-full bg-[#a6a6a6] [clip-path:polygon(100%_0,100%_10%,18%_50%,100%_90%,100%_100%,0_50%)]" />
             </div>
           </div>
         </div>

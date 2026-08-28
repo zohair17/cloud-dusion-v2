@@ -61,6 +61,101 @@ const MARKS = {
       <path d="M17.3 6.1a1 1 0 0 1 1.5.9v6.6a1 1 0 0 1-.5.9L14 17a1 1 0 0 1-1.5-.9V9.5a1 1 0 0 1 .5-.9l4.3-2.5Z" fill="#742774" opacity=".7" />
     </>
   ),
+  teams: (
+    <>
+      <circle cx="18.6" cy="5.2" r="2.3" fill="#5059C9" />
+      <path d="M15.7 8.6h6c.4 0 .8.4.8.8v4.7a3.5 3.5 0 0 1-7 0V9.4c0-.4.3-.8.7-.8Z" fill="#5059C9" />
+      <circle cx="10.9" cy="5" r="2.9" fill="#7B83EB" />
+      <path d="M5 8.6h11.2c.6 0 1 .4 1 1v6a5.6 5.6 0 0 1-11.2 0v-6c0-.6.4-1 1-1Z" fill="#7B83EB" />
+      <rect x="2" y="6.5" width="11" height="11" rx="1.4" fill="#4B53BC" />
+      <path d="M4.2 8.8h6.6v1.6H8.4v5.3H6.6v-5.3H4.2V8.8Z" fill="#fff" />
+    </>
+  ),
+  onedrive: (
+    <>
+      <path d="M9.1 7.3a4.6 4.6 0 0 1 8.2 1.5 3.7 3.7 0 0 1-.5 7.3H8.5a4.3 4.3 0 0 1-.4-8.7c.3 0 .7 0 1 .1Z" fill="#0078D4" />
+      <path d="M8.5 16.1a4.3 4.3 0 0 1-.4-8.7c.6 0 1.2.2 1.7.5a4.4 4.4 0 0 0-1 2.7 4.3 4.3 0 0 0 4.3 4.3v1.2H8.5Z" fill="#28A8EA" />
+    </>
+  ),
+  exchange: (
+    <>
+      <rect x="2.5" y="5.6" width="19" height="12.8" rx="1.6" fill="#0078D4" />
+      <path
+        d="M3.4 7.8 12 13.2l8.6-5.4"
+        stroke="#fff"
+        strokeWidth="1.4"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </>
+  ),
+  viva: (
+    <>
+      <path
+        d="M12 3.4c3.3 2.1 5.5 5.5 6.2 9 .5 2.3-.6 4.5-2.7 5.5"
+        fill="none"
+        stroke="#2764E7"
+        strokeWidth="2.1"
+        strokeLinecap="round"
+      />
+      <path
+        d="M12 3.4C8.7 5.5 6.5 8.9 5.8 12.4c-.5 2.3.6 4.5 2.7 5.5"
+        fill="none"
+        stroke="#50C2FF"
+        strokeWidth="2.1"
+        strokeLinecap="round"
+      />
+      <circle cx="12" cy="19.4" r="1.9" fill="#2764E7" />
+    </>
+  ),
+  "power-bi": (
+    <>
+      <rect x="3.4" y="12.6" width="4.3" height="8" rx="1" fill="#F2C811" opacity=".65" />
+      <rect x="9.9" y="7.8" width="4.3" height="12.8" rx="1" fill="#F2C811" opacity=".85" />
+      <rect x="16.3" y="3.4" width="4.3" height="17.2" rx="1" fill="#E8A200" />
+    </>
+  ),
+  "power-apps": (
+    <>
+      <path d="M11.3 2.9a1 1 0 0 1 1.4 0l8.4 8.4a1 1 0 0 1 0 1.4l-8.4 8.4a1 1 0 0 1-1.4 0l-8.4-8.4a1 1 0 0 1 0-1.4l8.4-8.4Z" fill="#742774" />
+      <path d="M11.6 7.4a.6.6 0 0 1 .8 0l4.2 4.2a.6.6 0 0 1 0 .8l-4.2 4.2a.6.6 0 0 1-.8 0l-4.2-4.2a.6.6 0 0 1 0-.8l4.2-4.2Z" fill="#fff" opacity=".9" />
+    </>
+  ),
+  "power-automate": (
+    <path
+      d="M13.4 2.9a1 1 0 0 1 1.5 1v5.2h4.2a1 1 0 0 1 .8 1.6l-8.5 10.9a1 1 0 0 1-1.8-.6v-5.4H5.4a1 1 0 0 1-.8-1.6l8.8-11.1Z"
+      fill="#0066FF"
+    />
+  ),
+  copilot: (
+    <>
+      <path d="M11 4.2c.2-.5.9-.5 1.1 0l1 2.6a5 5 0 0 0 2.9 2.9l2.6 1c.5.2.5.9 0 1.1l-2.6 1a5 5 0 0 0-2.9 2.9l-1 2.6c-.2.5-.9.5-1.1 0l-1-2.6a5 5 0 0 0-2.9-2.9l-2.6-1a.6.6 0 0 1 0-1.1l2.6-1A5 5 0 0 0 10 6.8l1-2.6Z" fill="#0F9BD7" />
+      <path d="M18.2 2.9c.1-.4.6-.4.8 0l.5 1.2a2.6 2.6 0 0 0 1.5 1.5l1.2.5c.4.2.4.7 0 .8l-1.2.5a2.6 2.6 0 0 0-1.5 1.5l-.5 1.2c-.2.4-.7.4-.8 0l-.5-1.2a2.6 2.6 0 0 0-1.5-1.5l-1.2-.5a.5.5 0 0 1 0-.8l1.2-.5a2.6 2.6 0 0 0 1.5-1.5l.5-1.2Z" fill="#D4308F" />
+    </>
+  ),
+  openai: (
+    <path
+      d="M12 2.7 20 7.2v9.6L12 21.3 4 16.8V7.2l8-4.5Z"
+      fill="none"
+      stroke="#10A37F"
+      strokeWidth="1.8"
+      strokeLinejoin="round"
+    />
+  ),
+  dynamics: (
+    <>
+      <path d="M4.6 4.4 17.4 2.2v6.3L9.9 10.9l7.5 1.4v9.5L4.6 19.6V4.4Z" fill="#0078D4" />
+      <path d="M17.4 8.5v3.8l-7.5-1.4 7.5-2.4Z" fill="#002050" opacity=".6" />
+    </>
+  ),
+  sql: (
+    <>
+      <ellipse cx="12" cy="5.6" rx="7.2" ry="2.8" fill="#CC2927" />
+      <path d="M4.8 5.6v12.8c0 1.5 3.2 2.8 7.2 2.8s7.2-1.3 7.2-2.8V5.6c0 1.5-3.2 2.8-7.2 2.8S4.8 7.1 4.8 5.6Z" fill="#A4262C" />
+      <path d="M4.8 12c0 1.6 3.2 2.8 7.2 2.8s7.2-1.2 7.2-2.8" stroke="#E8656A" strokeWidth="1" fill="none" />
+    </>
+  ),
 };
 
 export function ProductLogo({ id, className }) {

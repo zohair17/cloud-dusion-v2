@@ -23,6 +23,7 @@ import {
   Workflow,
 } from "lucide-react";
 import { Container } from "../primitives/container";
+import { ProductLogo } from "./product-logo";
 import { SectionHeading } from "./section-heading";
 import { useGsap, gsap } from "../motion/use-gsap";
 import { cn } from "../primitives/cn";
@@ -58,6 +59,38 @@ const ICON_RULES = [
   [/config|admin|setup|management|tuning/i, Settings],
 ];
 
+
+/**
+ * The vendor mark for a capability, where one exists.
+ *
+ * A capability named after a product should carry that product's own logo in
+ * its own colours: a reader scanning for Teams or Power BI finds it by the mark
+ * long before they finish the title. Anything with no product behind it keeps
+ * the drawn icon below, so the sheet never shows a wrong logo to avoid a blank.
+ */
+const LOGO_RULES = [
+  [/microsoft teams|\bteams\b/i, "teams"],
+  [/onedrive/i, "onedrive"],
+  [/sharepoint|syntex/i, "sharepoint"],
+  [/exchange|outlook|\bmail\b|messaging/i, "exchange"],
+  [/viva/i, "viva"],
+  [/power bi/i, "power-bi"],
+  [/power apps|powerapps|canvas app|model-driven/i, "power-apps"],
+  [/power platform|dataverse/i, "power-platform"],
+  [/power automate|power virtual/i, "power-automate"],
+  [/copilot/i, "copilot"],
+  [/openai|azure ai|ai foundry|\bgpt\b/i, "openai"],
+  [/dynamics/i, "dynamics"],
+  [/sql server|\bsql\b|synapse|fabric/i, "sql"],
+  [/azure|entra|active directory/i, "azure"],
+  [/microsoft 365|\bm365\b|office 365/i, "microsoft-365"],
+];
+
+function logoFor(title) {
+  for (const [pattern, id] of LOGO_RULES) if (pattern.test(title)) return id;
+
+  return null;
+}
 function iconFor(title) {
   for (const [pattern, Icon] of ICON_RULES) if (pattern.test(title)) return Icon;
   return Layers;
@@ -150,6 +183,8 @@ export function ServiceCapabilities({ section }) {
                       className="inline-flex h-10 w-10 items-center justify-center text-brand-600 transition-transform duration-500 group-hover:scale-105"
                     >
                       {(() => {
+                        const logo = logoFor(item.title);
+                        if (logo) return <ProductLogo id={logo} className="h-7 w-7" />;
                         const Icon = iconFor(item.title);
                         return <Icon className="h-7 w-7" strokeWidth={1.6} />;
                       })()}

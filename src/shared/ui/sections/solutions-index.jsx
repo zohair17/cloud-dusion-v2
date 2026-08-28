@@ -1,15 +1,13 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, BarChart3, Boxes, FileSignature, FileStack, LayoutDashboard, MessagesSquare, Search, ShieldCheck, Sparkles, Workflow } from "lucide-react";
 import { Container } from "../primitives/container";
 import { Button } from "../primitives/button";
 import { RevealText } from "../motion/reveal-text";
 import { useGsap, gsap } from "../motion/use-gsap";
-import { cn } from "../primitives/cn";
 
 /**
  * The solutions index: a blueprint, then a rail per practice.
@@ -282,48 +280,80 @@ export function SolutionRails({ categories }) {
   );
 }
 
-function CategoryRail({ category, index }) {
-  const [active, setActive] = useState(null);
+/**
+ * The icon a solution is given, by what its name says it does.
+ *
+ * The records carry no icon of their own, and inventing a field for one would
+ * put a design decision in the content layer. Matching on the title keeps the
+ * mark a property of the presentation, where it belongs.
+ */
+const SOLUTION_ICONS = [
+  [/chatbot|copilot|assistant|conversation/i, MessagesSquare],
+  [/document generat|proposal|contract|letter/i, FileSignature],
+  [/document|content|record|archive|dms/i, FileStack],
+  [/search|discovery|knowledge/i, Search],
+  [/workflow|process|automation|approval|rpa/i, Workflow],
+  [/portal|intranet|experience|employee/i, LayoutDashboard],
+  [/security|compliance|governance|risk|private|self-hosted/i, ShieldCheck],
+  [/data|analytics|report|insight|dashboard|warehouse/i, BarChart3],
+  [/integration|migration|platform|cloud|infrastructure/i, Boxes],
+  [/ai|intelligen|model|agent/i, Sparkles],
+];
 
+function solutionIcon(title) {
+  for (const [pattern, Icon] of SOLUTION_ICONS) if (pattern.test(title)) return Icon;
+  return Boxes;
+}
+
+/** The practice name, with its opening word carried in the brand colour. */
+function CategoryTitle({ title }) {
+  const words = title.split(" ");
+  if (words.length < 2) return title;
+
+  return (
+    <>
+      <span className="text-brand-600">{words[0]}</span> {words.slice(1).join(" ")}
+    </>
+  );
+}
+
+/**
+ * One practice: what it is on the left, what it builds on the right.
+ *
+ * The number is set on a plate of its own beside the word Practice, so the
+ * reader is told where they are before they are told what it is, and the
+ * picture underneath keeps the column from being three lines of type beside a
+ * long list. Each solution is then a card rather than a ruled row: the mark,
+ * the number, and the arrow give the list something to answer the pointer with.
+ */
+function CategoryRail({ category, index }) {
   return (
     <section id={category.anchor} className="section-y scroll-mt-28">
       <Container size="wide">
-        <div
-          className="relative grid gap-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-14"
-          onPointerLeave={() => setActive(null)}
-        >
-          {/*
-            The practice, held beside its list while the list is read. The
-            number is a plate rather than a line of text: set large on a tinted
-            panel with the guilloche behind it, so each practice announces
-            itself before its name does. Below it, the first picture from the
-            practice's own catalogue, so the column is not three lines of type
-            beside a long list.
-          */}
+        <div className="relative grid gap-8 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:gap-14">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <div className="flex items-center gap-4">
               <span
                 aria-hidden="true"
-                className="relative flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center overflow-hidden rounded-[1rem] bg-[linear-gradient(150deg,#f4f5fd_0%,#eceefb_100%)] ring-1 ring-brand-100 sm:h-[5.5rem] sm:w-[5.5rem]"
+                className="flex h-[3.75rem] w-[3.75rem] shrink-0 items-center justify-center rounded-[1rem] bg-white ring-1 ring-brand-200 sm:h-[4.25rem] sm:w-[4.25rem]"
               >
-                <span className="pointer-events-none absolute inset-0 opacity-70 [background-image:repeating-linear-gradient(115deg,transparent_0_7px,var(--color-brand-200)_7px_8px)]" />
-                <span className="relative font-display text-[1.6rem] font-bold tabular-nums tracking-tight text-brand-300 sm:text-[2.1rem]">
+                <span className="font-display text-[1.4rem] font-semibold tabular-nums tracking-tight text-brand-600 sm:text-[1.7rem]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </span>
 
-              <p className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-brand-600">
+              <p className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-foreground">
                 Practice
               </p>
             </div>
 
-            <h2 className="mt-5 font-display text-2xl font-semibold tracking-tight text-balance text-foreground sm:text-3xl">
-              {category.title}
+            <h2 className="mt-6 font-display text-[1.75rem] font-semibold tracking-tight text-balance text-foreground sm:text-4xl">
+              <CategoryTitle title={category.title} />
             </h2>
             <p className="mt-4 max-w-md text-[0.9375rem] leading-relaxed text-muted">{category.description}</p>
 
             {category.solutions.find((solution) => solution.image) ? (
-              <span className="relative mt-7 block aspect-[16/10] w-full max-w-md overflow-hidden rounded-[1.25rem] bg-surface ring-1 ring-black/[0.06]">
+              <span className="relative mt-8 block aspect-[16/11] w-full max-w-md overflow-hidden rounded-[1.25rem] bg-[linear-gradient(150deg,#f4f5fd_0%,#e9ecfa_100%)] ring-1 ring-brand-100">
                 <Image
                   src={category.solutions.find((solution) => solution.image).image}
                   alt=""
@@ -333,31 +363,24 @@ function CategoryRail({ category, index }) {
                 />
                 <span
                   aria-hidden="true"
-                  className="absolute inset-0 bg-[linear-gradient(to_top,rgb(53_51_205/0.22),transparent_55%)]"
+                  className="absolute inset-0 bg-[linear-gradient(to_top,rgb(53_51_205/0.24),transparent_58%)]"
                 />
               </span>
             ) : null}
           </div>
 
-          <ul className="border-t border-border">
+          <ul className="space-y-3.5">
             {category.solutions.map((solution, row) => (
-              <SolutionRow
-                key={solution.slug}
-                solution={solution}
-                row={row}
-                active={active === row}
-                onEnter={() => setActive(row)}
-              />
+              <SolutionCard key={solution.slug} solution={solution} row={row} Icon={solutionIcon(solution.title)} />
             ))}
           </ul>
-
         </div>
       </Container>
     </section>
   );
 }
 
-function SolutionRow({ solution, row, active, onEnter }) {
+function SolutionCard({ solution, row, Icon }) {
   const reduced = useReducedMotion();
 
   return (
@@ -366,66 +389,35 @@ function SolutionRow({ solution, row, active, onEnter }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "0px 0px -12% 0px" }}
       transition={{ duration: 0.55, delay: Math.min(row, 5) * 0.05, ease: EASE }}
-      className="border-b border-border"
-      onPointerEnter={onEnter}
     >
       <Link
         href={solution.href}
-        className="group relative flex gap-4 py-6 outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-4 sm:gap-6 lg:px-5"
+        className="group flex items-start gap-4 overflow-hidden rounded-[1rem] border-l-[3px] border-brand-600 bg-white p-5 shadow-[0_20px_44px_-36px_rgb(11_11_42/0.6)] ring-1 ring-black/[0.05] transition-shadow duration-500 hover:shadow-[0_28px_60px_-38px_rgb(53_51_205/0.6)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-600 sm:gap-5 sm:p-6"
       >
-        {/*
-          The row answers the pointer with itself: a brand wash opens from the
-          left edge and a rule is drawn down it, so the reader's place in the
-          list is marked by the list rather than by a picture chasing the cursor.
-        */}
         <span
           aria-hidden="true"
-          className={cn(
-            "pointer-events-none absolute inset-y-0 -left-2 right-0 hidden origin-left rounded-[1rem] bg-brand-50 transition-transform duration-500 ease-out lg:block",
-            active ? "scale-x-100" : "scale-x-0",
-          )}
-        />
-        <span
-          aria-hidden="true"
-          className={cn(
-            "pointer-events-none absolute inset-y-3 -left-2 hidden w-[3px] origin-top rounded-full bg-brand-600 transition-transform duration-500 ease-out lg:block",
-            active ? "scale-y-100" : "scale-y-0",
-          )}
-        />
-
-        <span
-          aria-hidden="true"
-          className={cn(
-            "relative hidden shrink-0 pt-1 font-display text-sm font-semibold tabular-nums transition-colors duration-300 lg:block",
-            active ? "text-brand-600" : "text-faint",
-          )}
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[0.9rem] bg-brand-50 text-brand-600 ring-1 ring-brand-100 transition-colors duration-500 group-hover:bg-brand-600 group-hover:text-white sm:h-14 sm:w-14"
         >
-          {String(row + 1).padStart(2, "0")}
+          <Icon className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.7} />
         </span>
 
-        <span className="relative min-w-0 flex-1">
-          <h3
-            className={cn(
-              "font-display text-lg font-semibold tracking-tight text-balance transition-colors duration-300 sm:text-xl",
-              active ? "text-brand-700" : "text-foreground",
-            )}
-          >
+        <span className="min-w-0 flex-1">
+          <span className="block font-display text-xs font-semibold tabular-nums tracking-tight text-brand-600">
+            {String(row + 1).padStart(2, "0")}
+          </span>
+          <h3 className="mt-1 font-display text-base font-semibold tracking-tight text-balance text-foreground transition-colors duration-300 group-hover:text-brand-700 sm:text-lg">
             {solution.title}
           </h3>
-          <span className="mt-2 block max-w-2xl text-[0.875rem] leading-relaxed text-muted">
+          <span className="mt-2 block text-[0.8125rem] leading-relaxed text-muted sm:text-[0.875rem]">
             {solution.summary}
           </span>
         </span>
 
         <span
-          className={cn(
-            "relative mt-1 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300",
-            active
-              ? "border-brand-600 bg-brand-600 text-white"
-              : "border-border bg-white text-brand-600",
-          )}
+          aria-hidden="true"
+          className="mt-1 hidden h-9 w-9 shrink-0 items-center justify-center rounded-[0.7rem] border border-border bg-white text-brand-600 transition-colors duration-300 group-hover:border-brand-600 group-hover:bg-brand-600 group-hover:text-white sm:inline-flex"
         >
-          <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+          <ArrowUpRight className="h-4 w-4" />
         </span>
       </Link>
     </motion.li>
