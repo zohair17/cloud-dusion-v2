@@ -32,14 +32,12 @@ export const solution = {
       "Documents filed inconsistently, or not at all, across sites and shares.",
       "Metadata too incomplete to power search, workflows, or retention.",
       "Staff hours consumed reading and re-keying document content.",
-      "Compliance policies impossible to enforce on unclassified content.",
-    ],
+      "Compliance policies impossible to enforce on unclassified content."],
   },
 
   overview: [
     "The AI-Enabled Document Management System combines SharePoint's enterprise content platform with AI processing at the point of entry. Every document that arrives is read, classified, and enriched: type identified, key fields extracted, taxonomy tags applied, and the right workflow triggered, with no manual filing.",
-    "On top of the organized estate sits AI retrieval: users ask questions in natural language and get answers with citations to the underlying documents, trimmed to their permissions. The result is a document platform that behaves like institutional memory.",
-  ],
+    "On top of the organized estate sits AI retrieval: users ask questions in natural language and get answers with citations to the underlying documents, trimmed to their permissions. The result is a document platform that behaves like institutional memory."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Answer",
         description: "Permission-aware AI search and Q&A lets users find and interrogate content in natural language, with citations.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Full-text and semantic search across the estate",
     "Version control, retention, and audit trails",
     "Workflow triggers from document events and extracted data",
-    "Role-based, permission-trimmed access throughout",
-  ],
+    "Role-based, permission-trimmed access throughout"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -85,8 +81,7 @@ export const solution = {
       "Document classification and taxonomy tagging models",
       "Key-field extraction with confidence thresholds and human review",
       "Natural-language Q&A with retrieval-augmented generation and citations",
-      "OCR and enrichment of scanned legacy archives",
-    ],
+      "OCR and enrichment of scanned legacy archives"],
   },
 
   architecture: {
@@ -98,31 +93,25 @@ export const solution = {
         "SharePoint UI",
         "Teams",
         "AI Q&A interface",
-        "Mobile",
-      ] },
+        "Mobile"] },
       { title: "INTELLIGENCE", nodes: [
         "Syntex models",
         "Azure OpenAI",
         "Azure AI Search",
-        "RAG pipeline",
-      ] },
+        "RAG pipeline"] },
       { title: "PROCESS", nodes: [
         "Power Automate workflows",
         "Approval routing",
-        "Notifications",
-      ] },
+        "Notifications"] },
       { title: "CONTENT & GOVERNANCE", nodes: [
         "SharePoint libraries",
         "Metadata & taxonomy",
         "Purview policies",
-        "Audit",
-      ] },
+        "Audit"] },
       { title: "IDENTITY & SECURITY", nodes: [
         "Microsoft Entra",
         "Permission trimming",
-        "Sensitivity labels",
-      ] },
-    ],
+        "Sensitivity labels"] }],
   },
 
   benefits: [
@@ -130,15 +119,13 @@ export const solution = {
     "Minutes-to-answers instead of hours-to-documents",
     "Compliance policies enforced automatically on classified content",
     "Legacy archives unlocked and searchable",
-    "A governed content foundation for Copilot and AI agents",
-  ],
+    "A governed content foundation for Copilot and AI agents"],
 
   useCases: [
     "Contract repositories with extracted terms and renewal alerts",
     "Invoice and statement processing with system handoff",
     "Policy and procedure libraries with AI Q&A",
-    "Digitization of scanned archives into searchable knowledge",
-  ],
+    "Digitization of scanned archives into searchable knowledge"],
 
   technologies: [
     "sharepoint-online",
@@ -146,33 +133,27 @@ export const solution = {
     "azure-openai",
     "azure-ai-search",
     "power-automate",
-    "microsoft-purview",
-  ],
+    "microsoft-purview"],
 
   industries: [
     "financial-services",
-    "real-estate",
-    "healthcare",
-  ],
+    "real-estate"],
 
   relatedServices: [
     "microsoft-syntex",
     "sharepoint-solutions",
-    "generative-ai",
-  ],
+    "generative-ai"],
 
   relatedSolutions: [
     "document-management-system",
     "records-management-system",
-    "ai-document-generator",
-  ],
+    "ai-document-generator"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "AI-Enabled Document Management System",

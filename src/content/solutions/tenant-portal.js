@@ -32,14 +32,12 @@ export const solution = {
       "Maintenance requests untracked from report to resolution.",
       "Front-desk and property teams consumed by routine queries.",
       "Documents, leases, statements, notices, delivered ad hoc.",
-      "No structured view of tenant satisfaction and service performance.",
-    ],
+      "No structured view of tenant satisfaction and service performance."],
   },
 
   overview: [
     "CFG's Tenant Portal gives occupants one branded place for everything: raising and tracking maintenance requests, accessing documents and statements, booking amenities, and finding building information, on web and mobile.",
-    "Behind the portal, requests route to the right teams with SLAs and status updates, documents publish from your systems automatically, and service analytics show where operations excel or lag.",
-  ],
+    "Behind the portal, requests route to the right teams with SLAs and status updates, documents publish from your systems automatically, and service analytics show where operations excel or lag."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Measure",
         description: "Dashboards show volumes, resolution times, and satisfaction across the portfolio.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Amenity and facility booking",
     "Announcements and building communication",
     "Property operations integration",
-    "Service performance dashboards",
-  ],
+    "Service performance dashboards"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -83,8 +79,7 @@ export const solution = {
     body: "Where intelligence does the heavy lifting in this solution.",
     items: [
       "AI assistant answering building and lease questions",
-      "Smart categorization and routing of requests",
-    ],
+      "Smart categorization and routing of requests"],
   },
 
   architecture: null,
@@ -94,15 +89,13 @@ export const solution = {
     "Requests resolved faster and visibly",
     "Professional, branded tenant experience",
     "Service performance measured, not guessed",
-    "Property teams freed for higher-value work",
-  ],
+    "Property teams freed for higher-value work"],
 
   useCases: [
     "Commercial office tenant services",
     "Residential and build-to-rent communities",
     "Retail center tenant coordination",
-    "Industrial park occupier services",
-  ],
+    "Industrial park occupier services"],
 
   technologies: [
     "power-pages",
@@ -110,31 +103,26 @@ export const solution = {
     "dataverse",
     "power-automate",
     "sharepoint-online",
-    "power-bi",
-  ],
+    "power-bi"],
 
   industries: [
-    "real-estate",
-  ],
+    "real-estate"],
 
   relatedServices: [
     "power-platform-solutions",
     "custom-software-development",
-    "mobile-app-development",
-  ],
+    "mobile-app-development"],
 
   relatedSolutions: [
     "property-listing-app",
     "request-approval-system",
-    "lease-management-system",
-  ],
+    "lease-management-system"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Tenant Portal",

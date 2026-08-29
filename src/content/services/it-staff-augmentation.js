@@ -20,13 +20,11 @@ export const service = {
   heroSlides: [
     { image: "/asset/services/staffing-1.webp", label: "Specialist capacity in weeks instead of months" },
     { image: "/asset/services/staffing-2.webp", label: "Our people in your tools and standards" },
-    { image: "/asset/services/staffing-3.webp", label: "Every placement backed by an engineering bench" },
-  ],
+    { image: "/asset/services/staffing-3.webp", label: "Every placement backed by an engineering bench" }],
 
   intro: [
     "Hiring for AI, Azure, SharePoint, and modern engineering skills is slow and competitive, while roadmaps won't wait. Staff augmentation done well gives you the specialists you need at the pace you need them, without the overhead and risk of permanent hiring cycles.",
-    "Cloud Fusion Global provides engineers and teams from the same talent bench that delivers our own projects: architects, AI engineers, Microsoft specialists, full-stack developers, and QA, with delivery discipline, overlap-friendly time zones, and the flexibility to scale up or down as your needs change.",
-  ],
+    "Cloud Fusion Global provides engineers and teams from the same talent bench that delivers our own projects: architects, AI engineers, Microsoft specialists, full-stack developers, and QA, with delivery discipline, overlap-friendly time zones, and the flexibility to scale up or down as your needs change."],
 
   challenges: {
     eyebrow: "The Challenge",
@@ -36,8 +34,7 @@ export const service = {
       "Specialist skills (Agentic AI, Azure, SPFx, Power Platform) too scarce or costly to hire locally.",
       "Project peaks that don't justify permanent headcount.",
       "Vendor engagements that deliver bodies, not accountable engineering.",
-      "Ramp-up friction that burns months before new people contribute.",
-    ],
+      "Ramp-up friction that burns months before new people contribute."],
   },
 
   approach: {
@@ -63,8 +60,7 @@ export const service = {
         title: "Back individuals with a bench",
         description:
           "Every placement is supported by CFG's architects and practices: knowledge continuity, cover, and escalation built in.",
-      },
-    ],
+      }],
   },
 
   capabilities: {
@@ -75,8 +71,7 @@ export const service = {
       { title: "Offshore Staff Augmentation", description: "Cost-efficient scale with structured overlap and delivery discipline." },
       { title: "Dedicated Development Teams", description: "Complete, stable teams (engineering, QA, and leadership) owning a workstream end-to-end." },
       { title: "Project-Based Resource Augmentation", description: "Specialists embedded for the duration of a defined project or initiative." },
-      { title: "On-Demand Resource Scaling", description: "Rapid capacity changes as priorities and workloads shift." },
-    ],
+      { title: "On-Demand Resource Scaling", description: "Rapid capacity changes as priorities and workloads shift." }],
   },
 
   stack: {
@@ -94,8 +89,7 @@ export const service = {
       "Access to scarce AI and Microsoft expertise",
       "Reduced hiring risk and overhead",
       "Delivery discipline, not just résumés",
-      "Continuity backed by an entire engineering organization",
-    ],
+      "Continuity backed by an entire engineering organization"],
   },
 
   technologies: [
@@ -106,15 +100,13 @@ export const service = {
     "power-apps",
     "dotnet",
     "react",
-    "nextjs",
-  ],
+    "nextjs"],
 
   relatedSolutions: [
     "sharepoint-migration",
     "workflow-automation-platform",
-    "deal-management-system",
-  ],
-  relatedIndustries: ["technology", "financial-services", "healthcare", "real-estate", "telecom"],
+    "deal-management-system"],
+  relatedIndustries: ["technology", "financial-services",  "real-estate"],
   relatedCaseStudies: [],
 
   ctas: ["talk-to-expert", "request-proposal"],

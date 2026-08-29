@@ -32,14 +32,12 @@ export const solution = {
       "No native Microsoft path for cross-tenant SharePoint migration at scale.",
       "User identities that must be mapped and remapped across tenants.",
       "Sharing links and permissions that silently break in transit.",
-      "Deal timelines that fix the deadline before the plan exists.",
-    ],
+      "Deal timelines that fix the deadline before the plan exists."],
   },
 
   overview: [
     "CFG has industrialized tenant-to-tenant migration: automated discovery across both tenants, identity mapping between directories, and staged migration of SharePoint sites, OneDrive accounts, and Teams content with permissions and metadata preserved.",
-    "We sequence waves around the deal timeline and business calendars, run delta syncs until cutover, and verify at item level, so day one on the new tenant is an ordinary working day.",
-  ],
+    "We sequence waves around the deal timeline and business calendars, run delta syncs until cutover, and verify at item level, so day one on the new tenant is an ordinary working day."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Cut over & verify",
         description: "Coordinated cutover with item-level verification, link remediation, and hypercare support.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "SharePoint, OneDrive, and Teams content migration",
     "Delta synchronization to cutover",
     "Sharing link remediation",
-    "Item-level verification and reporting",
-  ],
+    "Item-level verification and reporting"],
 
   aiCapabilities: null,
 
@@ -86,48 +82,40 @@ export const solution = {
     "Users productive on day one post-cutover",
     "Permissions and sharing preserved, not rebuilt",
     "Full audit trail for deal governance",
-    "Source tenant retired cleanly",
-  ],
+    "Source tenant retired cleanly"],
 
   useCases: [
     "Merger and acquisition tenant consolidation",
     "Divestiture carve-outs to new tenants",
     "Rebrand-driven tenant moves",
-    "Multi-tenant cleanup into a single estate",
-  ],
+    "Multi-tenant cleanup into a single estate"],
 
   technologies: [
     "sharepoint-online",
     "microsoft-365",
     "microsoft-entra",
     "migration-tooling",
-    "powershell",
-  ],
+    "powershell"],
 
   industries: [
     "financial-services",
-    "technology",
-    "healthcare",
-  ],
+    "technology"],
 
   relatedServices: [
     "microsoft-cloud-solutions",
     "sharepoint-solutions",
-    "data-security-governance",
-  ],
+    "data-security-governance"],
 
   relatedSolutions: [
     "sharepoint-migration",
     "sharepoint-version-upgrade",
-    "enterprise-content-management",
-  ],
+    "enterprise-content-management"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "SharePoint Online Tenant-to-Tenant Migration",

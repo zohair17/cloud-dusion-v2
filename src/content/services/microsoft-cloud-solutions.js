@@ -20,13 +20,11 @@ export const service = {
   heroSlides: [
     { image: "/asset/services/microsoft-cloud-1.webp", label: "Migrations delivered without business disruption" },
     { image: "/asset/services/microsoft-cloud-2.webp", label: "Azure landing zones ready for AI workloads" },
-    { image: "/asset/services/microsoft-cloud-3.webp", label: "Recovery objectives tested, not assumed" },
-  ],
+    { image: "/asset/services/microsoft-cloud-3.webp", label: "Recovery objectives tested, not assumed" }],
 
   intro: [
     "AI initiatives succeed or fail on the foundation beneath them. Identity, collaboration, cloud infrastructure, data platforms, and business continuity determine whether intelligent solutions can be deployed safely and scaled reliably.",
-    "Cloud Fusion Global implements and modernizes the Microsoft cloud end-to-end: Microsoft 365 for the digital workplace, Azure for infrastructure, data, and AI workloads, and disaster recovery for the platforms your business cannot afford to lose. We treat the cloud not as a destination but as the operating platform for intelligent business.",
-  ],
+    "Cloud Fusion Global implements and modernizes the Microsoft cloud end-to-end: Microsoft 365 for the digital workplace, Azure for infrastructure, data, and AI workloads, and disaster recovery for the platforms your business cannot afford to lose. We treat the cloud not as a destination but as the operating platform for intelligent business."],
 
   challenges: {
     eyebrow: "The Challenge",
@@ -36,8 +34,7 @@ export const service = {
       "Complex migrations (tenants, mailboxes, file shares, and legacy workloads) with no room for business disruption.",
       "Hybrid identity sprawl and inconsistent security posture across cloud and on-premises.",
       "Rising infrastructure costs without a clear cloud optimization strategy.",
-      "Critical workloads (SharePoint, SQL Server, Exchange) without tested recovery plans.",
-    ],
+      "Critical workloads (SharePoint, SQL Server, Exchange) without tested recovery plans."],
   },
 
   approach: {
@@ -63,8 +60,7 @@ export const service = {
         title: "Optimize continuously",
         description:
           "Cost management, right-sizing, and governance so the cloud stays efficient as it grows.",
-      },
-    ],
+      }],
   },
 
   capabilities: {
@@ -98,8 +94,7 @@ export const service = {
       { group: "Disaster Recovery & Business Continuity", title: "Business Continuity", description: "Continuity strategy that aligns recovery investment with actual business impact." },
       { group: "Disaster Recovery & Business Continuity", title: "Backup and Recovery", description: "Backup architecture with tested restores, because a backup is only real once it has been recovered." },
       { group: "Disaster Recovery & Business Continuity", title: "High Availability", description: "Redundancy and failover design that keeps critical platforms running through component failure." },
-      { group: "Disaster Recovery & Business Continuity", title: "Disaster Recovery Planning and Testing", description: "Documented recovery plans, defined RTO/RPO objectives, and scheduled failover rehearsals." },
-    ],
+      { group: "Disaster Recovery & Business Continuity", title: "Disaster Recovery Planning and Testing", description: "Documented recovery plans, defined RTO/RPO objectives, and scheduled failover rehearsals." }],
   },
 
   stack: {
@@ -117,8 +112,7 @@ export const service = {
       "Consistent identity and security posture across hybrid environments",
       "Tested disaster recovery with defined RTO/RPO objectives",
       "Optimized cloud spend through right-sizing and governance",
-      "One partner across Microsoft 365, Azure, and business continuity",
-    ],
+      "One partner across Microsoft 365, Azure, and business continuity"],
   },
 
   technologies: [
@@ -129,16 +123,14 @@ export const service = {
     "microsoft-teams",
     "azure-site-recovery",
     "azure-openai",
-    "azure-ai-foundry",
-  ],
+    "azure-ai-foundry"],
 
   relatedSolutions: [
     "sharepoint-migration",
     "tenant-to-tenant-migration",
     "self-hosted-enterprise-ai",
-    "intranet-portal",
-  ],
-  relatedIndustries: ["financial-services", "healthcare", "energy", "telecom", "education", "non-profit"],
+    "intranet-portal"],
+  relatedIndustries: ["financial-services",  "energy",  "education"],
   relatedCaseStudies: ["sharepoint-enterprise-migration"],
 
   ctas: ["talk-to-expert", "request-proposal"],

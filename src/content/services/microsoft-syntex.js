@@ -20,13 +20,11 @@ export const service = {
   heroSlides: [
     { image: "/asset/services/syntex-1.webp", label: "AI applied the moment a document lands" },
     { image: "/asset/services/syntex-2.webp", label: "Key fields pulled from unstructured documents" },
-    { image: "/asset/services/syntex-3.webp", label: "Governance applied without manual effort" },
-  ],
+    { image: "/asset/services/syntex-3.webp", label: "Governance applied without manual effort" }],
 
   intro: [
     "Enterprises receive thousands of documents a day: contracts, invoices, statements, forms, and armies of people read, rename, tag, route, and re-key them. Microsoft Syntex (SharePoint Premium) applies AI at the moment a document lands: reading it, extracting what matters, classifying it, and triggering the right process.",
-    "Cloud Fusion Global designs and implements Syntex solutions end-to-end, from identifying high-volume document scenarios and building extraction models, to wiring processed content into workflows, compliance policies, and downstream systems.",
-  ],
+    "Cloud Fusion Global designs and implements Syntex solutions end-to-end, from identifying high-volume document scenarios and building extraction models, to wiring processed content into workflows, compliance policies, and downstream systems."],
 
   challenges: {
     eyebrow: "The Challenge",
@@ -36,8 +34,7 @@ export const service = {
       "Critical data trapped inside PDFs and scans, invisible to systems and search.",
       "Inconsistent metadata that undermines findability, automation, and compliance.",
       "Contract and form processes stalled on printing, signing, and re-scanning.",
-      "Retention and compliance policies impossible to apply to unclassified content.",
-    ],
+      "Retention and compliance policies impossible to apply to unclassified content."],
   },
 
   approach: {
@@ -63,8 +60,7 @@ export const service = {
         title: "Govern at scale",
         description:
           "Processing rules, retention, and content compliance applied automatically across libraries: governance without manual effort.",
-      },
-    ],
+      }],
   },
 
   capabilities: {
@@ -83,8 +79,7 @@ export const service = {
       { title: "Content Query", description: "Precise, metadata-driven search across processed content." },
       { title: "PDF Merge and Extraction", description: "Automated assembly and splitting of PDF content within SharePoint." },
       { title: "Processing Rules", description: "Automated actions triggered by content type, metadata, or extraction results." },
-      { title: "Content Compliance", description: "Retention, sensitivity, and lifecycle policies applied automatically to classified content." },
-    ],
+      { title: "Content Compliance", description: "Retention, sensitivity, and lifecycle policies applied automatically to classified content." }],
   },
 
   stack: {
@@ -102,8 +97,7 @@ export const service = {
       "Data trapped in PDFs and scans made searchable and actionable",
       "Signature and approval cycles completed inside SharePoint",
       "Compliance policies enforced automatically, not manually",
-      "A content layer AI agents and Copilot can reliably reason over",
-    ],
+      "A content layer AI agents and Copilot can reliably reason over"],
   },
 
   technologies: [
@@ -113,16 +107,14 @@ export const service = {
     "power-automate",
     "microsoft-purview",
     "azure-ai-document-intelligence",
-    "azure-openai",
-  ],
+    "azure-openai"],
 
   relatedSolutions: [
     "ai-document-management",
     "ai-document-generator",
     "records-management-system",
-    "contract-management-system",
-  ],
-  relatedIndustries: ["financial-services", "healthcare", "real-estate", "energy", "transportation"],
+    "contract-management-system"],
+  relatedIndustries: ["financial-services",  "real-estate", "energy"],
   relatedCaseStudies: ["fredd-document-management-system"],
 
   ctas: ["talk-to-expert", "request-proposal"],

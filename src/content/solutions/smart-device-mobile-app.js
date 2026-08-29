@@ -32,14 +32,12 @@ export const solution = {
       "Device pairing and connectivity flows that frustrate users.",
       "Telemetry collected but never turned into user value.",
       "Firmware updates risky and poorly adopted.",
-      "Device fleets unmanageable at scale without a cloud backbone.",
-    ],
+      "Device fleets unmanageable at scale without a cloud backbone."],
   },
 
   overview: [
     "CFG builds companion apps that make hardware feel effortless: fast, reliable pairing over Bluetooth or Wi-Fi, responsive control interfaces, and telemetry presented as insight users actually want.",
-    "Behind the app, Azure IoT provides the fleet backbone, device identity, telemetry ingestion, remote configuration, and over-the-air updates, so the product scales from prototype to hundreds of thousands of devices.",
-  ],
+    "Behind the app, Azure IoT provides the fleet backbone, device identity, telemetry ingestion, remote configuration, and over-the-air updates, so the product scales from prototype to hundreds of thousands of devices."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Update safely",
         description: "Staged over-the-air firmware rollouts with health monitoring and rollback.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Telemetry dashboards and history",
     "Over-the-air firmware update delivery",
     "Fleet management and remote diagnostics",
-    "Offline operation with sync",
-  ],
+    "Offline operation with sync"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -83,8 +79,7 @@ export const solution = {
     body: "Where intelligence does the heavy lifting in this solution.",
     items: [
       "Predictive alerts from device telemetry patterns",
-      "Usage-based recommendations in-app",
-    ],
+      "Usage-based recommendations in-app"],
   },
 
   architecture: null,
@@ -94,15 +89,13 @@ export const solution = {
     "A fleet backbone that scales with sales",
     "Firmware updates that reach the field safely",
     "Telemetry turned into user and product insight",
-    "One codebase across iOS and Android",
-  ],
+    "One codebase across iOS and Android"],
 
   useCases: [
     "Consumer smart home device apps",
     "Industrial equipment monitoring companions",
     "Health and wellness device experiences",
-    "Commercial building device management",
-  ],
+    "Commercial building device management"],
 
   technologies: [
     "azure-iot-hub",
@@ -110,33 +103,27 @@ export const solution = {
     "react-native",
     "azure-functions",
     "azure-stream-analytics",
-    "power-bi",
-  ],
+    "power-bi"],
 
   industries: [
     "technology",
-    "energy",
-    "healthcare",
-  ],
+    "energy"],
 
   relatedServices: [
     "mobile-app-development",
     "custom-software-development",
-    "data-business-intelligence",
-  ],
+    "data-business-intelligence"],
 
   relatedSolutions: [
     "ai-powered-mobile-apps",
     "property-listing-app",
-    "workflow-automation-platform",
-  ],
+    "workflow-automation-platform"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Mobile App for Smart Devices",

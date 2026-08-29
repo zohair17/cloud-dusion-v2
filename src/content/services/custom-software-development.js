@@ -20,13 +20,11 @@ export const service = {
   heroSlides: [
     { image: "/asset/services/custom-software-1.webp", label: "Systems shaped exactly to how you operate" },
     { image: "/asset/services/custom-software-2.webp", label: "Working software every sprint" },
-    { image: "/asset/services/custom-software-3.webp", label: "Intelligence designed in, not bolted on" },
-  ],
+    { image: "/asset/services/custom-software-3.webp", label: "Intelligence designed in, not bolted on" }],
 
   intro: [
     "Packaged software fits average businesses. When your processes, data, or customer experience are a competitive advantage, custom software is how you press it: systems shaped exactly to how you operate, integrated with everything you run, and able to evolve as you do.",
-    "Cloud Fusion Global engineers custom software with enterprise discipline: clear architecture, secure-by-design implementation, automated testing, and cloud-native deployment on Azure. And because we are an AI-first company, intelligence (search, extraction, assistance, prediction) is designed into applications rather than bolted on.",
-  ],
+    "Cloud Fusion Global engineers custom software with enterprise discipline: clear architecture, secure-by-design implementation, automated testing, and cloud-native deployment on Azure. And because we are an AI-first company, intelligence (search, extraction, assistance, prediction) is designed into applications rather than bolted on."],
 
   challenges: {
     eyebrow: "The Challenge",
@@ -36,8 +34,7 @@ export const service = {
       "Aging line-of-business applications that are risky to change and costly to run.",
       "Disconnected systems requiring duplicate data entry and manual reconciliation.",
       "Customer-facing experiences that lag competitor expectations.",
-      "In-house teams stretched too thin to deliver strategic builds.",
-    ],
+      "In-house teams stretched too thin to deliver strategic builds."],
   },
 
   approach: {
@@ -63,8 +60,7 @@ export const service = {
         title: "Design intelligence in",
         description:
           "AI capabilities (semantic search, document understanding, copilots) architected into the product where they create value.",
-      },
-    ],
+      }],
   },
 
   capabilities: {
@@ -80,8 +76,7 @@ export const service = {
       { title: "Back-End Development", description: "Robust services, business logic, and data layers on .NET and Node.js." },
       { title: "API Development", description: "Well-designed REST and GraphQL APIs with versioning, security, and documentation." },
       { title: "API Integration", description: "Reliable integrations with third-party platforms and internal systems." },
-      { title: "Full-Stack Development", description: "End-to-end product engineering across interface, services, and data." },
-    ],
+      { title: "Full-Stack Development", description: "End-to-end product engineering across interface, services, and data." }],
   },
 
   stack: {
@@ -99,8 +94,7 @@ export const service = {
       "Integrated data flows that eliminate duplicate entry",
       "Cloud-native deployment with security and scale built in",
       "AI capabilities embedded as product features",
-      "A codebase your teams can own and evolve",
-    ],
+      "A codebase your teams can own and evolve"],
   },
 
   technologies: [
@@ -111,17 +105,15 @@ export const service = {
     "nodejs",
     "azure-app-services",
     "azure-sql",
-    "azure-openai",
-  ],
+    "azure-openai"],
 
   relatedSolutions: [
     "deal-management-system",
     "lease-management-system",
     "tenant-portal",
     "b2b-integration",
-    "electronic-contract-generator",
-  ],
-  relatedIndustries: ["real-estate", "financial-services", "technology", "transportation", "energy"],
+    "electronic-contract-generator"],
+  relatedIndustries: ["real-estate", "financial-services", "technology",  "energy"],
   relatedCaseStudies: ["real-estate-deal-management"],
 
   ctas: ["talk-to-expert", "request-proposal"],

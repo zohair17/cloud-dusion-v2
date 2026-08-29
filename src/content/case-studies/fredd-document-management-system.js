@@ -40,8 +40,7 @@ export const caseStudy = {
     {
       step: "05",
       description: "Trained teams and established ownership for ongoing content governance.",
-    },
-  ],
+    }],
 
   solution: "FREDD provides a structured SharePoint-based document platform where documents are filed by metadata, versioned automatically, secured by role, and found in seconds through scoped search.",
 
@@ -49,8 +48,7 @@ export const caseStudy = {
     "Authoritative documents locatable in seconds rather than searches across drives",
     "Version confusion eliminated through controlled versioning",
     "Permissions and retention applied consistently by structure",
-    "A governed foundation prepared for AI document capabilities",
-  ],
+    "A governed foundation prepared for AI document capabilities"],
 
   metricsNote: "Verified adoption and volume metrics to be added upon client approval",
 
@@ -58,21 +56,18 @@ export const caseStudy = {
     "sharepoint-online",
     "microsoft-365",
     "power-automate",
-    "microsoft-purview",
-  ],
+    "microsoft-purview"],
 
   relatedServices: [
     "sharepoint-solutions",
-    "microsoft-syntex",
-  ],
+    "microsoft-syntex"],
 
   relatedSolutions: [],
 
   ctas: [
     "talk-to-expert",
     "request-proposal",
-    "discovery-session",
-  ],
+    "discovery-session"],
 
   seo: {
     title: "FREDD Document Management System Case Study",

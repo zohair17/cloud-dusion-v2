@@ -32,14 +32,12 @@ export const solution = {
       "Company news and policies that never reach the people they affect.",
       "Employees unable to find forms, contacts, or answers.",
       "Content publishing bottlenecked on IT.",
-      "No connection between the intranet and daily tools like Teams.",
-    ],
+      "No connection between the intranet and daily tools like Teams."],
   },
 
   overview: [
     "CFG builds intranets as products, not projects: designed around employee tasks and journeys, branded to your identity, and structured so communications teams publish without IT involvement.",
-    "Built on SharePoint Online and surfaced in Microsoft Teams and Viva Connections, the intranet meets employees where they already work, with personalized news, powerful search, and self-service that actually serves.",
-  ],
+    "Built on SharePoint Online and surfaced in Microsoft Teams and Viva Connections, the intranet meets employees where they already work, with personalized news, powerful search, and self-service that actually serves."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Publish & measure",
         description: "Communications teams own publishing with governance guardrails; analytics show what lands.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Employee self-service hub: forms, requests, policies",
     "People directory and organizational browsing",
     "Teams and mobile delivery via Viva Connections",
-    "Publishing governance with distributed authorship",
-  ],
+    "Publishing governance with distributed authorship"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -83,8 +79,7 @@ export const solution = {
     body: "Where intelligence does the heavy lifting in this solution.",
     items: [
       "AI-assisted content drafting for communicators",
-      "Intranet Q&A assistant answering from policies and pages",
-    ],
+      "Intranet Q&A assistant answering from policies and pages"],
   },
 
   architecture: null,
@@ -94,48 +89,41 @@ export const solution = {
     "Self-service that deflects routine requests",
     "Publishing decentralized without losing control",
     "A culture and identity anchor for distributed teams",
-    "Adoption measured, not assumed",
-  ],
+    "Adoption measured, not assumed"],
 
   useCases: [
     "Global company intranets with regional targeting",
     "HR and employee services hubs",
     "Frontline communication via mobile",
-    "Onboarding and knowledge centers",
-  ],
+    "Onboarding and knowledge centers"],
 
   technologies: [
     "sharepoint-online",
     "microsoft-viva",
     "microsoft-teams",
     "sharepoint-framework",
-    "microsoft-graph",
-  ],
+    "microsoft-graph"],
 
   industries: [
-    "healthcare",
+    
     "financial-services",
-    "energy",
-  ],
+    "energy"],
 
   relatedServices: [
     "sharepoint-solutions",
     "microsoft-cloud-solutions",
-    "power-platform-solutions",
-  ],
+    "power-platform-solutions"],
 
   relatedSolutions: [
     "document-management-system",
     "request-approval-system",
-    "ai-chatbot-solutions",
-  ],
+    "ai-chatbot-solutions"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Intranet Portal",

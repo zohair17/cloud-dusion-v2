@@ -32,14 +32,12 @@ export const solution = {
       "Quotes disconnected from actual job costs and outcomes.",
       "Scheduling conflicts and idle time from manual planning.",
       "Field updates arriving by phone call and paper.",
-      "Invoicing delayed and incomplete because job data is scattered.",
-    ],
+      "Invoicing delayed and incomplete because job data is scattered."],
   },
 
   overview: [
     "CFG's Job Management System connects the job lifecycle: quotes convert to jobs with budgets attached, jobs are scheduled against team capacity, field crews update progress from mobile, and completed work flows straight to accurate invoices.",
-    "Job costing runs continuously, labor, materials, subcontractors against budget, so margin problems surface while they can still be fixed, not at month-end.",
-  ],
+    "Job costing runs continuously, labor, materials, subcontractors against budget, so margin problems surface while they can still be fixed, not at month-end."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Cost & invoice",
         description: "Actuals accrue against budget in real time; completed jobs invoice with full backup.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Mobile field execution with offline support",
     "Real-time job costing against budget",
     "Progress and completion invoicing",
-    "Job profitability reporting",
-  ],
+    "Job profitability reporting"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -83,8 +79,7 @@ export const solution = {
     body: "Where intelligence does the heavy lifting in this solution.",
     items: [
       "Estimate suggestions from historical job outcomes",
-      "Schedule optimization across crews and travel",
-    ],
+      "Schedule optimization across crews and travel"],
   },
 
   architecture: null,
@@ -94,48 +89,40 @@ export const solution = {
     "Higher utilization from capacity-based scheduling",
     "Field data captured once, at the source",
     "Margin visible during the job, not after",
-    "Invoicing accelerated with complete backup",
-  ],
+    "Invoicing accelerated with complete backup"],
 
   useCases: [
     "Field service and maintenance operations",
     "Installation and fit-out projects",
     "Facilities and property maintenance",
-    "Specialist contracting businesses",
-  ],
+    "Specialist contracting businesses"],
 
   technologies: [
     "power-apps",
     "dataverse",
     "power-automate",
     "power-bi",
-    "dynamics-365-business-central",
-  ],
+    "dynamics-365-business-central"],
 
   industries: [
     "real-estate",
-    "energy",
-    "transportation",
-  ],
+    "energy"],
 
   relatedServices: [
     "power-platform-solutions",
     "mobile-app-development",
-    "custom-software-development",
-  ],
+    "custom-software-development"],
 
   relatedSolutions: [
     "erp-manufacturing",
     "workflow-automation-platform",
-    "tenant-portal",
-  ],
+    "tenant-portal"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Job Management System",

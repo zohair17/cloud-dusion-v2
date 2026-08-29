@@ -20,13 +20,11 @@ export const service = {
   heroSlides: [
     { image: "/asset/services/security-1.webp", label: "A zero-trust identity foundation" },
     { image: "/asset/services/security-2.webp", label: "Protection that travels with the data" },
-    { image: "/asset/services/security-3.webp", label: "Continuous visibility into threats and risk" },
-  ],
+    { image: "/asset/services/security-3.webp", label: "Continuous visibility into threats and risk" }],
 
   intro: [
     "AI raises the stakes on security. Agents act with delegated permissions, models consume enterprise content, and data moves faster than manual controls can follow. Organizations that get governance right adopt AI with confidence; those that don't either stall or take risks they can't see.",
-    "Cloud Fusion Global implements security and governance on the Microsoft stack: Entra for identity, Purview for information protection and compliance, Defender for threat protection, and Intune for endpoints, designed as one coherent control plane across your cloud, content, and AI workloads.",
-  ],
+    "Cloud Fusion Global implements security and governance on the Microsoft stack: Entra for identity, Purview for information protection and compliance, Defender for threat protection, and Intune for endpoints, designed as one coherent control plane across your cloud, content, and AI workloads."],
 
   challenges: {
     eyebrow: "The Challenge",
@@ -36,8 +34,7 @@ export const service = {
       "Sensitive data unlabelled and unprotected across SharePoint, Teams, and email.",
       "Compliance obligations met with manual effort and hope.",
       "AI adoption blocked because no one can say what data models might expose.",
-      "Threats evolving faster than in-house security capacity.",
-    ],
+      "Threats evolving faster than in-house security capacity."],
   },
 
   approach: {
@@ -63,8 +60,7 @@ export const service = {
         title: "Defend continuously",
         description:
           "Threat protection, endpoint management, and security monitoring across your Microsoft estate.",
-      },
-    ],
+      }],
   },
 
   capabilities: {
@@ -83,8 +79,7 @@ export const service = {
       { title: "Governance", description: "Policies, lifecycle, and controls for Microsoft 365, Power Platform, and AI workloads." },
       { title: "Cloud Security", description: "Secure Azure architecture: networking, encryption, posture management." },
       { title: "Security Monitoring", description: "Continuous monitoring and alerting with Microsoft Sentinel." },
-      { title: "Infrastructure Security", description: "Hardening and protection for hybrid infrastructure estates." },
-    ],
+      { title: "Infrastructure Security", description: "Hardening and protection for hybrid infrastructure estates." }],
   },
 
   stack: {
@@ -102,8 +97,7 @@ export const service = {
       "Compliance evidence produced by the platform, not by heroics",
       "AI adoption unblocked with governed data boundaries",
       "Reduced attack surface across endpoints and cloud",
-      "Continuous visibility into threats and risk posture",
-    ],
+      "Continuous visibility into threats and risk posture"],
   },
 
   technologies: [
@@ -113,16 +107,14 @@ export const service = {
     "microsoft-intune",
     "microsoft-sentinel",
     "azure-key-vault",
-    "azure-policy",
-  ],
+    "azure-policy"],
 
   relatedSolutions: [
     "self-hosted-enterprise-ai",
     "records-management-system",
     "self-hosted-sharepoint-sites",
-    "document-management-system",
-  ],
-  relatedIndustries: ["financial-services", "healthcare", "energy", "telecom", "education"],
+    "document-management-system"],
+  relatedIndustries: ["financial-services",  "energy",  "education"],
   relatedCaseStudies: [],
 
   ctas: ["talk-to-expert", "request-proposal"],

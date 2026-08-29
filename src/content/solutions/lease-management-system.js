@@ -32,14 +32,12 @@ export const solution = {
       "Renewal, notice, and escalation dates tracked in spreadsheets, or memories.",
       "Lease abstracts produced manually at high cost and inconsistent quality.",
       "No portfolio-wide view of obligations, options, and exposure.",
-      "Audit and diligence requests requiring weeks of document review.",
-    ],
+      "Audit and diligence requests requiring weeks of document review."],
   },
 
   overview: [
     "CFG's Lease Management System creates a single source of truth for the lease portfolio: documents in a governed repository, key terms abstracted into structured data, and critical dates driving automated alerts to the right owners.",
-    "AI abstraction reads leases and amendments, parties, terms, rents, escalations, options, obligations, with human verification workflows, cutting abstraction time dramatically while raising consistency.",
-  ],
+    "AI abstraction reads leases and amendments, parties, terms, rents, escalations, options, obligations, with human verification workflows, cutting abstraction time dramatically while raising consistency."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Report",
         description: "Portfolio dashboards show exposure, expirations, escalations, and obligations in real time.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Critical date alerting and task assignment",
     "Escalation and rent schedule tracking",
     "Portfolio dashboards and reporting",
-    "Audit-ready document trails",
-  ],
+    "Audit-ready document trails"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -84,8 +80,7 @@ export const solution = {
     items: [
       "AI lease abstraction with human verification",
       "Amendment detection and record updating",
-      "Natural-language queries across the portfolio",
-    ],
+      "Natural-language queries across the portfolio"],
   },
 
   architecture: null,
@@ -95,15 +90,13 @@ export const solution = {
     "Abstraction cost and turnaround cut sharply",
     "Portfolio questions answered in seconds",
     "Diligence and audit readiness at all times",
-    "Consistent data quality across the portfolio",
-  ],
+    "Consistent data quality across the portfolio"],
 
   useCases: [
     "Corporate occupier lease portfolios",
     "Landlord and REIT lease administration",
     "Acquisition diligence abstraction",
-    "Lease accounting data feeds",
-  ],
+    "Lease accounting data feeds"],
 
   technologies: [
     "sharepoint-online",
@@ -111,33 +104,27 @@ export const solution = {
     "microsoft-syntex",
     "power-apps",
     "power-automate",
-    "power-bi",
-  ],
+    "power-bi"],
 
   industries: [
     "real-estate",
-    "financial-services",
-    "transportation",
-  ],
+    "financial-services"],
 
   relatedServices: [
     "agentic-ai-automation",
     "microsoft-syntex",
-    "power-platform-solutions",
-  ],
+    "power-platform-solutions"],
 
   relatedSolutions: [
     "deal-management-system",
     "contract-management-system",
-    "reit-analytics-dashboard",
-  ],
+    "reit-analytics-dashboard"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Lease Management System",

@@ -27,7 +27,6 @@ export const serviceRecords = [
   saasProductDevelopment,
   mobileAppDevelopment,
   dataSecurityGovernance,
-  itStaffAugmentation,
-];
+  itStaffAugmentation];
 
 export default serviceRecords;

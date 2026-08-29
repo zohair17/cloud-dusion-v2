@@ -40,8 +40,7 @@ export const caseStudy = {
     {
       step: "05",
       description: "Modernized site experiences with current templates and navigation.",
-    },
-  ],
+    }],
 
   solution: "A modernized SharePoint environment on supportable foundations (modern sites, SPFx components, and Power Automate workflows) ready for current and future platform capabilities.",
 
@@ -49,8 +48,7 @@ export const caseStudy = {
     "Unsupportable customizations retired or rebuilt on modern frameworks",
     "Workflows moved to a supported automation platform",
     "A current user experience that restored user confidence",
-    "Platform readiness for modern and AI capabilities",
-  ],
+    "Platform readiness for modern and AI capabilities"],
 
   metricsNote: "Verified adoption metrics to be added upon client approval",
 
@@ -58,21 +56,18 @@ export const caseStudy = {
     "sharepoint-online",
     "sharepoint-framework",
     "power-automate",
-    "microsoft-365",
-  ],
+    "microsoft-365"],
 
   relatedServices: [
     "sharepoint-solutions",
-    "power-platform-solutions",
-  ],
+    "power-platform-solutions"],
 
   relatedSolutions: [],
 
   ctas: [
     "talk-to-expert",
     "request-proposal",
-    "discovery-session",
-  ],
+    "discovery-session"],
 
   seo: {
     title: "SharePoint Modernization Case Study",

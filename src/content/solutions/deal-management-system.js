@@ -32,14 +32,12 @@ export const solution = {
       "No single view of the deal pipeline and its stages.",
       "Diligence documents scattered across drives and inboxes.",
       "Approvals bottlenecked and untracked.",
-      "Deal knowledge lost between transactions and teams.",
-    ],
+      "Deal knowledge lost between transactions and teams."],
   },
 
   overview: [
     "CFG's Deal Management System gives every deal a structured workspace: pipeline stage, team, checklist, documents, and approvals in one place, with dashboards rolling the whole pipeline up for leadership.",
-    "Stage gates enforce your investment process, document rooms keep diligence organized and shareable, and every decision leaves an audit trail. AI assists with document summarization and deal comparisons.",
-  ],
+    "Stage gates enforce your investment process, document rooms keep diligence organized and shareable, and every decision leaves an audit trail. AI assists with document summarization and deal comparisons."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Analyze",
         description: "Pipeline dashboards show volume, velocity, conversion, and exposure by market and type.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Approval workflows with audit trails",
     "Secure external sharing for diligence",
     "Pipeline analytics and leadership dashboards",
-    "Post-close handoff to asset management",
-  ],
+    "Post-close handoff to asset management"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -84,8 +80,7 @@ export const solution = {
     items: [
       "AI summarization of offering memoranda and diligence documents",
       "Deal comparison against portfolio and history",
-      "Automated extraction from broker packages",
-    ],
+      "Automated extraction from broker packages"],
   },
 
   architecture: null,
@@ -95,15 +90,13 @@ export const solution = {
     "Faster deal cycles through structured process",
     "Diligence organized and audit-ready",
     "Institutional memory retained across deals",
-    "Investment process enforced, not hoped for",
-  ],
+    "Investment process enforced, not hoped for"],
 
   useCases: [
     "Acquisition pipelines for investors and REITs",
     "Disposition and portfolio sale management",
     "Development project pipelines",
-    "Debt and financing transaction tracking",
-  ],
+    "Debt and financing transaction tracking"],
 
   technologies: [
     "power-apps",
@@ -111,32 +104,27 @@ export const solution = {
     "sharepoint-online",
     "power-automate",
     "power-bi",
-    "azure-openai",
-  ],
+    "azure-openai"],
 
   industries: [
     "real-estate",
-    "financial-services",
-  ],
+    "financial-services"],
 
   relatedServices: [
     "custom-software-development",
     "power-platform-solutions",
-    "data-business-intelligence",
-  ],
+    "data-business-intelligence"],
 
   relatedSolutions: [
     "lease-management-system",
     "reit-analytics-dashboard",
-    "request-approval-system",
-  ],
+    "request-approval-system"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Deal Management System",

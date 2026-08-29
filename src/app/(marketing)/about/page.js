@@ -1,8 +1,6 @@
 import { getClosingCta, getCompanyProfile } from "@/modules/company";
 import { buildMetadata } from "@/shared/lib/metadata";
-import { routes } from "@/shared/config/routes";
-import { PageHero } from "@/shared/ui/sections/page-hero";
-import { HeroMarquee } from "@/shared/ui/sections/hero-marquee";
+import { AboutHero } from "@/shared/ui/sections/about-hero";
 import { AboutIntro } from "@/shared/ui/sections/about-intro";
 import { AboutBeliefs } from "@/shared/ui/sections/about-beliefs";
 import { AboutEngagement } from "@/shared/ui/sections/about-engagement";
@@ -32,30 +30,25 @@ export default function AboutPage() {
 
   return (
     <>
-      <PageHero
-        trail={[
-          { label: "Home", href: routes.home() },
-          { label: profile.navLabel },
-        ]}
+      <AboutHero
         eyebrow={profile.title}
         heading={profile.tagline}
         headingAccent={profile.taglineAccent}
         intro={profile.summary}
         ctas={profile.ctas}
-      >
-        <HeroMarquee
-          images={[
-            "/asset/CloudFusion/cf-01.jpeg",
-            "/asset/CloudFusion/cf-02.jpeg",
-            "/asset/CloudFusion/cf-04.jpeg",
-            "/asset/CloudFusion/cf-06.jpeg",
-            "/asset/CloudFusion/cf-07.jpeg",
-            "/asset/CloudFusion/cf-08.jpeg",
-            "/asset/CloudFusion/cf-11.jpeg",
-          ]}
-          label="The Cloud Fusion Global team at work"
-        />
-      </PageHero>
+        images={[
+          "/asset/CloudFusion/cf-01.jpeg",
+          "/asset/CloudFusion/cf-03.jpeg",
+          "/asset/CloudFusion/cf-04.jpeg",
+          "/asset/CloudFusion/cf-05.jpeg",
+          "/asset/CloudFusion/cf-08.jpeg",
+          "/asset/CloudFusion/cf-10.jpeg",
+          "/asset/CloudFusion/cf-11.jpeg",
+          "/asset/CloudFusion/cf-12.jpeg",
+          "/asset/CloudFusion/cf-13.jpeg",
+        ]}
+        label="The Cloud Fusion Global team at work"
+      />
 
       <AboutIntro paragraphs={profile.intro} />
 

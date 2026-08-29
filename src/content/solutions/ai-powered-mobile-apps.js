@@ -32,14 +32,12 @@ export const solution = {
       "Manual data entry where a camera and AI could do the work.",
       "Support and engagement limited by static, menu-driven interfaces.",
       "Personalization ambitions without the ML foundation to deliver.",
-      "Privacy and latency concerns about cloud-only AI processing.",
-    ],
+      "Privacy and latency concerns about cloud-only AI processing."],
   },
 
   overview: [
     "CFG builds mobile applications where AI is the experience, not a gimmick: cameras that capture and understand documents and objects, assistants that answer from your knowledge, and interfaces that adapt to each user.",
-    "We balance on-device models for speed and privacy with Azure AI for depth, engineering the whole pipeline from capture to inference to a fluid user experience.",
-  ],
+    "We balance on-device models for speed and privacy with Azure AI for depth, engineering the whole pipeline from capture to inference to a fluid user experience."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Learn",
         description: "Feedback and behaviour refine personalization within privacy boundaries.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Personalized content and recommendations",
     "Voice interfaces and dictation",
     "On-device inference for speed and privacy",
-    "AI feature analytics and evaluation",
-  ],
+    "AI feature analytics and evaluation"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -85,8 +81,7 @@ export const solution = {
       "Vision models for capture and recognition",
       "RAG-grounded assistants over app and enterprise content",
       "Behavioural personalization models",
-      "Hybrid on-device / cloud inference",
-    ],
+      "Hybrid on-device / cloud inference"],
   },
 
   architecture: null,
@@ -96,15 +91,13 @@ export const solution = {
     "Engagement lifted by genuinely useful assistance",
     "Differentiation competitors can't copy from a template",
     "Privacy-respecting intelligence architecture",
-    "A measurable AI feature pipeline, not one-off tricks",
-  ],
+    "A measurable AI feature pipeline, not one-off tricks"],
 
   useCases: [
     "Field capture apps that read documents and meters",
     "Customer service assistants in consumer apps",
     "Personalized commerce and content experiences",
-    "Accessibility-first voice-driven interfaces",
-  ],
+    "Accessibility-first voice-driven interfaces"],
 
   technologies: [
     "azure-openai",
@@ -112,33 +105,27 @@ export const solution = {
     "azure-ai-speech",
     "dotnet-maui",
     "react-native",
-    "core-ml-ml-kit",
-  ],
+    "core-ml-ml-kit"],
 
   industries: [
     "technology",
-    "financial-services",
-    "healthcare",
-  ],
+    "financial-services"],
 
   relatedServices: [
     "mobile-app-development",
     "generative-ai",
-    "agentic-ai-automation",
-  ],
+    "agentic-ai-automation"],
 
   relatedSolutions: [
     "smart-device-mobile-app",
     "ai-chatbot-solutions",
-    "property-listing-app",
-  ],
+    "property-listing-app"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "AI-Powered Mobile Applications",

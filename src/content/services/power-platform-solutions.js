@@ -20,13 +20,11 @@ export const service = {
   heroSlides: [
     { image: "/asset/services/power-platform-1.webp", label: "Working applications delivered in weeks" },
     { image: "/asset/services/power-platform-2.webp", label: "Manual processes replaced with auditable automation" },
-    { image: "/asset/services/power-platform-3.webp", label: "A governed low-code estate, not shadow IT" },
-  ],
+    { image: "/asset/services/power-platform-3.webp", label: "A governed low-code estate, not shadow IT" }],
 
   intro: [
     "Business teams need applications and automation faster than traditional development can deliver them, but ungoverned low-code creates its own sprawl. The Power Platform, engineered with discipline, gives enterprises both: rapid delivery and a managed, secure application estate.",
-    "Cloud Fusion Global builds Power Platform solutions the way we build enterprise software, with architecture, ALM, security models, and governance, and infuses them with AI through Copilot Studio and AI Builder so applications don't just capture data, they act on it.",
-  ],
+    "Cloud Fusion Global builds Power Platform solutions the way we build enterprise software, with architecture, ALM, security models, and governance, and infuses them with AI through Copilot Studio and AI Builder so applications don't just capture data, they act on it."],
 
   challenges: {
     eyebrow: "The Challenge",
@@ -36,8 +34,7 @@ export const service = {
       "IT backlogs that leave departmental needs unmet for quarters at a time.",
       "Citizen-developed apps growing without security, ALM, or governance.",
       "Data captured in forms but never turned into insight or action.",
-      "Repetitive manual work across Microsoft 365 and line-of-business systems.",
-    ],
+      "Repetitive manual work across Microsoft 365 and line-of-business systems."],
   },
 
   approach: {
@@ -63,8 +60,7 @@ export const service = {
         title: "Govern the platform",
         description:
           "Environment strategy, DLP policies, ALM pipelines, and a center of excellence that make low-code sustainable at scale.",
-      },
-    ],
+      }],
   },
 
   capabilities: {
@@ -80,8 +76,7 @@ export const service = {
       { title: "AI Builder", description: "Prebuilt and custom AI models (document processing, prediction, classification) inside apps and flows." },
       { title: "UiPath", description: "Robotic process automation for legacy systems and interfaces without APIs." },
       { title: "Low-Code Automation", description: "Rapid automation of departmental processes with governed low-code patterns." },
-      { title: "Enterprise Workflow Automation", description: "Cross-departmental workflow platforms (requests, approvals, case management) at organizational scale." },
-    ],
+      { title: "Enterprise Workflow Automation", description: "Cross-departmental workflow platforms (requests, approvals, case management) at organizational scale." }],
   },
 
   stack: {
@@ -99,8 +94,7 @@ export const service = {
       "AI embedded where work happens: forms, flows, and chat",
       "A governed low-code estate instead of shadow IT",
       "Reduced development cost for departmental applications",
-      "Real-time operational visibility through Power BI",
-    ],
+      "Real-time operational visibility through Power BI"],
   },
 
   technologies: [
@@ -111,16 +105,14 @@ export const service = {
     "copilot-studio",
     "dataverse",
     "ai-builder",
-    "uipath",
-  ],
+    "uipath"],
 
   relatedSolutions: [
     "workflow-automation-platform",
     "request-approval-system",
     "electronic-contract-generator",
-    "job-management-system",
-  ],
-  relatedIndustries: ["financial-services", "healthcare", "real-estate", "energy", "transportation", "non-profit"],
+    "job-management-system"],
+  relatedIndustries: ["financial-services",  "real-estate", "energy"],
   relatedCaseStudies: ["real-estate-deal-management"],
 
   ctas: ["talk-to-expert", "request-proposal"],

@@ -3,7 +3,28 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowUpRight, Check, ListChecks, Sparkles, TriangleAlert } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  BarChart3,
+  Bot,
+  Boxes,
+  Check,
+  Clock,
+  Cloud,
+  FileText,
+  Globe,
+  GraduationCap,
+  Lightbulb,
+  ListChecks,
+  MessagesSquare,
+  Search,
+  ShieldCheck,
+  Sparkles,
+  TriangleAlert,
+  Users,
+  Workflow,
+} from "lucide-react";
 import { Container } from "../primitives/container";
 import { Button } from "../primitives/button";
 import { RevealText } from "../motion/reveal-text";
@@ -20,6 +41,36 @@ import { cn } from "../primitives/cn";
  * section here is composed for this page and appears nowhere else on the site.
  */
 const EASE = [0.22, 1, 0.36, 1];
+
+/**
+ * The mark for a line of copy, read off the words it already uses.
+ *
+ * Benefits, use cases and related links are authored as prose, not as records
+ * with an icon field. Matching on the sentence keeps the mark a presentation
+ * decision, and anything with nothing to match on falls back to a neutral one
+ * rather than to a wrong one.
+ */
+const MARK_RULES = [
+  [/chatbot|copilot|conversation|answer|q&a|voice|ask/i, MessagesSquare],
+  [/agent|bot|autonomous/i, Bot],
+  [/document|content|record|contract|file|citation/i, FileText],
+  [/search|discover|retriev|find/i, Search],
+  [/workflow|process|automat|approval|task/i, Workflow],
+  [/secur|complian|govern|policy|risk|protect|permission/i, ShieldCheck],
+  [/data|analytic|insight|report|dashboard|metric/i, BarChart3],
+  [/cloud|azure|infrastructure|hosting|platform/i, Cloud],
+  [/team|employee|people|staff|customer|user/i, Users],
+  [/train|learn|enable|knowledge|onboard/i, GraduationCap],
+  [/web|mobile|portal|intranet|channel|site/i, Globe],
+  [/clock|24|around the clock|instant|fast|speed|time/i, Clock],
+  [/idea|innovat|understand|know what/i, Lightbulb],
+  [/ai|intelligen|model|generative/i, Sparkles],
+];
+
+function markFor(text) {
+  for (const [pattern, Icon] of MARK_RULES) if (pattern.test(text)) return Icon;
+  return Boxes;
+}
 
 /** Section head, shared by the sections below and by nothing else. */
 function Head({ eyebrow, heading, body, align = "left", className }) {
@@ -569,18 +620,20 @@ export function SolutionOutcomes({ benefits, useCases, benefitItems = [], useCas
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "0px 0px -10% 0px" }}
                   transition={{ duration: 0.5, delay: (index % 3) * 0.08, ease: EASE }}
-                  className="relative overflow-hidden rounded-[1.2rem] bg-surface p-6 ring-1 ring-black/[0.05]"
+                  className="group relative flex items-center gap-4 overflow-hidden rounded-[1rem] border-l-[3px] border-brand-600 bg-white p-5 shadow-[0_18px_40px_-34px_rgb(11_11_42/0.55)] ring-1 ring-black/[0.05] transition-shadow duration-500 hover:shadow-[0_26px_54px_-36px_rgb(53_51_205/0.55)]"
                 >
+                  <BenefitMark Icon={markFor(item)} />
+
+                  <p className="relative min-w-0 flex-1 font-display text-[0.9375rem] font-medium leading-[1.5] tracking-tight text-foreground">
+                    {item}
+                  </p>
+
                   <span
                     aria-hidden="true"
-                    className="pointer-events-none absolute -right-1 -top-3 font-display text-[4.25rem] font-bold leading-none tabular-nums text-brand-600/[0.08]"
+                    className="relative shrink-0 font-display text-[2rem] font-bold leading-none tabular-nums text-brand-600/[0.22] transition-colors duration-500 group-hover:text-brand-600/40"
                   >
                     {String(index + 1).padStart(2, "0")}
                   </span>
-
-                  <p className="relative font-display text-[0.9375rem] font-medium leading-[1.6] tracking-tight text-foreground sm:text-base">
-                    {item}
-                  </p>
                 </motion.li>
               ))}
             </ul>
@@ -593,22 +646,39 @@ export function SolutionOutcomes({ benefits, useCases, benefitItems = [], useCas
           <Container size="wide">
             <Head eyebrow={useCases.eyebrow} heading={useCases.heading} />
 
-            <ul className="mt-9 grid gap-x-14 lg:mt-11 lg:grid-cols-2">
-              {useCaseItems.map((item, index) => (
-                <motion.li
-                  key={item}
-                  initial={{ opacity: 0, y: 14 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-                  transition={{ duration: 0.45, delay: (index % 2) * 0.07, ease: EASE }}
-                  className="group flex items-start gap-4 border-t border-border py-5"
-                >
-                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-600 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white">
-                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-                  </span>
-                  <span className="text-[0.9375rem] leading-relaxed text-foreground">{item}</span>
-                </motion.li>
-              ))}
+            <ul className="mt-9 grid gap-4 lg:mt-11 lg:grid-cols-2">
+              {useCaseItems.map((item, index) => {
+                const Icon = markFor(item);
+
+                return (
+                  <motion.li
+                    key={item}
+                    initial={{ opacity: 0, y: 14 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+                    transition={{ duration: 0.45, delay: (index % 2) * 0.07, ease: EASE }}
+                    className="group flex items-center gap-4 rounded-[1rem] bg-white p-5 shadow-[0_18px_40px_-34px_rgb(11_11_42/0.55)] ring-1 ring-black/[0.05] transition-shadow duration-500 hover:shadow-[0_26px_54px_-36px_rgb(53_51_205/0.55)] sm:gap-5 sm:p-6"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[0.9rem] bg-[linear-gradient(150deg,var(--color-brand-500)_0%,var(--color-brand-700)_100%)] text-white shadow-[0_12px_24px_-14px_rgb(53_51_205/0.9)] sm:h-14 sm:w-14"
+                    >
+                      <Icon className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.8} />
+                    </span>
+
+                    <span className="min-w-0 flex-1 text-[0.9375rem] font-medium leading-relaxed text-foreground">
+                      {item}
+                    </span>
+
+                    <span
+                      aria-hidden="true"
+                      className="shrink-0 text-brand-600 transition-transform duration-500 group-hover:translate-x-1"
+                    >
+                      <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </motion.li>
+                );
+              })}
             </ul>
           </Container>
         </section>
@@ -693,10 +763,15 @@ export function SolutionCrossLinks({ sections, industries = [], services = [], s
                   <p className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-faint">
                     {sections.related.servicesLabel}
                   </p>
-                  <RevealGroup as="ul" stagger={0.06} className="mt-4">
+                  <RevealGroup as="ul" stagger={0.06} className="mt-4 space-y-4">
                     {services.map((service) => (
-                      <RevealItem key={service.slug} as="li" y={12} className="border-t border-border">
-                        <CrossRow href={service.href} title={service.title} summary={service.summary} />
+                      <RevealItem key={service.slug} as="li" y={12}>
+                        <CrossRow
+                          href={service.href}
+                          title={service.title}
+                          summary={service.summary}
+                          Icon={markFor(`${service.title} ${service.summary ?? ""}`)}
+                        />
                       </RevealItem>
                     ))}
                   </RevealGroup>
@@ -708,14 +783,15 @@ export function SolutionCrossLinks({ sections, industries = [], services = [], s
                   <p className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-faint">
                     {sections.related.solutionsLabel}
                   </p>
-                  <RevealGroup as="ul" stagger={0.06} className="mt-4">
+                  <RevealGroup as="ul" stagger={0.06} className="mt-4 space-y-4">
                     {solutions.map((solution) => (
-                      <RevealItem key={solution.slug} as="li" y={12} className="border-t border-border">
+                      <RevealItem key={solution.slug} as="li" y={12}>
                         <CrossRow
                           href={solution.href}
                           title={solution.title}
                           summary={solution.summary}
                           category={solution.categoryTitle}
+                          Icon={markFor(`${solution.title} ${solution.summary ?? ""}`)}
                         />
                       </RevealItem>
                     ))}
@@ -730,10 +806,47 @@ export function SolutionCrossLinks({ sections, industries = [], services = [], s
   );
 }
 
-function CrossRow({ href, title, summary, category }) {
+/** The tinted plate a benefit's mark sits on. */
+function BenefitMark({ Icon }) {
   return (
-    <Link href={href} className="group flex items-start gap-4 py-5">
-      <span className="min-w-0 flex-1">
+    <span
+      aria-hidden="true"
+      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[0.8rem] bg-brand-50 text-brand-600 ring-1 ring-brand-100 transition-colors duration-500 group-hover:bg-brand-600 group-hover:text-white"
+    >
+      <Icon className="h-5 w-5" strokeWidth={1.8} />
+    </span>
+  );
+}
+
+/**
+ * One related service or solution, as a card.
+ *
+ * A ruled list made these read as footnotes to the page they sit under. As
+ * cards they read as the next thing to open: the brand edge marks them as ours,
+ * the mark gives the eye somewhere to land, and the arrow says the row is a
+ * door. The dot field in the corner is there to stop the right half of a short
+ * card from being empty.
+ */
+function CrossRow({ href, title, summary, category, Icon }) {
+
+  return (
+    <Link
+      href={href}
+      className="group relative flex h-full items-start gap-4 overflow-hidden rounded-[1rem] border-l-[3px] border-brand-600 bg-white p-5 shadow-[0_18px_40px_-34px_rgb(11_11_42/0.55)] ring-1 ring-black/[0.05] transition-shadow duration-500 hover:shadow-[0_28px_58px_-38px_rgb(53_51_205/0.55)] sm:gap-5 sm:p-6"
+    >
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-3 right-3 h-12 w-16 opacity-70 [background-image:radial-gradient(var(--color-brand-200)_1px,transparent_1px)] [background-size:7px_7px]"
+      />
+
+      <span
+        aria-hidden="true"
+        className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-[0.9rem] bg-brand-50 text-brand-600 ring-1 ring-brand-100 transition-colors duration-500 group-hover:bg-brand-600 group-hover:text-white sm:h-14 sm:w-14"
+      >
+        <Icon className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.7} />
+      </span>
+
+      <span className="relative min-w-0 flex-1">
         <h3 className="font-display text-base font-semibold tracking-tight text-foreground transition-colors group-hover:text-brand-700">
           {title}
         </h3>
@@ -746,7 +859,8 @@ function CrossRow({ href, title, summary, category }) {
           </span>
         ) : null}
       </span>
-      <span className="mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border text-brand-600 transition-colors group-hover:border-brand-600 group-hover:bg-brand-600 group-hover:text-white">
+
+      <span className="relative mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border bg-white text-brand-600 transition-colors duration-300 group-hover:border-brand-600 group-hover:bg-brand-600 group-hover:text-white">
         <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
       </span>
     </Link>

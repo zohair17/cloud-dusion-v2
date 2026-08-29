@@ -20,13 +20,11 @@ export const service = {
   heroSlides: [
     { image: "/asset/services/saas-1.webp", label: "A tenancy architecture that scales economically" },
     { image: "/asset/services/saas-2.webp", label: "Security posture that passes enterprise procurement" },
-    { image: "/asset/services/saas-3.webp", label: "AI-native capabilities that differentiate the product" },
-  ],
+    { image: "/asset/services/saas-3.webp", label: "AI-native capabilities that differentiate the product" }],
 
   intro: [
     "Building SaaS is different from building software. Multi-tenancy, data isolation, usage metering, upgrade paths, and operational excellence are product features: get them wrong early and every customer added multiplies the pain.",
-    "Cloud Fusion Global builds SaaS products with the architecture decisions that matter made deliberately: tenancy models matched to your market, security and compliance designed in, cloud costs engineered per-tenant, and AI capabilities that differentiate the product. We stay through launch and beyond with support and continuous delivery.",
-  ],
+    "Cloud Fusion Global builds SaaS products with the architecture decisions that matter made deliberately: tenancy models matched to your market, security and compliance designed in, cloud costs engineered per-tenant, and AI capabilities that differentiate the product. We stay through launch and beyond with support and continuous delivery."],
 
   challenges: {
     eyebrow: "The Challenge",
@@ -36,8 +34,7 @@ export const service = {
       "Single-tenant codebases that can't scale economically to many customers.",
       "Enterprise buyers demanding security, isolation, and compliance answers.",
       "Cloud bills growing faster than revenue.",
-      "No operational muscle for upgrades, monitoring, and incident response.",
-    ],
+      "No operational muscle for upgrades, monitoring, and incident response."],
   },
 
   approach: {
@@ -63,8 +60,7 @@ export const service = {
         title: "Operate and grow with you",
         description:
           "Monitoring, support, maintenance, and a roadmap partnership as the product and customer base scale.",
-      },
-    ],
+      }],
   },
 
   capabilities: {
@@ -76,8 +72,7 @@ export const service = {
       { title: "Secure Data Management", description: "Encryption, isolation, backup, and residency controls for customer data." },
       { title: "API Integration", description: "Public APIs and integration ecosystems that make your product extensible." },
       { title: "SaaS Support", description: "Responsive support operations for your customers and your platform." },
-      { title: "SaaS Maintenance", description: "Continuous updates, security patching, and performance management." },
-    ],
+      { title: "SaaS Maintenance", description: "Continuous updates, security patching, and performance management." }],
   },
 
   stack: {
@@ -95,8 +90,7 @@ export const service = {
       "Faster time-to-market with experienced product engineers",
       "AI-native capabilities that differentiate the product",
       "Predictable operations through managed support",
-      "Cloud costs engineered against revenue per tenant",
-    ],
+      "Cloud costs engineered against revenue per tenant"],
   },
 
   technologies: [
@@ -107,16 +101,14 @@ export const service = {
     "react",
     "nextjs",
     "azure-openai",
-    "microsoft-entra",
-  ],
+    "microsoft-entra"],
 
   relatedSolutions: [
     "ai-document-generator",
     "workflow-automation-platform",
     "b2b-integration",
-    "reit-analytics-dashboard",
-  ],
-  relatedIndustries: ["technology", "real-estate", "financial-services", "healthcare"],
+    "reit-analytics-dashboard"],
+  relatedIndustries: ["technology", "real-estate", "financial-services"],
   relatedCaseStudies: [],
 
   ctas: ["talk-to-expert", "request-proposal"],

@@ -32,14 +32,12 @@ export const solution = {
       "Processes with no visibility into status, bottlenecks, or ownership.",
       "Approvals stalled in inboxes for days at a time.",
       "The same data re-keyed across multiple systems.",
-      "No audit trail when questions or disputes arise.",
-    ],
+      "No audit trail when questions or disputes arise."],
   },
 
   overview: [
     "CFG's Workflow Automation Platform gives the organization a common backbone for process automation: structured intake, routing rules, approvals, escalations, integrations, and dashboards: a pattern applied to process after process instead of a one-off build.",
-    "Processes move from email to governed flows in weeks: forms capture clean data, rules route work to the right people with deadlines, integrations update downstream systems automatically, and every action is logged.",
-  ],
+    "Processes move from email to governed flows in weeks: forms capture clean data, rules route work to the right people with deadlines, integrations update downstream systems automatically, and every action is logged."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Monitor",
         description: "Dashboards show volumes, cycle times, and bottlenecks across every automated process.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Cross-system integration and updates",
     "Deadline, reminder, and SLA management",
     "Complete audit trail per case",
-    "Process analytics dashboards",
-  ],
+    "Process analytics dashboards"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -84,8 +80,7 @@ export const solution = {
     items: [
       "AI triage and categorization of incoming requests",
       "Document understanding within process steps",
-      "Anomaly detection on cycle times and volumes",
-    ],
+      "Anomaly detection on cycle times and volumes"],
   },
 
   architecture: null,
@@ -95,15 +90,13 @@ export const solution = {
     "Full visibility into every process instance",
     "Re-keying and handoff errors eliminated",
     "Audit trails produced automatically",
-    "A reusable automation pattern, not one-off scripts",
-  ],
+    "A reusable automation pattern, not one-off scripts"],
 
   useCases: [
     "Finance approvals: invoices, expenses, purchases",
     "HR processes: onboarding, changes, leave",
     "IT and facilities service requests",
-    "Compliance reviews and attestations",
-  ],
+    "Compliance reviews and attestations"],
 
   technologies: [
     "power-automate",
@@ -111,32 +104,27 @@ export const solution = {
     "dataverse",
     "microsoft-teams",
     "power-bi",
-    "ai-builder",
-  ],
+    "ai-builder"],
 
   industries: [
     "financial-services",
-    "healthcare",
-    "energy",
-  ],
+    
+    "energy"],
 
   relatedServices: [
     "power-platform-solutions",
-    "agentic-ai-automation",
-  ],
+    "agentic-ai-automation"],
 
   relatedSolutions: [
     "request-approval-system",
     "electronic-contract-generator",
-    "b2b-integration",
-  ],
+    "b2b-integration"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Workflow Automation Platform",

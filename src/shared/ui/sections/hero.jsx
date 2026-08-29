@@ -33,7 +33,7 @@ export function Hero({ hero }) {
         size="wide"
         className="[--spacing-gutter:1.25rem] pt-2 pb-6 sm:[--spacing-gutter:2rem] sm:pt-3 sm:pb-7 lg:pb-8"
       >
-        <div className="cfg-hero-slab relative isolate grid min-h-0 sm:min-h-[clamp(18rem,50vh,29rem)] lg:min-h-[min(calc(100dvh-12.5rem),58rem)] items-center gap-0 overflow-hidden rounded-[2rem] bg-white p-5 shadow-[0_40px_100px_-40px_rgb(11_11_42/0.28)] ring-1 ring-black/[0.04] sm:p-7 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:py-6 lg:pl-10 lg:pr-6 xl:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] xl:pl-12">
+        <div className="cfg-hero-slab relative isolate grid min-h-0 sm:min-h-[clamp(18rem,50vh,29rem)] lg:min-h-[min(calc(100dvh-12.5rem),58rem)] items-center gap-0 overflow-hidden rounded-[2rem] bg-white p-5 shadow-[0_40px_100px_-40px_rgb(11_11_42/0.28)] ring-1 ring-black/[0.04] sm:p-7 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:py-6 lg:pl-10 lg:pr-6 xl:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] xl:pl-12">
           <div className="relative z-10 order-2 w-full max-w-2xl lg:order-1">
             {hero.eyebrow ? (
               <p className="inline-flex items-center rounded-pill border border-brand-200/70 bg-white/80 px-4 py-1.5 text-xs font-medium tracking-wide text-brand-700 shadow-sm backdrop-blur-sm sm:text-sm">
@@ -91,7 +91,7 @@ export function Hero({ hero }) {
             sized by the room it is given, so the picture grows with the slab
             rather than sitting in a fixed well.
           */}
-          <div className="relative order-1 -mx-5 -mt-5 mb-1 h-[clamp(19rem,46vh,25rem)] sm:-mx-7 sm:-mt-7 sm:h-[clamp(17rem,42vw,27rem)] cfg-hero-film-well lg:order-2 lg:mx-0 lg:-my-6 lg:mb-0 lg:h-auto lg:self-stretch lg:pl-[2%] xl:pl-[12%]">
+          <div className="relative order-1 -mx-5 -mt-5 mb-1 h-[clamp(21rem,52vh,29rem)] sm:-mx-7 sm:-mt-7 sm:h-[clamp(19rem,47vw,31rem)] cfg-hero-film-well lg:order-2 lg:-mr-6 lg:ml-0 lg:-my-9 lg:mb-0 lg:h-auto lg:self-stretch lg:pl-0 xl:translate-x-8">
             <Film
               src="/asset/hero-swing.mp4"
               poster="/asset/hero-swing-poster.webp"
@@ -99,29 +99,25 @@ export function Hero({ hero }) {
               className="cfg-hero-film"
             />
 
-            {/*
-              The brand bracket, drawn last so its arms run over the film's own
-              white margin and stop short of the diagram — the same reading as
-              the reference, where the bracket disappears behind the picture.
-
-              It is a clipped shape rather than a stroked path: a stroke joined
-              under a non-uniform scale bevels its own corner, which reads as
-              two arms overlapping instead of one bracket coming to a point.
-              Cutting the outline puts both the nose and the notch on an exact
-              vertex, and keeps the arms parallel — the inner tip sits at twice
-              the inset of the inner shoulder, which is what makes them so.
-
-              The shadow falls to the right only, the side the arms open onto,
-              and only just enough to lift the bracket off the slab.
-            */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute left-[4%] inset-y-[0%] hidden w-[22%] [filter:drop-shadow(3px_0_7px_rgb(21_21_28/0.10))] xl:block"
+              className="pointer-events-none absolute left-[4%] top-[-14%] hidden h-[128%] w-[22%] xl:block"
             >
-              {/* Clipped inside the filter, so the shadow is cast by the
-                  bracket rather than trimmed away with the rectangle. */}
-              <div className="h-full w-full bg-[#a6a6a6] [clip-path:polygon(100%_0,100%_10%,18%_50%,100%_90%,100%_100%,0_50%)]" />
+              <svg
+                className="h-full w-full overflow-visible"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+              >
+                <polygon
+                  points="100,0 100,8 16,50 100,92 100,100 0,50"
+                  fill="white"
+                  stroke="rgb(53 51 205)"
+                  strokeWidth="2.9"
+                  vectorEffect="non-scaling-stroke"
+                />
+              </svg>
             </div>
+
           </div>
         </div>
 

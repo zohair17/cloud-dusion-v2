@@ -40,8 +40,7 @@ export const caseStudy = {
     {
       step: "05",
       description: "Rolled out with training and a governed publishing process for new reports.",
-    },
-  ],
+    }],
 
   solution: "The BREDD platform delivers automated data ingestion, a single governed metric layer, and interactive dashboards with drill-down from portfolio level to individual assets, refreshed on schedule rather than assembled by hand.",
 
@@ -49,8 +48,7 @@ export const caseStudy = {
     "Reporting cycles reduced from manual multi-day assembly to scheduled automated refresh",
     "One agreed definition for every portfolio metric across teams",
     "Leadership access to current performance without waiting on report packs",
-    "Analyst effort shifted from data assembly to analysis",
-  ],
+    "Analyst effort shifted from data assembly to analysis"],
 
   metricsNote: "Verified performance metrics to be added upon client approval",
 
@@ -58,21 +56,18 @@ export const caseStudy = {
     "power-bi",
     "azure-data-factory",
     "azure-sql",
-    "microsoft-365",
-  ],
+    "microsoft-365"],
 
   relatedServices: [
     "data-business-intelligence",
-    "microsoft-cloud-solutions",
-  ],
+    "microsoft-cloud-solutions"],
 
   relatedSolutions: [],
 
   ctas: [
     "talk-to-expert",
     "request-proposal",
-    "discovery-session",
-  ],
+    "discovery-session"],
 
   seo: {
     title: "BREDD BI Analytics Platform Case Study",

@@ -35,13 +35,11 @@ export const service = {
     {
       image: "/asset/services/agentic-ai-2.webp",
       label: "Engineered for production from day one",
-    },
-  ],
+    }],
 
   intro: [
     "Most enterprises have automated the easy work. What remains is the complex, judgment-heavy work that flows across systems, documents, and people: approvals, reconciliations, document processing, service requests, and reporting. Agentic AI changes what is automatable: AI agents can read, reason, decide, and act across your systems, escalating to people only when it matters.",
-    "Cloud Fusion Global designs and delivers agentic AI systems end-to-end: from identifying the right processes and preparing your data, to building and orchestrating agents on Azure AI Foundry, Azure OpenAI, and Copilot Studio, to running them in production with the observability, guardrails, and governance an enterprise demands.",
-  ],
+    "Cloud Fusion Global designs and delivers agentic AI systems end-to-end: from identifying the right processes and preparing your data, to building and orchestrating agents on Azure AI Foundry, Azure OpenAI, and Copilot Studio, to running them in production with the observability, guardrails, and governance an enterprise demands."],
 
   challenges: {
     eyebrow: "The Challenge",
@@ -51,8 +49,7 @@ export const service = {
       "AI pilots impress in demos but never reach production because governance, security, and operations were an afterthought.",
       "Enterprise data isn't ready for AI: fragmented, unlabelled, and locked in silos.",
       "Teams fear losing control: leadership wants automation with clear human oversight and audit trails.",
-      "Regulated environments can't send sensitive data to public AI services.",
-    ],
+      "Regulated environments can't send sensitive data to public AI services."],
   },
 
   approach: {
@@ -78,8 +75,7 @@ export const service = {
         title: "Build on your Microsoft investment",
         description:
           "Agents live where your work lives: Microsoft 365, SharePoint, Teams, Dynamics, and your line-of-business systems, secured by Microsoft Entra.",
-      },
-    ],
+      }],
   },
 
   capabilities: {
@@ -135,8 +131,7 @@ export const service = {
         title: "Self-Hosted AI Solutions for Compliant Enterprises",
         description:
           "Private, self-hosted AI deployments for organizations whose data cannot leave their environment.",
-      },
-    ],
+      }],
   },
 
   stack: {
@@ -154,8 +149,7 @@ export const service = {
       "Reduced operational cost and error rates",
       "Full auditability and human oversight of AI-driven decisions",
       "A reusable agent platform, not a one-off pilot",
-      "Compliance-friendly deployment options, including fully self-hosted AI",
-    ],
+      "Compliance-friendly deployment options, including fully self-hosted AI"],
   },
 
   technologies: [
@@ -166,17 +160,15 @@ export const service = {
     "microsoft-entra",
     "azure-functions",
     "microsoft-graph",
-    "dataverse",
-  ],
+    "dataverse"],
 
   relatedSolutions: [
     "ai-document-management",
     "ai-document-generator",
     "ai-chatbot-solutions",
     "self-hosted-enterprise-ai",
-    "workflow-automation-platform",
-  ],
-  relatedIndustries: ["financial-services", "healthcare", "real-estate", "energy", "technology"],
+    "workflow-automation-platform"],
+  relatedIndustries: ["financial-services",  "real-estate", "energy", "technology"],
   relatedCaseStudies: ["rel-ai-lease-abstractor"],
 
   ctas: ["talk-to-expert", "request-proposal"],

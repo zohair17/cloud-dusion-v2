@@ -32,14 +32,12 @@ export const solution = {
       "Content split across SharePoint sprawl, file servers, and third-party tools.",
       "No enterprise-wide search or single point of discovery.",
       "Inconsistent governance creating compliance blind spots.",
-      "Knowledge lost when teams reorganize or people leave.",
-    ],
+      "Knowledge lost when teams reorganize or people leave."],
   },
 
   overview: [
     "CFG's Enterprise Content Management solution establishes a single content architecture for the whole organization: a designed site topology, shared taxonomies, consistent content types, and governance applied uniformly from department level to enterprise level.",
-    "The platform consolidates scattered repositories onto SharePoint Online, connects content to the processes that produce and consume it, and gives leadership genuine visibility into the organization's content estate.",
-  ],
+    "The platform consolidates scattered repositories onto SharePoint Online, connects content to the processes that produce and consume it, and gives leadership genuine visibility into the organization's content estate."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Sustain",
         description: "A governance operating model, roles, reviews, reporting, keeps the estate healthy as it grows.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Unified enterprise search",
     "Content lifecycle management from creation to disposal",
     "Departmental autonomy within enterprise governance",
-    "Analytics on content usage and health",
-  ],
+    "Analytics on content usage and health"],
 
   aiCapabilities: null,
 
@@ -86,48 +82,40 @@ export const solution = {
     "Uniform governance without blocking department agility",
     "Reduced licensing and infrastructure from consolidation",
     "Knowledge preserved through organizational change",
-    "AI-ready content across the whole organization",
-  ],
+    "AI-ready content across the whole organization"],
 
   useCases: [
     "Consolidation after mergers and acquisitions",
     "Replacing legacy ECM platforms",
     "Enterprise knowledge management programs",
-    "Unifying multi-region content estates",
-  ],
+    "Unifying multi-region content estates"],
 
   technologies: [
     "sharepoint-online",
     "microsoft-365",
     "microsoft-purview",
     "microsoft-syntex",
-    "microsoft-graph",
-  ],
+    "microsoft-graph"],
 
   industries: [
     "financial-services",
-    "energy",
-    "healthcare",
-  ],
+    "energy"],
 
   relatedServices: [
     "sharepoint-solutions",
     "microsoft-cloud-solutions",
-    "microsoft-syntex",
-  ],
+    "microsoft-syntex"],
 
   relatedSolutions: [
     "document-management-system",
     "records-management-system",
-    "intranet-portal",
-  ],
+    "intranet-portal"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Enterprise Content Management System",

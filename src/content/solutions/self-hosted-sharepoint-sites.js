@@ -32,14 +32,12 @@ export const solution = {
       "Data sovereignty and residency rules excluding shared cloud platforms.",
       "Security review requirements over the full hosting stack.",
       "Content teams needing modern publishing on constrained infrastructure.",
-      "Legacy self-hosted web platforms aging without a successor plan.",
-    ],
+      "Legacy self-hosted web platforms aging without a successor plan."],
   },
 
   overview: [
     "CFG builds public-facing websites on self-hosted SharePoint, giving content teams a governed publishing experience while the entire stack, from servers to certificates, remains inside your controlled environment.",
-    "We harden the platform for internet exposure: security architecture, performance optimization, caching, and monitoring engineered specifically for public traffic on SharePoint infrastructure.",
-  ],
+    "We harden the platform for internet exposure: security architecture, performance optimization, caching, and monitoring engineered specifically for public traffic on SharePoint infrastructure."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Operate",
         description: "Monitoring, patching, and support keep the public platform secure and available.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Structured authoring and approval workflows",
     "Internet-exposure hardening and WAF integration",
     "Caching and performance optimization",
-    "Complete infrastructure ownership",
-  ],
+    "Complete infrastructure ownership"],
 
   aiCapabilities: null,
 
@@ -86,48 +82,40 @@ export const solution = {
     "Every layer of the stack under your inspection and control",
     "Modern publishing for content teams despite constraints",
     "Security posture demonstrable to auditors",
-    "One platform skillset across intranet and public web",
-  ],
+    "One platform skillset across intranet and public web"],
 
   useCases: [
     "Government and public-sector websites",
     "Regulated enterprises with residency mandates",
     "Organizations in restricted network environments",
-    "Legacy public SharePoint sites needing modernization",
-  ],
+    "Legacy public SharePoint sites needing modernization"],
 
   technologies: [
     "sharepoint-server",
     "iis",
     "sql-server",
     "windows-server",
-    "application-gateway-waf",
-  ],
+    "application-gateway-waf"],
 
   industries: [
     "energy",
-    "financial-services",
-    "healthcare",
-  ],
+    "financial-services"],
 
   relatedServices: [
     "sharepoint-solutions",
     "data-security-governance",
-    "microsoft-cloud-solutions",
-  ],
+    "microsoft-cloud-solutions"],
 
   relatedSolutions: [
     "self-hosted-enterprise-ai",
     "sharepoint-version-upgrade",
-    "intranet-portal",
-  ],
+    "intranet-portal"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Self-Hosted SharePoint Public-Facing Sites",

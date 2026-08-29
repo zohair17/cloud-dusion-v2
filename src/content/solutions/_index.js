@@ -57,7 +57,6 @@ export const solutionRecords = [
   workflowAutomationPlatform,
   requestApprovalSystem,
   electronicContractGenerator,
-  b2bIntegration,
-];
+  b2bIntegration];
 
 export default solutionRecords;

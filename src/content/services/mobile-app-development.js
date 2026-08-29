@@ -20,13 +20,11 @@ export const service = {
   heroSlides: [
     { image: "/asset/services/mobile-1.webp", label: "Experiences customers and field teams adopt" },
     { image: "/asset/services/mobile-2.webp", label: "Native performance or cross-platform reach" },
-    { image: "/asset/services/mobile-3.webp", label: "AI features built in where they remove friction" },
-  ],
+    { image: "/asset/services/mobile-3.webp", label: "AI features built in where they remove friction" }],
 
   intro: [
     "Mobile is where customers, field teams, and operations meet your business. The difference between an app that gets used and one that gets deleted is engineering: performance, reliability, offline behaviour, security, and an experience that feels effortless.",
-    "Cloud Fusion Global builds mobile applications across native and cross-platform stacks, integrates them deeply with enterprise systems and Azure services, and increasingly embeds AI, from intelligent capture and recommendations to conversational interfaces, directly into the mobile experience.",
-  ],
+    "Cloud Fusion Global builds mobile applications across native and cross-platform stacks, integrates them deeply with enterprise systems and Azure services, and increasingly embeds AI, from intelligent capture and recommendations to conversational interfaces, directly into the mobile experience."],
 
   challenges: {
     eyebrow: "The Challenge",
@@ -36,8 +34,7 @@ export const service = {
       "Legacy mobile apps that are slow, dated, and expensive to maintain.",
       "Choosing between native performance and cross-platform economics without clear guidance.",
       "Mobile apps disconnected from enterprise data, identity, and workflows.",
-      "Devices and wearables generating data no application acts on.",
-    ],
+      "Devices and wearables generating data no application acts on."],
   },
 
   approach: {
@@ -63,8 +60,7 @@ export const service = {
         title: "Embed intelligence",
         description:
           "AI features (capture, vision, personalization, chat) built into the app where they remove friction.",
-      },
-    ],
+      }],
   },
 
   capabilities: {
@@ -76,8 +72,7 @@ export const service = {
       { title: "Wearable App Development", description: "Applications for watches and wearables that extend workflows to the wrist." },
       { title: "Gaming App Development", description: "Engaging interactive and gamified experiences with polished performance." },
       { title: "AI-Powered Mobile App Development", description: "Mobile experiences with embedded AI: vision, language, prediction, and assistants." },
-      { title: "Mobile App Enhancements and Customization", description: "Modernization, feature development, and performance work on existing applications." },
-    ],
+      { title: "Mobile App Enhancements and Customization", description: "Modernization, feature development, and performance work on existing applications." }],
   },
 
   stack: {
@@ -95,8 +90,7 @@ export const service = {
       "The right platform economics for your reach and performance needs",
       "Deep, secure integration with enterprise systems and identity",
       "AI-powered features that differentiate the experience",
-      "Maintainable codebases with automated testing and CI/CD",
-    ],
+      "Maintainable codebases with automated testing and CI/CD"],
   },
 
   technologies: [
@@ -108,16 +102,14 @@ export const service = {
     "azure-app-services",
     "azure-ai-vision",
     "azure-openai",
-    "microsoft-entra",
-  ],
+    "microsoft-entra"],
 
   relatedSolutions: [
     "property-listing-app",
     "smart-device-mobile-app",
     "ai-powered-mobile-apps",
-    "tenant-portal",
-  ],
-  relatedIndustries: ["real-estate", "healthcare", "transportation", "technology", "education"],
+    "tenant-portal"],
+  relatedIndustries: ["real-estate",   "technology", "education"],
   relatedCaseStudies: [],
 
   ctas: ["talk-to-expert", "request-proposal"],

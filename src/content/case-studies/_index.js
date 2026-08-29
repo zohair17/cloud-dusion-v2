@@ -15,7 +15,6 @@ export const caseStudyRecords = [
   relAiLeaseAbstractor,
   sharepointEnterpriseMigration,
   sharepointModernization,
-  realEstateDealManagement,
-];
+  realEstateDealManagement];
 
 export default caseStudyRecords;

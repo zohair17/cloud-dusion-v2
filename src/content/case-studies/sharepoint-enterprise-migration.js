@@ -40,8 +40,7 @@ export const caseStudy = {
     {
       step: "05",
       description: "Executed staged waves with delta syncs, verification reports, and user communication.",
-    },
-  ],
+    }],
 
   solution: "A complete, verified migration to SharePoint Online with restructured sites, mapped permissions, and applied metadata, delivered wave by wave while the business kept working.",
 
@@ -49,8 +48,7 @@ export const caseStudy = {
     "Full estate migrated with item-level verification and no data loss",
     "Legacy infrastructure and its risk retired",
     "A restructured, governed content architecture rather than migrated sprawl",
-    "Users transitioned with communication and support at each wave",
-  ],
+    "Users transitioned with communication and support at each wave"],
 
   metricsNote: "Verified scale and timeline figures to be added upon client approval",
 
@@ -58,21 +56,18 @@ export const caseStudy = {
     "sharepoint-online",
     "microsoft-365",
     "migration-tooling",
-    "powershell",
-  ],
+    "powershell"],
 
   relatedServices: [
     "sharepoint-solutions",
-    "microsoft-cloud-solutions",
-  ],
+    "microsoft-cloud-solutions"],
 
   relatedSolutions: [],
 
   ctas: [
     "talk-to-expert",
     "request-proposal",
-    "discovery-session",
-  ],
+    "discovery-session"],
 
   seo: {
     title: "SharePoint Enterprise Migration Case Study",

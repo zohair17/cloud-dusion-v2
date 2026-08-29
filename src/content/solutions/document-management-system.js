@@ -32,14 +32,12 @@ export const solution = {
       "Multiple conflicting versions of critical documents in circulation.",
       "No consistent structure, naming, or metadata across departments.",
       "Permissions granted ad hoc, with no visibility into who can see what.",
-      "Retention and disposal obligations impossible to demonstrate.",
-    ],
+      "Retention and disposal obligations impossible to demonstrate."],
   },
 
   overview: [
     "CFG's Document Management System brings enterprise discipline to content: a designed information architecture, metadata-driven libraries, controlled versioning, and permission models aligned to how your organization actually works.",
-    "Built on SharePoint Online, it integrates naturally with Microsoft 365, co-authoring in Office, sharing in Teams, and governance through Purview, so structure never comes at the cost of usability.",
-  ],
+    "Built on SharePoint Online, it integrates naturally with Microsoft 365, co-authoring in Office, sharing in Teams, and governance through Purview, so structure never comes at the cost of usability."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Adopt",
         description: "Training and adoption support make the new structure the path of least resistance.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Granular, auditable permission models",
     "Retention schedules and disposition reviews",
     "Office co-authoring and Teams integration",
-    "Powerful search scoped by metadata",
-  ],
+    "Powerful search scoped by metadata"],
 
   aiCapabilities: null,
 
@@ -86,48 +82,41 @@ export const solution = {
     "Content findable in seconds by anyone authorized",
     "Demonstrable compliance with retention obligations",
     "Reduced storage waste from duplicates and sprawl",
-    "A foundation ready for AI enrichment with Syntex",
-  ],
+    "A foundation ready for AI enrichment with Syntex"],
 
   useCases: [
     "Departmental and project document repositories",
     "Controlled document processes for quality management",
     "Client and matter file management",
-    "Board and governance document control",
-  ],
+    "Board and governance document control"],
 
   technologies: [
     "sharepoint-online",
     "microsoft-365",
     "microsoft-purview",
     "power-automate",
-    "microsoft-teams",
-  ],
+    "microsoft-teams"],
 
   industries: [
     "financial-services",
-    "healthcare",
-    "energy",
-  ],
+    
+    "energy"],
 
   relatedServices: [
     "sharepoint-solutions",
     "microsoft-syntex",
-    "data-security-governance",
-  ],
+    "data-security-governance"],
 
   relatedSolutions: [
     "ai-document-management",
     "enterprise-content-management",
-    "records-management-system",
-  ],
+    "records-management-system"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Document Management System",

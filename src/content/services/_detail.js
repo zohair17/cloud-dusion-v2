@@ -57,8 +57,7 @@ export const serviceDetailSections = {
         title: "Operate & Evolve",
         description:
           "Monitoring, support, and continuous improvement, expanding capabilities as your business and the technology evolve.",
-      },
-    ],
+      }],
   },
 
   whyCfg: {
@@ -70,8 +69,7 @@ export const serviceDetailSections = {
       { title: "Enterprise Architecture", icon: "blocks" },
       { title: "End-to-End Delivery", icon: "route" },
       { title: "Industry-Focused Solutions", icon: "building" },
-      { title: "Flexible Engagement Models", icon: "handshake" },
-    ],
+      { title: "Flexible Engagement Models", icon: "handshake" }],
   },
 };
 

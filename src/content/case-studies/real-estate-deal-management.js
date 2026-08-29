@@ -40,8 +40,7 @@ export const caseStudy = {
     {
       step: "05",
       description: "Rolled out with the deal teams, refining against live transactions.",
-    },
-  ],
+    }],
 
   solution: "A deal management system where every transaction has a governed workspace (stage, team, documents, checklist, and approvals) and leadership sees the whole pipeline in live dashboards.",
 
@@ -49,8 +48,7 @@ export const caseStudy = {
     "Complete pipeline visibility for leadership at any moment",
     "Diligence documents organized and audit-ready per deal",
     "Approvals traceable with full decision history",
-    "Deal knowledge retained in the system across transactions",
-  ],
+    "Deal knowledge retained in the system across transactions"],
 
   metricsNote: "Verified cycle-time improvements to be added upon client approval",
 
@@ -59,21 +57,18 @@ export const caseStudy = {
     "dataverse",
     "sharepoint-online",
     "power-automate",
-    "power-bi",
-  ],
+    "power-bi"],
 
   relatedServices: [
     "power-platform-solutions",
-    "custom-software-development",
-  ],
+    "custom-software-development"],
 
   relatedSolutions: [],
 
   ctas: [
     "talk-to-expert",
     "request-proposal",
-    "discovery-session",
-  ],
+    "discovery-session"],
 
   seo: {
     title: "Real Estate Deal Management Case Study",

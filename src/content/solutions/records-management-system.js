@@ -32,14 +32,12 @@ export const solution = {
       "Retention schedules that exist on paper but not in systems.",
       "Records mixed with working documents, kept forever 'just in case'.",
       "Legal holds applied manually and inconsistently.",
-      "Audits and litigation requests consuming weeks of discovery effort.",
-    ],
+      "Audits and litigation requests consuming weeks of discovery effort."],
   },
 
   overview: [
     "CFG's Records Management System operationalizes your retention schedule: records are declared automatically or deliberately, immutability and retention are enforced by the platform, and disposal happens on schedule with documented review, creating a defensible, auditable lifecycle for every record class.",
-    "Built on SharePoint and Microsoft Purview Records Management, the system applies file plans, event-based retention, and legal holds across your content estate without requiring users to become records managers.",
-  ],
+    "Built on SharePoint and Microsoft Purview Records Management, the system applies file plans, event-based retention, and legal holds across your content estate without requiring users to become records managers."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Dispose defensibly",
         description: "Scheduled disposition reviews approve destruction or transfer, with certificates and full audit trail.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Immutability and version locking for declared records",
     "Legal hold management",
     "Disposition review workflow with audit certificates",
-    "Compliance dashboards and audit reporting",
-  ],
+    "Compliance dashboards and audit reporting"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -83,8 +79,7 @@ export const solution = {
     body: "Where intelligence does the heavy lifting in this solution.",
     items: [
       "AI classification proposing record classes for incoming content",
-      "Automated identification of record-worthy content in legacy stores",
-    ],
+      "Automated identification of record-worthy content in legacy stores"],
   },
 
   architecture: null,
@@ -94,48 +89,41 @@ export const solution = {
     "Storage and risk reduced by disciplined disposal",
     "Litigation readiness measured in hours, not weeks",
     "Records managed without burdening everyday users",
-    "Complete audit trail for regulators and courts",
-  ],
+    "Complete audit trail for regulators and courts"],
 
   useCases: [
     "Regulatory retention for financial and healthcare records",
     "Contract and corporate record lifecycles",
     "Government and public-sector recordkeeping",
-    "Litigation hold and eDiscovery readiness",
-  ],
+    "Litigation hold and eDiscovery readiness"],
 
   technologies: [
     "microsoft-purview",
     "sharepoint-online",
     "microsoft-syntex",
     "power-automate",
-    "microsoft-365",
-  ],
+    "microsoft-365"],
 
   industries: [
     "financial-services",
-    "healthcare",
-    "energy",
-  ],
+    
+    "energy"],
 
   relatedServices: [
     "data-security-governance",
     "sharepoint-solutions",
-    "microsoft-syntex",
-  ],
+    "microsoft-syntex"],
 
   relatedSolutions: [
     "document-management-system",
     "enterprise-content-management",
-    "contract-management-system",
-  ],
+    "contract-management-system"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Records Management System",

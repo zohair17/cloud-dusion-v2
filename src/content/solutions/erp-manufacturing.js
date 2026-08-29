@@ -32,14 +32,12 @@ export const solution = {
       "Production planned in spreadsheets against stale inventory data.",
       "Material shortages discovered on the shop floor, not before.",
       "True product costs unknown until long after the period closes.",
-      "Quality and traceability records scattered across paper and files.",
-    ],
+      "Quality and traceability records scattered across paper and files."],
   },
 
   overview: [
     "CFG implements manufacturing ERP that connects the chain from order to shipment: demand drives planning, planning drives procurement and production schedules, and shop-floor execution feeds back inventory and cost in real time.",
-    "We configure around your actual operations, make-to-stock, make-to-order, or mixed, integrate with your machines and systems where valuable, and layer Power BI analytics over everything so operations and finance finally share one set of numbers.",
-  ],
+    "We configure around your actual operations, make-to-stock, make-to-order, or mixed, integrate with your machines and systems where valuable, and layer Power BI analytics over everything so operations and finance finally share one set of numbers."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Cost & analyze",
         description: "Actual costs roll up continuously; dashboards show margin, efficiency, and exceptions.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Real-time, multi-location inventory",
     "Procurement and supplier management",
     "Quality management and lot traceability",
-    "Actual costing and margin analysis",
-  ],
+    "Actual costing and margin analysis"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -83,8 +79,7 @@ export const solution = {
     body: "Where intelligence does the heavy lifting in this solution.",
     items: [
       "Demand forecasting from history and seasonality",
-      "Anomaly detection on scrap, cost, and cycle times",
-    ],
+      "Anomaly detection on scrap, cost, and cycle times"],
   },
 
   architecture: null,
@@ -94,48 +89,41 @@ export const solution = {
     "Shortages prevented instead of discovered",
     "True product costs visible continuously",
     "Full traceability for audits and recalls",
-    "Operations and finance on one set of numbers",
-  ],
+    "Operations and finance on one set of numbers"],
 
   useCases: [
     "Discrete manufacturing order-to-ship management",
     "Process manufacturing with lot control",
     "Multi-site production and inventory",
-    "Contract manufacturing job costing",
-  ],
+    "Contract manufacturing job costing"],
 
   technologies: [
     "dynamics-365-business-central",
     "power-bi",
     "power-automate",
     "azure",
-    "dataverse",
-  ],
+    "dataverse"],
 
   industries: [
-    "transportation",
+    
     "energy",
-    "technology",
-  ],
+    "technology"],
 
   relatedServices: [
     "custom-software-development",
     "data-business-intelligence",
-    "power-platform-solutions",
-  ],
+    "power-platform-solutions"],
 
   relatedSolutions: [
     "erp-wholesale-distribution",
     "job-management-system",
-    "workflow-automation-platform",
-  ],
+    "workflow-automation-platform"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Manufacturing ERP Solutions",

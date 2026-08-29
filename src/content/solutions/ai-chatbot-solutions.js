@@ -32,14 +32,12 @@ export const solution = {
       "Support and HR teams buried in repetitive questions.",
       "Knowledge scattered across intranets, documents, and inboxes.",
       "Generic chatbots that frustrate users with scripted dead-ends.",
-      "Risk of AI answering from the wrong data, or another user's data.",
-    ],
+      "Risk of AI answering from the wrong data, or another user's data."],
   },
 
   overview: [
     "CFG chatbot solutions are grounded, not generic: retrieval-augmented generation connects the conversation to your policies, product documentation, and knowledge bases, so answers are accurate, current, and cited.",
-    "Built on Copilot Studio and Azure OpenAI, bots meet users where they work, Teams, intranet, website, or mobile, respect each user's permissions, and hand off gracefully to humans with full conversation context when needed.",
-  ],
+    "Built on Copilot Studio and Azure OpenAI, bots meet users where they work, Teams, intranet, website, or mobile, respect each user's permissions, and hand off gracefully to humans with full conversation context when needed."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Escalate & learn",
         description: "Unresolved conversations route to humans with context; analytics reveal gaps to improve knowledge and flows.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Task execution through secure connectors",
     "Human handoff with conversation context",
     "Conversation analytics and gap reporting",
-    "Multilingual support",
-  ],
+    "Multilingual support"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -85,8 +81,7 @@ export const solution = {
       "Retrieval-augmented generation over enterprise knowledge",
       "Permission-aware retrieval per user",
       "Intent understanding and multi-turn context",
-      "Continuous evaluation against answer-quality benchmarks",
-    ],
+      "Continuous evaluation against answer-quality benchmarks"],
   },
 
   architecture: null,
@@ -96,15 +91,13 @@ export const solution = {
     "Support and HR queues reduced to genuinely complex cases",
     "One consistent voice across channels",
     "Answers users can verify through citations",
-    "Insight into what your people and customers actually ask",
-  ],
+    "Insight into what your people and customers actually ask"],
 
   useCases: [
     "Employee HR and IT self-service in Teams",
     "Customer support on web and mobile",
     "Policy and compliance Q&A",
-    "Sales enablement and product knowledge assistants",
-  ],
+    "Sales enablement and product knowledge assistants"],
 
   technologies: [
     "copilot-studio",
@@ -112,33 +105,27 @@ export const solution = {
     "azure-ai-search",
     "microsoft-teams",
     "power-automate",
-    "microsoft-entra",
-  ],
+    "microsoft-entra"],
 
   industries: [
     "technology",
-    "financial-services",
-    "healthcare",
-  ],
+    "financial-services"],
 
   relatedServices: [
     "generative-ai",
     "agentic-ai-automation",
-    "power-platform-solutions",
-  ],
+    "power-platform-solutions"],
 
   relatedSolutions: [
     "ai-document-management",
     "self-hosted-enterprise-ai",
-    "intranet-portal",
-  ],
+    "intranet-portal"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "AI Chatbot Solutions",

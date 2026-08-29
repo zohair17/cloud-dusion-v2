@@ -32,14 +32,12 @@ export const solution = {
       "KPIs assembled manually from many property management exports.",
       "Reports outdated before they circulate.",
       "Inconsistent definitions of occupancy, NOI, and yields across sources.",
-      "Board and investor reporting consuming analyst weeks each cycle.",
-    ],
+      "Board and investor reporting consuming analyst weeks each cycle."],
   },
 
   overview: [
     "CFG's REIT Analytics Dashboard automates the pipeline from property systems to insight: data flows from management platforms and finance systems into a governed model where portfolio metrics are defined once, then serves dashboards for asset managers, executives, and board reporting.",
-    "Drill from portfolio, to fund, to asset, to lease, with occupancy, rent roll, arrears, NOI, and valuation trends current as of the latest sync, not the last quarter-end scramble.",
-  ],
+    "Drill from portfolio, to fund, to asset, to lease, with occupancy, rent roll, arrears, NOI, and valuation trends current as of the latest sync, not the last quarter-end scramble."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Drill & export",
         description: "From portfolio KPIs down to individual leases, with board-pack and investor exports on demand.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Occupancy, rent roll, arrears, and NOI dashboards",
     "Fund and asset-level drill-down",
     "Variance and trend analysis",
-    "Board and investor reporting exports",
-  ],
+    "Board and investor reporting exports"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -83,8 +79,7 @@ export const solution = {
     body: "Where intelligence does the heavy lifting in this solution.",
     items: [
       "Natural-language questions over portfolio data",
-      "Anomaly flagging on arrears and occupancy shifts",
-    ],
+      "Anomaly flagging on arrears and occupancy shifts"],
   },
 
   architecture: null,
@@ -94,46 +89,39 @@ export const solution = {
     "Reporting cycles cut from weeks to hours",
     "Early sight of occupancy and arrears movements",
     "Analyst time shifted from assembly to analysis",
-    "Investor-grade reporting on demand",
-  ],
+    "Investor-grade reporting on demand"],
 
   useCases: [
     "REIT portfolio performance reporting",
     "Fund and investor reporting automation",
     "Asset management KPI monitoring",
-    "Acquisition performance tracking",
-  ],
+    "Acquisition performance tracking"],
 
   technologies: [
     "power-bi",
     "azure-data-factory",
     "azure-sql",
     "azure-synapse",
-    "microsoft-fabric",
-  ],
+    "microsoft-fabric"],
 
   industries: [
     "real-estate",
-    "financial-services",
-  ],
+    "financial-services"],
 
   relatedServices: [
     "data-business-intelligence",
-    "custom-software-development",
-  ],
+    "custom-software-development"],
 
   relatedSolutions: [
     "lease-management-system",
     "deal-management-system",
-    "erp-manufacturing",
-  ],
+    "erp-manufacturing"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "REIT Analytics Dashboard",

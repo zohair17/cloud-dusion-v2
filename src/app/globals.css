@@ -141,6 +141,14 @@ html {
     linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%),
     linear-gradient(to bottom, transparent 0%, #000 6%, #000 94%, transparent 100%);
           mask-composite: intersect;
+
+  /*
+    The clip's own white is a couple of values short of the page's after the
+    codec has been through it, which reads as a faint grey box on the slab. A
+    few percent of brightness clips those last values to white without doing
+    anything a reader would notice to the diagram itself.
+  */
+  filter: brightness(1.07) saturate(1.06);
 }
 
 /* ---------------------------------------------------------------- premium card
@@ -326,7 +334,7 @@ html {
  */
 @media (min-width: 1024px) {
   .cfg-hero-film-well {
-    max-height: calc(100dvh - 15rem);
+    max-height: calc(100dvh - 11rem);
   }
 }
 

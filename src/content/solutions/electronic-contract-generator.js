@@ -32,14 +32,12 @@ export const solution = {
       "Routine agreements taking days through manual drafting.",
       "Outdated templates and clauses circulating unnoticed.",
       "Copy-paste errors in names, values, and terms.",
-      "Executed contracts filed inconsistently, if at all.",
-    ],
+      "Executed contracts filed inconsistently, if at all."],
   },
 
   overview: [
     "CFG's Electronic Contract Generator turns routine contracting into self-service: users complete a guided request, the system assembles the contract from current templates and clause rules, data merges from source systems, and the document flows to approval and eSignature automatically.",
-    "Legal defines the templates, rules, and escalation triggers once, then routine volume runs without them, while non-standard requests route to review with full context.",
-  ],
+    "Legal defines the templates, rules, and escalation triggers once, then routine volume runs without them, while non-standard requests route to review with full context."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "File & track",
         description: "Executed contracts file automatically with metadata, obligations, and renewal dates registered.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Data merge from CRM and master systems",
     "Exception routing to legal review",
     "Integrated electronic signature",
-    "Automatic filing and obligation registration",
-  ],
+    "Automatic filing and obligation registration"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -83,8 +79,7 @@ export const solution = {
     body: "Where intelligence does the heavy lifting in this solution.",
     items: [
       "AI drafting of variable sections within guardrails",
-      "Deviation detection against standard terms",
-    ],
+      "Deviation detection against standard terms"],
   },
 
   architecture: null,
@@ -94,48 +89,41 @@ export const solution = {
     "Legal time reserved for genuine exceptions",
     "Every contract on current, approved language",
     "Zero copy-paste errors in critical fields",
-    "A complete, searchable executed-contract record",
-  ],
+    "A complete, searchable executed-contract record"],
 
   useCases: [
     "NDA self-service for the whole organization",
     "Sales engagement and order agreements",
     "Supplier onboarding contracts",
-    "Employment and contractor documentation",
-  ],
+    "Employment and contractor documentation"],
 
   technologies: [
     "power-automate",
     "azure-openai",
     "sharepoint-online",
     "sharepoint-esignature",
-    "dataverse",
-  ],
+    "dataverse"],
 
   industries: [
     "technology",
     "financial-services",
-    "real-estate",
-  ],
+    "real-estate"],
 
   relatedServices: [
     "power-platform-solutions",
     "generative-ai",
-    "microsoft-syntex",
-  ],
+    "microsoft-syntex"],
 
   relatedSolutions: [
     "contract-management-system",
     "ai-document-generator",
-    "request-approval-system",
-  ],
+    "request-approval-system"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Electronic Contract Generator",

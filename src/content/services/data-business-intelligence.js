@@ -20,13 +20,11 @@ export const service = {
   heroSlides: [
     { image: "/asset/services/data-bi-1.webp", label: "One source of truth for enterprise metrics" },
     { image: "/asset/services/data-bi-2.webp", label: "Pipelines running continuously, with quality checks" },
-    { image: "/asset/services/data-bi-3.webp", label: "A data foundation ready for AI" },
-  ],
+    { image: "/asset/services/data-bi-3.webp", label: "A data foundation ready for AI" }],
 
   intro: [
     "Every enterprise is rich in data and most are poor in answers. Numbers live in disconnected systems, reports contradict each other, and by the time analysis arrives, the decision has passed. Meanwhile, every AI ambition depends on the same missing foundation: clean, integrated, governed data.",
-    "Cloud Fusion Global builds that foundation on the Azure data platform: engineering pipelines with Azure Data Factory, modelling warehouses on Azure Synapse and Databricks, and delivering insight through Power BI dashboards leadership actually uses. One data estate serving both human decisions and AI workloads.",
-  ],
+    "Cloud Fusion Global builds that foundation on the Azure data platform: engineering pipelines with Azure Data Factory, modelling warehouses on Azure Synapse and Databricks, and delivering insight through Power BI dashboards leadership actually uses. One data estate serving both human decisions and AI workloads."],
 
   challenges: {
     eyebrow: "The Challenge",
@@ -36,8 +34,7 @@ export const service = {
       "Reports that take days to assemble and still disagree with each other.",
       "No single source of truth for core business metrics.",
       "Leadership decisions made on instinct because data arrives too late.",
-      "AI initiatives blocked by data quality and accessibility.",
-    ],
+      "AI initiatives blocked by data quality and accessibility."],
   },
 
   approach: {
@@ -63,8 +60,7 @@ export const service = {
         title: "Make the estate AI-ready",
         description:
           "The same governed data foundation powers machine learning, RAG systems, and AI agents.",
-      },
-    ],
+      }],
   },
 
   capabilities: {
@@ -81,8 +77,7 @@ export const service = {
       { title: "Azure SQL", description: "Managed relational databases engineered for performance and resilience." },
       { title: "Azure Synapse", description: "Integrated analytics for warehousing and big data at enterprise scale." },
       { title: "Azure Databricks", description: "Lakehouse engineering and advanced analytics on unified data." },
-      { title: "Advanced Reporting", description: "Paginated, regulatory, and operational reporting at production quality." },
-    ],
+      { title: "Advanced Reporting", description: "Paginated, regulatory, and operational reporting at production quality." }],
   },
 
   stack: {
@@ -100,8 +95,7 @@ export const service = {
       "Decisions grounded in current, trusted data",
       "Reduced manual reporting effort across teams",
       "A data foundation ready for AI and machine learning",
-      "Governed self-service analytics for business users",
-    ],
+      "Governed self-service analytics for business users"],
   },
 
   technologies: [
@@ -111,16 +105,14 @@ export const service = {
     "azure-databricks",
     "azure-sql",
     "microsoft-fabric",
-    "azure-openai",
-  ],
+    "azure-openai"],
 
   relatedSolutions: [
     "reit-analytics-dashboard",
     "erp-manufacturing",
     "erp-wholesale-distribution",
-    "ai-document-management",
-  ],
-  relatedIndustries: ["financial-services", "real-estate", "energy", "healthcare", "transportation"],
+    "ai-document-management"],
+  relatedIndustries: ["financial-services", "real-estate", "energy"],
   relatedCaseStudies: ["bredd-bi-analytics-platform"],
 
   ctas: ["talk-to-expert", "request-proposal"],

@@ -20,13 +20,11 @@ export const service = {
   heroSlides: [
     { image: "/asset/services/sharepoint-1.webp", label: "Content that is organized, findable, and governed" },
     { image: "/asset/services/sharepoint-2.webp", label: "Processes that run as auditable workflows" },
-    { image: "/asset/services/sharepoint-3.webp", label: "AI-ready content foundations for Copilot" },
-  ],
+    { image: "/asset/services/sharepoint-3.webp", label: "AI-ready content foundations for Copilot" }],
 
   intro: [
     "SharePoint holds the documents, knowledge, and processes your organization runs on, but in many enterprises it has grown into sprawling sites, outdated farms, and content nobody can find. Modernized and governed well, SharePoint becomes something different: the intelligent content platform that AI, automation, and collaboration are built on.",
-    "Cloud Fusion Global has deep SharePoint engineering expertise across the full lifecycle: architecture, development, migration, integration, and managed services, and we pair it with AI capabilities like Microsoft Syntex so your content works for you, not the other way around.",
-  ],
+    "Cloud Fusion Global has deep SharePoint engineering expertise across the full lifecycle: architecture, development, migration, integration, and managed services, and we pair it with AI capabilities like Microsoft Syntex so your content works for you, not the other way around."],
 
   challenges: {
     eyebrow: "The Challenge",
@@ -36,8 +34,7 @@ export const service = {
       "Outdated SharePoint versions approaching or past end of support.",
       "Manual, email-driven processes that should be workflows.",
       "Intranets employees avoid because they are slow, dated, and hard to search.",
-      "No governance: sprawl, inconsistent permissions, and compliance risk.",
-    ],
+      "No governance: sprawl, inconsistent permissions, and compliance risk."],
   },
 
   approach: {
@@ -63,8 +60,7 @@ export const service = {
         title: "Operate and support",
         description:
           "Health checks, managed services, and support that keep the platform fast, healthy, and continuously improving.",
-      },
-    ],
+      }],
   },
 
   capabilities: {
@@ -83,8 +79,7 @@ export const service = {
       { title: "SharePoint Reporting", description: "Usage, adoption, storage, and compliance reporting for informed platform decisions." },
       { title: "SharePoint Support and Maintenance", description: "Responsive expert support for issues, changes, and platform questions." },
       { title: "SharePoint Managed Services", description: "Full operational ownership of your SharePoint estate with proactive monitoring and continuous improvement." },
-      { title: "Self-Hosted SharePoint Public-Facing Sites", description: "Public websites on self-hosted SharePoint for organizations with strict data residency and control requirements." },
-    ],
+      { title: "Self-Hosted SharePoint Public-Facing Sites", description: "Public websites on self-hosted SharePoint for organizations with strict data residency and control requirements." }],
   },
 
   stack: {
@@ -102,8 +97,7 @@ export const service = {
       "Processes that run as auditable workflows instead of email",
       "An intranet employees rely on daily",
       "AI-ready content foundations for Copilot, Syntex, and agents",
-      "Predictable platform operations through managed services",
-    ],
+      "Predictable platform operations through managed services"],
   },
 
   technologies: [
@@ -113,8 +107,7 @@ export const service = {
     "sharepoint-framework",
     "power-automate",
     "microsoft-graph",
-    "microsoft-purview",
-  ],
+    "microsoft-purview"],
 
   relatedSolutions: [
     "document-management-system",
@@ -122,9 +115,8 @@ export const service = {
     "records-management-system",
     "intranet-portal",
     "sharepoint-migration",
-    "sharepoint-version-upgrade",
-  ],
-  relatedIndustries: ["financial-services", "healthcare", "real-estate", "energy", "education", "non-profit"],
+    "sharepoint-version-upgrade"],
+  relatedIndustries: ["financial-services",  "real-estate", "energy", "education"],
   relatedCaseStudies: ["sharepoint-modernization"],
 
   ctas: ["talk-to-expert", "request-proposal"],

@@ -32,14 +32,12 @@ export const solution = {
       "Approvals delayed for days in overflowing inboxes.",
       "Policy thresholds applied inconsistently across teams.",
       "Requesters blind to status and forced to chase.",
-      "Approval evidence scattered when audits arrive.",
-    ],
+      "Approval evidence scattered when audits arrive."],
   },
 
   overview: [
     "CFG's Request Approval System standardizes the approval pattern organization-wide: typed request forms, policy-driven routing, delegation and escalation, and decisions captured with reasons: accessible from Teams, web, and mobile.",
-    "Every request moves visibly through its chain. Approvers act in one click from where they work; requesters see status without asking; auditors get a complete, timestamped record.",
-  ],
+    "Every request moves visibly through its chain. Approvers act in one click from where they work; requesters see status without asking; auditors get a complete, timestamped record."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Record",
         description: "Decisions, reasons, and timing are logged and reportable for every request.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Teams, email, and mobile approvals",
     "Delegation, escalation, and out-of-office handling",
     "Complete decision audit trail",
-    "Volume and cycle-time reporting",
-  ],
+    "Volume and cycle-time reporting"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -83,8 +79,7 @@ export const solution = {
     body: "Where intelligence does the heavy lifting in this solution.",
     items: [
       "Auto-approval recommendations for low-risk requests",
-      "Duplicate and anomaly flagging before approval",
-    ],
+      "Duplicate and anomaly flagging before approval"],
   },
 
   architecture: null,
@@ -94,47 +89,40 @@ export const solution = {
     "Policies enforced consistently by design",
     "Requesters informed without chasing",
     "Audit questions answered in minutes",
-    "Manager attention focused on genuine exceptions",
-  ],
+    "Manager attention focused on genuine exceptions"],
 
   useCases: [
     "Purchase and expense approvals",
     "Access and permission requests",
     "Document and content publishing approvals",
-    "Travel, leave, and HR requests",
-  ],
+    "Travel, leave, and HR requests"],
 
   technologies: [
     "power-automate",
     "power-apps",
     "microsoft-teams",
     "dataverse",
-    "power-bi",
-  ],
+    "power-bi"],
 
   industries: [
     "financial-services",
-    "healthcare",
-    "energy",
-  ],
+    
+    "energy"],
 
   relatedServices: [
     "power-platform-solutions",
-    "sharepoint-solutions",
-  ],
+    "sharepoint-solutions"],
 
   relatedSolutions: [
     "workflow-automation-platform",
     "electronic-contract-generator",
-    "intranet-portal",
-  ],
+    "intranet-portal"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Request Approval System",

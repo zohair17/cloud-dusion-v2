@@ -32,14 +32,12 @@ export const solution = {
       "Document assembly consuming expensive professional hours.",
       "Copy-paste errors and outdated clauses creating real risk.",
       "Inconsistent formatting and tone across teams.",
-      "Slow turnaround on proposals, contracts, and client documents.",
-    ],
+      "Slow turnaround on proposals, contracts, and client documents."],
   },
 
   overview: [
     "The AI-Enabled Document Generator turns document creation into a governed pipeline: structured templates define what a document must contain, live data flows in from your systems, and AI drafts the narrative sections in your organization's tone and terminology.",
-    "Every generated document routes through review and approval before release, with full traceability of sources, versions, and sign-off, speed without surrendering control.",
-  ],
+    "Every generated document routes through review and approval before release, with full traceability of sources, versions, and sign-off, speed without surrendering control."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Deliver & file",
         description: "Final documents are formatted, distributed, signed where needed, and filed with complete metadata.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "AI narrative drafting in organizational tone",
     "Review, redline, and approval workflow",
     "eSignature integration",
-    "Automatic filing with metadata and audit trail",
-  ],
+    "Automatic filing with metadata and audit trail"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -85,8 +81,7 @@ export const solution = {
       "Context-aware drafting grounded in sourced data",
       "Clause suggestion and consistency checking",
       "Tone and terminology alignment to house style",
-      "Summarization of long inputs into document sections",
-    ],
+      "Summarization of long inputs into document sections"],
   },
 
   architecture: null,
@@ -96,15 +91,13 @@ export const solution = {
     "Current, approved clauses in every document",
     "Consistent formatting and voice organization-wide",
     "Professional hours redirected to judgment, not assembly",
-    "Complete traceability from data to signed document",
-  ],
+    "Complete traceability from data to signed document"],
 
   useCases: [
     "Sales proposals and statements of work",
     "Contracts and engagement letters",
     "Periodic client and management reports",
-    "Regulatory and compliance correspondence",
-  ],
+    "Regulatory and compliance correspondence"],
 
   technologies: [
     "azure-openai",
@@ -112,33 +105,27 @@ export const solution = {
     "power-automate",
     "dataverse",
     "sharepoint-esignature",
-    "microsoft-graph",
-  ],
+    "microsoft-graph"],
 
   industries: [
     "financial-services",
-    "real-estate",
-    "healthcare",
-  ],
+    "real-estate"],
 
   relatedServices: [
     "generative-ai",
     "agentic-ai-automation",
-    "power-platform-solutions",
-  ],
+    "power-platform-solutions"],
 
   relatedSolutions: [
     "electronic-contract-generator",
     "contract-management-system",
-    "ai-document-management",
-  ],
+    "ai-document-management"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "AI-Enabled Document Generator",

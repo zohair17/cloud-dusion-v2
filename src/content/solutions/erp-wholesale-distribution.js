@@ -32,14 +32,12 @@ export const solution = {
       "Stock positions unreliable across warehouses and channels.",
       "Purchasing driven by instinct rather than demand and lead times.",
       "Pricing and margin eroding invisibly across thousands of SKUs.",
-      "Order-to-delivery handoffs dropped between disconnected tools.",
-    ],
+      "Order-to-delivery handoffs dropped between disconnected tools."],
   },
 
   overview: [
     "CFG implements distribution ERP that runs the full cycle, procurement, receiving, warehouse operations, sales orders, fulfillment, delivery, and invoicing, on live inventory and cost data.",
-    "Margin intelligence sits at the center: landed costs, customer-specific pricing, and profitability by SKU, customer, and channel are visible continuously, so commercial decisions stop being guesses.",
-  ],
+    "Margin intelligence sits at the center: landed costs, customer-specific pricing, and profitability by SKU, customer, and channel are visible continuously, so commercial decisions stop being guesses."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "See margin",
         description: "Landed cost and pricing engines expose true profitability by SKU, customer, and order.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Customer-specific pricing and promotions",
     "Order management across channels",
     "Picking, packing, and dispatch workflows",
-    "Landed cost and margin analytics",
-  ],
+    "Landed cost and margin analytics"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -83,8 +79,7 @@ export const solution = {
     body: "Where intelligence does the heavy lifting in this solution.",
     items: [
       "Replenishment forecasting by SKU and season",
-      "Margin anomaly alerts across customers and lines",
-    ],
+      "Margin anomaly alerts across customers and lines"],
   },
 
   architecture: null,
@@ -94,48 +89,41 @@ export const solution = {
     "Working capital freed from excess inventory",
     "Margin leakage surfaced and stopped",
     "Faster, cleaner order-to-cash cycles",
-    "One system from purchase order to proof of delivery",
-  ],
+    "One system from purchase order to proof of delivery"],
 
   useCases: [
     "Multi-warehouse wholesale operations",
     "B2B distribution with customer pricing tiers",
     "Import-driven distribution with landed costs",
-    "E-commerce and trade counter hybrid sales",
-  ],
+    "E-commerce and trade counter hybrid sales"],
 
   technologies: [
     "dynamics-365-business-central",
     "power-bi",
     "power-automate",
     "azure",
-    "edi-api-integrations",
-  ],
+    "edi-api-integrations"],
 
   industries: [
-    "transportation",
+    
     "technology",
-    "energy",
-  ],
+    "energy"],
 
   relatedServices: [
     "custom-software-development",
     "data-business-intelligence",
-    "power-platform-solutions",
-  ],
+    "power-platform-solutions"],
 
   relatedSolutions: [
     "erp-manufacturing",
     "b2b-integration",
-    "workflow-automation-platform",
-  ],
+    "workflow-automation-platform"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Wholesale Distribution ERP Solutions",

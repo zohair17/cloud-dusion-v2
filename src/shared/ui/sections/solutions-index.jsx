@@ -305,6 +305,42 @@ function solutionIcon(title) {
   return Boxes;
 }
 
+
+/**
+ * The picture beside a practice.
+ *
+ * Named here rather than borrowed from the first solution in the list: taking
+ * the lead solution's photograph put the same image on the index that the
+ * detail page already opens with. Each practice gets a frame of the work it
+ * actually covers, so the column shows the subject rather than a stock desk.
+ */
+const PRACTICE_ART = {
+  ai: {
+    src: "/asset/solutions/ai-chatbot-solutions-1.webp",
+    label: "Conversational AI answering from enterprise content",
+  },
+  "sharepoint-microsoft": {
+    src: "/asset/solutions/sharepoint-migration-1.webp",
+    label: "Content and collaboration on the Microsoft platform",
+  },
+  "real-estate": {
+    src: "/asset/solutions/deal-management-system-1.webp",
+    label: "Property portfolios, deals and tenants under one system",
+  },
+  erp: {
+    src: "/asset/solutions/erp-manufacturing-1.webp",
+    label: "Manufacturing and distribution operations on one backbone",
+  },
+  "mobile-iot": {
+    src: "/asset/solutions/smart-device-mobile-app-1.webp",
+    label: "Mobile experiences for connected devices",
+  },
+  automation: {
+    src: "/asset/solutions/workflow-automation-platform.webp",
+    label: "Workflow and approvals running without manual handoffs",
+  },
+};
+
 /** The practice name, with its opening word carried in the brand colour. */
 function CategoryTitle({ title }) {
   const words = title.split(" ");
@@ -352,11 +388,11 @@ function CategoryRail({ category, index }) {
             </h2>
             <p className="mt-4 max-w-md text-[0.9375rem] leading-relaxed text-muted">{category.description}</p>
 
-            {category.solutions.find((solution) => solution.image) ? (
-              <span className="relative mt-8 block aspect-[16/11] w-full max-w-md overflow-hidden rounded-[1.25rem] bg-[linear-gradient(150deg,#f4f5fd_0%,#e9ecfa_100%)] ring-1 ring-brand-100">
+            {PRACTICE_ART[category.anchor] ? (
+              <span className="relative mt-8 block aspect-[16/11] w-full max-w-md overflow-hidden rounded-[1.25rem] bg-surface ring-1 ring-black/[0.06]">
                 <Image
-                  src={category.solutions.find((solution) => solution.image).image}
-                  alt=""
+                  src={PRACTICE_ART[category.anchor].src}
+                  alt={PRACTICE_ART[category.anchor].label}
                   fill
                   sizes="(min-width: 1024px) 28vw, 92vw"
                   className="object-cover"

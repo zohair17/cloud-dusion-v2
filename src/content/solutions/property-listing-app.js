@@ -32,14 +32,12 @@ export const solution = {
       "Listings trapped in PDFs and outdated sites.",
       "Third-party portals owning your prospect relationships and data.",
       "No mobile-quality search, media, or inquiry experience.",
-      "Leads arriving by phone and email with no tracking.",
-    ],
+      "Leads arriving by phone and email with no tracking."],
   },
 
   overview: [
     "CFG builds branded property listing apps that present your portfolio the way prospects expect: fast search with map and filters, rich media including floor plans and virtual tours, and instant inquiry that flows straight into your CRM.",
-    "The app runs from the same data as your website and back office, so availability is always current, and every lead, view, and favorite becomes data you own.",
-  ],
+    "The app runs from the same data as your website and back office, so availability is always current, and every lead, view, and favorite becomes data you own."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Track & nurture",
         description: "Views, favorites, and inquiries feed your CRM for follow-up and pipeline reporting.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Instant inquiry and viewing scheduling",
     "Saved searches and availability alerts",
     "CRM and back-office integration",
-    "iOS and Android from one codebase",
-  ],
+    "iOS and Android from one codebase"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -83,8 +79,7 @@ export const solution = {
     body: "Where intelligence does the heavy lifting in this solution.",
     items: [
       "Natural-language search: 'ground floor retail near the marina'",
-      "Personalized recommendations from browsing behaviour",
-    ],
+      "Personalized recommendations from browsing behaviour"],
   },
 
   architecture: null,
@@ -94,15 +89,13 @@ export const solution = {
     "Always-current availability across channels",
     "Faster inquiry-to-viewing cycles",
     "A branded experience competitive with portals",
-    "Marketing insight from real engagement data",
-  ],
+    "Marketing insight from real engagement data"],
 
   useCases: [
     "Commercial portfolio leasing apps",
     "Residential sales and letting apps",
     "Build-to-rent community leasing",
-    "Brokerage listing platforms",
-  ],
+    "Brokerage listing platforms"],
 
   technologies: [
     "dotnet-maui",
@@ -110,30 +103,25 @@ export const solution = {
     "azure-app-services",
     "azure-sql",
     "azure-openai",
-    "microsoft-entra",
-  ],
+    "microsoft-entra"],
 
   industries: [
-    "real-estate",
-  ],
+    "real-estate"],
 
   relatedServices: [
     "mobile-app-development",
-    "custom-software-development",
-  ],
+    "custom-software-development"],
 
   relatedSolutions: [
     "tenant-portal",
     "deal-management-system",
-    "ai-powered-mobile-apps",
-  ],
+    "ai-powered-mobile-apps"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Property Listing Mobile App",

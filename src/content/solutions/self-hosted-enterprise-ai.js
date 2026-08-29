@@ -32,14 +32,12 @@ export const solution = {
       "Regulatory and residency rules prohibiting external AI processing.",
       "Confidential IP and client data that cannot cross the boundary.",
       "Employees quietly using consumer AI tools without controls.",
-      "Uncertainty about cost, hardware, and models for private AI.",
-    ],
+      "Uncertainty about cost, hardware, and models for private AI."],
   },
 
   overview: [
     "CFG deploys complete AI platforms inside your environment: your cloud tenancy, your data center, or sovereign infrastructure. Open-weight and privately hosted models, vector retrieval over your content, and end-user applications, all operating within your security perimeter.",
-    "You get the capabilities your teams are asking for, chat over documents, drafting, summarization, extraction, with your identity provider governing access, your policies governing data, and nothing leaving your control.",
-  ],
+    "You get the capabilities your teams are asking for, chat over documents, drafting, summarization, extraction, with your identity provider governing access, your policies governing data, and nothing leaving your control."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Operate & evolve",
         description: "Monitoring, evaluation, model updates, and capacity management: run by your team, ours, or both.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Chat, drafting, summarization, and extraction applications",
     "Full identity integration and role-based access",
     "Complete audit of prompts, retrievals, and outputs",
-    "Air-gapped deployment options",
-  ],
+    "Air-gapped deployment options"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -85,8 +81,7 @@ export const solution = {
       "Grounded Q&A and drafting entirely on-premises",
       "Domain fine-tuning on private data",
       "Document intelligence within the boundary",
-      "Evaluation pipelines for quality and safety",
-    ],
+      "Evaluation pipelines for quality and safety"],
   },
 
   architecture: {
@@ -97,30 +92,23 @@ export const solution = {
       { title: "APPLICATIONS", nodes: [
         "Chat & Q&A",
         "Drafting studio",
-        "Extraction pipelines",
-      ] },
+        "Extraction pipelines"] },
       { title: "AI PLATFORM", nodes: [
         "Model serving",
         "Orchestration & guardrails",
-        "Evaluation",
-      ] },
+        "Evaluation"] },
       { title: "KNOWLEDGE", nodes: [
         "Ingestion pipelines",
         "Vector store",
-        "Permission mapping",
-      ] },
+        "Permission mapping"] },
       { title: "YOUR INFRASTRUCTURE", nodes: [
         "Private cloud / on-premises",
         "GPU compute",
-        "Your network boundary",
-      ] },
+        "Your network boundary"] },
       { title: "IDENTITY & AUDIT", nodes: [
-        "Your identity provider",
-      ] },
+        "Your identity provider"] },
       { title: "RBAC", nodes: [
-        "Full interaction audit",
-      ] },
-    ],
+        "Full interaction audit"] }],
   },
 
   benefits: [
@@ -128,15 +116,13 @@ export const solution = {
     "Regulatory and residency obligations met by architecture",
     "Shadow AI replaced with a governed alternative",
     "Predictable cost at sustained enterprise usage",
-    "Full auditability of every AI interaction",
-  ],
+    "Full auditability of every AI interaction"],
 
   useCases: [
     "Confidential document analysis for legal and finance",
     "Internal knowledge assistants in classified environments",
     "AI drafting for regulated client communications",
-    "Research over proprietary IP",
-  ],
+    "Research over proprietary IP"],
 
   technologies: [
     "azure-ai-foundry",
@@ -144,33 +130,28 @@ export const solution = {
     "kubernetes",
     "vector-databases",
     "microsoft-entra",
-    "azure-stack-private-cloud",
-  ],
+    "azure-stack-private-cloud"],
 
   industries: [
     "financial-services",
-    "healthcare",
-    "energy",
-  ],
+    
+    "energy"],
 
   relatedServices: [
     "agentic-ai-automation",
     "generative-ai",
-    "data-security-governance",
-  ],
+    "data-security-governance"],
 
   relatedSolutions: [
     "ai-chatbot-solutions",
     "ai-document-management",
-    "self-hosted-sharepoint-sites",
-  ],
+    "self-hosted-sharepoint-sites"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Self-Hosted Enterprise AI Solutions",

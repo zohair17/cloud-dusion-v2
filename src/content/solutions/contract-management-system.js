@@ -32,14 +32,12 @@ export const solution = {
       "No single repository of executed contracts and amendments.",
       "Renewal and notice deadlines missed for lack of visibility.",
       "Negotiation cycles dragging through email attachments.",
-      "Key terms and obligations invisible without reading every contract.",
-    ],
+      "Key terms and obligations invisible without reading every contract."],
   },
 
   overview: [
     "CFG's Contract Management System manages the full lifecycle: contracts are authored from approved templates, negotiated with tracked versions, approved through defined workflows, signed electronically, and filed automatically into a governed repository.",
-    "AI extraction reads every executed contract, parties, dates, values, renewal terms, obligations, turning the repository into a queryable database that drives alerts, reporting, and renewals.",
-  ],
+    "AI extraction reads every executed contract, parties, dates, values, renewal terms, obligations, turning the repository into a queryable database that drives alerts, reporting, and renewals."],
 
   howItWorks: {
     eyebrow: "How It Works",
@@ -64,8 +62,7 @@ export const solution = {
         step: "04",
         title: "Manage obligations",
         description: "Renewals, notices, and obligations generate alerts and tasks to the right owners, on time.",
-      },
-    ],
+      }],
   },
 
   capabilities: [
@@ -74,8 +71,7 @@ export const solution = {
     "Version-controlled negotiation and redlining",
     "Configurable approval workflows",
     "Integrated electronic signature",
-    "Renewal, notice, and obligation alerting",
-  ],
+    "Renewal, notice, and obligation alerting"],
 
   aiCapabilities: {
     eyebrow: "AI Inside",
@@ -84,8 +80,7 @@ export const solution = {
     items: [
       "Automatic extraction of parties, dates, values, and terms",
       "Clause and risk flagging against your playbook",
-      "Portfolio-wide contract querying in natural language",
-    ],
+      "Portfolio-wide contract querying in natural language"],
   },
 
   architecture: null,
@@ -95,15 +90,13 @@ export const solution = {
     "Contract cycles cut from weeks to days",
     "Portfolio-wide visibility of terms and exposure",
     "Reduced legal review load through templates and AI flags",
-    "A complete, defensible contract record",
-  ],
+    "A complete, defensible contract record"],
 
   useCases: [
     "Procurement and vendor contract lifecycles",
     "Client engagement and sales contracts",
     "Lease and real estate agreements",
-    "NDA and routine agreement automation",
-  ],
+    "NDA and routine agreement automation"],
 
   technologies: [
     "sharepoint-online",
@@ -111,33 +104,28 @@ export const solution = {
     "azure-openai",
     "power-automate",
     "sharepoint-esignature",
-    "power-bi",
-  ],
+    "power-bi"],
 
   industries: [
     "financial-services",
     "real-estate",
-    "energy",
-  ],
+    "energy"],
 
   relatedServices: [
     "microsoft-syntex",
     "power-platform-solutions",
-    "generative-ai",
-  ],
+    "generative-ai"],
 
   relatedSolutions: [
     "electronic-contract-generator",
     "ai-document-generator",
-    "lease-management-system",
-  ],
+    "lease-management-system"],
 
   relatedCaseStudies: [],
 
   ctas: [
     "request-demo",
-    "talk-to-expert",
-  ],
+    "talk-to-expert"],
 
   seo: {
     title: "Contract Management System",

@@ -40,8 +40,7 @@ export const caseStudy = {
     {
       step: "05",
       description: "Tuned extraction quality iteratively against verified results.",
-    },
-  ],
+    }],
 
   solution: "REL reads lease documents with AI, proposes structured abstracts (parties, dates, rents, options, obligations) and routes them through analyst verification, producing consistent, source-linked lease data at a fraction of manual effort.",
 
@@ -49,8 +48,7 @@ export const caseStudy = {
     "Abstraction effort per lease reduced substantially, with analysts verifying rather than transcribing",
     "Consistent abstract quality independent of individual readers",
     "Lease data linked to source documents for instant validation",
-    "Foundation established for portfolio-wide lease intelligence",
-  ],
+    "Foundation established for portfolio-wide lease intelligence"],
 
   metricsNote: "Verified accuracy and throughput metrics to be added upon client approval",
 
@@ -58,22 +56,19 @@ export const caseStudy = {
     "azure-openai",
     "azure-ai-document-intelligence",
     "sharepoint-online",
-    "power-automate",
-  ],
+    "power-automate"],
 
   relatedServices: [
     "agentic-ai-automation",
     "generative-ai",
-    "microsoft-syntex",
-  ],
+    "microsoft-syntex"],
 
   relatedSolutions: [],
 
   ctas: [
     "talk-to-expert",
     "request-proposal",
-    "discovery-session",
-  ],
+    "discovery-session"],
 
   seo: {
     title: "REL AI Lease Abstractor Case Study",

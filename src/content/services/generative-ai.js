@@ -20,13 +20,11 @@ export const service = {
   heroSlides: [
     { image: "/asset/services/generative-ai-1.webp", label: "Answers with sources, not hallucinations" },
     { image: "/asset/services/generative-ai-2.webp", label: "Meaning-based search across your content" },
-    { image: "/asset/services/generative-ai-3.webp", label: "Enterprise data boundaries preserved end to end" },
-  ],
+    { image: "/asset/services/generative-ai-3.webp", label: "Enterprise data boundaries preserved end to end" }],
 
   intro: [
     "Generative AI has moved from novelty to expectation. The question for enterprises is no longer whether large language models are useful, but how to apply them to your documents, your data, and your workflows: accurately, securely, and at production quality.",
-    "Cloud Fusion Global builds generative AI solutions end-to-end: retrieval-augmented generation grounded in your knowledge, fine-tuned and integrated models, vector semantic search, and the data pipelines (collection, annotation, classification, extraction) that make it all trustworthy. Delivered on Azure OpenAI and Azure AI Foundry with enterprise controls throughout.",
-  ],
+    "Cloud Fusion Global builds generative AI solutions end-to-end: retrieval-augmented generation grounded in your knowledge, fine-tuned and integrated models, vector semantic search, and the data pipelines (collection, annotation, classification, extraction) that make it all trustworthy. Delivered on Azure OpenAI and Azure AI Foundry with enterprise controls throughout."],
 
   challenges: {
     eyebrow: "The Challenge",
@@ -36,8 +34,7 @@ export const service = {
       "Hallucination risk that makes ungrounded AI unusable for serious work.",
       "Sensitive data that cannot be sent to consumer AI services.",
       "Knowledge locked in thousands of documents no one can search semantically.",
-      "Proofs-of-concept that never became reliable production systems.",
-    ],
+      "Proofs-of-concept that never became reliable production systems."],
   },
 
   approach: {
@@ -63,8 +60,7 @@ export const service = {
         title: "Integrate into real workflows",
         description:
           "Generation, summarization, and search embedded into the applications and processes where work already happens.",
-      },
-    ],
+      }],
   },
 
   capabilities: {
@@ -114,8 +110,7 @@ export const service = {
       {
         title: "RAG Solutions",
         description: "Retrieval-augmented generation systems that answer from your knowledge with citations.",
-      },
-    ],
+      }],
   },
 
   stack: {
@@ -133,8 +128,7 @@ export const service = {
       "Drafting and summarization hours returned to skilled teams",
       "Enterprise data boundaries preserved end-to-end",
       "Production-grade reliability through evaluation and monitoring",
-      "A reusable AI platform across many use cases",
-    ],
+      "A reusable AI platform across many use cases"],
   },
 
   technologies: [
@@ -144,16 +138,14 @@ export const service = {
     "semantic-kernel",
     "azure-ai-document-intelligence",
     "cosmos-db",
-    "microsoft-entra",
-  ],
+    "microsoft-entra"],
 
   relatedSolutions: [
     "ai-chatbot-solutions",
     "ai-document-generator",
     "ai-document-management",
-    "self-hosted-enterprise-ai",
-  ],
-  relatedIndustries: ["financial-services", "healthcare", "real-estate", "technology", "education"],
+    "self-hosted-enterprise-ai"],
+  relatedIndustries: ["financial-services",  "real-estate", "technology", "education"],
   relatedCaseStudies: ["rel-ai-lease-abstractor"],
 
   ctas: ["talk-to-expert", "request-proposal"],
