@@ -100,7 +100,7 @@ export function Hero({ hero }) {
             </svg>
           </div>
 
-          <div className="relative order-1 flex items-center justify-center overflow-hidden py-3.5 px-9 -mx-5 -mt-5 mb-1 h-[clamp(18rem,88vw,25rem)] sm:-mx-7 sm:-mt-7 sm:h-[clamp(19rem,47vw,31rem)] cfg-hero-film-well lg:order-2 lg:-mr-6 lg:ml-0 lg:-my-9 lg:mb-0 lg:h-auto lg:self-stretch lg:px-0 lg:pl-[9%] lg:pr-[1%] lg:py-[2%] xl:translate-x-10">
+          <div className="relative order-1 flex items-center justify-center overflow-hidden py-4 px-14 -mx-5 -mt-5 mb-1 h-[clamp(16rem,78vw,23rem)] sm:-mx-7 sm:-mt-7 sm:h-[clamp(19rem,47vw,31rem)] cfg-hero-film-well lg:order-2 lg:-mr-6 lg:ml-0 lg:-my-9 lg:mb-0 lg:h-auto lg:self-stretch lg:px-0 lg:pl-[9%] lg:pr-[1%] lg:py-[2%] xl:translate-x-10">
             <Film
               src="/asset/hero-swing.mp4"
               poster="/asset/hero-swing-poster.webp"
