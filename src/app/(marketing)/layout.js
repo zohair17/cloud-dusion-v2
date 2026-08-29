@@ -1,6 +1,7 @@
 import { getFooterNavigation, getHeaderNavigation } from "@/modules/navigation";
 import { SiteHeader } from "@/shared/ui/layout/site-header";
 import { SiteFooter } from "@/shared/ui/layout/site-footer";
+import { ContactLauncher } from "@/shared/ui/layout/contact-launcher";
 
 /**
  * Marketing shell.
@@ -27,6 +28,7 @@ export default function MarketingLayout({ children }) {
         {children}
       </main>
       <SiteFooter columns={footer} />
+      <ContactLauncher />
     </>
   );
 }

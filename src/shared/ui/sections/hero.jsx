@@ -86,12 +86,7 @@ export function Hero({ hero }) {
             </div>
           </div>
 
-          {/*
-            The film half. It bleeds through the slab's own padding and is
-            sized by the room it is given, so the picture grows with the slab
-            rather than sitting in a fixed well.
-          */}
-          <div className="relative order-1 -mx-5 -mt-5 mb-1 h-[clamp(21rem,52vh,29rem)] sm:-mx-7 sm:-mt-7 sm:h-[clamp(19rem,47vw,31rem)] cfg-hero-film-well lg:order-2 lg:-mr-6 lg:ml-0 lg:-my-9 lg:mb-0 lg:h-auto lg:self-stretch lg:pl-0 xl:translate-x-8">
+          <div className="relative order-1 overflow-hidden -mx-5 -mt-5 mb-1 h-[clamp(3rem,60vw,226rem)] sm:-mx-7 sm:-mt-7 sm:h-[clamp(19rem,47vw,313rem)] cfg-hero-film-well lg:order-2 lg:-mr-6 lg:ml-0 lg:-my-9 lg:mb-0 lg:h-auto lg:self-stretch lg:pl-0 xl:translate-x-8">
             <Film
               src="/asset/hero-swing.mp4"
               poster="/asset/hero-swing-poster.webp"
@@ -101,7 +96,7 @@ export function Hero({ hero }) {
 
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute left-[4%] top-[-14%] hidden h-[128%] w-[22%] xl:block"
+              className="pointer-events-none absolute left-[4%] top-[-12%] hidden h-[128%] w-[22%] xl:block"
             >
               <svg
                 className="h-full w-full overflow-visible"

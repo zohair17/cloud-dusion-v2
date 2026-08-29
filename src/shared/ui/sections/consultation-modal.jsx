@@ -11,6 +11,31 @@ import { cn } from "../primitives/cn";
 const EASE = [0.22, 1, 0.36, 1];
 
 /**
+ * The two things this dialog is asked to be.
+ *
+ * A consultation and an inquiry want the same three answers, so they are one
+ * dialog with two sets of words rather than two forms with one set of bugs.
+ */
+const COPY = {
+  consultation: {
+    title: "Book a free consultation",
+    intro:
+      "Thirty minutes with an architect, not a salesperson. Tell us what you are trying to do and we will come back with how we would approach it.",
+    prompt: "What would you like to talk about?",
+    submit: "Request the call",
+    source: "consultation-modal",
+  },
+  inquiry: {
+    title: "Send an inquiry",
+    intro:
+      "Tell us what you are trying to move. The more you can say about the outcome, the more useful our first reply will be.",
+    prompt: "What can we help with?",
+    submit: "Send the inquiry",
+    source: "inquiry-modal",
+  },
+};
+
+/**
  * Book a consultation, without leaving the page.
  *
  * The hero's first call to action used to send the reader to /contact, which
@@ -21,7 +46,8 @@ const EASE = [0.22, 1, 0.36, 1];
  * The dialog is deliberately small: name, email, and what they want to talk
  * about. Everything else is a question for the call itself.
  */
-export function ConsultationModal({ open, onClose }) {
+export function ConsultationModal({ open, onClose, variant = "consultation" }) {
+  const copy = COPY[variant] ?? COPY.consultation;
   const [state, setState] = useState("idle");
   const [issues, setIssues] = useState({});
 
@@ -48,7 +74,7 @@ export function ConsultationModal({ open, onClose }) {
     setState("sending");
     const payload = new FormData();
     for (const [key, value] of Object.entries(data)) payload.set(key, value);
-    payload.set("source", "consultation-modal");
+    payload.set("source", copy.source);
 
     try {
       await submitInquiryAction({}, payload);
@@ -72,7 +98,7 @@ export function ConsultationModal({ open, onClose }) {
           <motion.div
             role="dialog"
             aria-modal="true"
-            aria-label="Book a free consultation"
+            aria-label={copy.title}
             initial={{ opacity: 0, y: 28, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.98 }}
@@ -119,11 +145,10 @@ export function ConsultationModal({ open, onClose }) {
                 <>
                   <span aria-hidden="true" className="block h-[3px] w-12 rounded-full bg-brand-600" />
                   <h2 className="mt-5 font-display text-xl font-semibold leading-snug tracking-tight text-balance text-foreground sm:text-2xl">
-                    Book a free consultation
+                    {copy.title}
                   </h2>
                   <p className="mt-2.5 text-[0.9375rem] leading-relaxed text-muted">
-                    Thirty minutes with an architect, not a salesperson. Tell us what you are trying
-                    to do and we will come back with how we would approach it.
+                    {copy.intro}
                   </p>
 
                   <form onSubmit={onSubmit} noValidate className="mt-7 space-y-4">
@@ -138,7 +163,7 @@ export function ConsultationModal({ open, onClose }) {
                     <ModalField name="company" label="Company" optional autoComplete="organization" />
                     <ModalField
                       name="message"
-                      label="What would you like to talk about?"
+                      label={copy.prompt}
                       optional
                       textarea
                     />
@@ -148,7 +173,7 @@ export function ConsultationModal({ open, onClose }) {
                       disabled={state === "sending"}
                       className="inline-flex w-full items-center justify-center gap-2.5 rounded-pill bg-brand-600 px-6 py-3 text-sm font-medium text-white shadow-md shadow-brand-600/25 transition-colors hover:bg-brand-700 disabled:opacity-60"
                     >
-                      {state === "sending" ? "Sending" : "Request the call"}
+                      {state === "sending" ? "Sending" : copy.submit}
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </button>
 
