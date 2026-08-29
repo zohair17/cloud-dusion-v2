@@ -117,7 +117,7 @@ export const service = {
     "sharepoint-migration",
     "sharepoint-version-upgrade"],
   relatedIndustries: ["financial-services",  "real-estate", "energy", "education"],
-  relatedCaseStudies: ["sharepoint-modernization"],
+  relatedCaseStudies: [],
 
   ctas: ["talk-to-expert", "request-proposal"],
 

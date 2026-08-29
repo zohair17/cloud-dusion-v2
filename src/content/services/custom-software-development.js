@@ -114,7 +114,7 @@ export const service = {
     "b2b-integration",
     "electronic-contract-generator"],
   relatedIndustries: ["real-estate", "financial-services", "technology",  "energy"],
-  relatedCaseStudies: ["real-estate-deal-management"],
+  relatedCaseStudies: [],
 
   ctas: ["talk-to-expert", "request-proposal"],
 

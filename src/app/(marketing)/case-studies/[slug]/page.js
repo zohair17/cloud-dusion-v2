@@ -3,10 +3,13 @@ import { buildMetadata } from "@/shared/lib/metadata";
 import { routes } from "@/shared/config/routes";
 import {
   CaseStudyHero,
+  CaseStudyCustomer,
   CaseStudyChallenge,
-  CaseStudyApproach,
   CaseStudySolution,
+  CaseStudyFeatures,
   CaseStudyOutcomes,
+  CaseStudyConclusion,
+  CaseStudyTestimonial,
   CaseStudyRelated,
 } from "@/shared/ui/sections/case-study-detail";
 import { ClosingCta } from "@/shared/ui/sections/closing-cta";
@@ -25,7 +28,8 @@ export async function generateMetadata({ params }) {
 /**
  * Case study detail.
  *
- * Where it started, how it was delivered, what was built, and what changed.
+ * Who it was for, what was wrong, what was built, what changed, and the
+ * client saying so.
  * This segment resolves the aggregate and hands each section its slice; no copy
  * lives here.
  */
@@ -45,21 +49,39 @@ export default async function CaseStudyDetailPage({ params }) {
         ]}
       />
 
-      <CaseStudyChallenge section={sections.challenge} body={caseStudy.challenge} />
+      <CaseStudyCustomer
+        body={caseStudy.aboutCustomer}
+        client={caseStudy.client}
+        partner={caseStudy.partner}
+      />
 
-      <CaseStudyApproach section={sections.approach} steps={caseStudy.approach} />
+      <CaseStudyChallenge
+        section={sections.challenge}
+        body={caseStudy.challenge}
+        points={caseStudy.challengePoints}
+      />
 
       <CaseStudySolution
         section={sections.solution}
+        heading={caseStudy.solutionHeading}
         body={caseStudy.solution}
+        steps={caseStudy.approach}
+        points={caseStudy.solutionPoints}
         technologies={caseStudy.technologies}
       />
 
+      <CaseStudyFeatures groups={caseStudy.pageFeatures} />
+
       <CaseStudyOutcomes
         section={sections.outcomes}
+        heading={caseStudy.outcomesHeading}
         items={caseStudy.outcomes}
         metricsNote={caseStudy.metricsNote}
       />
+
+      <CaseStudyConclusion body={caseStudy.conclusion} />
+
+      <CaseStudyTestimonial testimonial={caseStudy.testimonial} note={caseStudy.testimonialNote} />
 
       <CaseStudyRelated
         section={sections.related}

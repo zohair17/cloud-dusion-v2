@@ -131,7 +131,7 @@ export const service = {
     "self-hosted-enterprise-ai",
     "intranet-portal"],
   relatedIndustries: ["financial-services",  "energy",  "education"],
-  relatedCaseStudies: ["sharepoint-enterprise-migration"],
+  relatedCaseStudies: [],
 
   ctas: ["talk-to-expert", "request-proposal"],
 

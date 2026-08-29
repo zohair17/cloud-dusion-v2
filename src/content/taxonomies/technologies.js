@@ -89,6 +89,19 @@ export const technologies = [
   { id: "application-gateway-waf", label: "Application Gateway / WAF", layer: null },
   { id: "powershell", label: "PowerShell", layer: null },
   { id: "migration-tooling", label: "Migration tooling", layer: null },
+  /* Named by the case study write-ups. They are not part of the Microsoft
+     stack the layers above describe, so they carry no layer: they are here so
+     a study can say what it actually used rather than print a raw id. */
+  { id: "microsoft-outlook-calendar", label: "Microsoft Outlook Calendar", layer: null },
+  { id: "excel", label: "Excel", layer: null },
+  { id: "bloomberg-integration", label: "Bloomberg Integration", layer: null },
+  { id: "custom-api", label: "Custom API", layer: null },
+  { id: "api-integration", label: "API Integration", layer: null },
+  { id: "http-actions", label: "HTTP Actions", layer: null },
+  { id: "json", label: "JSON", layer: null },
+  { id: "timer-jobs", label: "Timer Jobs", layer: null },
+  { id: "external-disk-storage", label: "External Disk Storage", layer: null },
+  { id: "other", label: "Other", layer: null },
 ];
 
 export const technologyLayers = [

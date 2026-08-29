@@ -115,7 +115,7 @@ export const service = {
     "records-management-system",
     "contract-management-system"],
   relatedIndustries: ["financial-services",  "real-estate", "energy"],
-  relatedCaseStudies: ["fredd-document-management-system"],
+  relatedCaseStudies: [],
 
   ctas: ["talk-to-expert", "request-proposal"],
 

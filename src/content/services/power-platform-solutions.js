@@ -113,7 +113,7 @@ export const service = {
     "electronic-contract-generator",
     "job-management-system"],
   relatedIndustries: ["financial-services",  "real-estate", "energy"],
-  relatedCaseStudies: ["real-estate-deal-management"],
+  relatedCaseStudies: [],
 
   ctas: ["talk-to-expert", "request-proposal"],
 

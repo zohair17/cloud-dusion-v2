@@ -24,6 +24,9 @@
  * @property {{ title: string, description: string }} seo
  */
 
-export const REQUIRED_FIELDS = Object.freeze(["slug", "title", "sectorLabel", "summary", "client", "order", "seo"]);
+/* `sectorLabel` is not required: several of the source write-ups carry no
+   Industry line, and a badge invented to fill the gap would be a claim the
+   document never made. */
+export const REQUIRED_FIELDS = Object.freeze(["slug", "title", "summary", "client", "order", "seo"]);
 
 export const PUBLISHABLE_FIELDS = Object.freeze(["challenge", "approach", "solution", "outcomes"]);

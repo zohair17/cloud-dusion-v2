@@ -146,7 +146,7 @@ export const service = {
     "ai-document-management",
     "self-hosted-enterprise-ai"],
   relatedIndustries: ["financial-services",  "real-estate", "technology", "education"],
-  relatedCaseStudies: ["rel-ai-lease-abstractor"],
+  relatedCaseStudies: [],
 
   ctas: ["talk-to-expert", "request-proposal"],
 

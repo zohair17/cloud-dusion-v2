@@ -169,7 +169,7 @@ export const service = {
     "self-hosted-enterprise-ai",
     "workflow-automation-platform"],
   relatedIndustries: ["financial-services",  "real-estate", "energy", "technology"],
-  relatedCaseStudies: ["rel-ai-lease-abstractor"],
+  relatedCaseStudies: [],
 
   ctas: ["talk-to-expert", "request-proposal"],
 

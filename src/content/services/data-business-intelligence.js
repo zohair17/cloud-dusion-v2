@@ -113,7 +113,7 @@ export const service = {
     "erp-wholesale-distribution",
     "ai-document-management"],
   relatedIndustries: ["financial-services", "real-estate", "energy"],
-  relatedCaseStudies: ["bredd-bi-analytics-platform"],
+  relatedCaseStudies: [],
 
   ctas: ["talk-to-expert", "request-proposal"],
 
