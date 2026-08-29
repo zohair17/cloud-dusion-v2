@@ -151,6 +151,15 @@ html {
   filter: brightness(1.07) saturate(1.06);
 }
 
+/* The phone crops the clip's own white side margins to read the diagram, so a
+   horizontal feather would eat the diagram itself rather than a blank edge. */
+@media (max-width: 1023px) {
+  .cfg-hero-film {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 6%, #000 94%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  }
+}
+
 /* ---------------------------------------------------------------- premium card
  *
  * White stays the surface; the brand does the lighting. Three layers, all

@@ -1,1 +1,1 @@
-acha yar dekho jin jin case studies mai testimonials ki profile nahi hai to wo dekhlo
+- ![alt text](image-10.png) sirf mobile view par video ko thora sa chotta karo q kai iskay left aur right mai space nahi hai bhot chupka chupka lag raha hai.

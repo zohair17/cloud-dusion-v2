@@ -85,33 +85,28 @@ export function Hero({ hero }) {
               ))}
             </div>
           </div>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-[14%] left-[41%] z-20 hidden h-[128%] w-[14%] xl:block"
+          >
+            <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <polygon
+                points="100,0 100,8 16,50 100,92 100,100 0,50"
+                fill="white"
+                stroke="rgb(53 51 205)"
+                strokeWidth="2.9"
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
+          </div>
 
-          <div className="relative order-1 overflow-hidden -mx-5 -mt-5 mb-1 h-[clamp(3rem,60vw,226rem)] sm:-mx-7 sm:-mt-7 sm:h-[clamp(19rem,47vw,313rem)] cfg-hero-film-well lg:order-2 lg:-mr-6 lg:ml-0 lg:-my-9 lg:mb-0 lg:h-auto lg:self-stretch lg:pl-0 xl:translate-x-8">
+          <div className="relative order-1 flex items-center justify-center overflow-hidden py-3.5 px-9 -mx-5 -mt-5 mb-1 h-[clamp(18rem,88vw,25rem)] sm:-mx-7 sm:-mt-7 sm:h-[clamp(19rem,47vw,31rem)] cfg-hero-film-well lg:order-2 lg:-mr-6 lg:ml-0 lg:-my-9 lg:mb-0 lg:h-auto lg:self-stretch lg:px-0 lg:pl-[9%] lg:pr-[1%] lg:py-[2%] xl:translate-x-10">
             <Film
               src="/asset/hero-swing.mp4"
               poster="/asset/hero-swing-poster.webp"
               label={`${hero.constellation?.hub ?? "AI agents"} at the centre of the Microsoft ecosystem`}
-              className="cfg-hero-film"
+              className="cfg-hero-film h-full w-auto max-w-none translate-x-1.5 lg:h-auto lg:max-w-full lg:translate-x-0"
             />
-
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute left-[4%] top-[-12%] hidden h-[128%] w-[22%] xl:block"
-            >
-              <svg
-                className="h-full w-full overflow-visible"
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
-              >
-                <polygon
-                  points="100,0 100,8 16,50 100,92 100,100 0,50"
-                  fill="white"
-                  stroke="rgb(53 51 205)"
-                  strokeWidth="2.9"
-                  vectorEffect="non-scaling-stroke"
-                />
-              </svg>
-            </div>
 
           </div>
         </div>
