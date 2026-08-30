@@ -287,6 +287,166 @@ const MARKS = {
       <path d="M12 3.4h8.6L12 12 3.4 3.4H12Z" fill="#C711E1" opacity=".55" />
     </>
   ),
+
+  /*
+   * The Azure services, each by what it actually is.
+   *
+   * Sixteen chips all wearing the Azure chevron told a reader nothing except
+   * "this is Azure", which the word already said. The mark follows the second
+   * half of the name — Functions, Cosmos DB, Key Vault — because that is the
+   * half that differs, and each keeps the colour the product is known by.
+   */
+  "azure-ai-foundry": (
+    <>
+      <path d="M12 2.6 20.2 7.3v9.4L12 21.4 3.8 16.7V7.3L12 2.6Z" fill="#7A5AF8" opacity=".22" />
+      <path d="M12 6.6 16.8 9.4v5.2L12 17.4 7.2 14.6V9.4L12 6.6Z" fill="#7A5AF8" />
+      <circle cx="12" cy="12" r="2" fill="#fff" />
+    </>
+  ),
+  "azure-document-intelligence": (
+    <>
+      <path d="M6 2.8h7.4L18.6 8v13.2H6V2.8Z" fill="#0078D4" />
+      <path d="M13.4 2.8 18.6 8h-5.2V2.8Z" fill="#50E6FF" />
+      <path d="M8.6 12.4h7.2M8.6 15.4h5" stroke="#fff" strokeWidth="1.3" strokeLinecap="round" />
+      <path d="M9.4 6.6c.1-.3.5-.3.6 0l.4 1c.1.3.3.5.6.6l1 .4c.3.1.3.5 0 .6l-1 .4c-.3.1-.5.3-.6.6l-.4 1c-.1.3-.5.3-.6 0l-.4-1a1.2 1.2 0 0 0-.6-.6l-1-.4c-.3-.1-.3-.5 0-.6l1-.4c.3-.1.5-.3.6-.6l.4-1Z" fill="#50E6FF" />
+    </>
+  ),
+  "azure-search": (
+    <>
+      <circle cx="10.4" cy="10.4" r="6.2" fill="none" stroke="#0078D4" strokeWidth="2.1" />
+      <path d="m15.2 15.2 4.6 4.6" stroke="#50E6FF" strokeWidth="2.4" strokeLinecap="round" />
+      <circle cx="10.4" cy="10.4" r="2.6" fill="#50E6FF" opacity=".55" />
+    </>
+  ),
+  "azure-vision": (
+    <>
+      <path d="M2.6 12S6.2 5.6 12 5.6 21.4 12 21.4 12 17.8 18.4 12 18.4 2.6 12 2.6 12Z" fill="#50E6FF" opacity=".45" />
+      <circle cx="12" cy="12" r="4" fill="#0078D4" />
+      <circle cx="12" cy="12" r="1.5" fill="#fff" />
+    </>
+  ),
+  "azure-speech": (
+    <>
+      <rect x="9.2" y="2.8" width="5.6" height="11.2" rx="2.8" fill="#0078D4" />
+      <path d="M5.8 11.4a6.2 6.2 0 0 0 12.4 0" fill="none" stroke="#50E6FF" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M12 17.6v3.6M9 21.2h6" stroke="#0078D4" strokeWidth="1.7" strokeLinecap="round" />
+    </>
+  ),
+  "azure-functions": (
+    <>
+      <path d="M12 2.4 20.2 7v10L12 21.6 3.8 17V7L12 2.4Z" fill="#0062AD" opacity=".18" />
+      <path d="M13.4 5.2a.6.6 0 0 1 1 .7l-1.5 4.3h3a.6.6 0 0 1 .5 1l-6.4 7.8a.6.6 0 0 1-1-.7l1.5-4.4h-3a.6.6 0 0 1-.5-1l5.9-7.7Z" fill="#FFB900" />
+    </>
+  ),
+  "azure-app-service": (
+    <>
+      <circle cx="12" cy="12" r="9.2" fill="#0078D4" />
+      <ellipse cx="12" cy="12" rx="4" ry="9.2" fill="none" stroke="#fff" strokeWidth="1.2" opacity=".85" />
+      <path d="M3.2 9.4h17.6M3.2 14.6h17.6" stroke="#fff" strokeWidth="1.2" opacity=".85" />
+    </>
+  ),
+  "azure-sql": (
+    <>
+      <ellipse cx="12" cy="7.4" rx="6.6" ry="2.6" fill="#50E6FF" />
+      <path d="M5.4 7.4v9.2c0 1.5 3 2.6 6.6 2.6s6.6-1.1 6.6-2.6V7.4c0 1.5-3 2.6-6.6 2.6S5.4 8.9 5.4 7.4Z" fill="#0078D4" />
+      <path d="M5.4 13c0 1.4 3 2.6 6.6 2.6s6.6-1.2 6.6-2.6" stroke="#50E6FF" strokeWidth="1" fill="none" />
+    </>
+  ),
+  "azure-cosmos": (
+    <>
+      <circle cx="12" cy="12" r="7" fill="#3999C6" />
+      <path d="M12 5c3.9 0 7 3.1 7 7 0 1.3-.4 2.6-1 3.6C15.6 15 12.7 13 10.3 10.6 8.6 8.9 7.6 7.2 7.4 6A6.9 6.9 0 0 1 12 5Z" fill="#fff" opacity=".28" />
+      <ellipse cx="12" cy="12" rx="9.2" ry="3.4" fill="none" stroke="#50E6FF" strokeWidth="1.2" transform="rotate(-28 12 12)" />
+    </>
+  ),
+  "azure-data-factory": (
+    <>
+      <rect x="2.8" y="9.6" width="6.2" height="6.2" rx="1.2" fill="#0078D4" />
+      <rect x="15" y="4.4" width="6.2" height="6.2" rx="1.2" fill="#50E6FF" />
+      <rect x="15" y="13.4" width="6.2" height="6.2" rx="1.2" fill="#50E6FF" />
+      <path d="M9.4 12.2h2.4a1 1 0 0 0 1-1V8.6a1 1 0 0 1 1-1h1M9.4 13.4h2.4a1 1 0 0 1 1 1v2a1 1 0 0 0 1 1h1" stroke="#0078D4" strokeWidth="1.3" fill="none" strokeLinecap="round" />
+    </>
+  ),
+  "azure-synapse": (
+    <>
+      <path d="M4.2 12 10 3.6h4.2L8.4 12l5.8 8.4H10L4.2 12Z" fill="#0078D4" />
+      <path d="M11.6 12 17.4 3.6h2.4L14 12l5.8 8.4h-2.4L11.6 12Z" fill="#50E6FF" />
+    </>
+  ),
+  databricks: (
+    <>
+      <path d="M12 3 20.4 7.6v2.2L12 14.4 3.6 9.8V7.6L12 3Z" fill="#FF3621" />
+      <path d="m3.6 12.4 8.4 4.6 8.4-4.6v2.2L12 19.2l-8.4-4.6v-2.2Z" fill="#FF3621" opacity=".62" />
+    </>
+  ),
+  "azure-key-vault": (
+    <>
+      <path d="M12 2.4 4.8 5.2v6.1c0 4.3 3 8.3 7.2 10.3 4.2-2 7.2-6 7.2-10.3V5.2L12 2.4Z" fill="#0078D4" />
+      <circle cx="10.4" cy="10.4" r="2.4" fill="none" stroke="#FFD400" strokeWidth="1.7" />
+      <path d="m12.2 11.6 4 4m-1.6-1.6-1 1m2.2-2.2-1 1" stroke="#FFD400" strokeWidth="1.7" strokeLinecap="round" />
+    </>
+  ),
+  "azure-site-recovery": (
+    <>
+      <path d="M19.4 12a7.4 7.4 0 0 1-12.9 5" fill="none" stroke="#0078D4" strokeWidth="2" strokeLinecap="round" />
+      <path d="M4.6 12a7.4 7.4 0 0 1 12.9-5" fill="none" stroke="#50E6FF" strokeWidth="2" strokeLinecap="round" />
+      <path d="M17.8 3.6v3.6h-3.6M6.2 20.4v-3.6h3.6" stroke="#0078D4" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    </>
+  ),
+  "azure-policy": (
+    <>
+      <path d="M12 2.4 4.8 5.2v6.1c0 4.3 3 8.3 7.2 10.3 4.2-2 7.2-6 7.2-10.3V5.2L12 2.4Z" fill="#0078D4" opacity=".25" />
+      <rect x="7" y="5.4" width="10" height="13.2" rx="1.4" fill="#0078D4" />
+      <path d="M9.4 9.2h5.2M9.4 12.2h5.2M9.4 15.2h3" stroke="#fff" strokeWidth="1.2" strokeLinecap="round" />
+    </>
+  ),
+  "azure-iot": (
+    <>
+      <rect x="7.4" y="7.4" width="9.2" height="9.2" rx="1.6" fill="#0078D4" />
+      <rect x="10" y="10" width="4" height="4" rx="0.8" fill="#50E6FF" />
+      <path d="M10 4.2v3.2M14 4.2v3.2M10 16.6v3.2M14 16.6v3.2M4.2 10h3.2M4.2 14h3.2M16.6 10h3.2M16.6 14h3.2" stroke="#0078D4" strokeWidth="1.5" strokeLinecap="round" />
+    </>
+  ),
+  "azure-integration": (
+    <>
+      <circle cx="5.4" cy="6.2" r="2.6" fill="#0078D4" />
+      <circle cx="18.6" cy="6.2" r="2.6" fill="#50E6FF" />
+      <circle cx="12" cy="18" r="2.8" fill="#0078D4" />
+      <path d="M7.6 7.4 11 15.6M16.4 7.4 13 15.6M8 6.2h8" stroke="#0078D4" strokeWidth="1.4" fill="none" strokeLinecap="round" />
+    </>
+  ),
+  "azure-service-bus": (
+    <>
+      <rect x="2.8" y="8.4" width="18.4" height="7.2" rx="1.6" fill="#0078D4" />
+      <path d="M7 8.4v7.2M12 8.4v7.2M17 8.4v7.2" stroke="#fff" strokeWidth="1.2" opacity=".8" />
+      <path d="M4.4 5.2h15.2" stroke="#50E6FF" strokeWidth="1.7" strokeLinecap="round" />
+      <path d="M4.4 18.8h15.2" stroke="#50E6FF" strokeWidth="1.7" strokeLinecap="round" />
+    </>
+  ),
+  "azure-stream-analytics": (
+    <>
+      <path d="M3 7.2c3.4-2.4 6.2-2.4 9 0s5.6 2.4 9 0" fill="none" stroke="#50E6FF" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M3 12c3.4-2.4 6.2-2.4 9 0s5.6 2.4 9 0" fill="none" stroke="#0078D4" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M3 16.8c3.4-2.4 6.2-2.4 9 0s5.6 2.4 9 0" fill="none" stroke="#50E6FF" strokeWidth="1.8" strokeLinecap="round" />
+    </>
+  ),
+  "azure-data": (
+    <>
+      <ellipse cx="12" cy="5.8" rx="7" ry="2.7" fill="#50E6FF" />
+      <path d="M5 5.8v5c0 1.5 3.1 2.7 7 2.7s7-1.2 7-2.7v-5c0 1.5-3.1 2.7-7 2.7S5 7.3 5 5.8Z" fill="#0078D4" />
+      <path d="M5 13.2v5c0 1.5 3.1 2.7 7 2.7s7-1.2 7-2.7v-5c0 1.5-3.1 2.7-7 2.7s-7-1.2-7-2.7Z" fill="#0078D4" opacity=".62" />
+    </>
+  ),
+  "azure-stack": (
+    <>
+      <rect x="3.2" y="4.2" width="17.6" height="4.6" rx="1.2" fill="#0078D4" />
+      <rect x="3.2" y="9.7" width="17.6" height="4.6" rx="1.2" fill="#2B93E0" />
+      <rect x="3.2" y="15.2" width="17.6" height="4.6" rx="1.2" fill="#50E6FF" />
+      <circle cx="6.4" cy="6.5" r="0.9" fill="#fff" />
+      <circle cx="6.4" cy="12" r="0.9" fill="#fff" />
+      <circle cx="6.4" cy="17.5" r="0.9" fill="#fff" />
+    </>
+  ),
 };
 
 /**
@@ -322,6 +482,31 @@ const LOGO_RULES = [
   [/dynamics/i, "dynamics"],
   [/uipath/i, "uipath"],
   [/openai|\bgpt\b/i, "openai"],
+
+  /* Azure services are matched on the half of the name that differs, before
+     the family rule below claims them all for the plain Azure chevron. */
+  [/ai foundry/i, "azure-ai-foundry"],
+  [/document intelligence/i, "azure-document-intelligence"],
+  [/ai search|cognitive search/i, "azure-search"],
+  [/ai vision|computer vision/i, "azure-vision"],
+  [/speech/i, "azure-speech"],
+  [/cosmos/i, "azure-cosmos"],
+  [/databricks/i, "databricks"],
+  [/data factory/i, "azure-data-factory"],
+  [/synapse/i, "azure-synapse"],
+  [/key vault/i, "azure-key-vault"],
+  [/site recovery/i, "azure-site-recovery"],
+  [/azure policy/i, "azure-policy"],
+  [/functions/i, "azure-functions"],
+  [/app service/i, "azure-app-service"],
+  [/service bus/i, "azure-service-bus"],
+  [/stream analytics/i, "azure-stream-analytics"],
+  [/logic apps|integration services|api management/i, "azure-integration"],
+  [/\biot\b/i, "azure-iot"],
+  [/azure sql/i, "azure-sql"],
+  [/data platform/i, "azure-data"],
+  [/azure stack/i, "azure-stack"],
+
   [/azure/i, "azure"],
   [/sql|synapse/i, "sql"],
   [/microsoft 365|\bm365\b|office 365/i, "microsoft-365"],
