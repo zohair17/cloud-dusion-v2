@@ -339,7 +339,7 @@ export function IndustrySolutions({ section, solutions = [] }) {
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
                     />
                   ) : null}
-                  <span className="absolute left-3.5 top-3.5 inline-flex items-center rounded-pill bg-white/90 px-3 py-1 text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-brand-700 backdrop-blur-sm">
+                  <span className="absolute left-3.5 top-3.5 inline-flex items-center rounded-pill bg-white/90 px-3 py-1 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-brand-700 backdrop-blur-sm">
                     {solution.categoryTitle}
                   </span>
                 </span>

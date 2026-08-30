@@ -80,7 +80,7 @@ function HeroSlideshow({ slides }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: reduced ? 0 : 0.35, ease: [0.2, 0.8, 0.2, 1] }}
-            className="max-w-[58%] text-[0.625rem] font-semibold uppercase leading-relaxed tracking-[0.18em] text-white/75 sm:max-w-[22rem]"
+            className="max-w-[58%] text-[0.6875rem] font-semibold uppercase leading-relaxed tracking-[0.18em] text-white/75 sm:max-w-[22rem]"
           >
             {active.label}
           </motion.p>

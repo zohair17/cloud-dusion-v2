@@ -154,7 +154,7 @@ export function ContactHero({ page, image }) {
                     }}
                     className="min-w-0 rounded-2xl border border-brand-600/15 bg-brand-50/50 p-4 transition-colors duration-500 hover:border-brand-600/40 hover:bg-brand-50"
                   >
-                    <dt className="flex items-center gap-2 text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-brand-600">
+                    <dt className="flex items-center gap-2 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-brand-600">
                       <Icon className="h-3.5 w-3.5" strokeWidth={1.8} aria-hidden="true" />
                       {fact.label}
                     </dt>

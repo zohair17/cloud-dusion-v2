@@ -854,7 +854,7 @@ function CrossRow({ href, title, summary, category, Icon }) {
 
         {/* A solution belongs to a family; a service does not, so this is optional. */}
         {category ? (
-          <span className="mt-2.5 inline-flex items-center rounded-pill border border-border bg-surface px-2.5 py-1 text-[0.625rem] font-semibold uppercase tracking-[0.12em] text-muted">
+          <span className="mt-2.5 inline-flex items-center rounded-pill border border-border bg-surface px-2.5 py-1 text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-muted">
             {category}
           </span>
         ) : null}

@@ -33,7 +33,7 @@ export function Hero({ hero }) {
         size="wide"
         className="[--spacing-gutter:1.25rem] pt-2 pb-6 sm:[--spacing-gutter:2rem] sm:pt-3 sm:pb-7 lg:pb-8"
       >
-        <div className="cfg-hero-slab relative isolate grid min-h-0 sm:min-h-[clamp(18rem,50vh,29rem)] lg:min-h-[min(calc(100dvh-12.5rem),58rem)] items-center gap-0 overflow-hidden rounded-[2rem] bg-white p-5 shadow-[0_40px_100px_-40px_rgb(11_11_42/0.28)] ring-1 ring-black/[0.04] sm:p-7 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:py-6 lg:pl-10 lg:pr-6 xl:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] xl:pl-12">
+        <div className="cfg-hero-slab relative isolate grid min-h-0 sm:min-h-[clamp(18rem,50vh,29rem)] lg:min-h-[min(calc(100dvh-12.5rem),46rem)] items-center gap-0 overflow-hidden rounded-[2rem] bg-white p-5 shadow-[0_40px_100px_-40px_rgb(11_11_42/0.28)] ring-1 ring-black/[0.04] sm:p-7 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:py-6 lg:pl-10 lg:pr-6 xl:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] xl:pl-12">
           <div className="relative z-10 order-2 w-full max-w-2xl lg:order-1">
             {hero.eyebrow ? (
               <p className="inline-flex items-center rounded-pill border border-brand-200/70 bg-white/80 px-4 py-1.5 text-xs font-medium tracking-wide text-brand-700 shadow-sm backdrop-blur-sm sm:text-sm">
@@ -100,7 +100,7 @@ export function Hero({ hero }) {
             </svg>
           </div>
 
-          <div className="relative order-1 flex items-center justify-center overflow-hidden py-4 px-14 -mx-5 -mt-5 mb-1 h-[clamp(16rem,78vw,23rem)] sm:-mx-7 sm:-mt-7 sm:h-[clamp(19rem,47vw,31rem)] cfg-hero-film-well lg:order-2 lg:-mr-6 lg:ml-0 lg:-my-9 lg:mb-0 lg:h-auto lg:self-stretch lg:px-0 lg:pl-[9%] lg:pr-[1%] lg:py-[2%] xl:translate-x-10">
+          <div className="relative order-1 flex items-center justify-center overflow-hidden py-4 px-14 -mx-5 -mt-5 mb-1 h-[clamp(16rem,78vw,23rem)] sm:-mx-7 sm:-mt-7 sm:h-[clamp(19rem,47vw,31rem)] cfg-hero-film-well lg:order-2 lg:-mr-6 lg:ml-0 lg:-my-9 lg:mb-0 lg:h-auto lg:self-stretch lg:px-0 lg:pl-[9%] lg:pr-[1%] lg:py-[2%] xl:translate-x-10 xl:pl-[4%]">
             <Film
               src="/asset/hero-swing.mp4"
               poster="/asset/hero-swing-poster.webp"

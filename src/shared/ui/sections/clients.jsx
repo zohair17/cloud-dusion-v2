@@ -119,7 +119,7 @@ export function Clients({ section }) {
                     */}
                     {logo.via ? (
                       <span className="pointer-events-none absolute bottom-[calc(100%+0.5rem)] left-1/2 z-30 flex -translate-x-1/2 flex-col items-center gap-[0.35em] whitespace-nowrap rounded-[0.75rem] bg-brand-600 px-4 py-2.5 text-center opacity-0 shadow-lg transition-opacity duration-200 ease-out group-hover/tile:opacity-100 group-focus-within/tile:opacity-100">
-                        <span className="text-[0.625rem] font-semibold uppercase leading-none tracking-[0.14em] text-white/70">
+                        <span className="text-[0.6875rem] font-semibold uppercase leading-none tracking-[0.14em] text-white/70">
                           Client of
                         </span>
                         <span className="inline-flex items-center justify-center rounded-[0.4rem] bg-white px-2.5 py-1.5">

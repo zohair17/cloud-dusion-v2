@@ -67,7 +67,7 @@ export function PageHero({ trail = [], eyebrow, heading, headingAccent, intro, c
         {headingAccent ? (
           <span className="relative inline-block">
             <RevealText
-              className={centred ? "text-white-600" : "text-brand-600"}
+              className={centred ? "text-white" : "text-brand-600"}
               delay={0.1 + heading.split(" ").length * 0.055}
             >
               {headingAccent}
@@ -77,7 +77,7 @@ export function PageHero({ trail = [], eyebrow, heading, headingAccent, intro, c
               aria-hidden="true"
               className={cn(
                 "absolute -bottom-1 left-0 block h-[3px] w-full rounded-full",
-                centred ? "bg-[#FFFF]" : "bg-brand-600/80",
+                centred ? "bg-white" : "bg-brand-600/80",
               )}
             />
           </span>
