@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { buildRootMetadata } from "@/shared/lib/metadata";
 import { PageBackdrop } from "@/shared/ui/motion/page-backdrop";
+import { PageLoader } from "@/shared/ui/motion/page-loader";
 import { SmoothScroll } from "@/shared/ui/motion/smooth-scroll";
 import { organizationSchema } from "@/shared/lib/json-ld";
 
@@ -32,6 +33,11 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} h-full antialiased`}>
+      <head>
+        {/* The loader's mark, ahead of everything else it competes with: it is
+            the only thing on screen until the document is ready. */}
+        <link rel="preload" as="image" href="/asset/loader-mark.png" fetchPriority="high" />
+      </head>
       <body className="relative min-h-full flex flex-col">
         {/*
           One background for the whole application.
@@ -39,6 +45,9 @@ export default function RootLayout({ children }) {
           instead of a stack of differently-tinted bands. Sections must not paint
           their own backgrounds — cards may, the sections themselves may not.
         */}
+        {/* Over everything until the document has loaded, and it lives in the
+            root layout so a client-side navigation never raises it again. */}
+        <PageLoader />
         <PageBackdrop />
         <SmoothScroll />
         <script
