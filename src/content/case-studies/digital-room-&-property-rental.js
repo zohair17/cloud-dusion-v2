@@ -30,7 +30,7 @@ export const caseStudy = {
   aboutCustomer: "Hut24 is a digital property rental marketplace focused on simplifying the way people discover, list, and connect around rooms and rental properties. The platform was envisioned to provide a more convenient and structured experience for both property owners and prospective renters while creating a scalable foundation for future marketplace services. The engagement was delivered by Cloud Fusion Global in partnership with Briggr's Tech, with CFG contributing business analysis, product definition, solution architecture, technology expertise, and platform delivery capabilities.",
 
   // "Business Challenge": intro + the key business requirements list
-  challenge: "Traditional room and property rental processes can involve fragmented communication, manual listing management, limited visibility for property owners, and inefficient ways for renters to discover suitable properties. Hut24 needed a digital platform capable of bringing these interactions into one connected ecosystem.",
+  challenge: "Traditional room and property rental processes can involve fragmented communication, manual listing management, limited visibility for property owners, and inefficient ways for renters to discover suitable properties. Hut24 needed a digital platform capable of bringing these interactions into one connected ecosystem. The key business requirements included:",
   challengePoints: [
     "Making property discovery simple and intuitive",
     "Giving hosts an easy way to create and manage property listings",
@@ -114,8 +114,13 @@ export const caseStudy = {
   // No testimonial in this document
   testimonial: null,
 
-  relatedServices: [],
-  relatedSolutions: [],
+  relatedServices: [
+    "custom-software-development",
+    "mobile-app-development",
+  ],
+  relatedSolutions: [
+    "property-listing-app",
+  ],
   ctas: [
     "talk-to-expert",
     "request-proposal",

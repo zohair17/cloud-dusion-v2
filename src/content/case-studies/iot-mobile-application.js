@@ -29,7 +29,8 @@ export const caseStudy = {
   aboutCustomer: "Briggr's Tech is a technology company involved in delivering innovative digital and technology solutions. As part of its engagement with a smart ventilation and fan technology provider, Briggr's Tech required a mobile application capable of connecting users with smart fan devices and providing an intuitive digital control experience. Cloud Fusion Global was engaged as the technology delivery partner to design and develop the mobile application and its IoT device integration capabilities.",
 
   // "Business Challenge": intro + capability list + closing framing
-  challenge: "The client required a mobile solution that could communicate directly with smart fan hardware through Bluetooth Low Energy, while supporting different device models with varying capabilities. As the client's smart-fan portfolio expanded, the application also needed to accommodate different device specifications and control ranges without requiring significant redevelopment of the existing platform. The core challenge was therefore to build not just a mobile remote-control application, but a scalable IoT application architecture capable of evolving with the client's product portfolio.",
+  challenge: "The client required a mobile solution that could communicate directly with smart fan hardware through Bluetooth Low Energy, while supporting different device models with varying capabilities. The application needed to provide users with a simple way to:",
+  challengeNote: "As the client's smart-fan portfolio expanded, the application also needed to accommodate different device specifications and control ranges without requiring significant redevelopment of the existing platform. The core challenge was therefore to build not just a mobile remote-control application, but a scalable IoT application architecture capable of evolving with the client's product portfolio.",
   challengePoints: [
     "Discover and connect to compatible smart fans",
     "Configure a fan during initial onboarding",
@@ -117,8 +118,13 @@ export const caseStudy = {
   // No testimonial in this document
   testimonial: null,
 
-  relatedServices: [],
-  relatedSolutions: [],
+  relatedServices: [
+    "mobile-app-development",
+    "custom-software-development",
+  ],
+  relatedSolutions: [
+    "smart-device-mobile-app",
+  ],
   ctas: [
     "talk-to-expert",
     "request-proposal",

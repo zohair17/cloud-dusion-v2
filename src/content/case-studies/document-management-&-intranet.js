@@ -54,7 +54,7 @@ export const caseStudy = {
   aboutCustomer: "Malath Insurance is a reputable Saudi insurance firm with a strong emphasis on regulatory compliance, data privacy, and operational excellence. To address increasing documentation and collaboration demands, Malath engaged Cloud Fusion Global to build a reliable, scalable, and secure document management platform that leverages their existing on-premises infrastructure alongside modern intranet tools.",
 
   // "Business Challenge"
-  challenge: "Malath Insurance faced several critical challenges with its previous document management and intranet setup, spanning fragmented on-premises storage, strict National Cyber Security Regulatory Compliance (NCR) restrictions on cloud storage, labour-intensive manual content management, static and outdated interfaces, complex manual compliance requirements, and inefficient manual archival processes.",
+  challenge: "Malath Insurance faced several critical challenges with its previous document management and intranet setup:",
   challengePoints: [
     { title: "Fragmented Storage and Access", description: "Essential documents were securely stored on-premises but difficult to access quickly via a unified interface." },
     { title: "NCR Compliance", description: "Adhering to National Cyber Security Regulatory Compliance, which restricts the use of cloud storage for documents storage." },
@@ -144,8 +144,14 @@ export const caseStudy = {
   testimonial: null,
   testimonialNote: "The testimonial and feedback included in this case study will be collected and updated after the project's successful completion.",
 
-  relatedServices: [],
-  relatedSolutions: [],
+  relatedServices: [
+    "sharepoint-solutions",
+    "microsoft-cloud-solutions",
+  ],
+  relatedSolutions: [
+    "document-management-system",
+    "intranet-portal",
+  ],
   ctas: [
     "talk-to-expert",
     "request-proposal",

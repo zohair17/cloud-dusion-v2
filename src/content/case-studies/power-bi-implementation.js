@@ -41,7 +41,8 @@ export const caseStudy = {
   aboutCustomer: "Foylesoft is a leading technology services provider specializing in delivering tailored digital solutions for its clients. One of its key clients, Evide, is a data-driven organization focused on enabling social impact through advanced analytics and reporting solutions. Evide works with various stakeholders to track program effectiveness, measure engagement, and improve decision-making. To enhance Evide's analytics capabilities, Foylesoft partnered with Cloud Fusion Global to implement a scalable and interactive Power BI solution. This collaboration resulted in a customized reporting system that automated analytics, improved operational efficiency, and provided real-time insights into program performance.",
 
   // "Business Challenge"
-  challenge: "Foylesoft faced several challenges in providing an efficient reporting solution for Evide: manual, time-consuming data extraction and spreadsheets; a lack of live dashboards to monitor participant data, program completion, and activity engagement; inconsistent, fragmented reporting mechanisms across programs; and limited customization for program managers to filter and analyze data dynamically. To address these challenges, Foylesoft partnered with Cloud Fusion Global to develop a custom Power BI implementation that could automate reporting, provide interactive visualizations, and enhance decision-making.",
+  challenge: "Foylesoft faced several challenges in providing an efficient reporting solution for Evide:",
+  challengeNote: "To address these challenges, Foylesoft partnered with Cloud Fusion Global to develop a custom Power BI implementation that could automate reporting, provide interactive visualizations, and enhance decision-making.",
   challengePoints: [
     { title: "Manual Data Processing", description: "Their reporting relied on time-consuming, manual data extraction and spreadsheets." },
     { title: "Lack of Real-time Insights", description: "They needed live dashboards to monitor participant data, program completion, and activity engagement." },
@@ -127,11 +128,14 @@ export const caseStudy = {
   // Testimonial block (photo + quote)
   testimonial: {
     quote: "At Foylesoft, we were looking for a robust reporting solution to streamline data tracking and enhance program analytics for our client, Evide. Cloud Fusion Global delivered exactly that. Their Power BI implementation automated our reporting, eliminated manual effort, and provided interactive dashboards that enable real-time insights. The team's expertise went beyond implementation: they truly understood our needs and developed a solution that improved our efficiency and decision making. With their help, we have significantly optimized our data management and program reporting. We now have a system that scales with our needs and provides the transparency we always aimed for. A big thank you to Cloud Fusion Global for their dedication and professionalism. They have been an outstanding technology partner in this journey.",
+    avatar: "/asset/case-studies/people/yilmaz-saridemir.jpg",
     author: "Yilmaz Saridemir",
     role: "Director at Foylesoft",
   },
 
-  relatedServices: [],
+  relatedServices: [
+    "data-business-intelligence",
+  ],
   relatedSolutions: [],
   ctas: [
     "talk-to-expert",

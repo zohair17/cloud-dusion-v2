@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Check, Quote, Sparkles, TriangleAlert } from "lucide-react";
 import { Container } from "../primitives/container";
 import { Button } from "../primitives/button";
+import { ProductLogo, productLogoFor } from "./product-logo";
 import { RevealText } from "../motion/reveal-text";
 
 /**
@@ -108,6 +109,16 @@ export function CaseStudyHero({ caseStudy, trail = [] }) {
             ) : null}
 
             <div className="px-1 pb-2 sm:px-2 lg:py-4 lg:pr-6">
+              {caseStudy.logo ? (
+                <Image
+                  src={caseStudy.logo.src}
+                  alt={caseStudy.logo.alt}
+                  width={caseStudy.logo.width}
+                  height={caseStudy.logo.height}
+                  className="mb-5 h-7 w-auto sm:h-9"
+                />
+              ) : null}
+
               <h1 className="font-display text-[1.375rem] font-semibold leading-[1.18] tracking-tight text-balance text-foreground sm:text-[2rem]">
                 <RevealText>{caseStudy.titleLead ?? caseStudy.title}</RevealText>{" "}
                 {caseStudy.titleAccent ? (
@@ -250,79 +261,155 @@ function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+/* --------------------------------------------------------------- beat card */
+
+/**
+ * The card every beat of the page is built from.
+ *
+ * Challenges, solution points and steps are all "a named thing with a sentence
+ * under it", and the reference draws them the same way: a mark beside the words
+ * rather than above them, so a one-line item is a one-line card and a set of
+ * them reads as a list instead of a wall. One component means a study whose
+ * document names its problems and one whose document only lists them still look
+ * like the same page.
+ */
+function BeatCard({ icon: Icon, index, title, description, bullets = [] }) {
+  return (
+    <div className="group relative flex h-full items-start gap-4 overflow-hidden rounded-[1.25rem] border-l-[3px] border-brand-600 bg-white p-5 shadow-[0_20px_46px_-36px_rgb(11_11_42/0.6)] ring-1 ring-black/[0.05] transition-shadow duration-500 hover:shadow-[0_28px_58px_-38px_rgb(53_51_205/0.5)] sm:p-6">
+      {index !== undefined ? (
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-2 -top-4 font-display text-[3.5rem] font-bold leading-none tabular-nums text-brand-600/[0.08]"
+        >
+          {String(index + 1).padStart(2, "0")}
+        </span>
+      ) : null}
+
+      <span
+        aria-hidden="true"
+        className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.8rem] bg-brand-50 text-brand-600 ring-1 ring-brand-100 transition-colors duration-500 group-hover:bg-brand-600 group-hover:text-white"
+      >
+        <Icon className="h-5 w-5" strokeWidth={1.8} />
+      </span>
+
+      <span className="relative min-w-0 flex-1">
+        {title ? (
+          <h3 className="font-display text-base font-semibold leading-snug tracking-tight text-balance text-foreground">
+            {title}
+          </h3>
+        ) : null}
+
+        {/* Some write-ups name each item; others just list them. A bare line is
+            the card's own sentence rather than a description with nothing
+            above it. */}
+        {description ? (
+          <span
+            className={
+              title
+                ? "mt-2 block text-[0.875rem] leading-[1.7] text-muted"
+                : "block text-[0.9375rem] leading-[1.6] text-foreground"
+            }
+          >
+            {description}
+          </span>
+        ) : null}
+
+        {bullets.length ? (
+          <ul className="mt-3 space-y-2">
+            {bullets.map((bullet) => (
+              <li key={bullet} className="flex items-start gap-2.5">
+                <span aria-hidden="true" className="mt-[0.45rem] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-600" />
+                <span className="text-[0.8125rem] leading-[1.65] text-muted">{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+      </span>
+    </div>
+  );
+}
+
+/** An item is either a titled record or a bare sentence; both come back split. */
+function splitItem(item) {
+  if (item && typeof item === "object") return [item.title ?? null, item.description ?? null];
+  return [null, item];
+}
+
 /* --------------------------------------------------------------- challenge */
 
 /**
- * What was wrong, then the named problems as cards.
+ * What was wrong: the document's own lead-in line, then the named problems.
  *
- * One card per problem, each with the mark beside the words rather than above
- * them, so a set of one-line problems reads as a list and not as a wall.
+ * The write-ups introduce their problems in a sentence and then list them, so
+ * the page does the same — the lead-in sits under the heading in a smaller
+ * face, and the problems run across the page rather than down a narrow column
+ * beside it. Where a document names no problems at all there is nothing to run,
+ * so that page keeps two columns and gives the second one to the solution.
  */
-export function CaseStudyChallenge({ section, body, points = [] }) {
+export function CaseStudyChallenge({ section, body, note, points = [], solution = null }) {
   if (!body && !points.length) return null;
+
+  const aside = points.length ? null : solution;
 
   return (
     <section className="py-10 sm:py-14 lg:py-[clamp(3rem,5vw,4.5rem)]">
       <Container size="wide">
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:gap-14">
-          <Rise className="lg:sticky lg:top-28 lg:self-start">
-            <Head lead="Business" accent="Challenge" align="left" />
+        {aside ? (
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.92fr)_1px_minmax(0,1.08fr)] lg:gap-12">
+            <Rise className="lg:sticky lg:top-28 lg:self-start">
+              <Head lead="Business" accent="Challenge" align="left" />
+              {body ? <p className="mt-5 text-[0.9375rem] leading-[1.85] text-muted">{body}</p> : null}
+              {note ? <p className="mt-4 text-[0.875rem] leading-[1.8] text-muted">{note}</p> : null}
+            </Rise>
 
-            {body ? (
-              <p className="mt-5 text-[0.9375rem] leading-[1.85] text-muted">{body}</p>
-            ) : null}
-          </Rise>
+            {/* A hairline in the brand, so the second column reads as a
+                deliberate half of the row and not as spillover. */}
+            <span
+              aria-hidden="true"
+              className="hidden w-px self-stretch bg-[linear-gradient(to_bottom,transparent,var(--color-brand-600)_18%,var(--color-brand-600)_82%,transparent)] lg:block"
+            />
 
-          {points.length ? (
-            <div className="grid gap-4">
-              {points.map((point, index) => (
-                <Rise key={point.title ?? point} delay={Math.min(index, 4) * 0.05}>
-                  {/*
-                    The mark sits beside the words rather than above them, so a
-                    one-line problem is a one-line card: a column layout gave
-                    every card the height of the longest one in the set.
-                  */}
-                  <div className="group relative flex h-full items-start gap-4 overflow-hidden rounded-[1.25rem] border-l-[3px] border-brand-600 bg-white p-5 shadow-[0_20px_46px_-36px_rgb(11_11_42/0.6)] ring-1 ring-black/[0.05] transition-shadow duration-500 hover:shadow-[0_28px_58px_-38px_rgb(53_51_205/0.5)] sm:p-6">
-                    <span
-                      aria-hidden="true"
-                      className="pointer-events-none absolute -right-2 -top-4 font-display text-[3.5rem] font-bold leading-none tabular-nums text-brand-600/[0.08]"
-                    >
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+            <div>
+              <Rise>
+                <Head lead="Solution" accent="Provided" align="left" override={aside.heading} />
+                {aside.body ? (
+                  <p className="mt-5 text-[0.9375rem] leading-[1.85] text-muted">{aside.body}</p>
+                ) : null}
+              </Rise>
 
-                    <span
-                      aria-hidden="true"
-                      className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.8rem] bg-brand-50 text-brand-600 ring-1 ring-brand-100 transition-colors duration-500 group-hover:bg-brand-600 group-hover:text-white"
-                    >
-                      <TriangleAlert className="h-5 w-5" strokeWidth={1.8} />
-                    </span>
-
-                    <span className="relative min-w-0 flex-1">
-                      {point.title ? (
-                        <h3 className="font-display text-base font-semibold leading-snug tracking-tight text-balance text-foreground">
-                          {point.title}
-                        </h3>
-                      ) : null}
-
-                      {/* Some write-ups name each problem; others just list
-                          them. A bare line is the card's own sentence rather
-                          than a description with nothing above it. */}
-                      <span
-                        className={
-                          point.title
-                            ? "mt-2 block text-[0.875rem] leading-[1.7] text-muted"
-                            : "block text-[0.9375rem] leading-[1.6] text-foreground"
-                        }
-                      >
-                        {point.description ?? point}
-                      </span>
-                    </span>
-                  </div>
-                </Rise>
-              ))}
+              <SolutionBody {...aside} className="mt-6 sm:mt-7" columns={1} />
             </div>
-          ) : null}
-        </div>
+          </div>
+        ) : (
+          <>
+            <Rise>
+              <Head lead="Business" accent="Challenge" align="left" />
+              {body ? (
+                <p className="mt-4 max-w-4xl text-[0.875rem] leading-[1.8] text-muted">{body}</p>
+              ) : null}
+            </Rise>
+
+            {points.length ? (
+              <div className="mt-7 grid gap-3.5 sm:mt-9 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3">
+                {points.map((point, index) => {
+                  const [title, description] = splitItem(point);
+
+                  return (
+                    <Rise key={title ?? description} delay={(index % 3) * 0.06}>
+                      <BeatCard icon={TriangleAlert} index={index} title={title} description={description} />
+                    </Rise>
+                  );
+                })}
+              </div>
+            ) : null}
+
+            {note ? (
+              <Rise>
+                <p className="mt-7 max-w-4xl text-[0.875rem] leading-[1.8] text-muted">{note}</p>
+              </Rise>
+            ) : null}
+          </>
+        )}
       </Container>
     </section>
   );
@@ -331,16 +418,118 @@ export function CaseStudyChallenge({ section, body, points = [] }) {
 /* ---------------------------------------------------------------- solution */
 
 /**
- * What was built, laid out two to a row.
+ * The body of the solution: its steps, its points, its page features and the
+ * technologies it was built with.
+ *
+ * Lifted out of the section so the Ajil study can show the same thing in the
+ * column beside its challenge without either copy drifting from the other.
+ */
+function SolutionBody({ steps = [], points = [], features = [], technologies = [], columns = 2, className }) {
+  const wide = columns === 2;
+
+  return (
+    <div className={className}>
+      {points.length ? (
+        <div className={wide ? "grid gap-3.5 sm:grid-cols-2 sm:gap-4" : "grid gap-3.5"}>
+          {points.map((point, index) => {
+            const [title, description] = splitItem(point);
+
+            return (
+              <Rise key={title ?? description} delay={(index % 2) * 0.06}>
+                <BeatCard icon={Check} index={index} title={title} description={description} />
+              </Rise>
+            );
+          })}
+        </div>
+      ) : null}
+
+      {steps.length ? (
+        <ol className={wide ? "grid gap-3.5 sm:gap-4 lg:grid-cols-2" : "grid gap-3.5"}>
+          {steps.map((step, index) => (
+            <Rise key={step.title ?? index} delay={(index % 2) * 0.07}>
+              <li className="h-full">
+                <BeatCard
+                  icon={Sparkles}
+                  index={index}
+                  title={step.title}
+                  description={step.description}
+                  bullets={step.bullets ?? []}
+                />
+              </li>
+            </Rise>
+          ))}
+        </ol>
+      ) : null}
+
+      {/*
+        The page features are the solution's own detail, not a beat of their
+        own: two of the write-ups set them out under Solution Provided, grouped
+        by the page they belong to, and splitting them into a separate section
+        broke that sentence in half.
+      */}
+      {features.map((group, groupIndex) => (
+        <div key={group.page} className={groupIndex === 0 ? "mt-10 sm:mt-12" : "mt-9 sm:mt-11"}>
+          <Rise>
+            <h3 className="flex items-center gap-3 font-display text-xs font-semibold uppercase tracking-[0.16em] text-brand-600">
+              <span aria-hidden="true" className="h-px w-6 bg-brand-300" />
+              {group.page}
+            </h3>
+          </Rise>
+
+          <div className={wide ? "mt-5 grid gap-3.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3" : "mt-5 grid gap-3.5"}>
+            {group.features.map((feature, index) => (
+              <Rise key={feature.title} delay={(index % 3) * 0.06}>
+                <BeatCard icon={Sparkles} title={feature.title} bullets={feature.bullets ?? []} />
+              </Rise>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      {technologies.length ? (
+        <Rise delay={0.1}>
+          <ul
+            className={
+              wide
+                ? "mt-8 flex flex-wrap justify-center gap-2 sm:mt-10 sm:gap-2.5"
+                : "mt-8 flex flex-wrap gap-2 sm:gap-2.5"
+            }
+          >
+            {technologies.map((technology) => {
+              const logo = productLogoFor(technology.label);
+
+              return (
+                <li
+                  key={technology.id}
+                  className="inline-flex items-center gap-2 rounded-pill border border-border bg-white px-3.5 py-1.5 text-[0.8125rem] font-medium text-foreground"
+                >
+                  {logo ? (
+                    <ProductLogo id={logo} className="h-4 w-4 shrink-0" />
+                  ) : (
+                    <Sparkles className="h-3.5 w-3.5 shrink-0 text-brand-600" aria-hidden="true" />
+                  )}
+                  {technology.label}
+                </li>
+              );
+            })}
+          </ul>
+        </Rise>
+      ) : null}
+    </div>
+  );
+}
+
+/**
+ * What was built.
  *
  * The intro sits directly under the heading rather than in a card of its own:
  * it is the section's own opening line, and boxing it made it read as the first
- * of the items below it. The steps keep their numbers, because they happened in
- * an order, but they are dealt across the page rather than stacked down one
- * rail: a dozen of them in a single column is a scroll, not a sequence.
+ * of the items below it. Everything under it is dealt across the page rather
+ * than stacked down one rail: a dozen items in a single column is a scroll, not
+ * a sequence.
  */
-export function CaseStudySolution({ section, heading, body, steps = [], points = [], technologies = [] }) {
-  if (!body && !steps.length && !points.length) return null;
+export function CaseStudySolution({ section, heading, body, steps = [], points = [], features = [], technologies = [] }) {
+  if (!body && !steps.length && !points.length && !features.length) return null;
 
   return (
     <section className="py-10 sm:py-14 lg:py-[clamp(3rem,5vw,4.5rem)]">
@@ -355,157 +544,18 @@ export function CaseStudySolution({ section, heading, body, steps = [], points =
           ) : null}
         </Rise>
 
-        {/* Two of the write-ups list what was done as one flat run rather than
-            as named steps, so they get a list and not a set of empty cards. */}
-        {!steps.length && points.length ? (
-          <Rise delay={0.08}>
-            <ul className="mx-auto mt-7 grid max-w-5xl gap-3 sm:mt-9 sm:grid-cols-2">
-              {points.map((point) => (
-                <li
-                  key={point}
-                  className="flex items-start gap-3 rounded-[1rem] bg-white p-4 shadow-[0_18px_40px_-34px_rgb(11_11_42/0.55)] ring-1 ring-black/[0.05]"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-600"
-                  >
-                    <Check className="h-3.5 w-3.5" strokeWidth={2.6} />
-                  </span>
-                  <span className="text-[0.875rem] leading-[1.7] text-muted">{point}</span>
-                </li>
-              ))}
-            </ul>
-          </Rise>
-        ) : null}
-
-        {steps.length ? (
-          <ol className="mt-8 grid gap-3.5 sm:gap-4 lg:mt-10 lg:grid-cols-2">
-            {steps.map((step, index) => (
-              <Rise key={step.title ?? index} delay={(index % 2) * 0.07}>
-                <li className="group flex h-full flex-col rounded-[1.25rem] bg-white p-6 shadow-[0_20px_46px_-36px_rgb(11_11_42/0.6)] ring-1 ring-black/[0.05] transition-shadow duration-500 hover:shadow-[0_28px_58px_-38px_rgb(53_51_205/0.5)] sm:p-7">
-                  <div className="flex items-center gap-3.5">
-                    <span
-                      aria-hidden="true"
-                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-600 font-display text-[0.8125rem] font-semibold tabular-nums text-white shadow-[0_12px_26px_-14px_rgb(53_51_205/0.9)]"
-                    >
-                      {step.step ?? String(index + 1).padStart(2, "0")}
-                    </span>
-
-                    <h3 className="font-display text-base font-semibold leading-snug tracking-tight text-balance text-foreground sm:text-lg">
-                      {step.title}
-                    </h3>
-                  </div>
-
-                  {step.description ? (
-                    <p className="mt-4 text-[0.875rem] leading-[1.7] text-muted">{step.description}</p>
-                  ) : null}
-
-                  {step.bullets?.length ? (
-                    <ul className="mt-3.5 space-y-2.5">
-                      {step.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-start gap-3">
-                          <span
-                            aria-hidden="true"
-                            className="mt-[0.45rem] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-600"
-                          />
-                          <span className="text-[0.875rem] leading-[1.7] text-muted">{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-                </li>
-              </Rise>
-            ))}
-          </ol>
-        ) : null}
-
-        {technologies.length ? (
-          <Rise delay={0.1}>
-            <ul className="mt-8 flex flex-wrap justify-center gap-2 sm:mt-10 sm:gap-2.5">
-              {technologies.map((technology) => (
-                <li
-                  key={technology.id}
-                  className="inline-flex items-center gap-2 rounded-pill border border-border bg-white px-3.5 py-1.5 text-[0.8125rem] font-medium text-foreground"
-                >
-                  <Sparkles className="h-3.5 w-3.5 text-brand-600" aria-hidden="true" />
-                  {technology.label}
-                </li>
-              ))}
-            </ul>
-          </Rise>
-        ) : null}
+        <SolutionBody
+          steps={steps}
+          points={points}
+          features={features}
+          technologies={technologies}
+          className="mt-8 sm:mt-10"
+        />
       </Container>
     </section>
   );
 }
 
-/* ---------------------------------------------------------------- features */
-
-/**
- * What was built, feature by feature, grouped by where it lives.
- *
- * One of the write-ups is organised by page rather than by step: a People Page
- * and a Tech Page, each with a dozen named features. Flattening that into the
- * step rail lost the only structure the document had, so the groups are kept
- * and each becomes its own run of cards.
- */
-export function CaseStudyFeatures({ groups = [] }) {
-  if (!groups.length) return null;
-
-  return (
-    <section className="py-10 sm:py-14 lg:py-[clamp(3rem,5vw,4.5rem)]">
-      <Container size="wide">
-        <Rise>
-          <Head lead="Platform" accent="Features" />
-        </Rise>
-
-        {groups.map((group, groupIndex) => (
-          <div key={group.page} className={groupIndex === 0 ? "mt-8 sm:mt-10" : "mt-11 sm:mt-14"}>
-            <Rise>
-              <h3 className="flex items-center gap-3 font-display text-xs font-semibold uppercase tracking-[0.16em] text-brand-600">
-                <span aria-hidden="true" className="h-px w-6 bg-brand-300" />
-                {group.page}
-              </h3>
-            </Rise>
-
-            <div className="mt-5 grid gap-3.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
-              {group.features.map((feature, index) => (
-                <Rise key={feature.title} delay={(index % 3) * 0.06}>
-                  <div className="group flex h-full flex-col rounded-[1.25rem] bg-white p-5 shadow-[0_20px_46px_-36px_rgb(11_11_42/0.6)] ring-1 ring-black/[0.05] transition-shadow duration-500 hover:shadow-[0_28px_58px_-38px_rgb(53_51_205/0.5)] sm:p-6">
-                    <span
-                      aria-hidden="true"
-                      className="flex h-10 w-10 items-center justify-center rounded-[0.8rem] bg-brand-50 text-brand-600 ring-1 ring-brand-100 transition-colors duration-500 group-hover:bg-brand-600 group-hover:text-white"
-                    >
-                      <Sparkles className="h-4 w-4" strokeWidth={1.8} />
-                    </span>
-
-                    <h4 className="mt-4 font-display text-base font-semibold leading-snug tracking-tight text-balance text-foreground">
-                      {feature.title}
-                    </h4>
-
-                    {feature.bullets?.length ? (
-                      <ul className="mt-3 space-y-2">
-                        {feature.bullets.map((bullet) => (
-                          <li key={bullet} className="flex items-start gap-2.5">
-                            <span
-                              aria-hidden="true"
-                              className="mt-[0.45rem] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-600"
-                            />
-                            <span className="text-[0.8125rem] leading-[1.65] text-muted">{bullet}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
-                  </div>
-                </Rise>
-              ))}
-            </div>
-          </div>
-        ))}
-      </Container>
-    </section>
-  );
-}
 
 /* ---------------------------------------------------------------- outcomes */
 
@@ -597,7 +647,7 @@ export function CaseStudyConclusion({ body }) {
 /** The two letters that stand in for a portrait we were never given. */
 function initials(name = "") {
   return name
-    .split(/s+/)
+    .split(/\s+/)
     .filter((word) => /^[A-Za-z]/.test(word))
     .slice(0, 2)
     .map((word) => word[0].toUpperCase())

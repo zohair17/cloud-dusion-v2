@@ -6,7 +6,6 @@ import {
   CaseStudyCustomer,
   CaseStudyChallenge,
   CaseStudySolution,
-  CaseStudyFeatures,
   CaseStudyOutcomes,
   CaseStudyConclusion,
   CaseStudyTestimonial,
@@ -38,6 +37,21 @@ export default async function CaseStudyDetailPage({ params }) {
   const caseStudy = getCaseStudyDetail(slug);
   const { sections } = caseStudy;
 
+  /*
+   * What was built, as one bundle. A write-up that names no problems has
+   * nothing to fill the row beside its challenge, so the solution moves up into
+   * that column instead of leaving it empty and then repeating itself below.
+   */
+  const solution = {
+    heading: caseStudy.solutionHeading,
+    body: caseStudy.solution,
+    steps: caseStudy.approach,
+    points: caseStudy.solutionPoints,
+    features: caseStudy.pageFeatures,
+    technologies: caseStudy.technologies,
+  };
+  const hoisted = caseStudy.challengePoints.length === 0;
+
   return (
     <>
       <CaseStudyHero
@@ -58,19 +72,12 @@ export default async function CaseStudyDetailPage({ params }) {
       <CaseStudyChallenge
         section={sections.challenge}
         body={caseStudy.challenge}
+        note={caseStudy.challengeNote}
         points={caseStudy.challengePoints}
+        solution={solution}
       />
 
-      <CaseStudySolution
-        section={sections.solution}
-        heading={caseStudy.solutionHeading}
-        body={caseStudy.solution}
-        steps={caseStudy.approach}
-        points={caseStudy.solutionPoints}
-        technologies={caseStudy.technologies}
-      />
-
-      <CaseStudyFeatures groups={caseStudy.pageFeatures} />
+      {hoisted ? null : <CaseStudySolution section={sections.solution} {...solution} />}
 
       <CaseStudyOutcomes
         section={sections.outcomes}

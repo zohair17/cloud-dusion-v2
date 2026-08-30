@@ -22,6 +22,10 @@ export function createCaseStudy(record) {
     slug,
     title: record.title,
     image: record.image ?? null,
+    /* The client's own mark, taken out of the source document. Only some of the
+       write-ups carry one, so a study without it shows none rather than a
+       stand-in for a brand we were not given. */
+    logo: record.logo ?? null,
     sectorLabel: record.sectorLabel ?? null,
     industrySlug: record.industrySlug ?? null,
     order: record.order,
@@ -53,6 +57,9 @@ export function createCaseStudy(record) {
     aboutCustomer: record.aboutCustomer ?? null,
 
     challenge: record.challenge ?? null,
+    /* The line the write-up closes its challenge on, after the list. It is not
+       one of the problems, so it is not one of the cards. */
+    challengeNote: record.challengeNote ?? null,
     challengePoints: record.challengePoints ?? [],
     approach: record.approach ?? [],
     solutionPoints: record.solutionPoints ?? [],

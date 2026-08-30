@@ -47,7 +47,7 @@ export const caseStudy = {
   aboutCustomer: "Charles Penn is a Project Manager at Credit Union of Texas and the primary decision-maker for this initiative. Recognizing the inefficiencies in his manual email response process, Charles partnered with Cloud Fusion Global to design a solution that automates data retrieval and email replies, thereby reducing manual effort and ensuring real-time communication.",
 
   // "Business Challenge"
-  challenge: "The previous manual email response process required constant manual intervention, leading to inefficiencies. Reliance on manual data extraction from Microsoft Outlook Calendar caused delayed auto-replies, while issues with JSON parsing and HTTP actions resulted in inconsistent data integration. Combining real-time data from Microsoft Graph API with Microsoft Outlook Calendar, AI Builder, and Dataverse was cumbersome, further affecting overall workflow performance.",
+  challenge: "Charles faced several challenges with his manual email response system:",
   challengePoints: [
     { title: "Manual Oversight", description: "The previous process required constant manual intervention, leading to inefficiencies." },
     { title: "Delayed Auto-Replies", description: "The reliance on manual data extraction from Microsoft Outlook Calendar caused delays in sending responses." },
@@ -96,12 +96,18 @@ export const caseStudy = {
   // Testimonial block (photo + quote)
   testimonial: {
     quote: "Cloud Fusion Global did an outstanding job troubleshooting and optimizing my automation workflow. Their expertise with Microsoft integrations was evident from the start. They quickly identified and resolved the issues, offering valuable insights to improve the overall efficiency. Highly recommended for any automation and workflow solutions.",
+    avatar: "/asset/case-studies/people/charles-penn.jpg",
     author: "Charles Penn",
     role: "Project Manager at Credit Union of Texas",
   },
 
-  relatedServices: [],
-  relatedSolutions: [],
+  relatedServices: [
+    "power-platform-solutions",
+    "agentic-ai-automation",
+  ],
+  relatedSolutions: [
+    "workflow-automation-platform",
+  ],
   ctas: [
     "talk-to-expert",
     "request-proposal",

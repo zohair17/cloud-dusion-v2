@@ -29,7 +29,7 @@ export const caseStudy = {
   aboutCustomer: "Ajil Financial Services Company is a financial services organization in Saudi Arabia that relies on SharePoint to support important business processes, document management, collaboration, workflows, forms, and compliance-related activities. The engagement was delivered by Cloud Fusion Global in partnership with PC Communication and IT Co., with CFG providing specialist SharePoint, infrastructure, and disaster recovery expertise as part of the delivery team.",
 
   // "Business Challenge"
-  challenge: "Ajil required a dedicated Disaster Recovery capability for its business-critical SharePoint environment to strengthen business continuity and reduce the operational risk associated with a major infrastructure or site-level failure. The requirement extended beyond simply establishing a secondary environment: the DR solution needed to provide a practical and repeatable recovery capability covering SharePoint services, business content, user access, authentication, workflows, forms, and integrated applications. Ajil also needed clearly defined and tested failover and failback procedures, supported by documentation and knowledge transfer, so that the technical team could confidently execute the recovery process when required.",
+  challenge: "Ajil required a dedicated Disaster Recovery capability for its business-critical SharePoint environment to strengthen business continuity and reduce the operational risk associated with a major infrastructure or site-level failure. The requirement extended beyond simply establishing a secondary environment. The DR solution needed to provide a practical and repeatable recovery capability covering SharePoint services, business content, user access, authentication, workflows, forms, and integrated applications. Ajil also needed clearly defined and tested failover and failback procedures, supported by documentation and knowledge transfer, so that the technical team could confidently execute the recovery process when required.",
 
   // "Solution Provided": intro line + flat list of engagement activities (no sub-headed groups in this doc)
   solution: "Cloud Fusion Global, as the Delivery & Technology Partner to PC Communication and IT Co., designed and implemented an Active-Passive SharePoint Disaster Recovery architecture for Ajil Financial Services. The DR environment was validated through controlled recovery scenarios to confirm the availability of SharePoint services, content, authentication, user access, and critical business functionality.",
@@ -73,8 +73,14 @@ export const caseStudy = {
   // No testimonial in this document
   testimonial: null,
 
-  relatedServices: [],
-  relatedSolutions: [],
+  relatedServices: [
+    "sharepoint-solutions",
+    "microsoft-cloud-solutions",
+    "data-security-governance",
+  ],
+  relatedSolutions: [
+    "self-hosted-sharepoint-sites",
+  ],
   ctas: [
     "talk-to-expert",
     "request-proposal",

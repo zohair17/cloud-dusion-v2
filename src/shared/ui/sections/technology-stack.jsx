@@ -17,6 +17,7 @@ import {
   Wrench,
 } from "lucide-react";
 import { Container } from "../primitives/container";
+import { ProductLogo, productLogoFor } from "./product-logo";
 import { SectionHeading } from "./section-heading";
 import { cn } from "../primitives/cn";
 
@@ -300,12 +301,17 @@ function LayerSlab({ layer, active }) {
               transition={{ duration: 0.45, delay: 0.16 + order * 0.06, ease: [0.22, 1, 0.36, 1] }}
             >
               <span className="inline-flex items-center gap-2 rounded-pill border border-brand-100 bg-white px-2.5 py-1.5 text-[0.7rem] font-medium sm:px-4 sm:py-2.5 sm:text-[0.8rem] text-foreground shadow-[0_1px_2px_rgb(21_21_28/0.05)] transition-colors duration-300 hover:border-brand-400 hover:text-brand-700">
-                <span aria-hidden="true" className={techTone(technology.label)}>
-                  {(() => {
-                    const Mark = techIcon(technology.label);
-                    return <Mark className="h-3.5 w-3.5" strokeWidth={1.9} />;
-                  })()}
-                </span>
+                {(() => {
+                  const logo = productLogoFor(technology.label);
+                  if (logo) return <ProductLogo id={logo} className="h-4 w-4 shrink-0 sm:h-[1.15rem] sm:w-[1.15rem]" />;
+
+                  const Mark = techIcon(technology.label);
+                  return (
+                    <span aria-hidden="true" className={techTone(technology.label)}>
+                      <Mark className="h-3.5 w-3.5" strokeWidth={1.9} />
+                    </span>
+                  );
+                })()}
                 {technology.label}
               </span>
             </motion.li>
@@ -323,11 +329,11 @@ function LayerSlab({ layer, active }) {
  * `value × 10%` lands the right one in the window.
  */
 /**
- * The mark for a technology, read off its own name.
+ * The fallback mark, read off the name.
  *
- * Vendor logotypes are not in the repository and cannot be invented, so each
- * chip carries the mark for the kind of thing it is instead: the shape says
- * database, model, or pipeline where a logo would have said whose.
+ * Not everything on the slab is a product with a logotype — "Vector databases"
+ * and "Migration tooling" are categories — so those keep a drawn glyph saying
+ * what kind of thing they are rather than borrowing somebody else's badge.
  */
 const TECH_ICONS = [
   [/openai|foundry|copilot|gpt|llm|semantic kernel|agent/i, Sparkles],

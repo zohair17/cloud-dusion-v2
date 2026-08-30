@@ -31,7 +31,7 @@ export const caseStudy = {
   aboutCustomer: "Ajil Financial Services Company is a financial services organization in Saudi Arabia that relies on SharePoint to support business-critical document management, collaboration, forms, workflows, and compliance-related processes. The engagement was delivered by Cloud Fusion Global in partnership with PC Communication and IT Co., with CFG providing the SharePoint modernization and technical delivery expertise required for the project.",
 
   // "Business Challenge"
-  challenge: "Ajil needed to modernize its existing SharePoint Server 2019 environment and transition to a more current and supportable SharePoint platform. The challenge extended beyond migrating SharePoint content: the existing environment supported critical business processes and included third-party solutions such as Spark Forms, Spark Workflows, DocRead, and SwissGRC. The modernization therefore required a carefully controlled approach to ensure that existing content, configurations, workflows, forms, integrations, and business functionality continued to operate effectively in the new environment.",
+  challenge: "Ajil needed to modernize its existing SharePoint Server 2019 environment and transition to a more current and supportable SharePoint platform. The challenge extended beyond migrating SharePoint content. The existing environment supported critical business processes and included third-party solutions such as Spark Forms, Spark Workflows, DocRead, and SwissGRC. The modernization therefore required a carefully controlled approach to ensure that existing content, configurations, workflows, forms, integrations, and business functionality continued to operate effectively in the new environment.",
 
   // "Solution Provided": intro line + flat list of engagement activities (no sub-headed groups in this doc)
   solution: "Cloud Fusion Global, as the Delivery & Technology Partner to PC Communication and IT Co., designed and delivered a structured SharePoint modernization and migration approach for Ajil Financial Services. A pilot-first approach enabled potential migration and compatibility issues to be identified and addressed before production cutover.",
@@ -71,8 +71,14 @@ export const caseStudy = {
   // No testimonial in this document
   testimonial: null,
 
-  relatedServices: [],
-  relatedSolutions: [],
+  relatedServices: [
+    "sharepoint-solutions",
+    "microsoft-cloud-solutions",
+  ],
+  relatedSolutions: [
+    "sharepoint-version-upgrade",
+    "sharepoint-migration",
+  ],
   ctas: [
     "talk-to-expert",
     "request-proposal",

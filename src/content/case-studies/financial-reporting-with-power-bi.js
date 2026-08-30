@@ -17,6 +17,9 @@ export const caseStudy = {
   // --- Header strip ---
   sectorLabel: "Banking, Financial Services", // "Industry"
   industrySlug: "banking-financial-services",
+  /* The mark the source document itself carries, lifted out of it rather
+     than sourced elsewhere, so the page shows the logo the client signed off. */
+  logo: { src: "/asset/case-studies/logos/alpha-bank.png", alt: "Alpha Bank", width: 558, height: 123 },
   client: "Alpha Bank",
   order: 1,
   status: "published",
@@ -42,7 +45,8 @@ export const caseStudy = {
   aboutCustomer: "Alpha Bank is a leading financial institution providing a range of banking and investment services. Eleni Syraki, Asset & Liability Manager at Alpha Bank, was responsible for preparing and presenting financial reports for upper management on a daily and weekly basis. Her reports were manually created in Excel and PowerPoint, requiring time-intensive data extraction from Bloomberg and manual formatting. Eleni partnered with Cloud Fusion Global to modernize this process with an automated Power BI reporting system that reduced inefficiencies and improved decision-making.",
 
   // "Business Challenge"
-  challenge: "Eleni faced significant challenges in financial reporting: manual compilation of financial data in Excel and PowerPoint before sharing it with upper management, hours spent daily extracting, formatting, and updating reports, increased risk of errors from manual handling, static snapshots instead of real-time insights, and reports that had to be manually emailed to decision-makers, delaying access to critical financial information. To eliminate these inefficiencies, Eleni partnered with Cloud Fusion Global to implement an automated Power BI solution.",
+  challenge: "Eleni faced significant challenges in financial reporting:",
+  challengeNote: "To eliminate these inefficiencies, Eleni partnered with Cloud Fusion Global to implement an automated Power BI solution.",
   challengePoints: [
     { title: "Manual Report Creation", description: "She manually compiled financial data in Excel and PowerPoint before sharing it with upper management." },
     { title: "Time-Consuming Process", description: "Hours were spent daily extracting, formatting, and updating reports." },
@@ -99,11 +103,15 @@ export const caseStudy = {
   // Testimonial block (photo + quote)
   testimonial: {
     quote: "I had the pleasure of working with Cloud Fusion Global on several projects, including Power BI dashboards and other IT-related tasks, and I couldn't be more satisfied with their services. Their team demonstrated exceptional technical expertise, professionalism, and a keen understanding of our requirements. They delivered high-quality solutions on time and were always responsive to our needs. The Power BI dashboards they developed provided us with valuable insights and significantly improved our data visualization and decision-making processes. I highly recommend Cloud Fusion Global for their outstanding IT services and look forward to collaborating with them again in the future.",
+    avatar: "/asset/case-studies/people/eleni-syraki.jpg",
     author: "Eleni Syraki",
     role: "Asset & Liability Manager at Alpha Bank",
   },
 
-  relatedServices: [],
+  relatedServices: [
+    "data-business-intelligence",
+    "power-platform-solutions",
+  ],
   relatedSolutions: [],
   ctas: [
     "talk-to-expert",

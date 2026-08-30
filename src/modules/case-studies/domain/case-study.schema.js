@@ -10,6 +10,7 @@
  * @property {string?}  industrySlug   Link into the industries context, when one applies.
  * @property {number}   order
  * @property {string}   client         Anonymised client descriptor.
+ * @property {{ src: string, alt: string, width: number, height: number }?} logo Client mark taken from the source document.
  * @property {string}   summary
  * @property {"outline"|"published"} status
  * @property {string?}  challenge      Where it started. Section furniture lives in _detail.js.

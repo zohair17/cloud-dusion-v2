@@ -18,6 +18,9 @@ export const caseStudy = {
   // --- Header strip ---
   sectorLabel: "IT Services and IT Consulting, Software Products", // "Industry"
   industrySlug: "it-services-software-products",
+  /* The mark the source document itself carries, lifted out of it rather
+     than sourced elsewhere, so the page shows the logo the client signed off. */
+  logo: { src: "/asset/case-studies/logos/nisum.png", alt: "Nisum Technologies", width: 635, height: 137 },
   client: "Progressive Leasing", // end client
   partner: "Nisum Technologies", // engaging partner named throughout the PDF
   order: 1,
@@ -44,7 +47,8 @@ export const caseStudy = {
   aboutCustomer: "Nisum Technologies is a leading IT services provider that partners with clients to deliver innovative digital solutions. For their client, Progressive Leasing, Nisum required a modern intranet platform to improve internal communication and resource accessibility. Cloud Fusion Global was engaged to develop custom SharePoint pages that met Progressive Leasing's unique requirements and reflected their brand identity.",
 
   // "Business Challenge"
-  challenge: "Progressive Leasing faced several challenges with their previous intranet setup: information was scattered and hard to find, updating employee directories and content was labour-intensive and error prone, existing pages were static and lacked interactive features, communication tools weren't centralized, and secure role-based access to sensitive information was critical. Nisum sought a robust SharePoint solution that could deliver a seamless, integrated digital experience for Progressive Leasing's workforce.",
+  challenge: "Progressive Leasing faced several challenges with their previous intranet setup:",
+  challengeNote: "Nisum sought a robust SharePoint solution that could deliver a seamless, integrated digital experience for Progressive Leasing's workforce.",
   challengePoints: [
     { title: "Fragmented Information Access", description: "Information was scattered, making it difficult for employees to quickly find people or tech resources." },
     { title: "Manual Content Management", description: "Updating employee directories, technical updates, and event calendars was labour-intensive and error prone." },
@@ -102,12 +106,18 @@ export const caseStudy = {
   // Testimonial block (photo + quote)
   testimonial: {
     quote: "We are very pleased with the operational and technical skills of Cloud Fusion Global. Their team made our projects run smoothly with careful attention to detail. We are satisfied with their work and look forward to working with them again on future projects. Cloud Fusion Global has been a reliable partner, and we trust them to handle any future needs with the same high quality.",
+    avatar: "/asset/case-studies/people/abeer-saeed.jpg",
     author: "Abeer Saeed",
     role: "Head of People & Culture at Nisum",
   },
 
-  relatedServices: [],
-  relatedSolutions: [],
+  relatedServices: [
+    "sharepoint-solutions",
+    "power-platform-solutions",
+  ],
+  relatedSolutions: [
+    "intranet-portal",
+  ],
   ctas: [
     "talk-to-expert",
     "request-proposal",

@@ -34,7 +34,8 @@ export const caseStudy = {
   aboutCustomer: "Stonegate Commercial Capital is a US-based commercial real estate firm focused on commercial property and deal activities. As the organization grew, its technology environment needed to evolve alongside the business. Existing tools and processes were no longer providing the structure, visibility, and scalability required to support a growing team and an increasingly active deal pipeline. Cloud Fusion Global was engaged to assess the organization's technology landscape and implement a practical, scalable digital transformation strategy using the Microsoft ecosystem.",
 
   // "Business Challenge": intro + 8 named challenges (each with its own paragraph) + closing framing
-  challenge: "Stonegate's growth was being constrained by disconnected tools, manual processes, and limited operational visibility. Stonegate needed a single, integrated technology ecosystem capable of bringing these capabilities together while remaining cost-effective and scalable.",
+  challenge: "Stonegate's growth was being constrained by disconnected tools, manual processes, and limited operational visibility. Key challenges included:",
+  challengeNote: "Stonegate needed a single, integrated technology ecosystem capable of bringing these capabilities together while remaining cost-effective and scalable.",
   challengePoints: [
     { title: "Fragmented Technology Environment", description: "The organization relied on multiple platforms for email, communication, documents, and business activities, creating a disconnected employee experience." },
     { title: "Unstructured Business Data", description: "Important information was distributed across different platforms without consistent structures, naming conventions, or centralized management." },
@@ -171,8 +172,13 @@ export const caseStudy = {
   // No testimonial in this document
   testimonial: null,
 
-  relatedServices: [],
-  relatedSolutions: [],
+  relatedServices: [
+    "microsoft-cloud-solutions",
+    "sharepoint-solutions",
+  ],
+  relatedSolutions: [
+    "document-management-system",
+  ],
   ctas: [
     "talk-to-expert",
     "request-proposal",

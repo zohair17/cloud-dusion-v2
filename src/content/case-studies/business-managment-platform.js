@@ -29,7 +29,8 @@ export const caseStudy = {
   aboutCustomer: "Jamal Enterprises is a multi-location retail and distribution business serving both B2B and B2C customers. With operations spanning multiple locations and business functions, the organization needed a more connected approach to managing customers, sales, inventory, purchasing, and day-to-day operations. Cloud Fusion Global partnered with the organization to transform its operational processes into a centralized digital platform designed around its specific business requirements.",
 
   // "Business Challenge": intro + closing framing + the challenges list
-  challenge: "As the business expanded across multiple locations, its operational processes became increasingly dependent on fragmented systems, manual data entry, spreadsheets, and paper-based processes. The organization needed an integrated platform that could connect its operations, automate repetitive processes, improve data accuracy, and provide real-time business visibility across desktop, tablet, and mobile devices.",
+  challenge: "As the business expanded across multiple locations, its operational processes became increasingly dependent on fragmented systems, manual data entry, spreadsheets, and paper-based processes. This created several challenges:",
+  challengeNote: "The organization needed an integrated platform that could connect its operations, automate repetitive processes, improve data accuracy, and provide real-time business visibility across desktop, tablet, and mobile devices.",
   challengePoints: [
     "Limited real-time visibility across locations",
     "Manual sales and order entry",
@@ -147,8 +148,13 @@ export const caseStudy = {
   // No testimonial in this document
   testimonial: null,
 
-  relatedServices: [],
-  relatedSolutions: [],
+  relatedServices: [
+    "custom-software-development",
+    "power-platform-solutions",
+  ],
+  relatedSolutions: [
+    "job-management-system",
+  ],
   ctas: [
     "talk-to-expert",
     "request-proposal",

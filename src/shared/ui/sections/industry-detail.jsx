@@ -92,79 +92,86 @@ export function IndustryHero({ industry, trail = [] }) {
           </nav>
         ) : null}
 
-        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,25rem)] lg:gap-20 xl:grid-cols-[minmax(0,1fr)_minmax(0,28rem)]">
-          <div>
-            <motion.p
-              initial={reduced ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: EASE }}
-              className="inline-flex items-center gap-2.5 rounded-pill border border-brand-200 bg-brand-50/70 px-4 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-brand-700"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-600" aria-hidden="true" />
-              {industry.title} Industry
-            </motion.p>
-
-            <h1 className="mt-7 font-display text-[1.75rem] font-semibold leading-[1.14] tracking-tight sm:leading-[1.06] text-balance text-foreground sm:text-5xl lg:text-[3.4rem]">
-              <RevealText delay={0.1}>{industry.tagline ?? industry.title}</RevealText>
-            </h1>
-
-            {industry.intro.map((paragraph, index) => (
+        {/* The banner plate the case study pages open on: same white card, same
+            ring and lift, so an industry and a case study read as two pages of
+            one site rather than two sites. */}
+        <div className="overflow-hidden rounded-[1.5rem] bg-white p-5 shadow-[0_36px_92px_-58px_rgb(53_51_205/0.5)] ring-1 ring-black/[0.06] sm:rounded-[2.5rem] sm:p-9 lg:p-12">
+          <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,23rem)] lg:gap-16 xl:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]">
+            <div className="order-2 lg:order-1">
               <motion.p
-                key={index}
-                initial={reduced ? false : { opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.7, delay: 0.4 + index * 0.08 }}
-                className="mt-7 max-w-2xl text-[0.9375rem] leading-[1.8] text-muted sm:text-base"
+                initial={reduced ? false : { opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: EASE }}
+                className="inline-flex items-center gap-2.5 rounded-pill border border-brand-200 bg-brand-50/70 px-4 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-brand-700"
               >
-                {paragraph}
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-600" aria-hidden="true" />
+                {industry.title} Industry
               </motion.p>
-            ))}
 
-            {primaryCta ? (
+              <h1 className="mt-7 font-display text-[1.75rem] font-semibold leading-[1.14] tracking-tight sm:leading-[1.06] text-balance text-foreground sm:text-5xl lg:text-[3.4rem]">
+                <RevealText delay={0.1}>{industry.tagline ?? industry.title}</RevealText>
+              </h1>
+
+              {industry.intro.map((paragraph, index) => (
+                <motion.p
+                  key={index}
+                  initial={reduced ? false : { opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.7, delay: 0.4 + index * 0.08 }}
+                  className="mt-7 max-w-2xl text-[0.9375rem] leading-[1.8] text-muted sm:text-base"
+                >
+                  {paragraph}
+                </motion.p>
+              ))}
+
+              {primaryCta ? (
+                <motion.div
+                  initial={reduced ? false : { opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.58 }}
+                  className="mt-10"
+                >
+                  <Button href={primaryCta.href} variant="primary" size="lg" className="gap-2.5 pr-2 sm:gap-3 sm:pr-2.5">
+                    {primaryCta.label}
+                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-brand-600 sm:h-8 sm:w-8">
+                      <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                    </span>
+                  </Button>
+                </motion.div>
+              ) : null}
+            </div>
+
+            {industry.image ? (
               <motion.div
-                initial={reduced ? false : { opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.58 }}
-                className="mt-10"
+                ref={frame}
+                initial={reduced ? false : { opacity: 0, y: 34 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
+                /* On a phone the picture leads and the argument follows it, and it
+                   is held to a size that leaves the copy the fold. */
+                className="order-1 relative mx-auto w-full max-w-[13.5rem] sm:max-w-[17rem] lg:order-2 lg:max-w-none"
               >
-                <Button href={primaryCta.href} variant="primary" size="lg" className="gap-2.5 pr-2 sm:gap-3 sm:pr-2.5">
-                  {primaryCta.label}
-                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-brand-600 sm:h-8 sm:w-8">
-                    <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-                  </span>
-                </Button>
+                {/* The arch the photograph is cut into, and its offset outline. */}
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -left-4 -top-4 h-full w-full rounded-t-[999px] rounded-b-[2rem] border border-brand-600/25 sm:-left-5 sm:-top-5"
+                />
+
+                <div className="relative aspect-[3/4] overflow-hidden rounded-t-[999px] rounded-b-[2rem] bg-surface">
+                  <motion.div style={reduced ? undefined : { y: drift }} className="absolute -inset-y-[8%] inset-x-0">
+                    <Image
+                      src={industry.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 26rem, 17rem"
+                      priority
+                      className="object-cover"
+                    />
+                  </motion.div>
+                </div>
               </motion.div>
             ) : null}
           </div>
-
-          {industry.image ? (
-            <motion.div
-              ref={frame}
-              initial={reduced ? false : { opacity: 0, y: 34 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
-              className="relative mx-auto w-full max-w-[22rem] lg:max-w-none"
-            >
-              {/* The arch the photograph is cut into, and its offset outline. */}
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute -left-4 -top-4 h-full w-full rounded-t-[999px] rounded-b-[2rem] border border-brand-600/25 sm:-left-5 sm:-top-5"
-              />
-
-              <div className="relative aspect-[3/4] overflow-hidden rounded-t-[999px] rounded-b-[2rem] bg-surface">
-                <motion.div style={reduced ? undefined : { y: drift }} className="absolute -inset-y-[8%] inset-x-0">
-                  <Image
-                    src={industry.image}
-                    alt=""
-                    fill
-                    sizes="(min-width: 1024px) 28rem, 22rem"
-                    priority
-                    className="object-cover"
-                  />
-                </motion.div>
-              </div>
-            </motion.div>
-          ) : null}
         </div>
       </Container>
     </section>

@@ -29,7 +29,8 @@ export const caseStudy = {
   aboutCustomer: "The National Sugar Development Council (NSDC) is a Nigerian government organization responsible for supporting and developing the country's sugar industry. As a multi-department organization, NSDC manages a significant volume of organizational information, documents, policies, reports, resources, and departmental knowledge. The organization sought to modernize how employees access, manage, share, and discover this information through a centralized digital knowledge management platform. The engagement was delivered by Cloud Fusion Global in partnership with Eclipse Techsoft, with CFG providing SharePoint, Microsoft 365, information architecture, customization, and AI technology expertise.",
 
   // "Business Challenge": intro + capability requirements + closing framing
-  challenge: "NSDC needed to move beyond traditional document repositories and create a structured digital environment where employees could easily find and use organizational knowledge. A key challenge was balancing information accessibility with appropriate security boundaries, ensuring employees could easily find the information they needed while protecting sensitive and restricted content.",
+  challenge: "NSDC needed to move beyond traditional document repositories and create a structured digital environment where employees could easily find and use organizational knowledge. The organization required a solution that could provide:",
+  challengeNote: "A key challenge was balancing information accessibility with appropriate security boundaries, ensuring employees could easily find the information they needed while protecting sensitive and restricted content.",
   challengePoints: [
     "Centralized access to organizational knowledge",
     "Dedicated digital workspaces for departments",
@@ -149,8 +150,14 @@ export const caseStudy = {
   // No testimonial in this document
   testimonial: null,
 
-  relatedServices: [],
-  relatedSolutions: [],
+  relatedServices: [
+    "sharepoint-solutions",
+    "generative-ai",
+  ],
+  relatedSolutions: [
+    "enterprise-content-management",
+    "intranet-portal",
+  ],
   ctas: [
     "talk-to-expert",
     "request-proposal",
