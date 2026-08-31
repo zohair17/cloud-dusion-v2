@@ -10,7 +10,7 @@ export const caseStudy = {
   slug: "hybrid-document-management-intranet-malath-insurance",
   title: "Hybrid Document Management & Intranet Implementation (In Progress)",
   /** The photograph its tile is set on. */
-  image: "https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=1400&q=80",
+  image: "/asset/case-studies/hybrid-document-management-intranet-malath-insurance.webp",
 
   // --- Header strip ---
   sectorLabel: "Insurance", // "Industry"

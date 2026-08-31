@@ -313,10 +313,16 @@ function solutionIcon(title) {
  * the lead solution's photograph put the same image on the index that the
  * detail page already opens with. Each practice gets a frame of the work it
  * actually covers, so the column shows the subject rather than a stock desk.
+ *
+ * Five of the six now have artwork commissioned for the practice itself
+ * (`practice-*.webp`). SharePoint & Microsoft has none yet, so it still
+ * borrows from the migration solution — the one case the paragraph above
+ * describes. Drop a practice-sharepoint-microsoft.webp beside the others and
+ * point this at it to finish the set.
  */
 const PRACTICE_ART = {
   ai: {
-    src: "/asset/solutions/ai-chatbot-solutions-1.webp",
+    src: "/asset/solutions/practice-ai.webp",
     label: "Conversational AI answering from enterprise content",
   },
   "sharepoint-microsoft": {
@@ -324,19 +330,19 @@ const PRACTICE_ART = {
     label: "Content and collaboration on the Microsoft platform",
   },
   "real-estate": {
-    src: "/asset/solutions/deal-management-system-1.webp",
+    src: "/asset/solutions/practice-real-estate.webp",
     label: "Property portfolios, deals and tenants under one system",
   },
   erp: {
-    src: "/asset/solutions/erp-manufacturing-1.webp",
+    src: "/asset/solutions/practice-erp.webp",
     label: "Manufacturing and distribution operations on one backbone",
   },
   "mobile-iot": {
-    src: "/asset/solutions/smart-device-mobile-app-1.webp",
+    src: "/asset/solutions/practice-mobile-iot.webp",
     label: "Mobile experiences for connected devices",
   },
   automation: {
-    src: "/asset/solutions/workflow-automation-platform.webp",
+    src: "/asset/solutions/practice-automation.webp",
     label: "Workflow and approvals running without manual handoffs",
   },
 };

@@ -28,8 +28,15 @@ const ICONS = {
   bluetooth: Bluetooth,
 };
 
-/** How many photographs each solution's strip carries. */
-const SHOTS = 2;
+/**
+ * How many photographs each solution's strip carries.
+ *
+ * One. The supplied set has a single picture per solution, and a strip of two
+ * that shows the same frame twice reads as a broken carousel — the dots are
+ * there and they do nothing. ServiceSlider already hides its dots when there is
+ * only one image, so this is the whole change.
+ */
+const SHOTS = 1;
 
 /**
  * The solutions catalogue as a row of service cards.

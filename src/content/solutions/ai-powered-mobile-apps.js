@@ -13,7 +13,14 @@ export const solution = {
   /** Glyph id; the component owns the actual icon. */
   icon: undefined,
   /** Panel photograph, used by the index rail and the detail hero. */
-  image: "/asset/solutions/ai-powered-mobile-apps.webp",
+  /*
+   * Borrowed from the mobile service, whose third hero slide is captioned "AI
+   * features built in where they remove friction" — which is this solution.
+   * No picture of its own was supplied; pointing at the service's file rather
+   * than copying it keeps one image on disk and makes the borrowing visible.
+   * Replace with /asset/solutions/ai-powered-mobile-apps.webp when there is one.
+   */
+  image: "/asset/services/mobile-3.webp",
   summary: "Mobile experiences with AI at the core: vision capture, conversational assistants, personalization, and on-device intelligence built on Azure AI.",
   categoryId: "mobile-iot",
   order: 2,

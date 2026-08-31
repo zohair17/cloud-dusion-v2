@@ -13,7 +13,7 @@ export const caseStudy = {
   slug: "sharepoint-disaster-recovery-business-continuity-ajil",
   title: "SharePoint Disaster Recovery & Business Continuity for Ajil Financial Services",
   /** The photograph its tile is set on. */
-  image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80",
+  image: "/asset/case-studies/sharepoint-disaster-recovery-business-continuity-ajil.webp",
 
   // --- Header info (no Industry/Technologies/Business-gains strip in this doc) ---
   client: "Ajil Financial Services Company", // named in "About Our Customer"

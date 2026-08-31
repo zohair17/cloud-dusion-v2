@@ -23,6 +23,9 @@ export const metadata = buildRootMetadata();
  */
 export const viewport = {
   colorScheme: "only light",
+  /* The browser's own chrome, kept in step: a white address bar over a white
+     page rather than a black bar above it. */
+  themeColor: "#ffffff",
 };
 
 /**

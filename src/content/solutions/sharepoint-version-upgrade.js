@@ -13,7 +13,15 @@ export const solution = {
   /** Glyph id; the component owns the actual icon. */
   icon: undefined,
   /** Panel photograph, used by the index rail and the detail hero. */
-  image: "/asset/solutions/sharepoint-version-upgrade.webp",
+  /*
+   * Borrowed from the SharePoint service's second hero slide. No picture of its
+   * own was supplied, and the sibling migration solution's frame was the other
+   * candidate — but two solutions in one category wearing the same photograph
+   * is the duplication a reader actually notices. A service page is a section
+   * away. Replace with /asset/solutions/sharepoint-version-upgrade.webp when
+   * there is one.
+   */
+  image: "/asset/services/sharepoint-2.webp",
   summary: "Structured upgrades from legacy SharePoint versions to current platforms: customizations remediated, content preserved, downtime minimized.",
   categoryId: "sharepoint-microsoft",
   order: 7,

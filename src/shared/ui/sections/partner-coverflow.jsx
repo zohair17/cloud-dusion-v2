@@ -132,14 +132,43 @@ export function PartnerCoverflow({ items = [], label = "Our partners" }) {
           style={{ transform: "translateX(-50%)" }}
         >
           <div className="relative grid h-full w-full place-items-center overflow-hidden rounded-[clamp(0.9rem,1.6vw,1.6rem)] bg-[linear-gradient(150deg,#ffffff_0%,#ffffff_42%,#f2f3fa_100%)] shadow-[0_44px_80px_-32px_rgb(11_11_42/0.55),0_12px_26px_-12px_rgb(11_11_42/0.3),inset_0_1px_0_rgb(255_255_255/0.95)] ring-1 ring-black/[0.05] [backface-visibility:hidden]">
-            <Image
-              src={`/asset/clients/${item.file}`}
-              alt={item.name}
-              width={item.width}
-              height={item.height}
-              sizes="(min-width: 640px) 34vw, 62vw"
-              className="h-auto w-auto max-h-[calc(var(--card-h)*0.58)] max-w-[calc(var(--card-h)*2.1*0.82)] object-contain"
-            />
+            {item.file ? (
+              <Image
+                src={`/asset/clients/${item.file}`}
+                alt={item.name}
+                width={item.width}
+                height={item.height}
+                sizes="(min-width: 640px) 34vw, 62vw"
+                /*
+                  Multiply so a mark that ships with its white background baked
+                  in — the JPEGs — sits on the card instead of on a white patch
+                  of its own. The card's face runs white to #f2f3fa, so it costs
+                  the transparent PNGs nothing. A future logo drawn in white ink
+                  would disappear; none of these are.
+                */
+                className="h-auto w-full max-h-[calc(var(--card-h)*0.58)] object-contain mix-blend-multiply"
+                /*
+                  Most of these marks are far larger than the card and the box
+                  above holds them. Eclipse's is 186px wide — the only one LinkedIn
+                  publishes — and left at its own size it sits marooned in the
+                  middle of a card five times wider. So the width is allowed to
+                  grow to the box, but never past twice the pixels the file
+                  actually has: enough to read as a logo, not so far that it
+                  turns to mush.
+                */
+                style={{ maxWidth: `min(calc(var(--card-h) * 2.1 * 0.82), ${item.width * 2}px)` }}
+              />
+            ) : (
+              /*
+                A partner whose mark has not been supplied. Setting the name in
+                the display face holds the card at the same weight as a logo
+                would, which is the honest answer — inventing a mark for
+                somebody else's company is not.
+              */
+              <span className="max-w-[calc(var(--card-h)*2.1*0.82)] px-[5%] text-center font-display text-[calc(var(--card-h)*0.155)] font-semibold leading-tight tracking-tight text-foreground text-balance">
+                {item.name}
+              </span>
+            )}
 
             {/* Where the partner is based, if the record says. */}
             {item.country ? (

@@ -13,7 +13,7 @@ export const caseStudy = {
   slug: "custom-sharepoint-intranet-progressive-leasing",
   title: "Custom SharePoint Intranet for Progressive Leasing",
   /** The photograph its tile is set on. */
-  image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80",
+  image: "/asset/case-studies/custom-sharepoint-intranet-progressive-leasing.webp",
 
   // --- Header strip ---
   sectorLabel: "IT Services and IT Consulting, Software Products", // "Industry"

@@ -88,14 +88,25 @@ export function Clients({ section }) {
                       role={logo.via ? "button" : undefined}
                       aria-label={logo.via ? `${logo.name}, client of ${logo.via.name}` : undefined}
                       className="relative flex h-[var(--tile-h)] w-[var(--tile-w)] items-center justify-center overflow-hidden rounded-[clamp(0.75rem,1.2vw,1.15rem)] bg-[linear-gradient(150deg,#ffffff_0%,#ffffff_55%,#f2f3fa_100%)] shadow-[0_18px_30px_-18px_rgb(11_11_42/0.45),0_2px_4px_rgb(11_11_42/0.06),inset_0_1px_0_rgb(255_255_255/0.9)] ring-1 ring-black/[0.06] transition-[transform,box-shadow] duration-500 ease-out group-hover/tile:[transform:translateZ(34px)] group-hover/tile:shadow-[0_30px_50px_-22px_rgb(11_11_42/0.5),0_4px_8px_rgb(11_11_42/0.08)]">
-                      <Image
-                        src={`/asset/clients/${logo.file}`}
-                        alt={logo.name}
-                        width={logo.width}
-                        height={logo.height}
-                        sizes="(min-width: 768px) 11vw, 8rem"
-                        className="relative h-auto w-auto max-h-[calc(var(--tile-h)*0.48)] max-w-[calc(var(--tile-w)*0.78)] object-contain"
-                      />
+                      {logo.file ? (
+                        <Image
+                          src={`/asset/clients/${logo.file}`}
+                          alt={logo.name}
+                          width={logo.width}
+                          height={logo.height}
+                          sizes="(min-width: 768px) 11vw, 8rem"
+                          className="relative h-auto w-auto max-h-[calc(var(--tile-h)*0.48)] max-w-[calc(var(--tile-w)*0.78)] object-contain mix-blend-multiply"
+                        />
+                      ) : (
+                        /*
+                          A client whose mark has not been supplied. The name in
+                          the display face keeps the tile a tile; drawing a logo
+                          for somebody else's company is not ours to do.
+                        */
+                        <span className="relative max-w-[calc(var(--tile-w)*0.8)] px-1 text-center font-display text-[0.625rem] font-semibold uppercase leading-tight tracking-[0.06em] text-foreground text-balance">
+                          {logo.name}
+                        </span>
+                      )}
 
                       {/* Where the client is, if the record says. */}
                       {logo.country ? (
@@ -123,14 +134,21 @@ export function Clients({ section }) {
                           Client of
                         </span>
                         <span className="inline-flex items-center justify-center rounded-[0.4rem] bg-white px-2.5 py-1.5">
-                          <Image
-                            src={`/asset/clients/${logo.via.file}`}
-                            alt={logo.via.name}
-                            width={logo.via.width}
-                            height={logo.via.height}
-                            sizes="6rem"
-                            className="h-auto w-auto max-h-[1.9rem] max-w-[8rem] object-contain"
-                          />
+                          {logo.via.file ? (
+                            <Image
+                              src={`/asset/clients/${logo.via.file}`}
+                              alt={logo.via.name}
+                              width={logo.via.width}
+                              height={logo.via.height}
+                              sizes="6rem"
+                              className="h-auto w-auto max-h-[1.9rem] max-w-[8rem] object-contain mix-blend-multiply"
+                            />
+                          ) : (
+                            /* Same story one level down: the partner's own mark is not on file. */
+                            <span className="font-display text-[0.8125rem] font-semibold leading-none tracking-tight text-foreground">
+                              {logo.via.name}
+                            </span>
+                          )}
                         </span>
                         <span
                           aria-hidden="true"

@@ -14,7 +14,7 @@ export const caseStudy = {
   slug: "hut24-digital-room-property-rental-marketplace",
   title: "Building a Digital Room & Property Rental Marketplace",
   /** The photograph its tile is set on. */
-  image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80",
+  image: "/asset/case-studies/hut24-digital-room-property-rental-marketplace.webp",
 
   // --- Header info (no Industry/Technologies/Business-gains strip in this doc) ---
   client: "Hut24", // "Customer"

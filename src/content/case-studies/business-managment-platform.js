@@ -13,7 +13,7 @@ export const caseStudy = {
   slug: "je-portal-business-management-platform-jamal-enterprises",
   title: "JE Portal: Business Management Platform",
   /** The photograph its tile is set on. */
-  image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=80",
+  image: "/asset/case-studies/je-portal-business-management-platform-jamal-enterprises.webp",
 
   // --- Header info (no Industry/Technologies/Business-gains strip in this doc) ---
   client: "Jamal Enterprises", // "Customer"

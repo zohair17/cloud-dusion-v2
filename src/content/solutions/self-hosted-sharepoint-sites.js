@@ -13,7 +13,12 @@ export const solution = {
   /** Glyph id; the component owns the actual icon. */
   icon: undefined,
   /** Panel photograph, used by the index rail and the detail hero. */
-  image: "/asset/solutions/self-hosted-sharepoint-sites.webp",
+  /*
+   * Borrowed from the SharePoint service's first hero slide, "content that is
+   * organized, findable, and governed". No picture of its own was supplied;
+   * replace with /asset/solutions/self-hosted-sharepoint-sites.webp when there is.
+   */
+  image: "/asset/services/sharepoint-1.webp",
   summary: "Public websites built on self-hosted SharePoint for organizations with strict sovereignty, residency, and control requirements.",
   categoryId: "sharepoint-microsoft",
   order: 9,

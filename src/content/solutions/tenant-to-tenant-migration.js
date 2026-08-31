@@ -13,7 +13,14 @@ export const solution = {
   /** Glyph id; the component owns the actual icon. */
   icon: undefined,
   /** Panel photograph, used by the index rail and the detail hero. */
-  image: "/asset/solutions/tenant-to-tenant-migration.webp",
+  /*
+   * Borrowed from the Microsoft cloud service, whose first hero slide is
+   * captioned "migrations delivered without business disruption" — the closest
+   * thing on the site to this solution's subject. No picture of its own was
+   * supplied; replace with /asset/solutions/tenant-to-tenant-migration.webp
+   * when there is one.
+   */
+  image: "/asset/services/microsoft-cloud-1.webp",
   summary: "Merger, acquisition, and divestiture migrations between Microsoft 365 tenants: SharePoint, OneDrive, and Teams content moved with identity and sharing intact.",
   categoryId: "sharepoint-microsoft",
   order: 8,

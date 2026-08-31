@@ -9,7 +9,7 @@ export const caseStudy = {
   slug: "power-bi-implementation-evide-foylesoft",
   title: "Power BI Implementation for Evide",
   /** The photograph its tile is set on. */
-  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80",
+  image: "/asset/case-studies/power-bi-implementation-evide-foylesoft.webp",
 
   // --- Header strip ---
   sectorLabel: "Information Technology & Services, Software Products", // "Industry"

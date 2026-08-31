@@ -13,7 +13,7 @@ export const caseStudy = {
   slug: "nsdc-nigeria-knowledge-management-sharepoint-ai",
   title: "Transforming Knowledge Management with SharePoint Online & AI",
   /** The photograph its tile is set on. */
-  image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80",
+  image: "/asset/case-studies/nsdc-nigeria-knowledge-management-sharepoint-ai.webp",
 
   // --- Header info (no Industry/Technologies/Business-gains strip in this doc) ---
   client: "National Sugar Development Council of Nigeria (NSDC)", // named in "About Our Customer"

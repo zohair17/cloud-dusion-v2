@@ -193,14 +193,39 @@ export const homePage = {
     partners: {
       heading: "Our Strategic",
       headingAccent: "Partnerships",
+      /*
+        Progressive Leasing and Malath used to run here. Both are named on the
+        client list, and a name cannot be both the firm we build alongside and
+        the firm we built for — so they moved down to the roster and this run
+        is partners only.
+      */
       items: [
-        { id: "progressive-leasing", name: "Progressive Leasing", file: "progressive-leasing.webp", width: 300, height: 171, country: { code: "us", name: "United States" } },
         { id: "nisum", name: "Nisum", file: "nisum.png", width: 2297, height: 617, country: { code: "us", name: "United States" } },
         { id: "chick-fil-a", name: "Chick-fil-A", file: "chickfila.png", width: 343, height: 147, country: { code: "us", name: "United States" } },
         { id: "gic", name: "GIC", file: "gic-logo-new-2.png", width: 337, height: 102, country: { code: "in", name: "India" } },
         { id: "novizant", name: "Novizant", file: "novizant-removebg-preview.png", width: 680, height: 226, country: { code: "us", name: "United States" } },
-        { id: "malath", name: "Malath Insurance", file: "malath.png", width: 850, height: 600, country: { code: "sa", name: "Saudi Arabia" } },
         { id: "grand-studio", name: "Grand Studio", file: "Grandstudio-1.png", width: 220, height: 50 },
+        { id: "briggr-tech", name: "Briggr Tech", file: "briggrtech-1.jpeg", width: 1080, height: 433, country: { code: "us", name: "United States" } },
+        { id: "digicop", name: "DigiCop", file: "digicop.png", width: 641, height: 207, country: { code: "us", name: "United States" } },
+        /* Drawn from the SVG on tafsol.com, so it is sharp at any card size. */
+        { id: "tafsol-technologies", name: "Tafsol Technologies", file: "tafsol.png", width: 1050, height: 258 },
+        /*
+          Off the company's own LinkedIn page, which only publishes it at
+          200x200; the white surround is trimmed away so the mark sits on the
+          card rather than on a patch of its own white. A larger original would
+          be better if the company will supply one.
+        */
+        { id: "eclipse-technologies", name: "Eclipse Technologies", file: "eclipse-technologies.png", width: 186, height: 67, country: { code: "us", name: "United States" } },
+        /*
+          Still no mark for these three, so they carry no `file` and the card
+          sets the name as a wordmark instead. That is a partner whose logo has
+          not arrived rather than a broken image, and it swaps over the moment a
+          file lands: drop the artwork in public/asset/clients and add `file`
+          with its intrinsic width and height.
+        */
+        { id: "pcc-it", name: "Pcc&IT" },
+        { id: "nomonexus", name: "NomoNexus" },
+        { id: "browsefytech", name: "BrowsefyTech" },
       ],
     },
     roster: {
@@ -209,19 +234,49 @@ export const homePage = {
       headingAccent: "Worldwide",
       intro:
         "Trusted by organizations to modernize their technology, data, and business operations.",
-      /** The wall repeats the roster until it fills; the reference sets 50 tiles. */
-      tiles: 50,
+      /**
+       * The wall repeats the roster until it fills. Forty is two clean passes
+       * over the twenty names — the old fifty was two and a half, which left a
+       * stub row of two tiles hanging under five full ones.
+       */
+      tiles: 40,
+      /*
+        Briggr Tech and DigiCop used to sit here as well as in the partners
+        run above. One logo in two sections is not two proofs, it is the same
+        proof twice — and the smaller, faster tile undercuts the card. They
+        are partners, so they stay upstairs and come out of the wall.
+
+        `via` says the work reached us through a partner rather than direct.
+        Every one below is taken from a case study in src/content/case-studies,
+        not inferred: Hut24 and Ajil and NSDC each name their engagement
+        partner in their own write-up. Where a client's route is not recorded
+        anywhere, the field is left off rather than guessed at.
+      */
       items: [
-        { id: "briggr-tech", name: "Briggr Tech", file: "briggrtech-1.jpeg", width: 1080, height: 433, country: { code: "us", name: "United States" }  },
-        { id: "hut24", name: "Hut24", file: "Hut24.jpeg", width: 501, height: 328, country: { code: "us", name: "United States" }  },
-        { id: "jessies", name: "Jessies", file: "Jessies.webp", width: 397, height: 254, via: { name: "Grand Studio", file: "Grandstudio-1.png", width: 220, height: 50 }, country: { code: "us", name: "United States" }  },
-        { id: "urida", name: "Urida", file: "Urida.jpeg", width: 603, height: 243, country: { code: "us", name: "United States" }  },
-        { id: "da-boss", name: "Da Boss", file: "dabossicon.png", width: 301, height: 278, country: { code: "us", name: "United States" }  },
-        { id: "digicop", name: "Digicop", file: "digicop.png", width: 641, height: 207, country: { code: "us", name: "United States" }  },
-        { id: "good-n-guys", name: "Good N Guys", file: "goodnguys.png", width: 1222, height: 961, country: { code: "us", name: "United States" }  },
-        { id: "le-bleu", name: "Le Bleu", file: "lebleu.png", width: 250, height: 103, country: { code: "us", name: "United States" }  },
-        { id: "magic", name: "Magic", file: "magic-logo.png", width: 200, height: 82, country: { code: "us", name: "United States" }  },
-        { id: "texas-wholesale", name: "Texas Wholesale", file: "texaswholesale.png", width: 2396, height: 1088, country: { code: "us", name: "United States" }  },
+        /* --- with marks on file ------------------------------------------ */
+        { id: "progressive-leasing", name: "Progressive Leasing", file: "progressive-leasing.webp", width: 300, height: 171, country: { code: "us", name: "United States" } },
+        { id: "malath", name: "Malath Insurance", file: "malath.png", width: 850, height: 600, country: { code: "sa", name: "Saudi Arabia" } },
+        { id: "hut24", name: "Hut24", file: "Hut24.jpeg", width: 501, height: 328, via: { name: "Briggr Tech", file: "briggrtech-1.jpeg", width: 1080, height: 433 }, country: { code: "us", name: "United States" } },
+        { id: "jessies", name: "Jessies", file: "Jessies.webp", width: 397, height: 254, via: { name: "Grand Studio", file: "Grandstudio-1.png", width: 220, height: 50 }, country: { code: "us", name: "United States" } },
+        { id: "urida", name: "Urida", file: "Urida.jpeg", width: 603, height: 243, country: { code: "us", name: "United States" } },
+        { id: "da-boss", name: "Da Boss", file: "dabossicon.png", width: 301, height: 278, country: { code: "us", name: "United States" } },
+        /* The mark itself reads "Good Guys Wash Club"; the old "Good N Guys" was neither that nor the name on the list. */
+        { id: "good-guys", name: "Good Guys Wash Club", file: "goodnguys.png", width: 1222, height: 961, country: { code: "us", name: "United States" } },
+        { id: "le-bleu", name: "Le Bleu", file: "lebleu.png", width: 250, height: 103, country: { code: "us", name: "United States" } },
+        { id: "magic", name: "Magic", file: "magic-logo.png", width: 200, height: 82, country: { code: "us", name: "United States" } },
+        { id: "texas-wholesale", name: "Texas Wholesale", file: "texaswholesale.png", width: 2396, height: 1088, country: { code: "us", name: "United States" } },
+
+        /* --- named on the list, no mark supplied -------------------------- */
+        { id: "nsdc", name: "NSDC", file: null, via: { name: "Eclipse Technologies", file: "eclipse-technologies.png", width: 186, height: 67 }, country: { code: "ng", name: "Nigeria" } },
+        { id: "ajil", name: "Ajil Financial Services", file: null, via: { name: "Pcc&IT" }, country: { code: "sa", name: "Saudi Arabia" } },
+        { id: "definiti", name: "Definiti", file: null },
+        { id: "jakes-electric", name: "Jakes Electric", file: null },
+        { id: "olson-homes", name: "Olson Homes", file: null },
+        { id: "innvio", name: "Innvio", file: null },
+        { id: "kidswish", name: "KidsWish", file: null },
+        { id: "jadi-enterprise", name: "Jadi Enterprise", file: null },
+        { id: "airflow", name: "Airflow", file: null },
+        { id: "ozgo", name: "OzGo", file: null },
       ],
     },
   },
