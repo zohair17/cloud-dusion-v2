@@ -8,6 +8,42 @@
  * catalogue therefore updates the homepage, with no duplicated copy to drift.
  */
 
+/**
+ * Partner marks, each named once.
+ *
+ * Every one of these is drawn in two places: on its own card in the partners
+ * run, and again inside the "client of" note on each client the partner brought
+ * us. Holding the file and its intrinsic size here keeps the two from drifting
+ * apart the day a partner sends new artwork.
+ */
+const partnerMark = {
+  nisum: { name: "Nisum", file: "nisum.png", width: 2297, height: 617 },
+  chickFilA: { name: "Chick-fil-A", file: "chickfila.png", width: 343, height: 147 },
+  gic: { name: "GIC", file: "gic-logo-new-2.png", width: 337, height: 102 },
+  novizant: { name: "Novizant", file: "novizant-removebg-preview.png", width: 680, height: 226 },
+  grandStudio: { name: "Grand Studio", file: "Grandstudio-1.png", width: 220, height: 50 },
+  briggrTech: { name: "Briggr Tech", file: "briggrtech-1.jpeg", width: 1080, height: 433 },
+  digicop: { name: "DigiCop", file: "digicop.png", width: 641, height: 207 },
+  /* Drawn from the SVG on tafsol.com, so it is sharp at any card size. */
+  tafsol: { name: "Tafsol Technologies", file: "tafsol.png", width: 1050, height: 258 },
+  /*
+    The 200x200 LinkedIn crop this used to run on is gone: the company supplied
+    its own landscape artwork, so both the card and the note it appears in now
+    draw a mark that holds up at full size.
+  */
+  eclipse: { name: "Eclipse Technologies", file: "eclipse-technologies.png", width: 1197, height: 353 },
+  /*
+    No artwork on file for these three, so they carry no `file` and whatever
+    draws them sets the name as a wordmark instead. That is a partner whose logo
+    has not arrived rather than a broken image, and it swaps over the moment a
+    file lands: drop the artwork in public/asset/clients and add `file` with its
+    intrinsic width and height.
+  */
+  pccIt: { name: "Pcc&IT" },
+  nomonexus: { name: "NomoNexus" },
+  browsefytech: { name: "BrowsefyTech" },
+};
+
 /** @type {import("@/modules/company/domain/home-page.schema").HomePageRecord} */
 export const homePage = {
   status: "published",
@@ -200,32 +236,18 @@ export const homePage = {
         is partners only.
       */
       items: [
-        { id: "nisum", name: "Nisum", file: "nisum.png", width: 2297, height: 617, country: { code: "us", name: "United States" } },
-        { id: "chick-fil-a", name: "Chick-fil-A", file: "chickfila.png", width: 343, height: 147, country: { code: "us", name: "United States" } },
-        { id: "gic", name: "GIC", file: "gic-logo-new-2.png", width: 337, height: 102, country: { code: "in", name: "India" } },
-        { id: "novizant", name: "Novizant", file: "novizant-removebg-preview.png", width: 680, height: 226, country: { code: "us", name: "United States" } },
-        { id: "grand-studio", name: "Grand Studio", file: "Grandstudio-1.png", width: 220, height: 50 },
-        { id: "briggr-tech", name: "Briggr Tech", file: "briggrtech-1.jpeg", width: 1080, height: 433, country: { code: "us", name: "United States" } },
-        { id: "digicop", name: "DigiCop", file: "digicop.png", width: 641, height: 207, country: { code: "us", name: "United States" } },
-        /* Drawn from the SVG on tafsol.com, so it is sharp at any card size. */
-        { id: "tafsol-technologies", name: "Tafsol Technologies", file: "tafsol.png", width: 1050, height: 258 },
-        /*
-          Off the company's own LinkedIn page, which only publishes it at
-          200x200; the white surround is trimmed away so the mark sits on the
-          card rather than on a patch of its own white. A larger original would
-          be better if the company will supply one.
-        */
-        { id: "eclipse-technologies", name: "Eclipse Technologies", file: "eclipse-technologies.png", width: 186, height: 67, country: { code: "us", name: "United States" } },
-        /*
-          Still no mark for these three, so they carry no `file` and the card
-          sets the name as a wordmark instead. That is a partner whose logo has
-          not arrived rather than a broken image, and it swaps over the moment a
-          file lands: drop the artwork in public/asset/clients and add `file`
-          with its intrinsic width and height.
-        */
-        { id: "pcc-it", name: "Pcc&IT" },
-        { id: "nomonexus", name: "NomoNexus" },
-        { id: "browsefytech", name: "BrowsefyTech" },
+        { id: "nisum", ...partnerMark.nisum, country: { code: "us", name: "United States" } },
+        { id: "chick-fil-a", ...partnerMark.chickFilA, country: { code: "us", name: "United States" } },
+        { id: "gic", ...partnerMark.gic, country: { code: "in", name: "India" } },
+        { id: "novizant", ...partnerMark.novizant, country: { code: "us", name: "United States" } },
+        { id: "grand-studio", ...partnerMark.grandStudio },
+        { id: "briggr-tech", ...partnerMark.briggrTech, country: { code: "us", name: "United States" } },
+        { id: "digicop", ...partnerMark.digicop, country: { code: "us", name: "United States" } },
+        { id: "tafsol-technologies", ...partnerMark.tafsol },
+        { id: "eclipse-technologies", ...partnerMark.eclipse, country: { code: "us", name: "United States" } },
+        { id: "pcc-it", ...partnerMark.pccIt },
+        { id: "nomonexus", ...partnerMark.nomonexus },
+        { id: "browsefytech", ...partnerMark.browsefytech },
       ],
     },
     roster: {
@@ -246,37 +268,43 @@ export const homePage = {
         proof twice — and the smaller, faster tile undercuts the card. They
         are partners, so they stay upstairs and come out of the wall.
 
-        `via` says the work reached us through a partner rather than direct.
-        Every one below is taken from a case study in src/content/case-studies,
-        not inferred: Hut24 and Ajil and NSDC each name their engagement
-        partner in their own write-up. Where a client's route is not recorded
-        anywhere, the field is left off rather than guessed at.
+        `via` says the work reached us through a partner rather than direct,
+        and it is now recorded for every client the roster came to us that way:
+        each route below is the one the client list itself names against the
+        client. Direct engagements — Malath, Da Boss, KidsWish, Jadi and the
+        rest — carry no `via`, and where a route was never recorded the field
+        is left off rather than guessed at.
       */
       items: [
         /* --- with marks on file ------------------------------------------ */
-        { id: "progressive-leasing", name: "Progressive Leasing", file: "progressive-leasing.webp", width: 300, height: 171, country: { code: "us", name: "United States" } },
+        { id: "progressive-leasing", name: "Progressive Leasing", file: "progressive-leasing.webp", width: 300, height: 171, via: partnerMark.nisum, country: { code: "us", name: "United States" } },
         { id: "malath", name: "Malath Insurance", file: "malath.png", width: 850, height: 600, country: { code: "sa", name: "Saudi Arabia" } },
-        { id: "hut24", name: "Hut24", file: "Hut24.jpeg", width: 501, height: 328, via: { name: "Briggr Tech", file: "briggrtech-1.jpeg", width: 1080, height: 433 }, country: { code: "us", name: "United States" } },
-        { id: "jessies", name: "Jessies", file: "Jessies.webp", width: 397, height: 254, via: { name: "Grand Studio", file: "Grandstudio-1.png", width: 220, height: 50 }, country: { code: "us", name: "United States" } },
+        { id: "hut24", name: "Hut24", file: "Hut24.jpeg", width: 501, height: 328, via: partnerMark.briggrTech, country: { code: "us", name: "United States" } },
+        { id: "jessies", name: "Jessies", file: "Jessies.webp", width: 397, height: 254, via: partnerMark.grandStudio, country: { code: "us", name: "United States" } },
         { id: "urida", name: "Urida", file: "Urida.jpeg", width: 603, height: 243, country: { code: "us", name: "United States" } },
         { id: "da-boss", name: "Da Boss", file: "dabossicon.png", width: 301, height: 278, country: { code: "us", name: "United States" } },
         /* The mark itself reads "Good Guys Wash Club"; the old "Good N Guys" was neither that nor the name on the list. */
-        { id: "good-guys", name: "Good Guys Wash Club", file: "goodnguys.png", width: 1222, height: 961, country: { code: "us", name: "United States" } },
-        { id: "le-bleu", name: "Le Bleu", file: "lebleu.png", width: 250, height: 103, country: { code: "us", name: "United States" } },
+        { id: "good-guys", name: "Good Guys Wash Club", file: "goodnguys.png", width: 1222, height: 961, via: partnerMark.grandStudio, country: { code: "us", name: "United States" } },
+        { id: "le-bleu", name: "Le Bleu", file: "lebleu.png", width: 250, height: 103, via: partnerMark.grandStudio, country: { code: "us", name: "United States" } },
         { id: "magic", name: "Magic", file: "magic-logo.png", width: 200, height: 82, country: { code: "us", name: "United States" } },
         { id: "texas-wholesale", name: "Texas Wholesale", file: "texaswholesale.png", width: 2396, height: 1088, country: { code: "us", name: "United States" } },
+        /*
+          Four marks that arrived since: NSDC's federal council crest, Definiti,
+          and Ajil, whose supplied file carried a wide empty surround and is
+          trimmed to the mark so it fills the tile like the rest.
+        */
+        { id: "nsdc", name: "NSDC", file: "nsdc.png", width: 1154, height: 216, via: partnerMark.eclipse, country: { code: "ng", name: "Nigeria" } },
+        { id: "ajil", name: "Ajil Financial Services", file: "ajil.webp", width: 207, height: 45, via: partnerMark.pccIt, country: { code: "sa", name: "Saudi Arabia" } },
+        { id: "definiti", name: "Definiti", file: "definiti.png", width: 414, height: 160, via: partnerMark.tafsol },
 
         /* --- named on the list, no mark supplied -------------------------- */
-        { id: "nsdc", name: "NSDC", file: null, via: { name: "Eclipse Technologies", file: "eclipse-technologies.png", width: 186, height: 67 }, country: { code: "ng", name: "Nigeria" } },
-        { id: "ajil", name: "Ajil Financial Services", file: null, via: { name: "Pcc&IT" }, country: { code: "sa", name: "Saudi Arabia" } },
-        { id: "definiti", name: "Definiti", file: null },
-        { id: "jakes-electric", name: "Jakes Electric", file: null },
-        { id: "olson-homes", name: "Olson Homes", file: null },
-        { id: "innvio", name: "Innvio", file: null },
+        { id: "jakes-electric", name: "Jakes Electric", file: null, via: partnerMark.novizant },
+        { id: "olson-homes", name: "Olson Homes", file: null, via: partnerMark.novizant },
+        { id: "innvio", name: "Innvio", file: null, via: partnerMark.novizant },
         { id: "kidswish", name: "KidsWish", file: null },
         { id: "jadi-enterprise", name: "Jadi Enterprise", file: null },
-        { id: "airflow", name: "Airflow", file: null },
-        { id: "ozgo", name: "OzGo", file: null },
+        { id: "airflow", name: "Airflow", file: null, via: partnerMark.briggrTech },
+        { id: "ozgo", name: "OzGo", file: null, via: partnerMark.briggrTech },
       ],
     },
   },
